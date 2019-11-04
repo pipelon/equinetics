@@ -1,0 +1,65 @@
+/* Replace #D1A734 with Your Own Custom Hex Colors  */
+
+a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+.woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover,.footer_up_wrap.light #up_footerwrap.footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .up-menu-icon,
+.nav-trigger-case .up-menu-icon i:hover, .normal.white .shop_icon a:hover,.shop_icon a:hover, #wp-calendar a,.author_share a i:hover{color:#D1A734;}
+.product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit,
+.portfolionav a:hover, .home-iconmenu a:hover, #commentform .form-submit #submit,
+.login .form-row .button, .up-button{background:#D1A734}
+.topclass{background:#000000}
+.woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt{background:#D1A734;border-color:#D1A734;color:#fff;}
+.shipping-calculator-button{font-size:14px;text-transform:uppercase;background:#D1A734;border-color:#D1A734;color:#fff;padding:5px 10px 5px 10px;}
+a:hover{color:#000;}
+.input[type="submit"]:hover, .login .form-row .button:hover, .up-button:hover, .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .widget_layered_nav ul li.chosen a:hover{background:#000;}
+.up-mobile-nav .nav-inner li a:hover{color:#D1A734}
+.headerclass{background:#fff;}
+.navclass{background:#fff;}
+.sf-menu a{letter-spacing:normal;}
+#nav-second ul.sf-menu a{letter-spacing:normal;}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce-page .widget_price_filter .ui-slider .ui-slider-handle{position:absolute;z-index:2;width:1em;height:1em;border:1px solid #D1A734;cursor:pointer;background:#D1A734;}
+.wpb_categories_filter li.active {border-color:#D1A734;}
+a:hover{text-decoration:none;}
+.hometitle{text-align:center;}
+a.up-button.up_btn-t:hover{color:#fff !important;background:#D1A734;border:1px solid;}
+a.up-button.up_btn-d,.grid_port_paging a,a.up-button.port_but{color:#fff;background:#D1A734;}
+.head_title , .head_title h1{color:#D1A734;text-transform:uppercase}
+.sidebar a{color:#555;}
+
+.ab-wrap,.wideab-wrap{background:#D1A734;text-transform:uppercase;text-align:center;}
+.wp-pagenavi .current{background:#D1A734;color:#fff}
+.circle-text{color:#D1A734;border:1px solid #D1A734;}
+.up_bar_v{background-color:#D1A734;}
+#nav-main ul.sf-menu a:after, #commentform input, .form-search .search-icon:hover{background:#D1A734;}
+.wrap.maincontent.dark_version .widget-inner li a:hover, .widget-inner li a:hover{color:#D1A734}
+.datahead a:hover, .post_share i:hover{color:#D1A734}
+.team-box .team-inner h5, header #logo a.brand, .logofont, #commentform label span{color:#D1A734;}
+.hover.main.vc_column_container:hover, .widget .tagcloud a{background-color:#D1A734 !important;}
+.wp-pagenavi a:hover{background:#D1A734;color:#fff;}
+h4.wpb_toggle, .blogmasonry a h5:hover{color:#D1A734}
+blockquote{border-left:4px solid #D1A734;}
+#up_filters li span.active , a.linkedib i:hover, .dropcap{color:#D1A734}
+.highlight{background-color:#D1A734;}
+div.wpcf7-validation-errors{border:1px solid #D1A734;}
+.wpb_tabs .wpb_tabs_nav li{margin:0 -1px 0 0 !important;}
+.wpb_categories_filter li.active , .wpb_content_element .wpb_tabs_nav li.ui-tabs-active a {background:#D1A734;}
+.wpb_content_element .wpb_tabs_nav li.ui-tabs-active a ,.portfolionav a:hover{border-color:#D1A734}
+
+.wpb_teaser_grid .categories_filter li.active a, .up_counter_iner{color:#D1A734}
+.wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-accordion-header-active{border:1px solid #D1A734;}
+.up_pricing_inner{background:#D1A734}
+.wrap.maincontent.dark_version .blogmasonry .post_share i:hover, .wrap.maincontent.dark_version .nav-previous a:hover,.wrap.maincontent.dark_version .nav-next a:hover, h1.entry-title a:hover{color:#D1A734;}
+.up-mobile-nav .nav-inner li.current-menu-item>a, span.shortcode_icon a i:hover{color:#D1A734 !important}
+.woocommerce-page .wrap.maincontent.dark_version .single_add_to_cart_button.button.alt{border-color:#D1A734 !important}
+.woocommerce-page .wrap.maincontent.dark_version .single_add_to_cart_button.button.alt:hover{border-color:#868686 !important}
+ a.up-button:hover{color:#fff;background:#D1A734;}
+ a.up-button.up_btn-d:hover{color:#000;background:#fff;}
+a.slider-button.white:hover{color:#fff!important;background:#D1A734 !important;}
+a.slider-button{color:#fff!important;background:#D1A734 !important;}
+::selection{background:#D1A734;color:#fff;}
+.mc4wp-form input[type="submit"], .mc4wp-form button, .mc4wp-form input[type="button"]{background:#D1A734;color:#fff;border:0;}.mc4wp-form input[type="submit"]:hover, .mc4wp-form button:hover, .mc4wp-form input[type="button"]:hover{background:#000;color:#fff;border:0;}
+#nav-main ul.sf-menu li.current_page_item>a, a.rsswidget{color:#D1A734 !important;text-transform:uppercase;}
+.wpb_accordion .wpb_accordion_wrapper .wpb_accordion_header.ui-accordion-header-active a{background:#D1A734;color:#fff !important}
+.woocommerce #content input.button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page #content input.button, .woocommerce-page #respond input#submit, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button{background:#4A4A4A}
+a.post_more:hover{color:#fff; border-color:#D1A734; background:#D1A734}
+.normal.white #up_topbar #nav-main ul > li.up-megamenu > ul ul li a:hover{color:#D1A734!important;}
+.normal.dark #up_topbar #nav-main ul > li.up-megamenu > ul ul li a:hover{color:#D1A734!important;}

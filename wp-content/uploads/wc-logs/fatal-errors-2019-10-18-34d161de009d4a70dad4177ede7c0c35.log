@@ -1,0 +1,6 @@
+2019-10-18T20:29:23+00:00 CRITICAL require(): Failed opening required 'http://localhost/Onic/equinetics/wp-content/plugins/prueba.php' (include_path='.;C:\php\pear') en D:\wamp64\www\Onic\equinetics\wp-content\plugins\plugin-prueba\plugin-prueba.php en la línea 12
+
+2019-10-18T20:30:18+00:00 CRITICAL require(): Failed opening required 'http://localhost/Onic/equinetics/wp-content/plugins/plugin-prueba/prueba.php' (include_path='.;C:\php\pear') en D:\wamp64\www\Onic\equinetics\wp-content\plugins\plugin-prueba\plugin-prueba.php en la línea 13
+
+2019-10-18T21:19:50+00:00 CRITICAL syntax error, unexpected end of file en D:\wamp64\www\Onic\equinetics\wp-content\plugins\plugin-prueba\prueba.php en la línea 15
+

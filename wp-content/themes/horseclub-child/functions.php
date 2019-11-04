@@ -1,0 +1,398 @@
+<?php
+/**
+ * CARGA EL IDIOMA DESDE EL THEMA HIJO
+ */
+add_action('after_setup_theme', 'my_child_theme_setup');
+
+function my_child_theme_setup() {
+    load_child_theme_textdomain('horseclub', get_stylesheet_directory() . '/languages');
+    
+    //OVERRIDE MENU
+    class horseclub_bootstrap_navwalker_childtheme extends Walker_Nav_Menu {
+
+        public function start_lvl(&$output, $depth = 0, $args = array()) {
+            $indent = str_repeat("\t", $depth);
+            $output .= "\n$indent<ul role=\"menu\" class=\" sf-dropdown-menu\">\n";
+        }
+
+        public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+            $indent = ( $depth ) ? str_repeat("\t", $depth) : '';
+
+            if (strcasecmp($item->attr_title, 'divider') == 0 && $depth === 1) {
+                $output .= $indent . '<li role="presentation" class="divider">';
+            } else if (strcasecmp($item->title, 'divider') == 0 && $depth === 1) {
+                $output .= $indent . '<li role="presentation" class="divider">';
+            } else if (strcasecmp($item->attr_title, 'dropdown-header') == 0 && $depth === 1) {
+                $output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr($item->title);
+            } else if (strcasecmp($item->attr_title, 'disabled') == 0) {
+                $output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr($item->title) . '</a>';
+            } else if (strcasecmp($item->title, 'menuicon') == 0) {
+                $output .= $indent . '<li role="presentation" class="menu_icon"><a href="' . $item->url . '"><i class="fa ' . esc_attr($item->attr_title) . '"></i></a>';
+            } else if (strcasecmp($item->title, 'menuflag') == 0) {
+                $output .= $indent . '<li role="presentation" class="menu_icon"><a href="' . $item->url . '">'
+                        . '<img src="' . esc_attr($item->attr_title) . '"></img>'
+                        . '<span class="tituMenuIcon">' . esc_attr($item->description) . '</span>'
+                        . '</a>';
+            } else {
+
+                $class_names = $value = '';
+
+                $classes = empty($item->classes) ? array() : (array) $item->classes;
+                $classes[] = 'menu-item-' . $item->ID;
+
+                $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+
+                if ($args->has_children)
+                    $class_names .= ' sf-dropdown';
+
+                if (in_array('current-menu-item', $classes))
+                    $class_names .= ' active';
+
+                $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+                $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+                $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+
+                $output .= $indent . '<li' . $id . $value . $class_names . '>';
+
+                $atts = array();
+                $atts['title'] = !empty($item->title) ? $item->title : '';
+                $atts['target'] = !empty($item->target) ? $item->target : '';
+                $atts['rel'] = !empty($item->xfn) ? $item->xfn : '';
+
+                if ($args->has_children && $depth === 0) {
+                    $atts['href'] = !empty($item->url) ? $item->url : '';
+                    $atts['class'] = 'dropdown-toggle';
+                    $atts['aria-haspopup'] = 'false';
+                } else {
+                    $atts['href'] = !empty($item->url) ? $item->url : '';
+                }
+
+                $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);
+
+                $attributes = '';
+                foreach ($atts as $attr => $value) {
+                    if (!empty($value)) {
+                        $value = ( 'href' === $attr ) ? esc_url($value) : esc_attr($value);
+                        $attributes .= ' ' . $attr . '="' . $value . '"';
+                    }
+                }
+
+                $item_output = $args->before;
+
+                if (!empty($item->attr_title))
+                    $item_output .= '<a' . $attributes . '><i class="fa ' . esc_attr($item->attr_title) . '"></i>&nbsp;';
+                else
+                    $item_output .= '<a' . $attributes . '>';
+
+                $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+                $item_output .= '</a>';
+                $item_output .= $args->after;
+
+                $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+            }
+        }
+
+        public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output) {
+            if (!$element)
+                return;
+
+            $id_field = $this->db_fields['id'];
+
+            if (is_object($args[0]))
+                $args[0]->has_children = !empty($children_elements[$element->$id_field]);
+
+            parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+        }
+
+        public static function fallback($args) {
+            if (current_user_can('manage_options')) {
+
+                extract($args);
+
+                $fb_output = null;
+
+                if ($container) {
+                    $fb_output = '<' . $container;
+
+                    if ($container_id)
+                        $fb_output .= ' id="' . $container_id . '"';
+
+                    if ($container_class)
+                        $fb_output .= ' class="' . $container_class . '"';
+
+                    $fb_output .= '>';
+                }
+
+                $fb_output .= '<ul';
+
+                if ($menu_id)
+                    $fb_output .= ' id="' . $menu_id . '"';
+
+                if ($menu_class)
+                    $fb_output .= ' class="' . $menu_class . '"';
+
+                $fb_output .= '>';
+                $fb_output .= '<li><a href="' . admin_url('nav-menus.php') . '">Add a menu</a></li>';
+                $fb_output .= '</ul>';
+
+                if ($container)
+                    $fb_output .= '</' . $container . '>';
+
+                echo $fb_output;
+            }
+        }
+
+    }
+
+}
+
+/**
+ * FUNCION PARA EL TITULO DE LOS PRODUCTOS
+ */
+function equinetics_switch_loop_title() {
+    remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+    remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+    add_action('woocommerce_before_shop_loop_item_title', 'equinetics_template_loop_product_title', 10);
+}
+
+add_action('woocommerce_before_shop_loop_item', 'equinetics_switch_loop_title');
+
+function equinetics_template_loop_product_title() {
+    global $product;
+    echo '<h2 class="woocommerce-loop-product__title titleproduct">' . get_the_title() . '</h2>';
+    echo '<span class="shortdesc">' . $product->short_description . '</span>';
+}
+
+/**
+ * FUNCION PARA QUITAR EL PRECIO DE LOS PRODUCTOS
+ */
+function equinetics_switch_loop_price() {
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+    add_action('woocommerce_before_shop_loop_item_title', 'equinetics_template_single_price', 10);
+}
+
+add_action('woocommerce_before_shop_loop_item', 'equinetics_switch_loop_price');
+
+function equinetics_template_single_price() {
+    global $product;
+}
+
+/**
+ * FUNCION PARA EL BOTON AGREGAR AL CARRITO
+ */
+function equinetics_switch_loop_add_to_cart() {
+    remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+    add_action('woocommerce_before_shop_loop_item_title', 'equinetics_woocommerce_template_loop_add_to_cart', 10);
+}
+
+add_action('woocommerce_before_shop_loop_item', 'equinetics_switch_loop_add_to_cart');
+
+function equinetics_woocommerce_template_loop_add_to_cart($args = array()) {
+    global $product;
+}
+
+/**
+ * CAMBIAR ORDEN DE LAS COSAS EN LOS PRODUCTOS
+ */
+add_action('arrange_view_product', 'override_order_view_product');
+do_action('arrange_view_product');
+
+function override_order_view_product() {
+    //REMUEVO LA ACCIONES DEL CORE
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+    //SOBRE ESCRIBO LAS ACCIONES Y PESOS DEL CORE
+    add_action('woocommerce_single_product_summary', 'equinetics_woocommerce_template_single_title', 5);
+    //add_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 70);
+    add_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 80);
+}
+
+function equinetics_woocommerce_template_single_title() {
+    the_title('<h1 class="vc_custom_heading text space text-center">', '</h1>');
+    echo '<div class="vc_separator wpb_content_element vc_separator_align_center 
+        vc_sep_width_20 vc_sep_double vc_sep_pos_align_center underlined_title_red 
+        vc_separator-has-text"><span class="vc_sep_holder vc_sep_holder_l">
+        <span style="border-color:#be1e2d;" class="vc_sep_line">
+        </span>
+        </span>
+        <h4>Subrayado</h4>
+        <span class="vc_sep_holder vc_sep_holder_r">
+        <span style="border-color:#be1e2d;" class="vc_sep_line">
+        </span>
+        </span>
+        <div>
+        </div>
+        </div>';
+    echo '<div class="vc_empty_space" style="height: 20px"><span class="vc_empty_space_inner"></span></div>';
+}
+
+function my_text_strings($translated_text, $text, $domain) {
+    switch ($translated_text) {
+        case "Añadir al carrito":
+            $translated_text = __('Contratar servicio', 'woocommerce');
+            break;
+        case "Productos relacionados":
+            $translated_text = __('Otros profesionales', 'woocommerce');
+            break;
+        default:
+            break;
+    }
+    return $translated_text;
+}
+
+add_filter('gettext', 'my_text_strings', 20, 3);
+
+add_filter('wc_add_to_cart_message', 'wdo_custom_wc_add_to_cart_message', 10, 2);
+
+function wdo_custom_wc_add_to_cart_message($message, $product_id) {
+    $message = sprintf(esc_html__('Has solicitado un servicio de « %s ».', 'tm-organik'), get_the_title($product_id));
+    return $message;
+}
+?>
+
+<?php
+add_action('show_user_profile', 'agregar_campos_perfil');
+add_action('edit_user_profile', 'agregar_campos_perfil');
+add_action('personal_options_update', 'guardar_campos_perfil');
+add_action('edit_user_profile_update', 'guardar_campos_perfil');
+
+function agregar_campos_perfil($user) {
+    $id_product = esc_attr(get_the_author_meta('id_product', $user->ID));
+    $type_product = esc_attr(get_the_author_meta('type_product', $user->ID));
+    ?>
+
+    <h3>Campos adicionales</h3>
+    <?= $type_product ?>
+    <table class="form-table">
+        <tr>
+            <th><label for="id_product">ID de producto</label></th>
+            <td>
+                <input type="text" name="id_product" id="id_product" class="input" value="<?php echo $id_product; ?>" size="20" />
+                <span class="description">ID de producto</span>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="id_product">Tipo de producto</label></th>
+            <td>
+                <select name="type_product" id="type_product">
+                    <option value=""></option>
+                    <option  <?= $type_product == 'veterinario' ? 'selected' : '' ?> value="veterinario">Veterinario</option>
+                    <option  <?= $type_product == 'caballo' ? 'selected' : '' ?> value="caballo">Caballo</option>					
+                </select>                
+                <span class="description">Tipo de producto</span>
+            </td>
+        </tr>		
+    </table>
+
+    <?php
+}
+
+function guardar_campos_perfil($user_id) {
+    if (isset($_POST['id_product']) && isset($_POST['type_product'])) {
+        update_user_meta($user_id, 'id_product', $_POST['id_product']);
+        update_user_meta($user_id, 'type_product', $_POST['type_product']);
+    }
+}
+
+function shortcode_cleaner() {
+    remove_shortcode('add_to_cart'); // Not exactly required
+    add_shortcode('add_to_cart', 'my_add_to_cart_shortcode');
+}
+
+function my_add_to_cart_shortcode($atts) {
+    global $post;
+
+    if (empty($atts)) {
+        return '';
+    }
+
+    $atts = shortcode_atts(array(
+        'id' => '',
+        'class' => '',
+        'quantity' => '1',
+        'sku' => '',
+        'style' => 'border:4px solid #ccc; padding: 12px;',
+        'show_price' => 'true',
+            ), $atts, 'product_add_to_cart');
+
+    if (!empty($atts['id'])) {
+        $product_data = get_post($atts['id']);
+    } elseif (!empty($atts['sku'])) {
+        $product_id = wc_get_product_id_by_sku($atts['sku']);
+        $product_data = get_post($product_id);
+    } else {
+        return '';
+    }
+
+    $product = is_object($product_data) && in_array($product_data->post_type, array('product', 'product_variation'), true) ? wc_setup_product_data($product_data) : false;
+
+    if (!$product) {
+        return '';
+    }
+
+    ob_start();
+
+    echo '<p class="product woocommerce add_to_cart_inline ' . esc_attr($atts['class']) . '" style="' . ( empty($atts['style']) ? '' : esc_attr($atts['style']) ) . '">';
+
+    woocommerce_template_loop_add_to_cart(array(
+        'quantity' => $atts['quantity'],
+    ));
+
+    if (wc_string_to_bool($atts['show_price'])) {
+        // @codingStandardsIgnoreStart
+        echo $product->get_price_html();
+        // @codingStandardsIgnoreEnd
+    }
+
+    echo '</p>';
+
+    // Restore Product global in case this is shown inside a product post.
+    wc_setup_product_data($post);
+
+    return ob_get_clean();
+}
+
+add_action('init', 'shortcode_cleaner');
+
+
+add_filter('woocommerce_account_menu_items', 'add_links');
+
+function add_links($menu_links) {
+
+    $cu = wp_get_current_user();
+    $id_product = esc_attr(get_the_author_meta('id_product', $cu->ID));
+    if (!empty($id_product)) {
+        $new = array('reportes' => 'Reportes');
+        $menu_links = array_slice($menu_links, 0, 1, true) + $new + array_slice($menu_links, 1, NULL, true);
+    }
+    return $menu_links;
+}
+
+add_action('init', 'my_add_shortcodes');
+
+function my_add_shortcodes() {
+
+    add_shortcode('my-login-form', 'my_login_form_shortcode');
+}
+
+function my_login_form_shortcode() {
+
+    if (is_user_logged_in()) {
+        global $current_user;
+        wp_get_current_user();
+        $html = "<div class='sarafree'><p class='text-center'><b>Hola, </b> " . $current_user->display_name . "</p>";
+        $html .= "Ya puedes acceder a todos los beneficios de";
+        $html .= " S. A. R. A</div>";
+        $html .= "<div class='saraAccount logged'><a href='cruza'>Acceder a S. A. R. A. </a></div>";
+    } else {
+        $html = " <div class='sarafree'><a href='cruza'>Prueba S. A. R. A. <br /> (Sin crear una cuenta) </a></div>";
+        $html .= "<div class='saraAccount'><a href='mi-cuenta'>¡Crea una cuenta gratis!</a> y accede a todos los beneficios del software. </div>";
+        $html .= wp_login_form(array('echo' => false, 'form_id' => 'logincruza'));
+    }
+    return $html;
+}

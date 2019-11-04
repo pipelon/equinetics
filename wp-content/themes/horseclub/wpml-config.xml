@@ -1,0 +1,18 @@
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">portfolio</custom-type>
+       <custom-type translate="1">testimonials</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">portfolio-type</taxonomy>	
+    </taxonomies>
+
+   <admin-texts>
+        <key name="horseclub_usefulpi">
+            <key name="sec_top_left_text" />
+            <key name="sec_top_right_text" />
+			<key name="footer_text" />   
+        </key> 
+    </admin-texts>
+	
+	</wpml-config>
