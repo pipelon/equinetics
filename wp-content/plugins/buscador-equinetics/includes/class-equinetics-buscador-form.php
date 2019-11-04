@@ -25,8 +25,10 @@ if (!class_exists('FormularioBuscador')) :
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
                 if (isset($_POST["guardar"])) {
-                    
-                    echo "<pre>";                    var_dump($_POST);exit;
+
+                    echo "<pre>";
+                    var_dump($_POST);
+                    exit;
 
                     $yeguas = get_option('buscador_equinetics_yeguas');
                     if (!$yeguas) {
@@ -125,6 +127,27 @@ if (!class_exists('FormularioBuscador')) :
                 $infoYeguas = $infoYeguas[get_current_user_id()];
             }
 
+            //CATEGORIAS
+            $taxonomy = 'product_cat';
+            $orderby = 'name';
+            $show_count = 0;      // 1 for yes, 0 for no
+            $pad_counts = 0;      // 1 for yes, 0 for no
+            $hierarchical = 1;      // 1 for yes, 0 for no  
+            $title = '';
+            $empty = 0;
+
+            $args = array(
+                'taxonomy' => $taxonomy,
+                'orderby' => $orderby,
+                'show_count' => $show_count,
+                'pad_counts' => $pad_counts,
+                'hierarchical' => $hierarchical,
+                'title_li' => $title,
+                'hide_empty' => $empty,
+                'parent' => 26,
+            );
+            $categories = get_categories($args);
+
             $template = dirname(__FILE__) . '/views/buscador-form.php';
 
             if (file_exists($template)) {
@@ -133,6 +156,8 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
 
     
 

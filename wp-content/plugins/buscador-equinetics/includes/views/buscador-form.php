@@ -78,7 +78,21 @@
                     <input type="text" class="form-control" name="form[abuelo_materno]" id="abuelo_materno"
                            value="<?= isset($selectedYegua["abuelo_materno"]) ? $selectedYegua["abuelo_materno"] : '' ?>">
                 </div>
-            </div>            
+            </div> 
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="raza">Raza</label>
+                    <select id="raza" name="raza" class="form-control">
+                        <option value="">Seleccione una raza...</option>
+                        <?php foreach ($categories as $cat) : ?>
+                            <option value="<?= trim($cat->cat_ID); ?> "
+                                    <?= (isset($_POST["raza"]) && trim($_POST["raza"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
+                                        <?= $cat->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1799,15 +1813,20 @@
             <input type="submit" 
                    value="<?= $settings["search_field_text"]; ?>" 
                    class="up-button up_btn-s btn-grey btn-buscarguardar"
-                   style="line-height: 20px !important;"/>
+                   style="line-height: 40px !important; margin: 0 10px;"/>
+            
+            <input type="submit" 
+                   value="Sugerencias S. A. R. A." 
+                   class="up-button up_btn-s btn-grey btn-buscarguardar"
+                   style="line-height: 40px !important; margin: 0 10px;"/>
 
             <?php if (is_user_logged_in()) : ?>        
                 <input type="submit" 
                        name="guardar"
                        value="Buscar y guardar información de la Yegua" 
                        class="up-button btn-red btn-buscarguardar"
-                       style="line-height: 20px !important;"/>               
-                   <?php endif; ?>
+                       style="line-height: 40px !important; margin: 0 10px;"/>               
+            <?php endif; ?>
         </div>
     </div>
 </form>
