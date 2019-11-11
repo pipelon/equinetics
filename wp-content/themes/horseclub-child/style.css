@@ -279,6 +279,17 @@ html, body {
     margin: 0;
     padding: 0;
 }
+body {
+    font-family: "Catamaran" !important;
+    line-height: 24px !important;;
+    font-weight: normal !important;;
+    font-style: normal !important;;
+    color: #000000 !important;;
+    font-size: 17px !important;;
+}
+#nav-main ul.sf-menu  .sf-dropdown-menu a {
+    font-size: 14px !important;
+}
 .accordion {
     background-color: #FFFFFF;
     color: #000;
@@ -657,12 +668,17 @@ div.franja-iconos-ejemplares p a:hover{
     text-decoration: underline;
 }
 div.franja-iconos-ejemplares .vc_column_container > .vc_column-inner{
-    padding-left: 0;
+    padding:  0 30px;
 }
-div.franja-iconos-ejemplares .vc_column_container:first-of-type > .vc_column-inner{
+/*div.franja-iconos-ejemplares .vc_column_container:first-of-type > .vc_column-inner{
     padding-left: 15px;
+}*/
+#up_topbar #nav-main ul > li.up-megamenu > ul > li{
+    padding: 0 10px !important;
 }
-
+.menu_icon > a{
+    padding: 0 !important;
+}
 .menu_icon span.tituMenuIcon{
     display: block;
     text-align: center;
@@ -1071,7 +1087,7 @@ a.tribe-events-ical.tribe-events-button{
 form#logincruza{
     border: 1px solid #e0dadf;
     padding: 20px;
-    margin: 2em auto;
+    margin: 10px auto;
     width: 60%;
 }
 form#logincruza label{
@@ -1368,9 +1384,11 @@ form.buscadr li.vc_tta-tab{
 .infollegua div.form-group{
     margin-bottom: 0;
 }
-form.buscadr .chksmejoras label.form-check-label,
-form.buscadr .divVariable label{
+form.buscadr .chksmejoras label.form-check-label{
     font-size: 14px;
+}
+form.buscadr .divVariable label{
+    font-size: 18px;
 }
 form.buscadr .valores{
     width: 100%;
@@ -1413,6 +1431,9 @@ form.buscadr .valores span.valor:before{
 }
 form.buscadr .valores > span{
     text-align: center;
+}
+form.buscadr .divVariable .valores span{
+    font-family: "Catamaran" !important;
 }
 form.buscadr .divVariable label{
     font-family: "Catamaran" !important;
@@ -1787,6 +1808,21 @@ h1{
     padding-top: 40px !important;
     padding-bottom: 30px !important;
 }
+.reportes .vc_chart .wpb_wrapper{
+    text-align: center;
+}
+.reportes .vc_chart .wpb_wrapper .vc_chart-legend{
+    text-align: left;
+    margin-left: 60px;
+}
+.rowCounters .wpb_wrapper p{
+    color: var(--eqcolor);
+}
+.rowCounters .wpb_wrapper .wpb_wrapper p {
+    font-family: "Catamaran" !important;
+    font-size: 18px;
+    font-weight: bold;    
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
@@ -1833,6 +1869,7 @@ h1{
     }
     .vc_chart .vc_chart-legend{
         width: 100% !important;
+        margin-left: 0;
     }
     #news-panel .lp_three .up_lpt{
         width: auto;

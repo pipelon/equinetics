@@ -6,7 +6,7 @@ add_action('after_setup_theme', 'my_child_theme_setup');
 
 function my_child_theme_setup() {
     load_child_theme_textdomain('horseclub', get_stylesheet_directory() . '/languages');
-    
+
     //OVERRIDE MENU
     class horseclub_bootstrap_navwalker_childtheme extends Walker_Nav_Menu {
 
@@ -387,12 +387,32 @@ function my_login_form_shortcode() {
         wp_get_current_user();
         $html = "<div class='sarafree'><p class='text-center'><b>Hola, </b> " . $current_user->display_name . "</p>";
         $html .= "Ya puedes acceder a todos los beneficios de";
-        $html .= " S. A. R. A</div>";
+        $html .= " nuestro software</div>";
         $html .= "<div class='saraAccount logged'><a href='cruza'>Acceder a S. A. R. A. </a></div>";
     } else {
         $html = " <div class='sarafree'><a href='cruza'>Prueba S. A. R. A. <br /> (Sin crear una cuenta) </a></div>";
         $html .= "<div class='saraAccount'><a href='mi-cuenta'>¡Crea una cuenta gratis!</a> y accede a todos los beneficios del software. </div>";
+        if ($_GET['login'] == "failed") {
+            $html .= "<div style='border-left: 4px solid #be1e2d;
+                        width: 60%;
+                        padding: 12px;
+                        margin: 10px auto;
+                        background-color: #fff;
+                        box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);'><strong>ERROR</strong>: 
+                        Nombre de usuario no válido. </div>";
+        }
         $html .= wp_login_form(array('echo' => false, 'form_id' => 'logincruza'));
     }
     return $html;
+}
+
+//add_action('wp_login_failed', 'pippin_login_fail');  // hook failed login
+
+function pippin_login_fail($username) {
+    $referrer = $_SERVER['HTTP_REFERER'];  // where did the post submission come from?
+    // if there's a valid referrer, and it's not the default log-in screen
+    if (!empty($referrer) && !strstr($referrer, 'wp-login') && !strstr($referrer, 'wp-admin')) {
+        wp_redirect(site_url('/software-de-cruza/') . '/?login=failed');  // let's append some information (login=failed) to the URL for the theme to use
+        exit;
+    }
 }

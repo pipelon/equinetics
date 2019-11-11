@@ -51,10 +51,22 @@
                     <input type="text" class="form-control" name="form[nombre]" id="nombre"
                            value="<?= isset($selectedYegua["nombre"]) ? $selectedYegua["nombre"] : '' ?>">
                 </div>
+                <!--                <div class="form-group col-md-4">
+                                    <label for="andar">Andar</label>
+                                    <input type="text" class="form-control" name="form[andar]" id="andar"
+                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''   ?>">
+                                </div>-->
                 <div class="form-group col-md-4">
-                    <label for="andar">Andar</label>
-                    <input type="text" class="form-control" name="form[andar]" id="andar"
-                           value="<?= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : '' ?>">
+                    <label for="raza">Raza</label>
+                    <select id="raza" name="raza" class="form-control" required>
+                        <option value="">Seleccione una raza...</option>
+                        <?php foreach ($categories as $cat) : ?>
+                            <option value="<?= trim($cat->cat_ID); ?> "
+                                    <?= (isset($_POST["raza"]) && trim($_POST["raza"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
+                                        <?= $cat->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="registro">Registro</label>
@@ -78,21 +90,7 @@
                     <input type="text" class="form-control" name="form[abuelo_materno]" id="abuelo_materno"
                            value="<?= isset($selectedYegua["abuelo_materno"]) ? $selectedYegua["abuelo_materno"] : '' ?>">
                 </div>
-            </div> 
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="raza">Raza</label>
-                    <select id="raza" name="raza" class="form-control">
-                        <option value="">Seleccione una raza...</option>
-                        <?php foreach ($categories as $cat) : ?>
-                            <option value="<?= trim($cat->cat_ID); ?> "
-                                    <?= (isset($_POST["raza"]) && trim($_POST["raza"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
-                                        <?= $cat->name; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
+            </div>             
         </div>
     </div>
 
@@ -1795,6 +1793,14 @@
                                             </div>
                                         </div>        
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <input type="submit" 
+                                                   value="Sugerencias S. A. R. A." 
+                                                   class="up-button up_btn-s btn-red btn-buscarguardar"
+                                                   style="line-height: 40px !important; margin: 0 10px;"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1814,19 +1820,14 @@
                    value="<?= $settings["search_field_text"]; ?>" 
                    class="up-button up_btn-s btn-grey btn-buscarguardar"
                    style="line-height: 40px !important; margin: 0 10px;"/>
-            
-            <input type="submit" 
-                   value="Sugerencias S. A. R. A." 
-                   class="up-button up_btn-s btn-grey btn-buscarguardar"
-                   style="line-height: 40px !important; margin: 0 10px;"/>
 
             <?php if (is_user_logged_in()) : ?>        
                 <input type="submit" 
                        name="guardar"
                        value="Buscar y guardar información de la Yegua" 
-                       class="up-button btn-red btn-buscarguardar"
+                       class="up-button btn-grey btn-buscarguardar"
                        style="line-height: 40px !important; margin: 0 10px;"/>               
-            <?php endif; ?>
+                   <?php endif; ?>
         </div>
     </div>
 </form>
