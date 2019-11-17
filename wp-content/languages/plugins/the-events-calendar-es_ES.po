@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - The Events Calendar - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-10-25 02:38:52+0000\n"
+"PO-Revision-Date: 2019-11-14 16:52:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -6292,11 +6292,6 @@ msgstr "Ver la página que se mostró cuando el plugin fue instalado inicialment
 msgid "View the page that displayed when you updated the plugin."
 msgstr "Ver la página que se mostró cuando el plugin fue actualizado."
 
-#: common/src/Tribe/Admin/Help_Page.php:405
-msgctxt "not available"
-msgid "n/a"
-msgstr "no disponible"
-
 #: common/src/Tribe/Admin/Help_Page.php:413
 #: common/src/Tribe/Admin/Help_Page.php:788
 msgid "You are up to date!"
@@ -6460,6 +6455,11 @@ msgstr "Mostrar enlace de Google Maps"
 #: src/resources/js/app/blocks.js:48525
 msgid "Share Settings"
 msgstr "Ajustes de compartir"
+
+#: common/src/Tribe/Admin/Help_Page.php:405
+msgctxt "not available"
+msgid "n/a"
+msgstr "n/d"
 
 #: common/src/Tribe/Languages/Locations.php:342
 msgid "Louisiana"

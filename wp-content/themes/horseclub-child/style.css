@@ -18,6 +18,19 @@ Template: horseclub
 .top-bar-section{
     border-bottom: 1px solid #ddd;
 }
+.top_bar_right span,
+.top_bar_left span,
+.top_bar_left span a i,
+.top_bar_right span a i{
+    color: #000000 !important;
+}
+.top_bar_right span:hover,
+.top_bar_left span:hover,
+.top_bar_left span:hover a i,
+.top_bar_right span:hover a i,
+span.shortcode_icon a i:hover{
+    color: var(--eqcolor) !important;
+}
 .top-bar-section span.shortcode_icon:hover a,
 .top-bar-section span.shortcode_icon:hover a i{
     color: #000000 !important;    
@@ -50,6 +63,9 @@ header.normal.white,
 }
 .normal.dark #up_topbar #nav-main ul > li.up-megamenu > ul.sf-dropdown-menu ul li a:hover{
     color: #000000 !important;
+}
+#up_topbar #nav-main ul > li.up-megamenu > ul.sf-dropdown-menu{
+    max-width: 1280px !important;
 }
 #nav-main ul.sf-menu ul li a:hover, 
 #nav-main ul.sf-menu a:hover, 
@@ -673,8 +689,11 @@ div.franja-iconos-ejemplares .vc_column_container > .vc_column-inner{
 /*div.franja-iconos-ejemplares .vc_column_container:first-of-type > .vc_column-inner{
     padding-left: 15px;
 }*/
+#nav-main ul.sf-menu li.current_page_item>a, a.rsswidget{
+    text-transform: none !important;
+}
 #up_topbar #nav-main ul > li.up-megamenu > ul > li{
-    padding: 0 10px !important;
+    padding: 0 5px !important;
 }
 .menu_icon > a{
     padding: 0 !important;
@@ -1816,7 +1835,7 @@ h1{
     margin-left: 60px;
 }
 .rowCounters .wpb_wrapper p{
-    color: var(--eqcolor);
+    color: #000000;
 }
 .rowCounters .wpb_wrapper .wpb_wrapper p {
     font-family: "Catamaran" !important;

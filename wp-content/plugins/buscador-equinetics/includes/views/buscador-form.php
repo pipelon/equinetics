@@ -54,24 +54,24 @@
                 <!--                <div class="form-group col-md-4">
                                     <label for="andar">Andar</label>
                                     <input type="text" class="form-control" name="form[andar]" id="andar"
-                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''   ?>">
-                                </div>-->
-                <div class="form-group col-md-4">
-                    <label for="raza">Raza</label>
-                    <select id="raza" name="raza" class="form-control" required>
-                        <option value="">Seleccione una raza...</option>
-                        <?php foreach ($categories as $cat) : ?>
-                            <option value="<?= trim($cat->cat_ID); ?> "
-                                    <?= (isset($_POST["raza"]) && trim($_POST["raza"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
-                                        <?= $cat->name; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''       ?>">
+                                </div>-->                
                 <div class="form-group col-md-4">
                     <label for="registro">Registro</label>
                     <input type="text" class="form-control" name="form[registro]" id="registro"
                            value="<?= isset($selectedYegua["registro"]) ? $selectedYegua["registro"] : '' ?>">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="andar">Andar</label>
+                    <select id="andar" name="andar" class="form-control" required>
+                        <option value="">Seleccione un andar...</option>
+                        <?php foreach ($categories as $cat) : ?>
+                            <option value="<?= trim($cat->cat_ID); ?> "
+                                    <?= (isset($_POST["andar"]) && trim($_POST["andar"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
+                                        <?= $cat->name; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -1795,10 +1795,29 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 text-center">
+                                            <?php if (!is_user_logged_in()) : ?>
+                                                <p class="alert alert-warning" style="margin: 15px 0;">
+                                                    <i class="fa fa-info-circle"></i> 
+                                                    Registrate para acceder a los beneficios de nuestro software, <br />
+                                                    como la posibilidad de guardar todos tus ejemplares buscados.</p>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <input type="submit" 
+                                                   value="<?= $settings["search_field_text"]; ?>" 
+                                                   class="up-button up_btn-s btn-grey btn-buscarguardar"
+                                                   style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>
+                                                   <?php if (is_user_logged_in()) : ?>        
+                                                <input type="submit" 
+                                                       name="guardar"
+                                                       value="Buscar y guardar información de la Yegua" 
+                                                       class="up-button btn-grey btn-buscarguardar"
+                                                       style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>               
+                                                   <?php endif; ?>
                                             <input type="submit" 
                                                    value="Sugerencias S. A. R. A." 
                                                    class="up-button up_btn-s btn-red btn-buscarguardar"
-                                                   style="line-height: 40px !important; margin: 0 10px;"/>
+                                                   style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>
                                         </div>
                                     </div>
                                 </div>
@@ -1813,23 +1832,6 @@
     </div>
     <!-- FIN FORM SOFTWARE -->
 
-
-    <div class="form-row"> 
-        <div class="form-group col-md-12 text-center">
-            <input type="submit" 
-                   value="<?= $settings["search_field_text"]; ?>" 
-                   class="up-button up_btn-s btn-grey btn-buscarguardar"
-                   style="line-height: 40px !important; margin: 0 10px;"/>
-
-            <?php if (is_user_logged_in()) : ?>        
-                <input type="submit" 
-                       name="guardar"
-                       value="Buscar y guardar información de la Yegua" 
-                       class="up-button btn-grey btn-buscarguardar"
-                       style="line-height: 40px !important; margin: 0 10px;"/>               
-                   <?php endif; ?>
-        </div>
-    </div>
 </form>
 <!-- FIN FORM SOFTWARE -->
 
@@ -1892,6 +1894,22 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         if (jQuery(this).val() != "") {
             jQuery('form.buscadr').submit();
         }
+    });
+
+    jQuery('form.buscadr').submit(function () {
+        var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
+        
+        if (numberOfChecked <= 0) {
+            alert('Debe selecionar al menos una variable de mejoramiento');
+            return false;
+        }
+        
+        if (numberOfChecked > 6) {
+            alert('Solo puedes seleccionar 6 variables');
+            return false;
+        }
+        
+        return true;
     });
 
     jQuery('input[type="range"]').on("change", function () {
