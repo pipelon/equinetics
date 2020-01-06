@@ -1835,7 +1835,7 @@
 </form>
 <!-- FIN FORM SOFTWARE -->
 
-<?php if (isset($products) && $products->have_posts()) : ?>
+<?php if (isset($_POST) && isset($products) && $products->have_posts()) : ?>
     <span id="hr-search-results-eq"></span>
     <hr />
     <p class="text-center" style="margin: 50px 0 0 0;">
@@ -1855,9 +1855,9 @@
 
         <?php woocommerce_product_loop_end(); ?>
     </div>
+<?php endif; ?>
 
-    <?php
-endif;
+<?php 
 wp_reset_postdata();
 echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
 ?>

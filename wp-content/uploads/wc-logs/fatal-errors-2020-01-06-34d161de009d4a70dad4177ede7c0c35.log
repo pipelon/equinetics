@@ -1,0 +1,48 @@
+2020-01-06T19:24:14+00:00 CRITICAL syntax error, unexpected ';', expecting ')' en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 107
+
+2020-01-06T19:34:17+00:00 CRITICAL Uncaught Error: Call to undefined method FormularioBuscador::getQuery() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:78
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#1 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#2 [internal function]: do_shortcode_tag(Array)
+#3 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#4 D:\wamp64\www\Equinetics\wp-includes\class-wp-hook.php(290): do_shortcode('[add_equinetics...')
+#5 D:\wamp64\www\Equinetics\wp-includes\plugin.php(206): WP_Hook->apply_filters('[add_equinetics...', Array)
+#6 D:\wamp64\www\Equinetics\wp-includes\widgets\class-wp-widget-text.php(278): apply_filters('widget_text', '[add_equinetics...', Array, Object(WP_Widget_Te en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 78
+
+2020-01-06T19:50:34+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php:1859
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(109): include()
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#2 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#5 D:\wamp64\www\Equinetics\wp-includes\class-wp-hook.php(290): do_shortcode('[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp-includes\plugin.php(206): WP_Hook->apply_filters('[add_equinetics...', Array)
+#7 D:\wamp64\www\Equinetics\wp-includes\widgets en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 1859
+
+2020-01-06T19:50:56+00:00 CRITICAL syntax error, unexpected 'if' (T_IF), expecting ':' en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 1859
+
+2020-01-06T19:53:02+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php:1859
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(109): include()
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#2 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#5 D:\wamp64\www\Equinetics\wp-includes\class-wp-hook.php(290): do_shortcode('[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp-includes\plugin.php(206): WP_Hook->apply_filters('[add_equinetics...', Array)
+#7 D:\wamp64\www\Equinetics\wp-includes\widgets en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 1859
+
+2020-01-06T19:59:26+00:00 CRITICAL syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 1962
+
+2020-01-06T19:59:52+00:00 CRITICAL syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 1962
+
+2020-01-06T20:37:34+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) en D:\wamp64\www\Equinetics\wp-content\themes\horseclub-child\woocommerce\single-product\tabs\description.php en la línea 25
+
+2020-01-06T21:07:01+00:00 CRITICAL syntax error, unexpected ')' en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\get_horse_features.php en la línea 63
+
+2020-01-06T21:07:06+00:00 CRITICAL syntax error, unexpected ')' en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\get_horse_features.php en la línea 63
+
+2020-01-06T21:45:19+00:00 CRITICAL syntax error, unexpected '(int)' (int) (T_INT_CAST) en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\get_horse_features.php en la línea 52
+

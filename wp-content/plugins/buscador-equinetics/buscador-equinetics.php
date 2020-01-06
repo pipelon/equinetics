@@ -131,3 +131,8 @@ add_action('woocommerce_loaded', 'Buscador_equinetics_init');
 function Buscador_equinetics() {
     return BuscadorEquinetics::instance();
 }
+
+function get_horse_features($atts){
+    include dirname(__FILE__) . '/includes/views/get_horse_features.php';
+}
+add_shortcode('get_horse_features', 'get_horse_features');

@@ -16,19 +16,14 @@ if (!class_exists('FormularioBuscador')) :
 
         public function buscador() {
 
-            $products = null;
-            //SETTINGS
-            $settings = Buscador_equinetics()->get_settings();
+            $products = null;          
+            $settings = Buscador_equinetics()->get_settings();  
 
             //SI HUBO POST
             if (!empty($_POST)) {
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
-                if (isset($_POST["guardar"])) {
-
-                    echo "<pre>";
-                    var_dump($_POST);
-                    exit;
+                if (isset($_POST["guardar"])) {                    
 
                     $yeguas = get_option('buscador_equinetics_yeguas');
                     if (!$yeguas) {
@@ -70,7 +65,7 @@ if (!class_exists('FormularioBuscador')) :
                  * *************************************************************
                  * A PARTIR DE ACA ES TODO EL PROCESO DE BUSQUEDA
                  * *************************************************************
-                 */
+                 */                 
 
                 //CONTAR VARIABLES PARA EL MENSAJE EN PANTALLA
                 $countVars = 0;
@@ -79,46 +74,7 @@ if (!class_exists('FormularioBuscador')) :
                 }
                 $countVars += isset($_POST["chk"]) ? count($_POST["chk"]) : 0;
 
-                //VARIABLES GLOBALES
-                global $woocommerce, $woocommerce_loop;
-
-                //VALORES SELECCIONADOS
-                $values1 = 'L';
-                $values2 = 'Negro';
-
-                // Default ordering args
-                $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
-
-                //FOREACH POST
-                $ArrTerms = [];
-//                $ArrTerms[] = [
-//                    'taxonomy' => 'pa_tallas',
-//                    'terms' => explode(",", $values1),
-//                    'field' => 'slug',
-//                    'operator' => 'IN'
-//                ];
-//                $ArrTerms[] = [
-//                    'taxonomy' => 'pa_color',
-//                    'terms' => explode(",", $values2),
-//                    'field' => 'slug',
-//                    'operator' => 'IN'
-//                ];
-                // Define Query Arguments
-                $args = array(
-                    'post_type' => 'product',
-                    'post_status' => 'publish',
-                    'product_cat' => 'caballos',
-                    'ignore_sticky_posts' => 1,
-                    'orderby' => $ordering_args['orderby'],
-                    'order' => $ordering_args['order'],
-                    'posts_per_page' => $settings["result_per_page"],
-//                    'tax_query' => array(
-//                        'relation' => 'AND',
-//                        $ArrTerms
-//                    )
-                );
-                ob_start();
-                $products = new WP_Query($args);
+                $products = $this->getHorses($_POST["var"], $_POST['andar']);
             }
 
             //SELECTOR DE YEGUAS GUARDADAS SOLO PARA USUARIOS REGISTRADOS
@@ -155,72 +111,59 @@ if (!class_exists('FormularioBuscador')) :
             }
         }
 
-    }
+        private function getHorses($variables, $categoy) {
 
-    
+            //SETTINGS
+            $settings = Buscador_equinetics()->get_settings();
 
-    
+            //VARIABLES GLOBALES
+            global $woocommerce, $woocommerce_loop;
 
-    
+            //CATEGORIA SELECCIONADA
+            $selectedCat = trim($categoy);
 
-    
+            // ARGUMENTOS DE ORDENAMIENTO
+            $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
 
-    
+            //QUERY DE BUSQUEDA
+            
+            $meta_query = [];
+            foreach ($variables as $key => $value) {
+                if($value != '0'){
+                    $meta_query[] = [
+                        'relation' => 'AND',
+                        [
+                            'key' => $key,
+                            'value' => 'varsara_' . $value,
+                            'compare' => 'LIKE'
+                        ]
+                    ];
+                }
+            }
+            
+            //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
+            $args = array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'ignore_sticky_posts' => 1,
+                'orderby' => $ordering_args['orderby'],
+                'order' => $ordering_args['order'],
+                'posts_per_page' => $settings["result_per_page"],
+                'tax_query' => array(
+                    array(
+                        'taxonomy'      => 'product_cat',
+                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                        'terms'         => $selectedCat,
+                        'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                    ), 
+                ),
+                'meta_query' => $meta_query                       
+            );
+            ob_start();
+            return new WP_Query($args);
 
-    
+        }
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+    }    
 
 endif;
