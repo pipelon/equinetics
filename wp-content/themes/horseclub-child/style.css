@@ -12,6 +12,8 @@ Template: horseclub
 
 :root{
     --eqcolor: #be1e2d;
+    --size: 150px;
+    --bord: 10px;
 }
 ::-moz-selection { color: #FFFFFF;  background: #999 !important; }
 ::selection      { color: #FFFFFF;  background: #999 !important; } 
@@ -1841,6 +1843,49 @@ h1{
     font-family: "Catamaran" !important;
     font-size: 18px;
     font-weight: bold;    
+}
+
+/* TABS DE VARIABLES DE CABALLOS */
+.tab-caracteristicas {
+    padding: 20px;
+}
+.tab-caracteristica ul.vc_tta-tabs-list {
+    text-align: center !important;
+}
+.tab-caracteristicas ul li.vc_tta-tab > a{
+    background-color: #eaeaea;
+    border-radius: 5px !important;
+}
+.tab-caracteristicas ul li.vc_tta-tab.vc_active > a{
+    background-color: var(--eqcolor);
+    color: white !important;
+}
+.chart {
+    width: var(--size);
+    height: var(--size);
+    float: left;
+    margin: 10px;
+    border: var(--bord) solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(white, white) padding-box, conic-gradient(#BE1E2D var(--value), lightgrey var(--value)) border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.chart .tituVar,
+.chart .subtituVaR {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.tituVar {
+    font-weight: bold;
+    line-height: 0.5;
 }
 
 /* RESOLUCION CELULAR */
