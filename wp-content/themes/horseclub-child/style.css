@@ -1884,7 +1884,7 @@ h1{
     text-transform: capitalize;
 }
 .tituVar {
-    line-height: 0.5;
+    line-height: 1;
 }
 
 /* RESOLUCION CELULAR */

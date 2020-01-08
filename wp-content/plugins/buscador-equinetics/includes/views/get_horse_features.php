@@ -29,9 +29,15 @@
                             </a>
                         </li>
                         <li class="vc_tta-tab" data-vc-tab="">
-                            <a href="#linea_superior" data-vc-tabs="" 
+                            <a href="#lineaSuperior" data-vc-tabs="" 
                             data-vc-container=".vc_tta">
                                 <span class="vc_tta-title-text">Línea superior</span>
+                            </a>
+                        </li>
+                        <li class="vc_tta-tab" data-vc-tab="">
+                            <a href="#espalda" data-vc-tabs="" 
+                            data-vc-container=".vc_tta">
+                                <span class="vc_tta-title-text">Espalda</span>
                             </a>
                         </li>
                     </ul>
