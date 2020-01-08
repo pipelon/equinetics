@@ -133,6 +133,26 @@ function Buscador_equinetics() {
 }
 
 function get_horse_features($atts){
+
+    //ARRAY CON LAS VARIABLES ARMADAS POR CATEGORIA
+    $arrVarDefinitiva = [];
+    //OBTENGO TODOS LOS CAMPOS DEL PRODUCTO (CABALLO)
+    $variables = get_post_meta($atts['horseid']);
+    foreach($variables as $key => $value){
+        //SOLO TOMO LAS QUE SEAN TIPO VARIABLE SARA
+        if(substr($key, 0, 8) === "varsara_"){
+            //ELIMINO LA PALABRA varsara_ Y TRABAJO CON EL RESTO
+            $arrVarTemp = explode("_", substr($key, 8));
+            $categoria = $arrVarTemp[0];
+            //ELIMINO LA PROSICION DE LA CATEGORIA DEL ARRAY
+            unset($arrVarTemp[0]);
+            //JUNTO LAS VARIABLES EN UN SOLO LABEL
+            $nmVariable = implode(" ", $arrVarTemp);
+            //ARMO EL ARRAY DEFINITIVO CON LAS VARIABLES
+            $arrVarDefinitiva[$categoria][$nmVariable] = $value[0];
+        }
+    }
+    
     include dirname(__FILE__) . '/includes/views/get_horse_features.php';
 }
 add_shortcode('get_horse_features', 'get_horse_features');
