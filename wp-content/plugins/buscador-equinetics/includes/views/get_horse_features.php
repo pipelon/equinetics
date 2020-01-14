@@ -5,9 +5,7 @@
 
 <!-- INICIO DE DIV PARA LA TABS DE LAS CARACTERISTICAS -->
 <div style="float: left; width: 100%;">
-    <div class="tab-caracteristicas">
-        <h2>Características</h2>
-        <br />
+    <div class="tab-caracteristicas">        
         <div class="vc_tta-container" data-vc-action="collapse">
             <div
                 class="vc_general vc_tta vc_tta-tabs vc_tta-shape-square vc_tta-spacing-1 
@@ -35,9 +33,27 @@
                             </a>
                         </li>
                         <li class="vc_tta-tab" data-vc-tab="">
-                            <a href="#espalda" data-vc-tabs="" 
+                            <a href="#dorso" data-vc-tabs="" 
                                data-vc-container=".vc_tta">
-                                <span class="vc_tta-title-text">Espalda</span>
+                                <span class="vc_tta-title-text">dorso</span>
+                            </a>
+                        </li>
+                        <li class="vc_tta-tab" data-vc-tab="">
+                            <a href="#alzada" data-vc-tabs="" 
+                               data-vc-container=".vc_tta">
+                                <span class="vc_tta-title-text">alzada</span>
+                            </a>
+                        </li>
+                        <li class="vc_tta-tab" data-vc-tab="">
+                            <a href="#morfometria" data-vc-tabs="" 
+                               data-vc-container=".vc_tta">
+                                <span class="vc_tta-title-text">morfometria</span>
+                            </a>
+                        </li>
+                        <li class="vc_tta-tab" data-vc-tab="">
+                            <a href="#movimiento" data-vc-tabs="" 
+                               data-vc-container=".vc_tta">
+                                <span class="vc_tta-title-text">movimiento</span>
                             </a>
                         </li>
                     </ul>
