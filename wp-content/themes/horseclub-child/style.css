@@ -1873,6 +1873,21 @@ h1{
     font-size: 20px;
     text-transform: capitalize;
 }
+
+#portfoliolist .portfolio .bottom-pp .text-title {
+    font-weight: bold;
+    font-size: 17px;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    text-align: center;
+}
+#portfoliolist .portfolio .bottom-pp .text-category {
+    display: block;
+    font-size: 14px;
+    padding-top: 5px;
+    text-align: center;
+}
+
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
     .tab-caracteristicas .vc_tta-panels .vc_tta-panel .vc_tta-panel-heading{
