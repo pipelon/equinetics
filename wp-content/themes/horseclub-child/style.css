@@ -1887,9 +1887,40 @@ h1{
     padding-top: 5px;
     text-align: center;
 }
+.tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
+	width: max-content !important;
+	margin: 0 auto !important;
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+	#portfoliolist .portfolio.p5w, 
+	#portfoliolist .portfolio.p3w, 
+	#portfoliolist .portfolio.p3, 
+	#portfoliolist .portfolio.p2, 
+	#portfoliolist .portfolio.p4, 
+	#portfoliolist .portfolio, 
+	#portfoliolist .portfolio.p4w, 
+	#portfoliolist .portfolio.p3.nospace, 
+	#portfoliolist .portfolio.p2.nospace, 
+	#portfoliolist .portfolio.p4.nospace, 
+	#portfoliolist .portfolio, 
+	#portfoliolist .portfolio.p4w.nospace, 
+	#portfoliolist .portfolio.p5w.nospace, 
+	#portfoliolist .portfolio.p3w.nospace {
+		width: 47%;
+		margin: 1%;
+	}
+	.tab-caracteristicas .chartsara_container{
+		width: auto;
+		margin: 5px;
+	}
+	.tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
+		width: 100% !important;
+	}	
+	.tituvarsara{
+		font-size: 12px !important;
+	}
     .tab-caracteristicas .vc_tta-panels .vc_tta-panel .vc_tta-panel-heading{
         background-color: #eaeaea;        
         text-align: center !important;
