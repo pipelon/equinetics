@@ -450,20 +450,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg"> 
-                                                    <label for="lnsup_cabeza">Cabeza</label>
+                                                    <label for="lineaSuperior_cabeza">Cabeza</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="lnsup_cabeza" 
-                                                           name="var[lnsup_cabeza]" 
-                                                           value="<?= isset($selectedYegua['var']['lnsup_cabeza']) ? $selectedYegua['var']['lnsup_cabeza'] : 0; ?>">
+                                                           id="lineaSuperior_cabeza" 
+                                                           name="var[lineaSuperior_cabeza]" 
+                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_cabeza']) ? $selectedYegua['var']['lineaSuperior_cabeza'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lnsup_cabeza']) ?
-                                                                    $selectedYegua['var']['lnsup_cabeza'] : "-"
+                                                            isset($selectedYegua['var']['lineaSuperior_cabeza']) ?
+                                                                    $selectedYegua['var']['lineaSuperior_cabeza'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -476,20 +476,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="lnsup_longcuello">Longitud cuello</label>
+                                                    <label for="lineaSuperior_longitud_cuello">Longitud cuello</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="lnsup_longcuello" 
-                                                           name="var[lnsup_longcuello]" 
-                                                           value="<?= isset($selectedYegua['var']['lnsup_longcuello']) ? $selectedYegua['var']['lnsup_longcuello'] : 0; ?>">
+                                                           id="lineaSuperior_longitud_cuello" 
+                                                           name="var[lineaSuperior_longitud_cuello]" 
+                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_longitud_cuello']) ? $selectedYegua['var']['lineaSuperior_longitud_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lnsup_longcuello']) ?
-                                                                    $selectedYegua['var']['lnsup_longcuello'] : "-"
+                                                            isset($selectedYegua['var']['lineaSuperior_longitud_cuello']) ?
+                                                                    $selectedYegua['var']['lineaSuperior_longitud_cuello'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -502,20 +502,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="lnsup_oriencuello">Orientación Cuello</label>
+                                                    <label for="lineaSuperior_orientacion_cuello">Orientación Cuello</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="lnsup_oriencuello" 
-                                                           name="var[lnsup_oriencuello]" 
-                                                           value="<?= isset($selectedYegua['var']['lnsup_oriencuello']) ? $selectedYegua['var']['lnsup_oriencuello'] : 0; ?>">
+                                                           id="lineaSuperior_orientacion_cuello" 
+                                                           name="var[lineaSuperior_orientacion_cuello]" 
+                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_orientacion_cuello']) ? $selectedYegua['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lnsup_oriencuello']) ?
-                                                                    $selectedYegua['var']['lnsup_oriencuello'] : "-"
+                                                            isset($selectedYegua['var']['lineaSuperior_orientacion_cuello']) ?
+                                                                    $selectedYegua['var']['lineaSuperior_orientacion_cuello'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -528,20 +528,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="lnsup_cruz">Cruz</label>
+                                                    <label for="lineaSuperior_cruz">Cruz</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="lnsup_cruz" 
-                                                           name="var[lnsup_cruz]" 
-                                                           value="<?= isset($selectedYegua['var']['lnsup_cruz']) ? $selectedYegua['var']['lnsup_cruz'] : 0; ?>">
+                                                           id="lineaSuperior_cruz" 
+                                                           name="var[lineaSuperior_cruz]" 
+                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_cruz']) ? $selectedYegua['var']['lineaSuperior_cruz'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lnsup_cruz']) ?
-                                                                    $selectedYegua['var']['lnsup_cruz'] : "-"
+                                                            isset($selectedYegua['var']['lineaSuperior_cruz']) ?
+                                                                    $selectedYegua['var']['lineaSuperior_cruz'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -554,20 +554,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="lnsup_pecho">Pecho</label>
+                                                    <label for="lineaSuperior_pecho">Pecho</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="lnsup_pecho" 
-                                                           name="var[lnsup_pecho]" 
-                                                           value="<?= isset($selectedYegua['var']['lnsup_pecho']) ? $selectedYegua['var']['lnsup_pecho'] : 0; ?>">
+                                                           id="lineaSuperior_pecho" 
+                                                           name="var[lineaSuperior_pecho]" 
+                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_pecho']) ? $selectedYegua['var']['lineaSuperior_pecho'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Angosto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lnsup_pecho']) ?
-                                                                    $selectedYegua['var']['lnsup_pecho'] : "-"
+                                                            isset($selectedYegua['var']['lineaSuperior_pecho']) ?
+                                                                    $selectedYegua['var']['lineaSuperior_pecho'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1117,17 +1117,17 @@
                                                     <label for="alzada">Estatura</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="alzada" 
-                                                           name="var[alzada]" 
-                                                           value="<?= isset($selectedYegua['var']['alzada']) ? $selectedYegua['var']['alzada'] : 0; ?>">
+                                                           id="alzada_estatura" 
+                                                           name="var[alzada_estatura]" 
+                                                           value="<?= isset($selectedYegua['var']['alzada_estatura']) ? $selectedYegua['var']['alzada_estatura'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Bajo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['alzada']) ?
-                                                                    $selectedYegua['var']['alzada'] : '';
+                                                            isset($selectedYegua['var']['alzada_estatura']) ?
+                                                                    $selectedYegua['var']['alzada_estatura'] : '';
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1397,20 +1397,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="mvto_velocidad">Velocidad</label>
+                                                    <label for="movimiento_velocidad">Velocidad</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_velocidad" 
-                                                           name="var[mvto_velocidad]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_velocidad']) ? $selectedYegua['var']['mvto_velocidad'] : 0; ?>">
+                                                           id="movimiento_velocidad" 
+                                                           name="var[movimiento_velocidad]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_velocidad']) ? $selectedYegua['var']['movimiento_velocidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Lento
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_velocidad']) ?
-                                                                    $selectedYegua['var']['mvto_velocidad'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_velocidad']) ?
+                                                                    $selectedYegua['var']['movimiento_velocidad'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1423,20 +1423,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="mvto_elevancion_anteriores">Elevanción anteriores</label>
+                                                    <label for="movimiento_elevacion_anterior">Elevanción anteriores</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_elevancion_anteriores" 
-                                                           name="var[mvto_elevancion_anteriores]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_elevancion_anteriores']) ? $selectedYegua['var']['mvto_elevancion_anteriores'] : 0; ?>">
+                                                           id="movimiento_elevacion_anterior" 
+                                                           name="var[movimiento_elevacion_anterior]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_elevacion_anterior']) ? $selectedYegua['var']['movimiento_elevacion_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_elevancion_anteriores']) ?
-                                                                    $selectedYegua['var']['mvto_elevancion_anteriores'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_elevacion_anterior']) ?
+                                                                    $selectedYegua['var']['movimiento_elevacion_anterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1449,20 +1449,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="mvto_elevancion_poteriores">Elevanción posteriores</label>
+                                                    <label for="movimiento_elevacion_posterior">Elevanción posteriores</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_elevancion_poteriores" 
-                                                           name="var[mvto_elevancion_poteriores]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_elevancion_poteriores']) ? $selectedYegua['var']['mvto_elevancion_poteriores'] : 0; ?>">
+                                                           id="movimiento_elevacion_posterior" 
+                                                           name="var[movimiento_elevacion_posterior]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_elevacion_posterior']) ? $selectedYegua['var']['movimiento_elevacion_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_elevancion_poteriores']) ?
-                                                                    $selectedYegua['var']['mvto_elevancion_poteriores'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_elevacion_posterior']) ?
+                                                                    $selectedYegua['var']['movimiento_elevacion_posterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1475,20 +1475,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="mvto_pisada">Pisada</label>
+                                                    <label for="movimiento_pisada">Pisada</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_pisada" 
-                                                           name="var[mvto_pisada]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_pisada']) ? $selectedYegua['var']['mvto_pisada'] : 0; ?>">
+                                                           id="movimiento_pisada" 
+                                                           name="var[movimiento_pisada]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_pisada']) ? $selectedYegua['var']['movimiento_pisada'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_pisada']) ?
-                                                                    $selectedYegua['var']['mvto_pisada'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_pisada']) ?
+                                                                    $selectedYegua['var']['movimiento_pisada'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1501,20 +1501,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="mvto_pulimento">Pulimento</label>
+                                                    <label for="movimiento_pulimento">Pulimento</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_pulimento" 
-                                                           name="var[mvto_pulimento]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_pulimento']) ? $selectedYegua['var']['mvto_pulimento'] : 0; ?>">
+                                                           id="movimiento_pulimento" 
+                                                           name="var[movimiento_pulimento]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_pulimento']) ? $selectedYegua['var']['movimiento_pulimento'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_pulimento']) ?
-                                                                    $selectedYegua['var']['mvto_pulimento'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_pulimento']) ?
+                                                                    $selectedYegua['var']['movimiento_pulimento'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1527,20 +1527,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="mvto_elasticidad">Elasticidad</label>
+                                                    <label for="movimiento_elasticidad">Elasticidad</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_elasticidad" 
-                                                           name="var[mvto_elasticidad]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_elasticidad']) ? $selectedYegua['var']['mvto_elasticidad'] : 0; ?>">
+                                                           id="movimiento_elasticidad" 
+                                                           name="var[movimiento_elasticidad]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_elasticidad']) ? $selectedYegua['var']['movimiento_elasticidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_elasticidad']) ?
-                                                                    $selectedYegua['var']['mvto_elasticidad'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_elasticidad']) ?
+                                                                    $selectedYegua['var']['movimiento_elasticidad'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1553,20 +1553,20 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="mvto_compensacion">Compensación</label>
+                                                    <label for="movimiento_compensacion">Compensación</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
-                                                           id="mvto_compensacion" 
-                                                           name="var[mvto_compensacion]" 
-                                                           value="<?= isset($selectedYegua['var']['mvto_compensacion']) ? $selectedYegua['var']['mvto_compensacion'] : 0; ?>">
+                                                           id="movimiento_compensacion" 
+                                                           name="var[movimiento_compensacion]" 
+                                                           value="<?= isset($selectedYegua['var']['movimiento_compensacion']) ? $selectedYegua['var']['movimiento_compensacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descompensado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['mvto_compensacion']) ?
-                                                                    $selectedYegua['var']['mvto_compensacion'] : "-"
+                                                            isset($selectedYegua['var']['movimiento_compensacion']) ?
+                                                                    $selectedYegua['var']['movimiento_compensacion'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">

@@ -113,6 +113,8 @@ if (!class_exists('FormularioBuscador')) :
 
         private function getHorses($variables, $categoy) {
 
+            //var_dump($variables, $categoy);
+
             //SETTINGS
             $settings = Buscador_equinetics()->get_settings();
 
@@ -133,13 +135,13 @@ if (!class_exists('FormularioBuscador')) :
                     $meta_query[] = [
                         'relation' => 'AND',
                         [
-                            'key' => $key,
-                            'value' => 'varsara_' . $value,
-                            'compare' => 'LIKE'
+                            'key' => 'varsara_' . $key,
+                            'value' => $value
                         ]
                     ];
                 }
             }
+            //var_dump($meta_query);
             
             //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
             $args = array(
@@ -160,7 +162,10 @@ if (!class_exists('FormularioBuscador')) :
                 'meta_query' => $meta_query                       
             );
             ob_start();
+            //$res = new WP_Query($args);
+            //echo $res->request;
             return new WP_Query($args);
+
 
         }
 
