@@ -161,7 +161,7 @@ add_action('woocommerce_before_shop_loop_item', 'equinetics_switch_loop_title');
 function equinetics_template_loop_product_title() {
     global $product;
     echo '<h2 class="woocommerce-loop-product__title titleproduct">' . get_the_title() . '</h2>';
-    echo '<span class="shortdesc">' . $product->short_description . '</span>';
+    //echo '<span class="shortdesc">' . $product->short_description . '</span>';
 }
 
 /**

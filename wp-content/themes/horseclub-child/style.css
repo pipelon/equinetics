@@ -1891,9 +1891,30 @@ h1{
 	width: max-content !important;
 	margin: 0 auto !important;
 }
+#search-results-eq ul.products li.product.first{
+    clear: none;
+}
+#search-results-eq ul.products li.product {
+    float: left;
+    margin: 0 0 40px 0;
+    position: relative;
+    width: 20%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+    .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body .chartsara_container canvas{
+        min-width: 100px !important;
+    }
+    #search-results-eq ul.products li.product {
+        width: 50%;
+    }
+    #search-results-eq ul.products li.product .titleproduct{
+        font-size: 14px !important;
+        line-height: 14px !important;
+    }
     #portfoliolist .portfolio .bottom-pp .text-title {
         white-space: normal;
         line-height: 15px;
@@ -2040,11 +2061,11 @@ h1{
         position: relative; 
         float: left;
     }
-    .woocommerce ul.products li.product, 
+/*    .woocommerce ul.products li.product, 
     .woocommerce-page ul.products li.product{
         width: auto !important;
         float: none !important;
-    }
+    }*/
     body.single-product .woocommerce-product-rating > div{        
         min-height: 230px;
         width: 80%; 
