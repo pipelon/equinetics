@@ -1185,33 +1185,7 @@
 
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">        
-                                            <h4 class="tituVar">Morfometría</h4>
-                                            <div class="form-row">
-                                                <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
-                                                <div class="form-group col-md-12 divVariable" 
-                                                     data-image="cuello.jpg">
-                                                    <label for="morfometria_velocidad">Velocidad</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
-                                                           id="morfometria_velocidad" 
-                                                           name="var[morfometria_velocidad]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_velocidad']) ? $selectedYegua['var']['morfometria_velocidad'] : 0; ?>">
-                                                    <div class="valores">
-                                                        <span class="minvalor">
-                                                            Lento
-                                                        </span>
-                                                        <span class="valor">
-                                                            <?=
-                                                            isset($selectedYegua['var']['morfometria_velocidad']) ?
-                                                                    $selectedYegua['var']['morfometria_velocidad'] : "-"
-                                                            ?>
-                                                        </span>
-                                                        <span class="maxvalor">
-                                                            Elevado
-                                                        </span>
-                                                    </div>
-                                                </div>                                    
-                                            </div>
+                                            <h4 class="tituVar">Morfometría</h4>                                            
                                             <div class="form-row">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
