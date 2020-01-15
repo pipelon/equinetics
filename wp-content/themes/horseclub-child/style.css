@@ -1894,6 +1894,14 @@ h1{
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+    #portfoliolist .portfolio .bottom-pp .text-title {
+        white-space: normal;
+        line-height: 15px;
+        padding-bottom: 0;
+    }
+    #portfoliolist .portfolio .bottom-pp .text-category {
+        line-height: 15px;
+    }
 	#portfoliolist .portfolio.p5w, 
 	#portfoliolist .portfolio.p3w, 
 	#portfoliolist .portfolio.p3, 
@@ -1909,7 +1917,8 @@ h1{
 	#portfoliolist .portfolio.p5w.nospace, 
 	#portfoliolist .portfolio.p3w.nospace {
 		width: 47%;
-		margin: 1%;
+        margin: 1%;
+        min-height: 260px;
 	}
 	.tab-caracteristicas .chartsara_container{
 		width: auto;
