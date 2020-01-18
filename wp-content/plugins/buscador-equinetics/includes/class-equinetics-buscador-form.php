@@ -155,8 +155,14 @@ if (!class_exists('FormularioBuscador')) :
                     array(
                         'taxonomy'      => 'product_cat',
                         'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                        'terms'         => $selectedCat,
+                        'terms'         => $selectedCat, //CATEGORIA DEL ANDAR
                         'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                    ), 
+                    array(
+                        'taxonomy'      => 'product_cat',
+                        'field' => 'term_id', 
+                        'terms'         => 52, //CATEGORIA DEL SOLO MACHOS
+                        'operator'      => 'AND' 
                     ), 
                 ),
                 'meta_query' => $meta_query                       
