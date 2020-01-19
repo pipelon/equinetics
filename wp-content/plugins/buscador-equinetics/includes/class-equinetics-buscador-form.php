@@ -16,14 +16,14 @@ if (!class_exists('FormularioBuscador')) :
 
         public function buscador() {
 
-            $products = null;          
-            $settings = Buscador_equinetics()->get_settings();  
+            $products = null;
+            $settings = Buscador_equinetics()->get_settings();
 
             //SI HUBO POST
             if (!empty($_POST)) {
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
-                if (isset($_POST["guardar"])) {                    
+                if (isset($_POST["guardar"])) {
 
                     $yeguas = get_option('buscador_equinetics_yeguas');
                     if (!$yeguas) {
@@ -65,7 +65,7 @@ if (!class_exists('FormularioBuscador')) :
                  * *************************************************************
                  * A PARTIR DE ACA ES TODO EL PROCESO DE BUSQUEDA
                  * *************************************************************
-                 */                 
+                 */
 
                 //CONTAR VARIABLES PARA EL MENSAJE EN PANTALLA
                 $countVars = 0;
@@ -74,7 +74,7 @@ if (!class_exists('FormularioBuscador')) :
                 }
                 $countVars += isset($_POST["chk"]) ? count($_POST["chk"]) : 0;
 
-                $products = $this->getHorses($_POST["var"], $_POST['andar']);
+                $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar']);
             }
 
             //SELECTOR DE YEGUAS GUARDADAS SOLO PARA USUARIOS REGISTRADOS
@@ -83,26 +83,13 @@ if (!class_exists('FormularioBuscador')) :
                 $infoYeguas = $infoYeguas[get_current_user_id()];
             }
 
-            //CATEGORIAS
-            $taxonomy = 'product_cat';
-            $orderby = 'name';
-            $show_count = 0;      // 1 for yes, 0 for no
-            $pad_counts = 0;      // 1 for yes, 0 for no
-            $hierarchical = 1;      // 1 for yes, 0 for no  
-            $title = '';
-            $empty = 0;
-
-            $args = array(
-                'taxonomy' => $taxonomy,
-                'orderby' => $orderby,
-                'show_count' => $show_count,
-                'pad_counts' => $pad_counts,
-                'hierarchical' => $hierarchical,
-                'title_li' => $title,
-                'hide_empty' => $empty,
-                'parent' => 26,
-            );
-            $categories = get_categories($args);
+            //CATEGORIAS            
+            $categories = [
+                "46" => "Paso fino",
+                "47" => "Trocha",
+                "48" => "Trocha y galope",
+                "49" => "Trote y galope"
+            ];
 
             $template = dirname(__FILE__) . '/views/buscador-form.php';
 
@@ -111,9 +98,9 @@ if (!class_exists('FormularioBuscador')) :
             }
         }
 
-        private function getHorses($variables, $categoy) {
+        private function getHorses($variables, $mejoras, $categoy) {
 
-            //var_dump($variables, $categoy);
+
 
             //SETTINGS
             $settings = Buscador_equinetics()->get_settings();
@@ -128,21 +115,8 @@ if (!class_exists('FormularioBuscador')) :
             $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
 
             //QUERY DE BUSQUEDA
-            
-            $meta_query = [];
-            foreach ($variables as $key => $value) {
-                if($value != '0'){
-                    $meta_query[] = [
-                        'relation' => 'AND',
-                        [
-                            'key' => 'varsara_' . $key,
-                            'value' => $value
-                        ]
-                    ];
-                }
-            }
-            //var_dump($meta_query);
-            
+            $meta_query = $this->getVariables($variables, $mejoras);
+
             //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
             $args = array(
                 'post_type' => 'product',
@@ -153,28 +127,212 @@ if (!class_exists('FormularioBuscador')) :
                 'posts_per_page' => $settings["result_per_page"],
                 'tax_query' => array(
                     array(
-                        'taxonomy'      => 'product_cat',
+                        'taxonomy' => 'product_cat',
                         'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                        'terms'         => $selectedCat, //CATEGORIA DEL ANDAR
-                        'operator'      => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
-                    ), 
+                        'terms' => $selectedCat, //CATEGORIA DEL ANDAR
+                        'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                    ),
                     array(
-                        'taxonomy'      => 'product_cat',
-                        'field' => 'term_id', 
-                        'terms'         => 52, //CATEGORIA DEL SOLO MACHOS
-                        'operator'      => 'AND' 
-                    ), 
+                        'taxonomy' => 'product_cat',
+                        'field' => 'term_id',
+                        'terms' => 52, //CATEGORIA DEL SOLO MACHOS
+                        'operator' => 'AND'
+                    ),
                 ),
-                'meta_query' => $meta_query                       
+                'meta_query' => $meta_query
             );
             ob_start();
             //$res = new WP_Query($args);
             //echo $res->request;
             return new WP_Query($args);
-
-
         }
 
-    }    
+        private function getVariables($variables, $mejoras) {
+            $meta_query = [];
+            foreach ($mejoras as $mejora) {
+                $nmVariable = substr($mejora, 4);
+                $func = "get_" . $nmVariable;
+                $searchValues = $this->$func($variables[$nmVariable]);
+                $meta_query[] = [
+                    'relation' => 'AND',
+                    [
+                        'key' => 'varsara_' . $nmVariable,
+                        'value' => $searchValues,
+                        'compare' => 'IN',
+                    ]
+                ];
+            }
+            return $meta_query;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para geometria y figur
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_geometria_figura($valor) {
+            switch ($valor) {
+                case 1:
+                    $arrValores = [1, 2, 3];
+                    break;
+                case 2:
+                    $arrValores = [2, 3];
+                    break;
+                case 3:
+                    $arrValores = [3];
+                    break;
+                default:
+                    $arrValores = [1, 2, 3];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para geometria y orientacion
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_geometria_orientacion($valor) {
+            switch ($valor) {
+                case 1:
+                case 2:
+                    $arrValores = [2, 3];
+                    break;
+                case 3:
+                    $arrValores = [3];
+                    break;
+                default:
+                    $arrValores = [2, 3];
+                    break;
+            }
+            return $arrValores;
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para balance horizontal
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_balance_horizontal($valor) {
+            switch ($valor) {
+                case 1:                
+                    $arrValores = [3];
+                    break;
+                case 2:                
+                    $arrValores = [2, 3];
+                    break;
+                case 3:
+                    $arrValores = [3];
+                    break;
+                default:
+                    $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para linea superior pecho
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_lineaSuperior_pecho($valor) {
+            switch ($valor) {
+                case 1:                
+                case 2:
+                case 3:
+                default:
+                    $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para linea superior longitud cuello
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_lineaSuperior_longitud_cuello($valor) {            
+            return [$valor];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para linea superior longitud cuello
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_lineaSuperior_cabeza($valor) {            
+            return [$valor];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para aplomos
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_aplomos_anteriores_frente($valor) {            
+            return [2];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para aplomos
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_aplomos_anteriores_lateralmente($valor) {            
+            return [2];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para aplomos
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_aplomos_posteriores_atras($valor) {            
+            return [2];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para aplomos
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_aplomos_posteriores_lateralmente($valor) {            
+            return [2];
+        }
+        
+        /**
+         * Funcion encargada de buscar ejemplares para la estatura
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_alzada_estatura($valor) {            
+            return [$valor];
+        }
+
+    }
+
+    
+
+    
+
+    
+
+    
+
+        
 
 endif;

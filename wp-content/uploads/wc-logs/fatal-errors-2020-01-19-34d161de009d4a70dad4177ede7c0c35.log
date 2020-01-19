@@ -20,3 +20,57 @@ Stack trace:
 #6 D:\wamp64\www\Equinetics\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\wamp64\\www\\E...')
 #7 en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\views\get_horse_features.php en la línea 76
 
+2020-01-19T18:03:15+00:00 CRITICAL Uncaught Error: Call to undefined function getVariables() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:119
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#2 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#5 D:\wamp64\www\Equinetics\wp-includes\class-wp-hook.php(290): do_shortcode('[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp-includes\plugin.php(206): WP_Hook->apply_filters('[add_equinetics...', Array)
+#7 en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 119
+
+2020-01-19T18:04:44+00:00 CRITICAL Uncaught Error: Call to undefined function getVariables() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:119
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#2 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#3 [internal function]: do_shortcode_tag(Array)
+#4 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#5 D:\wamp64\www\Equinetics\wp-includes\class-wp-hook.php(290): do_shortcode('[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp-includes\plugin.php(206): WP_Hook->apply_filters('[add_equinetics...', Array)
+#7 en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 119
+
+2020-01-19T18:05:19+00:00 CRITICAL syntax error, unexpected '->' (T_OBJECT_OPERATOR) en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 119
+
+2020-01-19T19:10:37+00:00 CRITICAL Uncaught Error: Call to undefined method FormularioBuscador::get_pecho() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:168
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(119): FormularioBuscador->getVariables(Array, Array)
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp- en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 168
+
+2020-01-19T19:11:57+00:00 CRITICAL Uncaught Error: Call to undefined method FormularioBuscador::get_pecho() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:168
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(119): FormularioBuscador->getVariables(Array, Array)
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\Equinetics\wp- en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 168
+
+2020-01-19T19:46:23+00:00 CRITICAL Uncaught Error: Call to undefined method FormularioBuscador::get_alzada_estatura() in D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:168
+Stack trace:
+#0 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(119): FormularioBuscador->getVariables(Array, Array)
+#1 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\Equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\Equi en D:\wamp64\www\Equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 168
+

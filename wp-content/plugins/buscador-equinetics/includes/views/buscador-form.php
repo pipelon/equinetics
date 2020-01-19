@@ -54,7 +54,7 @@
                 <!--                <div class="form-group col-md-4">
                                     <label for="andar">Andar</label>
                                     <input type="text" class="form-control" name="form[andar]" id="andar"
-                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''       ?>">
+                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''           ?>">
                                 </div>-->                
                 <div class="form-group col-md-4">
                     <label for="registro">Registro</label>
@@ -65,10 +65,10 @@
                     <label for="andar">Andar</label>
                     <select id="andar" name="andar" class="form-control" required>
                         <option value="">Seleccione un andar...</option>
-                        <?php foreach ($categories as $cat) : ?>
-                            <option value="<?= trim($cat->cat_ID); ?> "
-                                    <?= (isset($_POST["andar"]) && trim($_POST["andar"]) == $cat->cat_ID) ? 'selected' : ''; ?>>
-                                        <?= $cat->name; ?>
+                        <?php foreach ($categories as $idCat => $nmCat) : ?>
+                            <option value="<?= trim($idCat); ?> "
+                                    <?= (isset($_POST["andar"]) && trim($_POST["andar"]) == $idCat) ? 'selected' : ''; ?>>
+                                        <?= $nmCat; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -1599,17 +1599,34 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" 
                                                        type="checkbox" 
-                                                       id="chk_geometria" 
-                                                       name="chk[chk_geometria]" 
-                                                       value="chk_geometria"
-                                                       <?= isset($selectedYegua['chk']['chk_balance']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_geometria">Geometría</label>
+                                                       id="chk_geometria_figura" 
+                                                       name="chk[chk_geometria_figura]" 
+                                                       value="chk_geometria_figura"
+                                                       <?= isset($selectedYegua['chk']['chk_geometria_figura']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_geometria_figura">Figura</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_balance" name="chk[chk_balance]" value="chk_balance" <?= isset($selectedYegua['chk']['chk_balance']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_balance">Balance</label>
+                                                <input class="form-check-input" 
+                                                       type="checkbox" 
+                                                       id="chk_geometria_orientacion" 
+                                                       name="chk[chk_geometria_orientacion]" 
+                                                       value="chk_geometria_orientacion"
+                                                       <?= isset($selectedYegua['chk']['chk_geometria_orientacion']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_geometria_orientacion">Orientación</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_balance_horizontal" name="chk[chk_balance_horizontal]" value="chk_balance_horizontal" <?= isset($selectedYegua['chk']['chk_balance_horizontal']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_balance_horizontal">Balance horizontal</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_balance_vertical" name="chk[chk_balance_vertical]" value="chk_balance_vertical" <?= isset($selectedYegua['chk']['chk_balance_vertical']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_balance_vertical">Balance vertical</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -1632,36 +1649,49 @@
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores" name="chk[chk_aplomos_anteriores]" value="chk_aplomos_anteriores" <?= isset($selectedYegua['chk']['chk_aplomos_anteriores']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_anteriores">Aplomos anteriores</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_alzada_estatura" name="chk[chk_alzada_estatura]" value="chk_alzada_estatura" <?= isset($selectedYegua['chk']['chk_alzada_estatura']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_alzada_estatura">Alzada</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores" name="chk[chk_aplomos_posteriores]" value="chk_aplomos_posteriores" <?= isset($selectedYegua['chk']['chk_aplomos_posteriores']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_posteriores">Aplomos posteriores</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($selectedYegua['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_frente">Aplomos anteriores (frente)</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_alzada" name="chk[chk_alzada]" value="chk_alzada" <?= isset($selectedYegua['chk']['chk_alzada']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_alzada">Alzada</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($selectedYegua['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Aplomos anteriores (lateralmente)</label>
                                             </div>
                                         </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($selectedYegua['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_atras">Aplomos posteriores (atrás)</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($selectedYegua['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Aplomos posteriores (lateralmente)</label>
+                                            </div>
+                                        </div>
+                                        
 
                                     </div>
                                     <h3 class="h3subtitu margin-space">Línea Superior</h3>
                                     <div class="row well">
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cabeza" name="chk[chk_cabeza]" value="chk_cabeza" <?= isset($selectedYegua['chk']['chk_cabeza']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cabeza">Cabeza</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cabeza" name="chk[chk_lineaSuperior_cabeza]" value="chk_lineaSuperior_cabeza" <?= isset($selectedYegua['chk']['chk_lineaSuperior_cabeza']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_lineaSuperior_cabeza">Cabeza</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_longitud_cuello" name="chk[chk_longitud_cuello]" value="chk_longitud_cuello" <?= isset($selectedYegua['chk']['chk_longitud_cuello']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_longitud_cuello">Longitud cuello</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_longitud_cuello" name="chk[chk_lineaSuperior_longitud_cuello]" value="chk_lineaSuperior_longitud_cuello" <?= isset($selectedYegua['chk']['chk_lineaSuperior_longitud_cuello']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_lineaSuperior_longitud_cuello">Longitud cuello</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -1678,8 +1708,8 @@
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_pecho" name="chk[chk_pecho]" value="chk_pecho" <?= isset($selectedYegua['chk']['chk_pecho']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_pecho">Pecho</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_pecho" name="chk[chk_lineaSuperior_pecho]" value="chk_lineaSuperior_pecho" <?= isset($selectedYegua['chk']['chk_lineaSuperior_pecho']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_lineaSuperior_pecho">Pecho</label>
                                             </div>
                                         </div>        
                                     </div>
@@ -1831,7 +1861,7 @@
     </div>
 <?php endif; ?>
 
-<?php 
+<?php
 wp_reset_postdata();
 echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
 ?>
@@ -1872,17 +1902,33 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
 
     jQuery('form.buscadr').submit(function () {
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
-        
+
         if (numberOfChecked <= 0) {
             alert('Debe selecionar al menos una variable de mejoramiento');
             return false;
         }
-        
+
         if (numberOfChecked > 6) {
             alert('Solo puedes seleccionar 6 variables');
             return false;
         }
-        
+
+        /* VALIDACION DE VARIABLES TIPIFICADAS VS MEJORADAS */
+        var bandera= true;
+        jQuery('form.buscadr input.form-check-input:checked').each(function () {
+            var variableChk = jQuery(this).attr("id").replace('chk_', '');
+            if (jQuery("#" + variableChk).val() === "0") {                
+                bandera = false;
+                return false;
+            }
+        });
+        if(!bandera){
+            alert('Todas las características que desea mejorar en el reproductor, \n\
+deben estar tipificadas en la información de su Yegua.\n\
+Por favor revise la información suministrada.');
+            return false;
+        }
+
         return true;
     });
 
