@@ -73,7 +73,11 @@
                                            data-vc-accordion="" 
                                            data-vc-container=".vc_tta-container">
                                             <span class="vc_tta-title-text">
-                                                <?= $key; ?>
+                                                <?=
+                                                isset($arrayTextos[trim($key)]) ?
+                                                        $arrayTextos[trim($key)] :
+                                                        $key;
+                                                ?>
                                             </span>
                                         </a>
                                     </h4>
@@ -97,10 +101,16 @@
                                                                               style="border-color: rgb(205,205,205); width: 170px; height: 170px"></span>
                                                                         <span class="vc_pie_chart_value" 
                                                                               style="width: 170px; height: 170px; line-height: 170px;">
-                                                                            <?= $v; ?>
+                                                                                  <?= $v; ?>
                                                                         </span>
                                                                         <canvas width="170px" height="170px"></canvas>
-                                                                        <span class="tituvarsara"><?= $k; ?></span>
+                                                                        <span class="tituvarsara">
+                                                                            <?=
+                                                                            isset($arrayTextos[trim($k)]) ?
+                                                                                    $arrayTextos[trim($k)] :
+                                                                                    $k;
+                                                                            ?>
+                                                                        </span>
                                                                     </div>
                                                                 </div>
                                                             </div>

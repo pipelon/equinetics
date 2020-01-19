@@ -1127,7 +1127,7 @@
                                                         <span class="valor">
                                                             <?=
                                                             isset($selectedYegua['var']['alzada_estatura']) ?
-                                                                    $selectedYegua['var']['alzada_estatura'] : '';
+                                                                    $selectedYegua['var']['alzada_estatura'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1198,7 +1198,7 @@
                                                            value="<?= isset($selectedYegua['var']['morfometria_cana_anterior']) ? $selectedYegua['var']['morfometria_cana_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Larga
+                                                            Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1207,7 +1207,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Corta
+                                                            Larga
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -1225,7 +1225,7 @@
                                                            value="<?= isset($selectedYegua['var']['morfometria_cuartilla_anterior']) ? $selectedYegua['var']['morfometria_cuartilla_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Larga
+                                                            Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1234,7 +1234,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Corta
+                                                            Larga
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -1277,7 +1277,7 @@
                                                            value="<?= isset($selectedYegua['var']['morfometria_cana_posterior']) ? $selectedYegua['var']['morfometria_cana_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Larga
+                                                            Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1286,7 +1286,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Corta
+                                                            Larga
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -1303,7 +1303,7 @@
                                                            value="<?= isset($selectedYegua['var']['morfometria_cuartilla_posterior']) ? $selectedYegua['var']['morfometria_cuartilla_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Larga
+                                                            Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1312,7 +1312,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Corta
+                                                            Larga
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -1397,7 +1397,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="movimiento_elevacion_anterior">Elevanción anteriores</label>
+                                                    <label for="movimiento_elevacion_anterior">Elevación anteriores</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
                                                            id="movimiento_elevacion_anterior" 
@@ -1423,7 +1423,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="movimiento_elevacion_posterior">Elevanción posteriores</label>
+                                                    <label for="movimiento_elevacion_posterior">Elevación posteriores</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
                                                            id="movimiento_elevacion_posterior" 
@@ -1544,7 +1544,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Descompensada
+                                                            Compensado
                                                         </span>
                                                     </div>
                                                 </div>                                    

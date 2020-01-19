@@ -153,6 +153,16 @@ function get_horse_features($atts){
         }
     }
     
+    $arrayTextos = [
+        "orientacion" => "Orientación",
+        "geometria" => "Geometría",
+        "lineaSuperior" => "Línea superior",
+        "morfometria" => "Morfometría",
+        "compensacion" => "Compensación",
+        "elevacion anterior" => "Elevación Anterior",
+        "elevacion posterior" => "Elevación Posterior",
+    ];
+    
     include dirname(__FILE__) . '/includes/views/get_horse_features.php';
 }
 add_shortcode('get_horse_features', 'get_horse_features');
