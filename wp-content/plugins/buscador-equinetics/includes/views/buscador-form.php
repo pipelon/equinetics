@@ -32,7 +32,7 @@
             <?php if (is_user_logged_in()) : ?>   
                 <div class="form-row margin-space">
                     <div class="form-group col-md-12"> 
-                        <label for="nombre">Seleccione una de las yeguas almacenadas</label>
+                        <label for="selectedYegua">Seleccione una de las yeguas almacenadas</label>
                         <select id="selectedYegua" name="selectedYegua" class="form-control">
                             <option value="">Seleccione...</option>
                             <?php foreach ($infoYeguas as $key => $value) : ?>
@@ -47,19 +47,14 @@
             <?php endif; ?>
             <div class="form-row margin-space">
                 <div class="form-group col-md-4">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="form[nombre]" id="nombre"
-                           value="<?= isset($selectedYegua["nombre"]) ? $selectedYegua["nombre"] : '' ?>">
-                </div>
-                <!--                <div class="form-group col-md-4">
-                                    <label for="andar">Andar</label>
-                                    <input type="text" class="form-control" name="form[andar]" id="andar"
-                                           value="<?php //= isset($selectedYegua["andar"]) ? $selectedYegua["andar"] : ''           ?>">
-                                </div>-->                
+                    <label for="nombre_yegua">Nombre</label>
+                    <input type="text" class="form-control" name="form[nombre_yegua]" id="nombre_yegua"
+                           value="<?= isset($_POST["nombre_yegua"]) ? $_POST["nombre_yegua"] : '' ?>">
+                </div>                
                 <div class="form-group col-md-4">
                     <label for="registro">Registro</label>
                     <input type="text" class="form-control" name="form[registro]" id="registro"
-                           value="<?= isset($selectedYegua["registro"]) ? $selectedYegua["registro"] : '' ?>">
+                           value="<?= isset($_POST["registro"]) ? $_POST["registro"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="andar">Andar</label>
@@ -78,17 +73,17 @@
                 <div class="form-group col-md-4">
                     <label for="padre">Padre</label>
                     <input type="text" class="form-control" name="form[padre]" id="padre"
-                           value="<?= isset($selectedYegua["padre"]) ? $selectedYegua["padre"] : '' ?>">
+                           value="<?= isset($_POST["padre"]) ? $_POST["padre"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="madre">Madre</label>
                     <input type="text" class="form-control" name="form[madre]" id="madre"
-                           value="<?= isset($selectedYegua["madre"]) ? $selectedYegua["madre"] : '' ?>">
+                           value="<?= isset($_POST["madre"]) ? $_POST["madre"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="abuelo_materno">Abuelo materno</label>
                     <input type="text" class="form-control" name="form[abuelo_materno]" id="abuelo_materno"
-                           value="<?= isset($selectedYegua["abuelo_materno"]) ? $selectedYegua["abuelo_materno"] : '' ?>">
+                           value="<?= isset($_POST["abuelo_materno"]) ? $_POST["abuelo_materno"] : '' ?>">
                 </div>
             </div>             
         </div>
@@ -248,8 +243,8 @@
                                                            id="geometria_figura" 
                                                            name="var[geometria_figura]" 
                                                            value="<?=
-                                                           isset($selectedYegua['var']['geometria_figura']) ?
-                                                                   $selectedYegua['var']['geometria_figura'] : 0;
+                                                           isset($_POST['var']['geometria_figura']) ?
+                                                                   $_POST['var']['geometria_figura'] : 0;
                                                            ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -257,8 +252,8 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['geometria_figura']) ?
-                                                                    $selectedYegua['var']['geometria_figura'] : "-";
+                                                            isset($_POST['var']['geometria_figura']) ?
+                                                                    $_POST['var']['geometria_figura'] : "-";
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -276,15 +271,15 @@
                                                            class="custom-range" 
                                                            id="geometria_orientacion" 
                                                            name="var[geometria_orientacion]" 
-                                                           value="<?= isset($selectedYegua['var']['geometria_orientacion']) ? $selectedYegua['var']['geometria_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['geometria_orientacion']) ? $_POST['var']['geometria_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descendente
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['geometria_orientacion']) ?
-                                                                    $selectedYegua['var']['geometria_orientacion'] : "-"
+                                                            isset($_POST['var']['geometria_orientacion']) ?
+                                                                    $_POST['var']['geometria_orientacion'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -353,15 +348,15 @@
                                                            class="custom-range" 
                                                            id="balance_horizontal" 
                                                            name="var[balance_horizontal]" 
-                                                           value="<?= isset($selectedYegua['var']['balance_horizontal']) ? $selectedYegua['var']['balance_horizontal'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['balance_horizontal']) ? $_POST['var']['balance_horizontal'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Desbalanceado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['balance_horizontal']) ?
-                                                                    $selectedYegua['var']['balance_horizontal'] : "-"
+                                                            isset($_POST['var']['balance_horizontal']) ?
+                                                                    $_POST['var']['balance_horizontal'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -379,15 +374,15 @@
                                                            class="custom-range" 
                                                            id="balance_vertical" 
                                                            name="var[balance_vertical]" 
-                                                           value="<?= isset($selectedYegua['var']['balance_vertical']) ? $selectedYegua['var']['balance_vertical'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['balance_vertical']) ? $_POST['var']['balance_vertical'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Angosto porción 1
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['balance_vertical']) ?
-                                                                    $selectedYegua['var']['balance_vertical'] : "-"
+                                                            isset($_POST['var']['balance_vertical']) ?
+                                                                    $_POST['var']['balance_vertical'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -455,15 +450,15 @@
                                                            class="custom-range" 
                                                            id="lineaSuperior_cabeza" 
                                                            name="var[lineaSuperior_cabeza]" 
-                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_cabeza']) ? $selectedYegua['var']['lineaSuperior_cabeza'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_cabeza']) ? $_POST['var']['lineaSuperior_cabeza'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lineaSuperior_cabeza']) ?
-                                                                    $selectedYegua['var']['lineaSuperior_cabeza'] : "-"
+                                                            isset($_POST['var']['lineaSuperior_cabeza']) ?
+                                                                    $_POST['var']['lineaSuperior_cabeza'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -481,15 +476,15 @@
                                                            class="custom-range" 
                                                            id="lineaSuperior_longitud_cuello" 
                                                            name="var[lineaSuperior_longitud_cuello]" 
-                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_longitud_cuello']) ? $selectedYegua['var']['lineaSuperior_longitud_cuello'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_longitud_cuello']) ? $_POST['var']['lineaSuperior_longitud_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lineaSuperior_longitud_cuello']) ?
-                                                                    $selectedYegua['var']['lineaSuperior_longitud_cuello'] : "-"
+                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) ?
+                                                                    $_POST['var']['lineaSuperior_longitud_cuello'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -507,15 +502,15 @@
                                                            class="custom-range" 
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]" 
-                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_orientacion_cuello']) ? $selectedYegua['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lineaSuperior_orientacion_cuello']) ?
-                                                                    $selectedYegua['var']['lineaSuperior_orientacion_cuello'] : "-"
+                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) ?
+                                                                    $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -533,15 +528,15 @@
                                                            class="custom-range" 
                                                            id="lineaSuperior_cruz" 
                                                            name="var[lineaSuperior_cruz]" 
-                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_cruz']) ? $selectedYegua['var']['lineaSuperior_cruz'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lineaSuperior_cruz']) ?
-                                                                    $selectedYegua['var']['lineaSuperior_cruz'] : "-"
+                                                            isset($_POST['var']['lineaSuperior_cruz']) ?
+                                                                    $_POST['var']['lineaSuperior_cruz'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -559,15 +554,15 @@
                                                            class="custom-range" 
                                                            id="lineaSuperior_pecho" 
                                                            name="var[lineaSuperior_pecho]" 
-                                                           value="<?= isset($selectedYegua['var']['lineaSuperior_pecho']) ? $selectedYegua['var']['lineaSuperior_pecho'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_pecho']) ? $_POST['var']['lineaSuperior_pecho'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Angosto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['lineaSuperior_pecho']) ?
-                                                                    $selectedYegua['var']['lineaSuperior_pecho'] : "-"
+                                                            isset($_POST['var']['lineaSuperior_pecho']) ?
+                                                                    $_POST['var']['lineaSuperior_pecho'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -635,15 +630,15 @@
                                                            class="custom-range" 
                                                            id="espalda_tamano" 
                                                            name="var[espalda_tamano]" 
-                                                           value="<?= isset($selectedYegua['var']['espalda_tamano']) ? $selectedYegua['var']['espalda_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['espalda_tamano']) ? $_POST['var']['espalda_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['espalda_tamano']) ?
-                                                                    $selectedYegua['var']['espalda_tamano'] : "-"
+                                                            isset($_POST['var']['espalda_tamano']) ?
+                                                                    $_POST['var']['espalda_tamano'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -661,15 +656,15 @@
                                                            class="custom-range" 
                                                            id="espalda_orientacion" 
                                                            name="var[espalda_orientacion]" 
-                                                           value="<?= isset($selectedYegua['var']['espalda_orientacion']) ? $selectedYegua['var']['espalda_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['espalda_orientacion']) ? $_POST['var']['espalda_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['espalda_orientacion']) ?
-                                                                    $selectedYegua['var']['espalda_orientacion'] : "-"
+                                                            isset($_POST['var']['espalda_orientacion']) ?
+                                                                    $_POST['var']['espalda_orientacion'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -738,15 +733,15 @@
                                                            class="custom-range" 
                                                            id="dorso_tamano" 
                                                            name="var[dorso_tamano]" 
-                                                           value="<?= isset($selectedYegua['var']['dorso_tamano']) ? $selectedYegua['var']['dorso_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['dorso_tamano']) ? $_POST['var']['dorso_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['dorso_tamano']) ?
-                                                                    $selectedYegua['var']['dorso_tamano'] : "-"
+                                                            isset($_POST['var']['dorso_tamano']) ?
+                                                                    $_POST['var']['dorso_tamano'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -764,13 +759,13 @@
                                                            class="custom-range" 
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]" 
-                                                           value="<?= isset($selectedYegua['var']['dorso_linea']) ? $selectedYegua['var']['dorso_linea'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?= isset($selectedYegua['var']['dorso_linea']) ? $selectedYegua['var']['dorso_linea'] : "-" ?>
+                                                            <?= isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "-" ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Valor máximo
@@ -837,15 +832,15 @@
                                                            class="custom-range" 
                                                            id="grupa_tamano" 
                                                            name="var[grupa_tamano]" 
-                                                           value="<?= isset($selectedYegua['var']['grupa_tamano']) ? $selectedYegua['var']['grupa_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_tamano']) ? $_POST['var']['grupa_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['grupa_tamano']) ?
-                                                                    $selectedYegua['var']['grupa_tamano'] : "-"
+                                                            isset($_POST['var']['grupa_tamano']) ?
+                                                                    $_POST['var']['grupa_tamano'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -863,15 +858,15 @@
                                                            class="custom-range" 
                                                            id="grupa_orientacion" 
                                                            name="var[grupa_orientacion]" 
-                                                           value="<?= isset($selectedYegua['var']['grupa_orientacion']) ? $selectedYegua['var']['grupa_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_orientacion']) ? $_POST['var']['grupa_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['grupa_orientacion']) ?
-                                                                    $selectedYegua['var']['grupa_orientacion'] : "-"
+                                                            isset($_POST['var']['grupa_orientacion']) ?
+                                                                    $_POST['var']['grupa_orientacion'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -889,15 +884,15 @@
                                                            class="custom-range" 
                                                            id="grupa_amplitud" 
                                                            name="var[grupa_amplitud]" 
-                                                           value="<?= isset($selectedYegua['var']['grupa_amplitud']) ? $selectedYegua['var']['grupa_amplitud'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_amplitud']) ? $_POST['var']['grupa_amplitud'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['grupa_amplitud']) ?
-                                                                    $selectedYegua['var']['grupa_amplitud'] : "-"
+                                                            isset($_POST['var']['grupa_amplitud']) ?
+                                                                    $_POST['var']['grupa_amplitud'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -965,15 +960,15 @@
                                                            class="custom-range" 
                                                            id="aplomos_anteriores_frente" 
                                                            name="var[aplomos_anteriores_frente]" 
-                                                           value="<?= isset($selectedYegua['var']['aplomos_anteriores_frente']) ? $selectedYegua['var']['aplomos_anteriores_frente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_anteriores_frente']) ? $_POST['var']['aplomos_anteriores_frente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Izquierdo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['aplomos_anteriores_frente']) ?
-                                                                    $selectedYegua['var']['aplomos_anteriores_frente'] : "-"
+                                                            isset($_POST['var']['aplomos_anteriores_frente']) ?
+                                                                    $_POST['var']['aplomos_anteriores_frente'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -991,15 +986,15 @@
                                                            class="custom-range" 
                                                            id="aplomos_anteriores_lateralmente" 
                                                            name="var[aplomos_anteriores_lateralmente]" 
-                                                           value="<?= isset($selectedYegua['var']['aplomos_anteriores_lateralmente']) ? $selectedYegua['var']['aplomos_anteriores_lateralmente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_anteriores_lateralmente']) ? $_POST['var']['aplomos_anteriores_lateralmente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Plantado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['aplomos_anteriores_lateralmente']) ?
-                                                                    $selectedYegua['var']['aplomos_anteriores_lateralmente'] : "-"
+                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) ?
+                                                                    $_POST['var']['aplomos_anteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1017,15 +1012,15 @@
                                                            class="custom-range" 
                                                            id="aplomos_posteriores_atras" 
                                                            name="var[aplomos_posteriores_atras]" 
-                                                           value="<?= isset($selectedYegua['var']['aplomos_posteriores_atras']) ? $selectedYegua['var']['aplomos_posteriores_atras'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_posteriores_atras']) ? $_POST['var']['aplomos_posteriores_atras'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Cerrados
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['aplomos_posteriores_atras']) ?
-                                                                    $selectedYegua['var']['aplomos_posteriores_atras'] : "-"
+                                                            isset($_POST['var']['aplomos_posteriores_atras']) ?
+                                                                    $_POST['var']['aplomos_posteriores_atras'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1043,15 +1038,15 @@
                                                            class="custom-range" 
                                                            id="aplomos_posteriores_lateralmente" 
                                                            name="var[aplomos_posteriores_lateralmente]" 
-                                                           value="<?= isset($selectedYegua['var']['aplomos_posteriores_lateralmente']) ? $selectedYegua['var']['aplomos_posteriores_lateralmente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_posteriores_lateralmente']) ? $_POST['var']['aplomos_posteriores_lateralmente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Plantado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['aplomos_posteriores_lateralmente']) ?
-                                                                    $selectedYegua['var']['aplomos_posteriores_lateralmente'] : "-"
+                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) ?
+                                                                    $_POST['var']['aplomos_posteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1119,15 +1114,15 @@
                                                            class="custom-range" 
                                                            id="alzada_estatura" 
                                                            name="var[alzada_estatura]" 
-                                                           value="<?= isset($selectedYegua['var']['alzada_estatura']) ? $selectedYegua['var']['alzada_estatura'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['alzada_estatura']) ? $_POST['var']['alzada_estatura'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Bajo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['alzada_estatura']) ?
-                                                                    $selectedYegua['var']['alzada_estatura'] : "-"
+                                                            isset($_POST['var']['alzada_estatura']) ?
+                                                                    $_POST['var']['alzada_estatura'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1195,15 +1190,15 @@
                                                            class="custom-range" 
                                                            id="morfometria_cana_anterior" 
                                                            name="var[morfometria_cana_anterior]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_cana_anterior']) ? $selectedYegua['var']['morfometria_cana_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cana_anterior']) ? $_POST['var']['morfometria_cana_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['morfometria_cana_anterior']) ?
-                                                                    $selectedYegua['var']['morfometria_cana_anterior'] : "-"
+                                                            isset($_POST['var']['morfometria_cana_anterior']) ?
+                                                                    $_POST['var']['morfometria_cana_anterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1222,15 +1217,15 @@
                                                            class="custom-range" 
                                                            id="morfometria_cuartilla_anterior" 
                                                            name="var[morfometria_cuartilla_anterior]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_cuartilla_anterior']) ? $selectedYegua['var']['morfometria_cuartilla_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_anterior']) ? $_POST['var']['morfometria_cuartilla_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['morfometria_cuartilla_anterior']) ?
-                                                                    $selectedYegua['var']['morfometria_cuartilla_anterior'] : "-"
+                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) ?
+                                                                    $_POST['var']['morfometria_cuartilla_anterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1248,15 +1243,15 @@
                                                            class="custom-range" 
                                                            id="morfometria_femur" 
                                                            name="var[morfometria_femur]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_femur']) ? $selectedYegua['var']['morfometria_femur'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_femur']) ? $_POST['var']['morfometria_femur'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['morfometria_femur']) ?
-                                                                    $selectedYegua['var']['morfometria_femur'] : "-"
+                                                            isset($_POST['var']['morfometria_femur']) ?
+                                                                    $_POST['var']['morfometria_femur'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1274,15 +1269,15 @@
                                                            class="custom-range" 
                                                            id="morfometria_cana_posterior" 
                                                            name="var[morfometria_cana_posterior]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_cana_posterior']) ? $selectedYegua['var']['morfometria_cana_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cana_posterior']) ? $_POST['var']['morfometria_cana_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['morfometria_cana_posterior']) ?
-                                                                    $selectedYegua['var']['morfometria_cana_posterior'] : "-"
+                                                            isset($_POST['var']['morfometria_cana_posterior']) ?
+                                                                    $_POST['var']['morfometria_cana_posterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1300,15 +1295,15 @@
                                                            class="custom-range" 
                                                            id="morfometria_cuartilla_posterior" 
                                                            name="var[morfometria_cuartilla_posterior]" 
-                                                           value="<?= isset($selectedYegua['var']['morfometria_cuartilla_posterior']) ? $selectedYegua['var']['morfometria_cuartilla_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_posterior']) ? $_POST['var']['morfometria_cuartilla_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['morfometria_cuartilla_posterior']) ?
-                                                                    $selectedYegua['var']['morfometria_cuartilla_posterior'] : "-"
+                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) ?
+                                                                    $_POST['var']['morfometria_cuartilla_posterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1376,15 +1371,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_velocidad" 
                                                            name="var[movimiento_velocidad]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_velocidad']) ? $selectedYegua['var']['movimiento_velocidad'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Lento
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_velocidad']) ?
-                                                                    $selectedYegua['var']['movimiento_velocidad'] : "-"
+                                                            isset($_POST['var']['movimiento_velocidad']) ?
+                                                                    $_POST['var']['movimiento_velocidad'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1402,15 +1397,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_elevacion_anterior" 
                                                            name="var[movimiento_elevacion_anterior]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_elevacion_anterior']) ? $selectedYegua['var']['movimiento_elevacion_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_elevacion_anterior']) ? $_POST['var']['movimiento_elevacion_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_elevacion_anterior']) ?
-                                                                    $selectedYegua['var']['movimiento_elevacion_anterior'] : "-"
+                                                            isset($_POST['var']['movimiento_elevacion_anterior']) ?
+                                                                    $_POST['var']['movimiento_elevacion_anterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1428,15 +1423,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_elevacion_posterior" 
                                                            name="var[movimiento_elevacion_posterior]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_elevacion_posterior']) ? $selectedYegua['var']['movimiento_elevacion_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_elevacion_posterior']) ? $_POST['var']['movimiento_elevacion_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_elevacion_posterior']) ?
-                                                                    $selectedYegua['var']['movimiento_elevacion_posterior'] : "-"
+                                                            isset($_POST['var']['movimiento_elevacion_posterior']) ?
+                                                                    $_POST['var']['movimiento_elevacion_posterior'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1454,15 +1449,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_pisada" 
                                                            name="var[movimiento_pisada]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_pisada']) ? $selectedYegua['var']['movimiento_pisada'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_pisada']) ? $_POST['var']['movimiento_pisada'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_pisada']) ?
-                                                                    $selectedYegua['var']['movimiento_pisada'] : "-"
+                                                            isset($_POST['var']['movimiento_pisada']) ?
+                                                                    $_POST['var']['movimiento_pisada'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1480,15 +1475,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_pulimento']) ? $selectedYegua['var']['movimiento_pulimento'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_pulimento']) ?
-                                                                    $selectedYegua['var']['movimiento_pulimento'] : "-"
+                                                            isset($_POST['var']['movimiento_pulimento']) ?
+                                                                    $_POST['var']['movimiento_pulimento'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1506,15 +1501,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_elasticidad']) ? $selectedYegua['var']['movimiento_elasticidad'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_elasticidad']) ?
-                                                                    $selectedYegua['var']['movimiento_elasticidad'] : "-"
+                                                            isset($_POST['var']['movimiento_elasticidad']) ?
+                                                                    $_POST['var']['movimiento_elasticidad'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1532,15 +1527,15 @@
                                                            class="custom-range" 
                                                            id="movimiento_compensacion" 
                                                            name="var[movimiento_compensacion]" 
-                                                           value="<?= isset($selectedYegua['var']['movimiento_compensacion']) ? $selectedYegua['var']['movimiento_compensacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descompensado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($selectedYegua['var']['movimiento_compensacion']) ?
-                                                                    $selectedYegua['var']['movimiento_compensacion'] : "-"
+                                                            isset($_POST['var']['movimiento_compensacion']) ?
+                                                                    $_POST['var']['movimiento_compensacion'] : "-"
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1602,7 +1597,7 @@
                                                        id="chk_geometria_figura" 
                                                        name="chk[chk_geometria_figura]" 
                                                        value="chk_geometria_figura"
-                                                       <?= isset($selectedYegua['chk']['chk_geometria_figura']) ? 'checked' : '' ?>>
+                                                       <?= isset($_POST['chk']['chk_geometria_figura']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_geometria_figura">Figura</label>
                                             </div>
                                         </div>
@@ -1613,67 +1608,91 @@
                                                        id="chk_geometria_orientacion" 
                                                        name="chk[chk_geometria_orientacion]" 
                                                        value="chk_geometria_orientacion"
-                                                       <?= isset($selectedYegua['chk']['chk_geometria_orientacion']) ? 'checked' : '' ?>>
+                                                       <?= isset($_POST['chk']['chk_geometria_orientacion']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_geometria_orientacion">Orientación</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_balance_horizontal" name="chk[chk_balance_horizontal]" value="chk_balance_horizontal" <?= isset($selectedYegua['chk']['chk_balance_horizontal']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_balance_horizontal" name="chk[chk_balance_horizontal]" value="chk_balance_horizontal" <?= isset($_POST['chk']['chk_balance_horizontal']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_balance_horizontal">Balance horizontal</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_balance_vertical" name="chk[chk_balance_vertical]" value="chk_balance_vertical" <?= isset($selectedYegua['chk']['chk_balance_vertical']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_balance_vertical" name="chk[chk_balance_vertical]" value="chk_balance_vertical" <?= isset($_POST['chk']['chk_balance_vertical']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_balance_vertical">Balance vertical</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_espalda" name="chk[chk_espalda]" value="chk_espalda" <?= isset($selectedYegua['chk']['chk_espalda']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_espalda">Espalda</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_espalda_tamano" name="chk[chk_espalda_tamano]" value="chk_espalda_tamano" <?= isset($_POST['chk']['chk_espalda_tamano']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_espalda_tamano">Tamaño espalda</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso" name="chk[chk_dorso]" value="chk_dorso" <?= isset($selectedYegua['chk']['chk_dorso']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_dorso">Dorso</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_espalda_orientacion" name="chk[chk_espalda_orientacion]" value="chk_espalda_orientacion" <?= isset($_POST['chk']['chk_espalda_orientacion']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_espalda_orientacion">Orientación espalda</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_grupa" name="chk[chk_grupa]" value="chk_grupa" <?= isset($selectedYegua['chk']['chk_grupa']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_grupa">Grupa</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_tamano" name="chk[chk_dorso_tamano]" value="chk_dorso_tamano" <?= isset($_POST['chk']['chk_dorso_tamano']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_dorso_tamano">Tamaño Dorso</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_alzada_estatura" name="chk[chk_alzada_estatura]" value="chk_alzada_estatura" <?= isset($selectedYegua['chk']['chk_alzada_estatura']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?= isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_grupa_tamano" name="chk[chk_grupa_tamano]" value="chk_grupa_tamano" <?= isset($_POST['chk']['chk_grupa_tamano']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_grupa_tamano">Tamaño grupa</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_grupa_orientacion" name="chk[chk_grupa_orientacion]" value="chk_grupa_orientacion" <?= isset($_POST['chk']['chk_grupa_orientacion']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_grupa_orientacion">Orientación grupa</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_grupa_amplitud" name="chk[chk_grupa_amplitud]" value="chk_grupa_amplitud" <?= isset($_POST['chk']['chk_grupa_amplitud']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_grupa_amplitud">Amplitud grupa</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_alzada_estatura" name="chk[chk_alzada_estatura]" value="chk_alzada_estatura" <?= isset($_POST['chk']['chk_alzada_estatura']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_alzada_estatura">Alzada</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($selectedYegua['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($_POST['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_anteriores_frente">Aplomos anteriores (frente)</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($selectedYegua['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Aplomos anteriores (lateralmente)</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($selectedYegua['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($_POST['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_posteriores_atras">Aplomos posteriores (atrás)</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($selectedYegua['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Aplomos posteriores (lateralmente)</label>
                                             </div>
                                         </div>
@@ -1684,71 +1703,65 @@
                                     <div class="row well">
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cabeza" name="chk[chk_lineaSuperior_cabeza]" value="chk_lineaSuperior_cabeza" <?= isset($selectedYegua['chk']['chk_lineaSuperior_cabeza']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cabeza" name="chk[chk_lineaSuperior_cabeza]" value="chk_lineaSuperior_cabeza" <?= isset($_POST['chk']['chk_lineaSuperior_cabeza']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_cabeza">Cabeza</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_longitud_cuello" name="chk[chk_lineaSuperior_longitud_cuello]" value="chk_lineaSuperior_longitud_cuello" <?= isset($selectedYegua['chk']['chk_lineaSuperior_longitud_cuello']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_longitud_cuello" name="chk[chk_lineaSuperior_longitud_cuello]" value="chk_lineaSuperior_longitud_cuello" <?= isset($_POST['chk']['chk_lineaSuperior_longitud_cuello']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_longitud_cuello">Longitud cuello</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_orientacion_cuello" name="chk[chk_orientacion_cuello]" value="chk_orientacion_cuello" <?= isset($selectedYegua['chk']['chk_orientacion_cuello']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_orientacion_cuello">Orientacion cuello</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?= isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cruza" name="chk[chk_cruza]" value="chk_cruza" <?= isset($selectedYegua['chk']['chk_cruza']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cruza">Cruza</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cruz" name="chk[chk_lineaSuperior_cruz]" value="chk_lineaSuperior_cruz" <?= isset($_POST['chk']['chk_lineaSuperior_cruz']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_lineaSuperior_cruz">Cruz</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_pecho" name="chk[chk_lineaSuperior_pecho]" value="chk_lineaSuperior_pecho" <?= isset($selectedYegua['chk']['chk_lineaSuperior_pecho']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_pecho" name="chk[chk_lineaSuperior_pecho]" value="chk_lineaSuperior_pecho" <?= isset($_POST['chk']['chk_lineaSuperior_pecho']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_pecho">Pecho</label>
                                             </div>
                                         </div>        
                                     </div>
                                     <h3 class="h3subtitu margin-space">Morfometría</h3>
-                                    <div class="row well">
+                                    <div class="row well">                                        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_radio" name="chk[chk_radio]" value="chk_radio" <?= isset($selectedYegua['chk']['chk_radio']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_radio">Radio</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_anterior" name="chk[chk_morfometria_cana_anterior]" value="chk_morfometria_cana_anterior" <?= isset($_POST['chk']['chk_morfometria_cana_anterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_morfometria_cana_anterior">Caña anterior</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cana_anterior" name="chk[chk_cana_anterior]" value="chk_cana_anterior" <?= isset($selectedYegua['chk']['chk_cana_anterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cana_anterior">Caña anterior</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cuartilla_anterior" name="chk[chk_morfometria_cuartilla_anterior]" value="chk_morfometria_cuartilla_anterior" <?= isset($_POST['chk']['chk_morfometria_cuartilla_anterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_morfometria_cuartilla_anterior">Cuartilla anterior</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cuartilla_anterior" name="chk[chk_cuartilla_anterior]" value="chk_cuartilla_anterior" <?= isset($selectedYegua['chk']['chk_cuartilla_anterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cuartilla_anterior">Cuartilla anterior</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_femur" name="chk[chk_femur]" value="chk_femur" <?= isset($selectedYegua['chk']['chk_femur']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_femur">Fémur</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_femur" name="chk[chk_morfometria_femur]" value="chk_morfometria_femur" <?= isset($_POST['chk']['chk_morfometria_femur']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_morfometria_femur">Fémur</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cana_posterior" name="chk[chk_cana_posterior]" value="chk_cana_posterior" <?= isset($selectedYegua['chk']['chk_cana_posterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cana_posterior">Caña posterior</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_posterior" name="chk[chk_cana_posterior]" value="chk_morfometria_cana_posterior" <?= isset($_POST['chk']['chk_morfometria_cana_posterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_morfometria_cana_posterior">Caña posterior</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_cuartilla_posterior" name="chk[chk_cuartilla_posterior]" value="chk_cuartilla_posterior" <?= isset($selectedYegua['chk']['chk_cuartilla_posterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_cuartilla_posterior">Cuartilla posterior</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cuartilla_posterior" name="chk[chk_morfometria_cuartilla_posterior]" value="chk_morfometria_cuartilla_posterior" <?= isset($_POST['chk']['chk_morfometria_cuartilla_posterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_morfometria_cuartilla_posterior">Cuartilla posterior</label>
                                             </div>
                                         </div>        
                                     </div>
@@ -1756,44 +1769,44 @@
                                     <div class="row well">
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_velocidad" name="chk[chk_velocidad]" value="chk_velocidad" <?= isset($selectedYegua['chk']['chk_velocidad']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_velocidad">Velocidad</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_velocidad" name="chk[chk_movimiento_velocidad]" value="chk_movimiento_velocidad" <?= isset($_POST['chk']['chk_movimiento_velocidad']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_velocidad">Velocidad</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_elevacion_anterior" name="chk[chk_elevacion_anterior]" value="chk_elevacion_anterior" <?= isset($selectedYegua['chk']['chk_elevacion_anterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_elevacion_anterior">Elevación anterior</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elevacion_anterior" name="chk[chk_movimiento_elevacion_anterior]" value="chk_movimiento_elevacion_anterior" <?= isset($_POST['chk']['chk_movimiento_elevacion_anterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_elevacion_anterior">Elevación anterior</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_elevacion_posterior" name="chk[chk_elevacion_posterior]" value="chk_elevacion_posterior" <?= isset($selectedYegua['chk']['chk_elevacion_posterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_elevacion_posterior">Elevacion posterior</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elevacion_posterior" name="chk[chk_movimiento_elevacion_posterior]" value="chk_movimiento_elevacion_posterior" <?= isset($_POST['chk']['chk_movimiento_elevacion_posterior']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_elevacion_posterior">Elevacion posterior</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_pisada" name="chk[chk_pisada]" value="chk_pisada" <?= isset($selectedYegua['chk']['chk_pisada']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_pisada">Pisada</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pisada" name="chk[chk_movimiento_pisada]" value="chk_movimiento_pisada" <?= isset($_POST['chk']['chk_movimiento_pisada']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_pisada">Pisada</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_pulimento" name="chk[chk_pulimento]" value="chk_pulimento" <?= isset($selectedYegua['chk']['chk_pulimento']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_pulimento">Pulimento</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?= isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_elasticidad" name="chk[chk_elasticidad]" value="chk_elasticidad" <?= isset($selectedYegua['chk']['chk_elasticidad']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_elasticidad">Elasticidad</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?= isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_compensacion" name="chk[chk_compensacion]" value="chk_compensacion" <?= isset($selectedYegua['chk']['chk_compensacion']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_compensacion">Compensación</label>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_compensacion" name="chk[chk_movimiento_compensacion]" value="chk_movimiento_compensacion" <?= isset($_POST['chk']['chk_movimiento_compensacion']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_movimiento_compensacion">Compensación</label>
                                             </div>
                                         </div>        
                                     </div>
@@ -1901,6 +1914,20 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
     });
 
     jQuery('form.buscadr').submit(function () {
+        
+        /* VALIDAR QUE AL MENOS UNA TIPIFICACION SEA SELECCIONADA */
+        var bandera1= false;
+        jQuery('form.buscadr input.custom-range').each(function () {
+            if (jQuery(this).val() !== "0") {                
+                bandera1 = true;
+                return false;
+            }
+        });
+        if(!bandera1){
+            alert('Debe tipificar al menos una variable de su Yegua.');
+            return false;
+        }
+        
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
 
         if (numberOfChecked <= 0) {
@@ -1911,7 +1938,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         if (numberOfChecked > 6) {
             alert('Solo puedes seleccionar 6 variables');
             return false;
-        }
+        }        
 
         /* VALIDACION DE VARIABLES TIPIFICADAS VS MEJORADAS */
         var bandera= true;

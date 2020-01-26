@@ -20,6 +20,7 @@ if (!class_exists('FormularioBuscador')) :
             $settings = Buscador_equinetics()->get_settings();
 
             //SI HUBO POST
+            var_dump(filter_input_array(INPUT_POST));
             if (!empty($_POST)) {
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
@@ -33,12 +34,12 @@ if (!class_exists('FormularioBuscador')) :
                         $nmYegua = str_replace(
                                 [" ", "á", "Á", "é", "É", "í", "Í", "ó", "Ó", "ú", "Ú", "ñ", "Ñ"],
                                 ["_", "a", "A", "e", "E", "i", "I", "o", "O", "u", "U", "n", "N"],
-                                $_POST["form"]["nombre"]);
+                                $_POST["form"]["nombre_yegua"]);
                         $nmYegua = strtolower($nmYegua);
                         $nmYegua = trim($nmYegua);
                         //TODA LA DATA DE LA YEGUA
                         $yeguas[get_current_user_id()][$nmYegua] = [
-                            'nombre' => $_POST["form"]["nombre"],
+                            'nombre_yegua' => $_POST["form"]["nombre_yegua"],
                             'andar' => $_POST["form"]["andar"],
                             'registro' => $_POST["form"]["registro"],
                             'padre' => $_POST["form"]["padre"],
