@@ -20,7 +20,6 @@ if (!class_exists('FormularioBuscador')) :
             $settings = Buscador_equinetics()->get_settings();
 
             //SI HUBO POST
-            var_dump(filter_input_array(INPUT_POST));
             if (!empty($_POST)) {
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
@@ -101,8 +100,6 @@ if (!class_exists('FormularioBuscador')) :
 
         private function getHorses($variables, $mejoras, $categoy) {
 
-
-
             //SETTINGS
             $settings = Buscador_equinetics()->get_settings();
 
@@ -175,16 +172,16 @@ if (!class_exists('FormularioBuscador')) :
         private function get_geometria_figura($valor) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [1, 2, 3];
-                    break;
-                case 2:
-                    $arrValores = [2, 3];
-                    break;
-                case 3:
                     $arrValores = [3];
                     break;
+                case 2:
+                    $arrValores = [1, 3];
+                    break;
+                case 3:
+                    $arrValores = [1];
+                    break;
                 default:
-                    $arrValores = [1, 2, 3];
+                    $arrValores = [3];
                     break;
             }
             return $arrValores;
@@ -199,14 +196,14 @@ if (!class_exists('FormularioBuscador')) :
         private function get_geometria_orientacion($valor) {
             switch ($valor) {
                 case 1:
-                case 2:
-                    $arrValores = [2, 3];
-                    break;
                 case 3:
                     $arrValores = [3];
                     break;
+                case 2:
+                    $arrValores = [3, 2];
+                    break;
                 default:
-                    $arrValores = [2, 3];
+                    $arrValores = [3, 2];
                     break;
             }
             return $arrValores;
@@ -224,7 +221,7 @@ if (!class_exists('FormularioBuscador')) :
                     $arrValores = [3];
                     break;
                 case 2:                
-                    $arrValores = [2, 3];
+                    $arrValores = [3, 2];
                     break;
                 case 3:
                     $arrValores = [3];
@@ -244,9 +241,13 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_lineaSuperior_pecho($valor) {
             switch ($valor) {
-                case 1:                
+                case 1:
+                case 3:               
+                    $arrValores = [3];
+                    break;
                 case 2:
-                case 3:
+                    $arrValores = [3, 2];
+                    break;
                 default:
                     $arrValores = [3];
                     break;
@@ -261,7 +262,21 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_lineaSuperior_longitud_cuello($valor) {            
-            return [$valor];
+            switch ($valor) {
+                case 1:                               
+                    $arrValores = [3];
+                    break;
+                case 2:
+                    $arrValores = [1, 3, 2];
+                    break;
+                case 3:
+                    $arrValores = [1];
+                    break;
+                default:
+                    $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -271,7 +286,19 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_lineaSuperior_cabeza($valor) {            
-            return [$valor];
+            switch ($valor) {
+                case 1:     
+                case 3:                          
+                    $arrValores = [3];
+                    break;
+                case 2:
+                    $arrValores = [3, 2];
+                    break;               
+                default:
+                    $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -281,7 +308,15 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_aplomos_anteriores_frente($valor) {            
-            return [2];
+            switch ($valor) {
+                case 1:
+                case 2:
+                case 3:
+                default:
+                    $arrValores = [2];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -291,7 +326,15 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_aplomos_anteriores_lateralmente($valor) {            
-            return [2];
+            switch ($valor) {
+                case 1:
+                case 2:
+                case 3:
+                default:
+                    $arrValores = [2];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -301,7 +344,15 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_aplomos_posteriores_atras($valor) {            
-            return [2];
+            switch ($valor) {
+                case 1:
+                case 2:
+                case 3:
+                default:
+                    $arrValores = [2];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -311,7 +362,15 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_aplomos_posteriores_lateralmente($valor) {            
-            return [2];
+            switch ($valor) {
+                case 1:
+                case 2:
+                case 3:
+                default:
+                    $arrValores = [2];
+                    break;
+            }
+            return $arrValores;
         }
         
         /**
@@ -321,7 +380,132 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_alzada_estatura($valor) {            
-            return [$valor];
+            switch ($valor) {
+                case 1:                          
+                    $arrValores = [3, 2];
+                    break;
+                case 2:
+                    $arrValores = [3];
+                    break;   
+                case 3:
+                    $arrValores = [2, 1];
+                    break;             
+                default:
+                    $arrValores = [3, 2];
+                    break;
+            }
+            return $arrValores;
+        }        
+
+
+        /**
+         * Funcion encargada de buscar ejemplares para la morfometria
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_morfometria_cana_anterior($valor) {            
+            switch ($valor) {
+                case 1:   
+                case 2:                      
+                    $arrValores = [1, 2];
+                    break;
+                case 3:
+                    $arrValores = [1];
+                    break;             
+                default:
+                    $arrValores = [1, 2];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para la morfometria
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_morfometria_cuartilla_anterior($valor) {            
+            switch ($valor) {
+                case 1:              
+                    $arrValores = [1, 2];
+                    break;
+                case 2:
+                case 3:
+                    $arrValores = [1];
+                    break;             
+                default:
+                    $arrValores = [1, 2];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para la morfometria
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_morfometria_femur($valor) {            
+            switch ($valor) {
+                case 1:
+                case 3:              
+                    $arrValores = [3];
+                    break;
+                case 2:                
+                    $arrValores = [3, 2];
+                    break;             
+                default:
+                    $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para la morfometria
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_morfometria_cana_posterior($valor) {            
+            switch ($valor) {
+                case 1:
+                case 2:              
+                    $arrValores = [1, 2];
+                    break;
+                case 3:                
+                    $arrValores = [1];
+                    break;             
+                default:
+                    $arrValores = [1, 2];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para la morfometria
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_morfometria_cuartilla_posterior($valor) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = [1, 2];
+                    break;
+                case 2:
+                case 3:                
+                    $arrValores = [1];
+                    break;             
+                default:
+                    $arrValores = [1, 2];
+                    break;
+            }
+            return $arrValores;
         }
 
     }

@@ -1928,13 +1928,14 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
             return false;
         }
         
+        /* VALIDAR QUE AL MENOS UN CHECK DE MEJORA SEA SELECCIONADO */
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
-
         if (numberOfChecked <= 0) {
             alert('Debe selecionar al menos una variable de mejoramiento');
             return false;
         }
 
+        /* VALIDAR QUE SOLO SE SELECCIONES MAXIMO 6 VARIABLES */
         if (numberOfChecked > 6) {
             alert('Solo puedes seleccionar 6 variables');
             return false;
@@ -1956,6 +1957,18 @@ Por favor revise la información suministrada.');
             return false;
         }
 
+        /* VALIDAR QUE SI SE MEJORA EL DORSO SE DEBA SELECCIONAR LA CRUZ */
+        if((jQuery("#chk_lineaSuperior_cruz").is(':checked') 
+        &&  !jQuery("#chk_dorso_tamano").is(':checked')) ||
+        (jQuery("#chk_dorso_tamano").is(':checked') 
+        && !jQuery("#chk_lineaSuperior_cruz").is(':checked')) 
+        ){
+            alert("Las variables 'Dorso' y 'Cruz' están directamente relacionadas. \n\
+            Por favor tipifique ambas variables");
+            return false;
+        }
+
+        /* SI NO HAY ERRORES REALIZA LA BUSQUEDA */
         return true;
     });
 

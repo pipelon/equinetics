@@ -1,0 +1,10 @@
+2020-01-28T12:09:06+00:00 CRITICAL Uncaught Error: Call to undefined method FormularioBuscador::get_lineaSuperior_cruz() in D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:156
+Stack trace:
+#0 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(119): FormularioBuscador->getVariables(Array, Array)
+#1 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(78): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\e en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 156
+
