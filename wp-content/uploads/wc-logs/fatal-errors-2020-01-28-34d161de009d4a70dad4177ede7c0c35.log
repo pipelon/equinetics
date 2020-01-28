@@ -8,3 +8,7 @@ Stack trace:
 #5 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
 #6 D:\wamp64\www\e en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 156
 
+2020-01-28T13:43:01+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 274
+
+2020-01-28T13:43:10+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 274
+
