@@ -12,3 +12,9 @@ Stack trace:
 
 2020-01-28T13:43:10+00:00 CRITICAL Cannot use isset() on the result of an expression (you can use "null !== expression" instead) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 274
 
+2020-01-28T14:47:21+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 275
+
+2020-01-28T14:49:20+00:00 CRITICAL syntax error, unexpected ';' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 274
+
+2020-01-28T14:53:00+00:00 CRITICAL syntax error, unexpected ';' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\views\buscador-form.php en la línea 280
+

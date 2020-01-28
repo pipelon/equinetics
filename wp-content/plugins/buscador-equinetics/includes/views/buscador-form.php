@@ -252,7 +252,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['geometria_figura']) ?
+                                                            isset($_POST['var']['geometria_figura']) && $_POST['var']['geometria_figura']!== '0' ?
                                                                     $_POST['var']['geometria_figura'] : "-";
                                                             ?>
                                                         </span>
@@ -278,7 +278,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['geometria_orientacion']) ?
+                                                            isset($_POST['var']['geometria_orientacion']) && $_POST['var']['geometria_orientacion'] !== '0' ?
                                                                     $_POST['var']['geometria_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -355,7 +355,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_horizontal']) ?
+                                                            isset($_POST['var']['balance_horizontal']) && $_POST['var']['balance_horizontal']!== '0' ?
                                                                     $_POST['var']['balance_horizontal'] : "-"
                                                             ?>
                                                         </span>
@@ -381,7 +381,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_vertical']) ?
+                                                            isset($_POST['var']['balance_vertical']) && $_POST['var']['balance_vertical']!== '0' ?
                                                                     $_POST['var']['balance_vertical'] : "-"
                                                             ?>
                                                         </span>
@@ -457,7 +457,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cabeza']) ?
+                                                            isset($_POST['var']['lineaSuperior_cabeza']) && $_POST['var']['lineaSuperior_cabeza']!== '0' ?
                                                                     $_POST['var']['lineaSuperior_cabeza'] : "-"
                                                             ?>
                                                         </span>
@@ -483,7 +483,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) ?
+                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) && $_POST['var']['lineaSuperior_longitud_cuello']!== '0' ?
                                                                     $_POST['var']['lineaSuperior_longitud_cuello'] : "-"
                                                             ?>
                                                         </span>
@@ -509,7 +509,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) ?
+                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello']!== '0' ?
                                                                     $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"
                                                             ?>
                                                         </span>
@@ -535,7 +535,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cruz']) ?
+                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz']!== '0' ?
                                                                     $_POST['var']['lineaSuperior_cruz'] : "-"
                                                             ?>
                                                         </span>
@@ -561,7 +561,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_pecho']) ?
+                                                            isset($_POST['var']['lineaSuperior_pecho']) && $_POST['var']['lineaSuperior_pecho']!== '0' ?
                                                                     $_POST['var']['lineaSuperior_pecho'] : "-"
                                                             ?>
                                                         </span>
@@ -637,7 +637,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_tamano']) ?
+                                                            isset($_POST['var']['espalda_tamano']) && $_POST['var']['espalda_tamano']!== '0' ?
                                                                     $_POST['var']['espalda_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -663,7 +663,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_orientacion']) ?
+                                                            isset($_POST['var']['espalda_orientacion']) && $_POST['var']['espalda_orientacion']!== '0' ?
                                                                     $_POST['var']['espalda_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -740,7 +740,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['dorso_tamano']) ?
+                                                            isset($_POST['var']['dorso_tamano']) && $_POST['var']['dorso_tamano']!== '0' ?
                                                                     $_POST['var']['dorso_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -839,7 +839,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_tamano']) ?
+                                                            isset($_POST['var']['grupa_tamano']) && $_POST['var']['grupa_tamano']!== '0' ?
                                                                     $_POST['var']['grupa_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -865,7 +865,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_orientacion']) ?
+                                                            isset($_POST['var']['grupa_orientacion']) && $_POST['var']['grupa_orientacion']!== '0' ?
                                                                     $_POST['var']['grupa_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -891,7 +891,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_amplitud']) ?
+                                                            isset($_POST['var']['grupa_amplitud']) && $_POST['var']['grupa_amplitud']!== '0' ?
                                                                     $_POST['var']['grupa_amplitud'] : "-"
                                                             ?>
                                                         </span>
@@ -967,7 +967,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_frente']) ?
+                                                            isset($_POST['var']['aplomos_anteriores_frente']) && $_POST['var']['aplomos_anteriores_frente']!== '0' ?
                                                                     $_POST['var']['aplomos_anteriores_frente'] : "-"
                                                             ?>
                                                         </span>
@@ -993,7 +993,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) ?
+                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) && $_POST['var']['aplomos_anteriores_lateralmente']!== '0' ?
                                                                     $_POST['var']['aplomos_anteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1019,7 +1019,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_atras']) ?
+                                                            isset($_POST['var']['aplomos_posteriores_atras']) && $_POST['var']['aplomos_posteriores_atras']!== '0' ?
                                                                     $_POST['var']['aplomos_posteriores_atras'] : "-"
                                                             ?>
                                                         </span>
@@ -1045,7 +1045,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) ?
+                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) && $_POST['var']['aplomos_posteriores_lateralmente']!== '0' ?
                                                                     $_POST['var']['aplomos_posteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1121,7 +1121,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['alzada_estatura']) ?
+                                                            isset($_POST['var']['alzada_estatura']) && $_POST['var']['alzada_estatura']!== '0' ?
                                                                     $_POST['var']['alzada_estatura'] : "-"
                                                             ?>
                                                         </span>
@@ -1197,7 +1197,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_anterior']) ?
+                                                            isset($_POST['var']['morfometria_cana_anterior']) && $_POST['var']['morfometria_cana_anterior']!== '0' ?
                                                                     $_POST['var']['morfometria_cana_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1224,7 +1224,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) ?
+                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) && $_POST['var']['morfometria_cuartilla_anterior']!== '0' ?
                                                                     $_POST['var']['morfometria_cuartilla_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1250,7 +1250,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_femur']) ?
+                                                            isset($_POST['var']['morfometria_femur']) && $_POST['var']['morfometria_femur']!== '0' ?
                                                                     $_POST['var']['morfometria_femur'] : "-"
                                                             ?>
                                                         </span>
@@ -1276,7 +1276,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_posterior']) ?
+                                                            isset($_POST['var']['morfometria_cana_posterior']) && $_POST['var']['morfometria_cana_posterior']!== '0' ?
                                                                     $_POST['var']['morfometria_cana_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1302,7 +1302,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) ?
+                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) && $_POST['var']['morfometria_cuartilla_posterior']!== '0' ?
                                                                     $_POST['var']['morfometria_cuartilla_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1378,7 +1378,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_velocidad']) ?
+                                                            isset($_POST['var']['movimiento_velocidad']) && $_POST['var']['movimiento_velocidad']!== '0' ?
                                                                     $_POST['var']['movimiento_velocidad'] : "-"
                                                             ?>
                                                         </span>
@@ -1404,7 +1404,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_anterior']) ?
+                                                            isset($_POST['var']['movimiento_elevacion_anterior']) && $_POST['var']['movimiento_elevacion_anterior']!== '0' ?
                                                                     $_POST['var']['movimiento_elevacion_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1430,7 +1430,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_posterior']) ?
+                                                            isset($_POST['var']['movimiento_elevacion_posterior']) && $_POST['var']['movimiento_elevacion_posterior']!== '0' ?
                                                                     $_POST['var']['movimiento_elevacion_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1456,7 +1456,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_pisada']) ?
+                                                            isset($_POST['var']['movimiento_pisada']) && $_POST['var']['movimiento_pisada']!== '0' ?
                                                                     $_POST['var']['movimiento_pisada'] : "-"
                                                             ?>
                                                         </span>
@@ -1482,7 +1482,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_pulimento']) ?
+                                                            isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento']!== '0' ?
                                                                     $_POST['var']['movimiento_pulimento'] : "-"
                                                             ?>
                                                         </span>
@@ -1508,7 +1508,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elasticidad']) ?
+                                                            isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad']!== '0' ?
                                                                     $_POST['var']['movimiento_elasticidad'] : "-"
                                                             ?>
                                                         </span>
@@ -1534,7 +1534,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_compensacion']) ?
+                                                            isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion']!== '0' ?
                                                                     $_POST['var']['movimiento_compensacion'] : "-"
                                                             ?>
                                                         </span>
