@@ -113,7 +113,7 @@ if (!class_exists('FormularioBuscador')) :
             $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
 
             //QUERY DE BUSQUEDA
-            $meta_query = $this->getVariables($variables, $mejoras);
+            $meta_query = $this->getVariables($variables, $mejoras, $selectedCat);
 
             //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
             $args = array(
@@ -145,12 +145,21 @@ if (!class_exists('FormularioBuscador')) :
             return new WP_Query($args);
         }
 
-        private function getVariables($variables, $mejoras) {
+        private function getVariables($variables, $mejoras, $selectedCat) {
             $meta_query = [];
             foreach ($mejoras as $mejora) {
                 $nmVariable = substr($mejora, 4);
                 $func = "get_" . $nmVariable;
-                $searchValues = $this->$func($variables[$nmVariable]);
+                if($nmVariable == 'espalda_tamano'
+                || $nmVariable == 'espalda_orientacion'
+                || $nmVariable == 'movimiento_velocidad'
+                || $nmVariable == 'movimiento_pisada'
+                || $nmVariable == 'movimiento_elevacion_posterior'
+                || $nmVariable == 'movimiento_elevacion_anterior'){
+                    $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
+                } else {
+                    $searchValues = $this->$func($variables[$nmVariable]);
+                }
                 $meta_query[] = [
                     'relation' => 'AND',
                     [
@@ -160,6 +169,7 @@ if (!class_exists('FormularioBuscador')) :
                     ]
                 ];
             }
+            //echo "<pre>"; print_r($meta_query); echo "</pre>";
             return $meta_query;
         }
 
@@ -508,16 +518,126 @@ if (!class_exists('FormularioBuscador')) :
             return $arrValores;
         }
 
-    }
+        /**
+         * Funcion encargada de buscar ejemplares para espalda
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_espalda_orientacion($valor, $category) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = $category == '46' ? [1] : [3];
+                    break;
+                case 2:                               
+                    $arrValores = $category == '46' ? [1, 2] : [3, 2];
+                    break;   
+                case 3:                               
+                    $arrValores = $category == '46' ? [1] : [3, 2];
+                    break;          
+                default:
+                    $arrValores = [1];
+                    break;
+            }
+            return $arrValores;
+        }
 
-    
+        /**
+         * Funcion encargada de buscar ejemplares para movimiento
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_movimiento_velocidad($valor, $category) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = $category == '49' ? [1, 2] : [3];
+                    break;
+                case 2:                               
+                    $arrValores = $category == '49' ? [1, 2] : [3, 2];
+                    break;   
+                case 3:                               
+                    $arrValores = $category == '49' ? [1] : [3];
+                    break;          
+                default:
+                    $arrValores = [1];
+                    break;
+            }
+            return $arrValores;
+        }
 
-    
+        /**
+         * Funcion encargada de buscar ejemplares para movimiento
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_movimiento_elevacion_anterior($valor, $category) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = $category == '46' ? [1, 2] : [3];
+                    break;
+                case 2:                               
+                    $arrValores = $category == '46' ? [2, 1] : [3, 2];
+                    break;   
+                case 3:                               
+                    $arrValores = $category == '46' ? [1] : [3];
+                    break;          
+                default:
+                    $arrValores = [1];
+                    break;
+            }
+            return $arrValores;
+        }
 
-    
+        /**
+         * Funcion encargada de buscar ejemplares para movimiento
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_movimiento_elevacion_posterior($valor, $category) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = $category == '46' ? [3, 2] : [3];
+                    break;
+                case 2:                               
+                    $arrValores = $category == '46' ? [2] : [3, 2];
+                    break;   
+                case 3:                               
+                    $arrValores = $category == '46' ? [1, 2] : [3, 2];
+                    break;          
+                default:
+                    $arrValores = [1];
+                    break;
+            }
+            return $arrValores;
+        }
 
-    
+        /**
+         * Funcion encargada de buscar ejemplares para movimiento
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_movimiento_pisada($valor, $category) {            
+            switch ($valor) {
+                case 1:                              
+                    $arrValores = $category == '46' ? [3] : [3];
+                    break;
+                case 2:                               
+                    $arrValores = $category == '46' ? [3, 2] : [3, 2];
+                    break;   
+                case 3:                               
+                    $arrValores = $category == '46' ? [2, 3] : [2, 3];
+                    break;          
+                default:
+                    $arrValores = [1];
+                    break;
+            }
+            return $arrValores;
+        }
 
-        
+    }        
 
 endif;
