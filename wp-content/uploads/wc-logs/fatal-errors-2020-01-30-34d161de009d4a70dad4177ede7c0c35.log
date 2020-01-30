@@ -1,0 +1,50 @@
+2020-01-30T15:35:11+00:00 CRITICAL syntax error, unexpected 'continue' (T_CONTINUE) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 217
+
+2020-01-30T15:40:37+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 179
+
+2020-01-30T15:53:15+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 169
+
+2020-01-30T15:54:30+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 170
+
+2020-01-30T15:55:34+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 170
+
+2020-01-30T16:20:21+00:00 CRITICAL syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 184
+
+2020-01-30T17:59:06+00:00 CRITICAL Uncaught Error: Call to undefined function push() in D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:182
+Stack trace:
+#0 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(116): FormularioBuscador->getVariables(Array, Array, '46')
+#1 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\equinetics\wp-includes\class-wp en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 182
+
+2020-01-30T18:00:15+00:00 CRITICAL Uncaught Error: Call to a member function push() on array in D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php:182
+Stack trace:
+#0 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(116): FormularioBuscador->getVariables(Array, Array, '46')
+#1 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php(77): FormularioBuscador->getHorses(Array, Array, '46 ')
+#2 D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\buscador-equinetics.php(109): FormularioBuscador->buscador()
+#3 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(325): BuscadorEquinetics->equinetics_search_form('', '', 'add_equinetics_...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\wamp64\www\equinetics\wp-includes\shortcodes.php(199): preg_replace_callback('/\\[(\\[?)(add_eq...', 'do_shortcode_ta...', '[add_equinetics...')
+#6 D:\wamp64\www\equinetics\wp-includes\ en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 182
+
+2020-01-30T18:08:35+00:00 CRITICAL syntax error, unexpected 'private' (T_PRIVATE) en D:\wamp64\www\equinetics\wp-content\plugins\buscador-equinetics\includes\class-equinetics-buscador-form.php en la línea 244
+
+2020-01-30T18:30:58+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:30:59+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:30:59+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:30:59+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:41:38+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:41:38+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:41:38+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+
+2020-01-30T18:41:38+00:00 CRITICAL Maximum execution time of 120 seconds exceeded en D:\wamp64\www\equinetics\wp-includes\wp-db.php en la línea 2030
+

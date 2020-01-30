@@ -140,24 +140,54 @@ if (!class_exists('FormularioBuscador')) :
                 'meta_query' => $meta_query
             );
             ob_start();
-            //$res = new WP_Query($args);
-            //echo $res->request;
-            return new WP_Query($args);
+            //echo "<pre>"; print_r($args);echo "</pre>";
+            $res = new WP_Query($args);
+            echo $res->request;
+            //return new WP_Query($args);
         }
 
         private function getVariables($variables, $mejoras, $selectedCat) {
             $meta_query = [];
+            $boolDorsoPlusCruz = false;
             foreach ($mejoras as $mejora) {
                 $nmVariable = substr($mejora, 4);
                 $func = "get_" . $nmVariable;
+
+                //Si las variables dependen de la categoria
                 if($nmVariable == 'espalda_tamano'
-                || $nmVariable == 'espalda_orientacion'
-                || $nmVariable == 'movimiento_velocidad'
-                || $nmVariable == 'movimiento_pisada'
-                || $nmVariable == 'movimiento_elevacion_posterior'
-                || $nmVariable == 'movimiento_elevacion_anterior'){
+                    || $nmVariable == 'espalda_orientacion'
+                    || $nmVariable == 'movimiento_velocidad'
+                    || $nmVariable == 'movimiento_pisada'
+                    || $nmVariable == 'movimiento_elevacion_posterior'
+                    || $nmVariable == 'movimiento_elevacion_anterior'){
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
+                } elseif($nmVariable == 'lineaSuperior_cruz'
+                    || $nmVariable == 'dorso_tamano') {
+                    //Caso especial de cruz + dorso
+                    if(!$boolDorsoPlusCruz){
+                        $searchValues = $this->get_dorso_cruz($variables['lineaSuperior_cruz'], $variables['dorso_tamano']);
+                        foreach($searchValues as $searchValue){
+                            $meta_querytmp = [
+                                'relation' => 'AND',
+                                    [
+                                        'key' => 'varsara_lineaSuperior_cruz',
+                                        'value' => $searchValue['lineaSuperior_cruz'],
+                                        'compare' => '='                
+                                    ],
+                                    [
+                                        'key' => 'varsara_varsara_dorso_tamano',
+                                        'value' => $searchValue['dorso_tamano'],
+                                        'compare' => '='                            
+                                    ]
+                            ];
+                            array_push($meta_query, $meta_querytmp);
+                        }     
+                        $meta_query['relation'] = 'OR';
+                        $boolDorsoPlusCruz = true;
+                    }
+                    continue;
                 } else {
+                    //resto de variables
                     $searchValues = $this->$func($variables[$nmVariable]);
                 }
                 $meta_query[] = [
@@ -306,6 +336,159 @@ if (!class_exists('FormularioBuscador')) :
                     break;               
                 default:
                     $arrValores = [3];
+                    break;
+            }
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para linea superior cruz + dorso
+         * @param int $valor
+         * @param string $nmVariable
+         * @return array
+         */
+        private function get_dorso_cruz($lineaSuperior_cruz, $dorso_tamano) {            
+            switch (true) {
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 1):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 2):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        
+                    ];
+                    break;   
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 3):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                    ];
+                    break;   
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 2):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ]
+                    ];
+                    break;  
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 1):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;  
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 3):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 3
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 1
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 3):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 1):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 2):                              
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;
+                default:
+                    $arrValores = 
+                    [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        
+                    ];
                     break;
             }
             return $arrValores;
