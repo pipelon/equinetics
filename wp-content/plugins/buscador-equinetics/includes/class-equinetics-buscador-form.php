@@ -141,9 +141,9 @@ if (!class_exists('FormularioBuscador')) :
             );
             ob_start();
             //echo "<pre>"; print_r($args);echo "</pre>";
-            $res = new WP_Query($args);
-            echo $res->request;
-            //return new WP_Query($args);
+            //$res = new WP_Query($args);
+            //echo $res->request;
+            return new WP_Query($args);
         }
 
         private function getVariables($variables, $mejoras, $selectedCat) {
@@ -154,34 +154,28 @@ if (!class_exists('FormularioBuscador')) :
                 $func = "get_" . $nmVariable;
 
                 //Si las variables dependen de la categoria
-                if($nmVariable == 'espalda_tamano'
-                    || $nmVariable == 'espalda_orientacion'
-                    || $nmVariable == 'movimiento_velocidad'
-                    || $nmVariable == 'movimiento_pisada'
-                    || $nmVariable == 'movimiento_elevacion_posterior'
-                    || $nmVariable == 'movimiento_elevacion_anterior'){
+                if ($nmVariable == 'espalda_tamano' || $nmVariable == 'espalda_orientacion' || $nmVariable == 'movimiento_velocidad' || $nmVariable == 'movimiento_pisada' || $nmVariable == 'movimiento_elevacion_posterior' || $nmVariable == 'movimiento_elevacion_anterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
-                } elseif($nmVariable == 'lineaSuperior_cruz'
-                    || $nmVariable == 'dorso_tamano') {
+                } elseif ($nmVariable == 'lineaSuperior_cruz' || $nmVariable == 'dorso_tamano') {
                     //Caso especial de cruz + dorso
-                    if(!$boolDorsoPlusCruz){
+                    if (!$boolDorsoPlusCruz) {
                         $searchValues = $this->get_dorso_cruz($variables['lineaSuperior_cruz'], $variables['dorso_tamano']);
-                        foreach($searchValues as $searchValue){
+                        foreach ($searchValues as $searchValue) {
                             $meta_querytmp = [
                                 'relation' => 'AND',
-                                    [
-                                        'key' => 'varsara_lineaSuperior_cruz',
-                                        'value' => $searchValue['lineaSuperior_cruz'],
-                                        'compare' => '='                
-                                    ],
-                                    [
-                                        'key' => 'varsara_varsara_dorso_tamano',
-                                        'value' => $searchValue['dorso_tamano'],
-                                        'compare' => '='                            
-                                    ]
+                                [
+                                    'key' => 'varsara_lineaSuperior_cruz',
+                                    'value' => $searchValue['lineaSuperior_cruz'],
+                                    'compare' => '='
+                                ],
+                                [
+                                    'key' => 'varsara_varsara_dorso_tamano',
+                                    'value' => $searchValue['dorso_tamano'],
+                                    'compare' => '='
+                                ]
                             ];
                             array_push($meta_query, $meta_querytmp);
-                        }     
+                        }
                         $meta_query['relation'] = 'OR';
                         $boolDorsoPlusCruz = true;
                     }
@@ -248,7 +242,7 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para balance horizontal
          * @param int $valor
@@ -257,10 +251,10 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_balance_horizontal($valor) {
             switch ($valor) {
-                case 1:                
+                case 1:
                     $arrValores = [3];
                     break;
-                case 2:                
+                case 2:
                     $arrValores = [3, 2];
                     break;
                 case 3:
@@ -272,7 +266,7 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para linea superior pecho
          * @param int $valor
@@ -282,7 +276,7 @@ if (!class_exists('FormularioBuscador')) :
         private function get_lineaSuperior_pecho($valor) {
             switch ($valor) {
                 case 1:
-                case 3:               
+                case 3:
                     $arrValores = [3];
                     break;
                 case 2:
@@ -294,16 +288,16 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para linea superior longitud cuello
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_lineaSuperior_longitud_cuello($valor) {            
+        private function get_lineaSuperior_longitud_cuello($valor) {
             switch ($valor) {
-                case 1:                               
+                case 1:
                     $arrValores = [3];
                     break;
                 case 2:
@@ -318,22 +312,22 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para linea superior longitud cuello
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_lineaSuperior_cabeza($valor) {            
+        private function get_lineaSuperior_cabeza($valor) {
             switch ($valor) {
-                case 1:     
-                case 3:                          
+                case 1:
+                case 3:
                     $arrValores = [3];
                     break;
                 case 2:
                     $arrValores = [3, 2];
-                    break;               
+                    break;
                 default:
                     $arrValores = [3];
                     break;
@@ -347,11 +341,10 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_dorso_cruz($lineaSuperior_cruz, $dorso_tamano) {            
+        private function get_dorso_cruz($lineaSuperior_cruz, $dorso_tamano) {
             switch (true) {
-                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 1):                              
-                    $arrValores = 
-                    [
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 1):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 1,
                             'dorso_tamano' => 1
@@ -360,12 +353,10 @@ if (!class_exists('FormularioBuscador')) :
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
                         ],
-                        
                     ];
                     break;
-                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 2):                              
-                    $arrValores = 
-                    [
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 2):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 1,
                             'dorso_tamano' => 2
@@ -374,12 +365,10 @@ if (!class_exists('FormularioBuscador')) :
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
                         ],
-                        
                     ];
-                    break;   
-                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 3):                              
-                    $arrValores = 
-                    [
+                    break;
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 3):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 3,
                             'dorso_tamano' => 2
@@ -393,19 +382,17 @@ if (!class_exists('FormularioBuscador')) :
                             'dorso_tamano' => 1
                         ],
                     ];
-                    break;   
-                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 2):                              
-                    $arrValores = 
-                    [
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 2):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
                         ]
                     ];
-                    break;  
-                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 1):                              
-                    $arrValores = 
-                    [
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 1):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
@@ -419,10 +406,9 @@ if (!class_exists('FormularioBuscador')) :
                             'dorso_tamano' => 3
                         ]
                     ];
-                    break;  
-                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 3):                              
-                    $arrValores = 
-                    [
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 3):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
@@ -437,9 +423,8 @@ if (!class_exists('FormularioBuscador')) :
                         ]
                     ];
                     break;
-                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 3):                              
-                    $arrValores = 
-                    [
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 3):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 3,
                             'dorso_tamano' => 3
@@ -450,9 +435,8 @@ if (!class_exists('FormularioBuscador')) :
                         ]
                     ];
                     break;
-                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 1):                              
-                    $arrValores = 
-                    [
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 1):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
@@ -463,9 +447,8 @@ if (!class_exists('FormularioBuscador')) :
                         ]
                     ];
                     break;
-                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 2):                              
-                    $arrValores = 
-                    [
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 2):
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
@@ -477,8 +460,7 @@ if (!class_exists('FormularioBuscador')) :
                     ];
                     break;
                 default:
-                    $arrValores = 
-                    [
+                    $arrValores = [
                         [
                             'lineaSuperior_cruz' => 1,
                             'dorso_tamano' => 1
@@ -487,20 +469,19 @@ if (!class_exists('FormularioBuscador')) :
                             'lineaSuperior_cruz' => 2,
                             'dorso_tamano' => 2
                         ],
-                        
                     ];
                     break;
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para aplomos
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_aplomos_anteriores_frente($valor) {            
+        private function get_aplomos_anteriores_frente($valor) {
             switch ($valor) {
                 case 1:
                 case 2:
@@ -511,14 +492,14 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para aplomos
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_aplomos_anteriores_lateralmente($valor) {            
+        private function get_aplomos_anteriores_lateralmente($valor) {
             switch ($valor) {
                 case 1:
                 case 2:
@@ -529,14 +510,14 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para aplomos
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_aplomos_posteriores_atras($valor) {            
+        private function get_aplomos_posteriores_atras($valor) {
             switch ($valor) {
                 case 1:
                 case 2:
@@ -547,14 +528,14 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para aplomos
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_aplomos_posteriores_lateralmente($valor) {            
+        private function get_aplomos_posteriores_lateralmente($valor) {
             switch ($valor) {
                 case 1:
                 case 2:
@@ -565,31 +546,30 @@ if (!class_exists('FormularioBuscador')) :
             }
             return $arrValores;
         }
-        
+
         /**
          * Funcion encargada de buscar ejemplares para la estatura
          * @param int $valor
          * @param string $nmVariable
          * @return array
          */
-        private function get_alzada_estatura($valor) {            
+        private function get_alzada_estatura($valor) {
             switch ($valor) {
-                case 1:                          
+                case 1:
                     $arrValores = [3, 2];
                     break;
                 case 2:
                     $arrValores = [3];
-                    break;   
+                    break;
                 case 3:
                     $arrValores = [2, 1];
-                    break;             
+                    break;
                 default:
                     $arrValores = [3, 2];
                     break;
             }
             return $arrValores;
-        }        
-
+        }
 
         /**
          * Funcion encargada de buscar ejemplares para la morfometria
@@ -597,15 +577,15 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cana_anterior($valor) {            
+        private function get_morfometria_cana_anterior($valor) {
             switch ($valor) {
-                case 1:   
-                case 2:                      
+                case 1:
+                case 2:
                     $arrValores = [1, 2];
                     break;
                 case 3:
                     $arrValores = [1];
-                    break;             
+                    break;
                 default:
                     $arrValores = [1, 2];
                     break;
@@ -619,15 +599,15 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cuartilla_anterior($valor) {            
+        private function get_morfometria_cuartilla_anterior($valor) {
             switch ($valor) {
-                case 1:              
+                case 1:
                     $arrValores = [1, 2];
                     break;
                 case 2:
                 case 3:
                     $arrValores = [1];
-                    break;             
+                    break;
                 default:
                     $arrValores = [1, 2];
                     break;
@@ -641,15 +621,15 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_femur($valor) {            
+        private function get_morfometria_femur($valor) {
             switch ($valor) {
                 case 1:
-                case 3:              
+                case 3:
                     $arrValores = [3];
                     break;
-                case 2:                
+                case 2:
                     $arrValores = [3, 2];
-                    break;             
+                    break;
                 default:
                     $arrValores = [3];
                     break;
@@ -663,15 +643,15 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cana_posterior($valor) {            
+        private function get_morfometria_cana_posterior($valor) {
             switch ($valor) {
                 case 1:
-                case 2:              
+                case 2:
                     $arrValores = [1, 2];
                     break;
-                case 3:                
+                case 3:
                     $arrValores = [1];
-                    break;             
+                    break;
                 default:
                     $arrValores = [1, 2];
                     break;
@@ -685,15 +665,15 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cuartilla_posterior($valor) {            
+        private function get_morfometria_cuartilla_posterior($valor) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = [1, 2];
                     break;
                 case 2:
-                case 3:                
+                case 3:
                     $arrValores = [1];
-                    break;             
+                    break;
                 default:
                     $arrValores = [1, 2];
                     break;
@@ -707,17 +687,17 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_espalda_orientacion($valor, $category) {            
+        private function get_espalda_orientacion($valor, $category) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = $category == '46' ? [1] : [3];
                     break;
-                case 2:                               
+                case 2:
                     $arrValores = $category == '46' ? [1, 2] : [3, 2];
-                    break;   
-                case 3:                               
+                    break;
+                case 3:
                     $arrValores = $category == '46' ? [1] : [3, 2];
-                    break;          
+                    break;
                 default:
                     $arrValores = [1];
                     break;
@@ -731,17 +711,17 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_movimiento_velocidad($valor, $category) {            
+        private function get_movimiento_velocidad($valor, $category) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = $category == '49' ? [1, 2] : [3];
                     break;
-                case 2:                               
+                case 2:
                     $arrValores = $category == '49' ? [1, 2] : [3, 2];
-                    break;   
-                case 3:                               
+                    break;
+                case 3:
                     $arrValores = $category == '49' ? [1] : [3];
-                    break;          
+                    break;
                 default:
                     $arrValores = [1];
                     break;
@@ -755,17 +735,17 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_movimiento_elevacion_anterior($valor, $category) {            
+        private function get_movimiento_elevacion_anterior($valor, $category) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = $category == '46' ? [1, 2] : [3];
                     break;
-                case 2:                               
+                case 2:
                     $arrValores = $category == '46' ? [2, 1] : [3, 2];
-                    break;   
-                case 3:                               
+                    break;
+                case 3:
                     $arrValores = $category == '46' ? [1] : [3];
-                    break;          
+                    break;
                 default:
                     $arrValores = [1];
                     break;
@@ -779,17 +759,17 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_movimiento_elevacion_posterior($valor, $category) {            
+        private function get_movimiento_elevacion_posterior($valor, $category) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = $category == '46' ? [3, 2] : [3];
                     break;
-                case 2:                               
+                case 2:
                     $arrValores = $category == '46' ? [2] : [3, 2];
-                    break;   
-                case 3:                               
+                    break;
+                case 3:
                     $arrValores = $category == '46' ? [1, 2] : [3, 2];
-                    break;          
+                    break;
                 default:
                     $arrValores = [1];
                     break;
@@ -803,17 +783,17 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_movimiento_pisada($valor, $category) {            
+        private function get_movimiento_pisada($valor, $category) {
             switch ($valor) {
-                case 1:                              
+                case 1:
                     $arrValores = $category == '46' ? [3] : [3];
                     break;
-                case 2:                               
+                case 2:
                     $arrValores = $category == '46' ? [3, 2] : [3, 2];
-                    break;   
-                case 3:                               
+                    break;
+                case 3:
                     $arrValores = $category == '46' ? [2, 3] : [2, 3];
-                    break;          
+                    break;
                 default:
                     $arrValores = [1];
                     break;
@@ -821,6 +801,12 @@ if (!class_exists('FormularioBuscador')) :
             return $arrValores;
         }
 
-    }        
+    }
+
+    
+
+    
+
+            
 
 endif;
