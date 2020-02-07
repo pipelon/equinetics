@@ -1588,7 +1588,7 @@
                         <div class="vc_tta-panel-body" style="">
                             <div class="wpb_text_column wpb_content_element ">
                                 <div class="wpb_wrapper chksmejoras">
-                                    <p>*Seleccione 6 características.</p>
+                                    <p>*Seleccione máximo 6 características en el orden de prioridad de mejoramiento.</p>
                                     <div class="row margin-space well">
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
@@ -1599,6 +1599,7 @@
                                                        value="chk_geometria_figura"
                                                        <?= isset($_POST['chk']['chk_geometria_figura']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_geometria_figura">Figura</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
@@ -1610,90 +1611,105 @@
                                                        value="chk_geometria_orientacion"
                                                        <?= isset($_POST['chk']['chk_geometria_orientacion']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_geometria_orientacion">Orientación</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_balance_horizontal" name="chk[chk_balance_horizontal]" value="chk_balance_horizontal" <?= isset($_POST['chk']['chk_balance_horizontal']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_balance_horizontal">Balance horizontal</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_balance_vertical" name="chk[chk_balance_vertical]" value="chk_balance_vertical" <?= isset($_POST['chk']['chk_balance_vertical']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_balance_vertical">Balance vertical</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_espalda_tamano" name="chk[chk_espalda_tamano]" value="chk_espalda_tamano" <?= isset($_POST['chk']['chk_espalda_tamano']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_espalda_tamano">Tamaño espalda</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_espalda_orientacion" name="chk[chk_espalda_orientacion]" value="chk_espalda_orientacion" <?= isset($_POST['chk']['chk_espalda_orientacion']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_espalda_orientacion">Orientación espalda</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_dorso_tamano" name="chk[chk_dorso_tamano]" value="chk_dorso_tamano" <?= isset($_POST['chk']['chk_dorso_tamano']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_dorso_tamano">Tamaño Dorso</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?= isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_grupa_tamano" name="chk[chk_grupa_tamano]" value="chk_grupa_tamano" <?= isset($_POST['chk']['chk_grupa_tamano']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_grupa_tamano">Tamaño grupa</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_grupa_orientacion" name="chk[chk_grupa_orientacion]" value="chk_grupa_orientacion" <?= isset($_POST['chk']['chk_grupa_orientacion']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_grupa_orientacion">Orientación grupa</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_grupa_amplitud" name="chk[chk_grupa_amplitud]" value="chk_grupa_amplitud" <?= isset($_POST['chk']['chk_grupa_amplitud']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_grupa_amplitud">Amplitud grupa</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_alzada_estatura" name="chk[chk_alzada_estatura]" value="chk_alzada_estatura" <?= isset($_POST['chk']['chk_alzada_estatura']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_alzada_estatura">Alzada</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($_POST['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_anteriores_frente">Aplomos anteriores (frente)</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Aplomos anteriores (lateralmente)</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($_POST['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_posteriores_atras">Aplomos posteriores (atrás)</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Aplomos posteriores (lateralmente)</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         
@@ -1705,30 +1721,35 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cabeza" name="chk[chk_lineaSuperior_cabeza]" value="chk_lineaSuperior_cabeza" <?= isset($_POST['chk']['chk_lineaSuperior_cabeza']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_cabeza">Cabeza</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_longitud_cuello" name="chk[chk_lineaSuperior_longitud_cuello]" value="chk_lineaSuperior_longitud_cuello" <?= isset($_POST['chk']['chk_lineaSuperior_longitud_cuello']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_longitud_cuello">Longitud cuello</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?= isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cruz" name="chk[chk_lineaSuperior_cruz]" value="chk_lineaSuperior_cruz" <?= isset($_POST['chk']['chk_lineaSuperior_cruz']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_cruz">Cruz</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_pecho" name="chk[chk_lineaSuperior_pecho]" value="chk_lineaSuperior_pecho" <?= isset($_POST['chk']['chk_lineaSuperior_pecho']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_pecho">Pecho</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                     </div>
@@ -1738,30 +1759,34 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_anterior" name="chk[chk_morfometria_cana_anterior]" value="chk_morfometria_cana_anterior" <?= isset($_POST['chk']['chk_morfometria_cana_anterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_morfometria_cana_anterior">Caña anterior</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_morfometria_cuartilla_anterior" name="chk[chk_morfometria_cuartilla_anterior]" value="chk_morfometria_cuartilla_anterior" <?= isset($_POST['chk']['chk_morfometria_cuartilla_anterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_morfometria_cuartilla_anterior">Cuartilla anterior</label>
+                                                <label class="form-check-label" for="chk_morfometria_cuartilla_anterior">Cuartilla anterior</label><span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_morfometria_femur" name="chk[chk_morfometria_femur]" value="chk_morfometria_femur" <?= isset($_POST['chk']['chk_morfometria_femur']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_morfometria_femur">Fémur</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_posterior" name="chk[chk_cana_posterior]" value="chk_morfometria_cana_posterior" <?= isset($_POST['chk']['chk_morfometria_cana_posterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_morfometria_cana_posterior">Caña posterior</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_morfometria_cuartilla_posterior" name="chk[chk_morfometria_cuartilla_posterior]" value="chk_morfometria_cuartilla_posterior" <?= isset($_POST['chk']['chk_morfometria_cuartilla_posterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_morfometria_cuartilla_posterior">Cuartilla posterior</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                     </div>
@@ -1771,42 +1796,49 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_velocidad" name="chk[chk_movimiento_velocidad]" value="chk_movimiento_velocidad" <?= isset($_POST['chk']['chk_movimiento_velocidad']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_velocidad">Velocidad</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_elevacion_anterior" name="chk[chk_movimiento_elevacion_anterior]" value="chk_movimiento_elevacion_anterior" <?= isset($_POST['chk']['chk_movimiento_elevacion_anterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elevacion_anterior">Elevación anterior</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_elevacion_posterior" name="chk[chk_movimiento_elevacion_posterior]" value="chk_movimiento_elevacion_posterior" <?= isset($_POST['chk']['chk_movimiento_elevacion_posterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elevacion_posterior">Elevacion posterior</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_pisada" name="chk[chk_movimiento_pisada]" value="chk_movimiento_pisada" <?= isset($_POST['chk']['chk_movimiento_pisada']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pisada">Pisada</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?= isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?= isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_compensacion" name="chk[chk_movimiento_compensacion]" value="chk_movimiento_compensacion" <?= isset($_POST['chk']['chk_movimiento_compensacion']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_compensacion">Compensación</label>
+                                                <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
                                     </div>
@@ -1848,29 +1880,72 @@
         </div>
     </div>
     <!-- FIN FORM SOFTWARE -->
+    <input type="hidden" name="priority" id="priority" />
 
 </form>
 <!-- FIN FORM SOFTWARE -->
 
-<?php if (isset($_POST) && isset($products) && $products->have_posts()) : ?>
+<?php if (isset($_POST) && ((isset($products) && $products->have_posts()) || (isset($products90) && $products90->have_posts()) || (isset($products80) && $products80->have_posts()))) : ?>
     <span id="hr-search-results-eq"></span>
-    <hr />
-    <p class="text-center" style="margin: 50px 0 0 0;">
-        Los siguientes resultados se basan en <b>(<?= $countVars; ?>)</b> criterios entre 
-        los <b>58</b> criterios disponibles.
-    </p>
+    <hr />    
     <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Resultados encontrados</h3>
 
     <div id="search-results-eq">
-        <?php woocommerce_product_loop_start(); ?>
 
-        <?php while ($products->have_posts()) : $products->the_post(); ?>
+        <?php if((int)$products->found_posts > 0) : ?>
+            <div class="fullresult">
+                <p class="text-center" style="padding: 10px 0;">
+                    Los siguientes resultados se basan en las solicitudes de mejora de: 
+                    <span class="variables_resultados"></span>.
+                </p>
+                <?php woocommerce_product_loop_start(); ?>
 
-            <?php wc_get_template_part('content', 'product'); ?>
+                <?php while ($products->have_posts()) : $products->the_post(); ?>
 
-        <?php endwhile; // end of the loop.                                                          ?>
+                    <?php wc_get_template_part('content', 'product'); ?>
 
-        <?php woocommerce_product_loop_end(); ?>
+                <?php endwhile; // end of the loop.                                                          ?>
+
+                <?php woocommerce_product_loop_end(); ?>
+            </div>
+        <?php endif; ?>
+    
+        <?php if((int)$products90->found_posts > 0) : ?>
+            <div class="result90">
+                <p class="text-center" style="padding: 10px 0;">
+                    Los siguientes resultados se basan en las solicitudes de mejora de: 
+                    <span class="variables_resultados_90"></span>.
+                </p>
+                <?php woocommerce_product_loop_start(); ?>
+
+                <?php while ($products90->have_posts()) : $products90->the_post(); ?>
+
+                    <?php wc_get_template_part('content', 'product'); ?>
+
+                <?php endwhile; // end of the loop.                                                          ?>
+
+                <?php woocommerce_product_loop_end(); ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if((int)$products80->found_posts > 0) : ?>
+            <div class="result80">
+                <p class="text-center" style="padding: 10px 0;">
+                    Los siguientes resultados se basan en las solicitudes de mejora de: 
+                    <span class="variables_resultados_80"></span>.
+                </p>
+                <?php woocommerce_product_loop_start(); ?>
+
+                <?php while ($products80->have_posts()) : $products80->the_post(); ?>
+
+                    <?php wc_get_template_part('content', 'product'); ?>
+
+                <?php endwhile; // end of the loop.                                                          ?>
+
+                <?php woocommerce_product_loop_end(); ?>
+            </div>
+        <?php endif; ?>
+
     </div>
 <?php endif; ?>
 
@@ -1906,6 +1981,8 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
             });
         }
     })(jQuery);
+
+    var selectedImprovements = [];
 
     jQuery('#selectedYegua').change(function () {
         if (jQuery(this).val() != "") {
@@ -2009,6 +2086,10 @@ Por favor revise la información suministrada.');
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
         if (numberOfChecked > 6) {
             jQuery(this).prop('checked', false);
+            selectedImprovements.splice(selectedImprovements.indexOf(jQuery(this).attr('id')), 1);
+            jQuery(this).siblings(".prioridad").html("");
+            jQuery(this).parent(".form-check.form-check-inline").removeClass("haspriority");
+            jQuery(this).siblings(".prioridad").removeClass("haspriority");
             alert('Solo puedes seleccionar 6 variables');
         }
     });
@@ -2019,5 +2100,65 @@ Por favor revise la información suministrada.');
             }, 2000);
         }, 1000);
 <?php endif; ?>
+
+        /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */   
+
+        jQuery(document).ready (function (){
+            jQuery("input[type='checkbox']").each(function (){
+                if(jQuery(this).is(":checked")){
+                    selectedImprovements.push(jQuery(this).attr('id'));
+                }
+                setPriority();
+            });
+
+            var chkSelected = jQuery("#priority").val().split(",");            
+            var varchkSelected = []
+            jQuery.each( chkSelected, function (i, val){
+				varchkSelected.push(jQuery("label[for='" + val + "']").text());
+            });
+            jQuery(".variables_resultados").text(varchkSelected.join());
+
+            <?php if(!empty($lblpriority90)): ?>
+                var chkSelected90 = "<?php echo $lblpriority90; ?>".split(",");            
+                var varchkSelected90 = []
+                jQuery.each( chkSelected90, function (i, val){
+                    varchkSelected90.push(jQuery("label[for='" + val + "']").text());
+                });
+                jQuery(".variables_resultados_90").text(varchkSelected90.join(', '));
+            <?php endif; ?>
+
+            <?php if(!empty($lblpriority80)): ?>
+                var chkSelected80 = "<?php echo $lblpriority80; ?>".split(",");
+                var varchkSelected80 = []
+                jQuery.each( chkSelected80, function (i, val){
+                    varchkSelected80.push(jQuery("label[for='" + val + "']").text());
+                });
+                jQuery(".variables_resultados_80").text(varchkSelected80.join(', '));
+            <?php endif; ?>
+
+        });   
+		
+		jQuery("input[type='checkbox']").click(function (){
+
+			if(jQuery(this).is(":checked")){
+				selectedImprovements.push(jQuery(this).attr('id'));				
+			} else {
+				selectedImprovements.splice(selectedImprovements.indexOf(jQuery(this).attr('id')), 1);
+			}
+            setPriority();
+		});
+
+        function setPriority(){
+            jQuery(".prioridad").html("");
+			jQuery(".prioridad").removeClass("haspriority");
+			jQuery(".form-check.form-check-inline").removeClass("haspriority");
+			jQuery.each( selectedImprovements, function (i, val){
+				let prioridad = i + 1;
+				jQuery("#" + val).siblings(".prioridad").html(prioridad);
+				jQuery("#" + val).parent(".form-check.form-check-inline").addClass("haspriority");
+				jQuery("#" + val).siblings(".prioridad").addClass("haspriority");
+			});
+            jQuery("#priority").val(selectedImprovements.join());
+        }
 
 </script>
