@@ -1880,7 +1880,7 @@
         </div>
     </div>
     <!-- FIN FORM SOFTWARE -->
-    <input type="hidden" name="priority" id="priority" />
+    <input type="hidden" name="priority" id="priority" value="<?= isset($_POST['priority']) ? $_POST['priority'] : ''; ?>" />
 
 </form>
 <!-- FIN FORM SOFTWARE -->
@@ -1947,6 +1947,11 @@
         <?php endif; ?>
 
     </div>
+<?php else: ?>
+    <span id="hr-search-results-eq"></span>
+    <hr />    
+    <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Resultados encontrados</h3>
+    <p style="margin-bottom: 50px;">No se encontraron ejemplares compatibles con las tipificaciones de su Yegua.</p>
 <?php endif; ?>
 
 <?php
@@ -2104,19 +2109,24 @@ Por favor revise la información suministrada.');
         /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */   
 
         jQuery(document).ready (function (){
-            jQuery("input[type='checkbox']").each(function (){
-                if(jQuery(this).is(":checked")){
-                    selectedImprovements.push(jQuery(this).attr('id'));
+
+            var prioritySelected = jQuery("#priority").val().split(",");
+            console.info(prioritySelected);
+            jQuery.each( prioritySelected, function (i, val) {
+                if(jQuery("#" + val).is(":checked")){
+                    selectedImprovements.push(jQuery("#" + val).attr('id'));
                 }
                 setPriority();
             });
 
-            var chkSelected = jQuery("#priority").val().split(",");            
-            var varchkSelected = []
-            jQuery.each( chkSelected, function (i, val){
-				varchkSelected.push(jQuery("label[for='" + val + "']").text());
-            });
-            jQuery(".variables_resultados").text(varchkSelected.join());
+            <?php if(!empty($lblpriority)): ?>
+                var chkSelected = "<?php echo $lblpriority; ?>".split(",");            
+                var varchkSelected = []
+                jQuery.each( chkSelected, function (i, val){
+                    varchkSelected.push(jQuery("label[for='" + val + "']").text());
+                });
+                jQuery(".variables_resultados").text(varchkSelected.join(', '));
+            <?php endif; ?>
 
             <?php if(!empty($lblpriority90)): ?>
                 var chkSelected90 = "<?php echo $lblpriority90; ?>".split(",");            
@@ -2139,7 +2149,6 @@ Por favor revise la información suministrada.');
         });   
 		
 		jQuery("input[type='checkbox']").click(function (){
-
 			if(jQuery(this).is(":checked")){
 				selectedImprovements.push(jQuery(this).attr('id'));				
 			} else {
