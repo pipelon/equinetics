@@ -1889,8 +1889,8 @@ h1{
     text-align: center;
 }
 .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
-	width: max-content !important;
-	margin: 0 auto !important;
+    width: max-content !important;
+    margin: 0 auto !important;
 }
 #search-results-eq ul.products li.product.first{
     clear: none;
@@ -1924,34 +1924,34 @@ h1{
     #portfoliolist .portfolio .bottom-pp .text-category {
         line-height: 15px;
     }
-	#portfoliolist .portfolio.p5w, 
-	#portfoliolist .portfolio.p3w, 
-	#portfoliolist .portfolio.p3, 
-	#portfoliolist .portfolio.p2, 
-	#portfoliolist .portfolio.p4, 
-	#portfoliolist .portfolio, 
-	#portfoliolist .portfolio.p4w, 
-	#portfoliolist .portfolio.p3.nospace, 
-	#portfoliolist .portfolio.p2.nospace, 
-	#portfoliolist .portfolio.p4.nospace, 
-	#portfoliolist .portfolio, 
-	#portfoliolist .portfolio.p4w.nospace, 
-	#portfoliolist .portfolio.p5w.nospace, 
-	#portfoliolist .portfolio.p3w.nospace {
-		width: 47%;
+    #portfoliolist .portfolio.p5w, 
+    #portfoliolist .portfolio.p3w, 
+    #portfoliolist .portfolio.p3, 
+    #portfoliolist .portfolio.p2, 
+    #portfoliolist .portfolio.p4, 
+    #portfoliolist .portfolio, 
+    #portfoliolist .portfolio.p4w, 
+    #portfoliolist .portfolio.p3.nospace, 
+    #portfoliolist .portfolio.p2.nospace, 
+    #portfoliolist .portfolio.p4.nospace, 
+    #portfoliolist .portfolio, 
+    #portfoliolist .portfolio.p4w.nospace, 
+    #portfoliolist .portfolio.p5w.nospace, 
+    #portfoliolist .portfolio.p3w.nospace {
+        width: 47%;
         margin: 1%;
         min-height: 260px;
-	}
-	.tab-caracteristicas .chartsara_container{
-		width: auto;
-		margin: 5px;
-	}
-	.tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
-		width: 100% !important;
-	}	
-	.tituvarsara{
-		font-size: 12px !important;
-	}
+    }
+    .tab-caracteristicas .chartsara_container{
+        width: auto;
+        margin: 5px;
+    }
+    .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
+        width: 100% !important;
+    }	
+    .tituvarsara{
+        font-size: 12px !important;
+    }
     .tab-caracteristicas .vc_tta-panels .vc_tta-panel .vc_tta-panel-heading{
         background-color: #eaeaea;        
         text-align: center !important;
@@ -2062,11 +2062,11 @@ h1{
         position: relative; 
         float: left;
     }
-/*    .woocommerce ul.products li.product, 
-    .woocommerce-page ul.products li.product{
-        width: auto !important;
-        float: none !important;
-    }*/
+    /*    .woocommerce ul.products li.product, 
+        .woocommerce-page ul.products li.product{
+            width: auto !important;
+            float: none !important;
+        }*/
     body.single-product .woocommerce-product-rating > div{        
         min-height: 230px;
         width: 80%; 
@@ -2392,5 +2392,8 @@ h1{
     form.buscadr .divVariable input,
     form.buscadr .valores{
         width: 100%;
+    }
+    .h3subtitu::after{
+        width: 100% !important;
     }
 }
