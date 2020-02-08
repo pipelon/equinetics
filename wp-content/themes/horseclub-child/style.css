@@ -1908,13 +1908,17 @@ h1{
     background: var(--eqcolor);
 }
 .fullresult{
-    background: green;
+    background: #dcf7cd;
+    border-radius: 5px;
+    border: 1px solid #b9e2ba;
 }
-.result90{
-    background: red;
-}
+.result90,
 .result80{
-    background: blue;
+    background: #f5f8f9;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    float: left;
+    margin: 10px 0;
 }
 .variables_resultados,
 .variables_resultados_80,

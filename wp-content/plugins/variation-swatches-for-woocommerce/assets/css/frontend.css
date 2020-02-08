@@ -44,6 +44,7 @@
 .tawcvs-swatches .swatch-color {
 	text-indent: -9999px;
 	border: 2px solid #ccc;
+	position: relative;
 }
 
 .tawcvs-swatches .swatch-color.selected {
@@ -71,4 +72,58 @@
 
 .tawcvs-swatches .swatch-image {
 	overflow: hidden;
+}
+
+
+/*--------*/
+.tawcvs-swatches .swatch{
+	opacity: 1;
+}
+.tawcvs-swatches .swatch-color {
+	position: relative;
+}
+.tawcvs-swatches .cv-tooltip {
+    position: absolute;
+    background: #444;
+    z-index: 2;
+    width: 110px;
+    bottom: 43px;
+    color: #fff;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-indent: initial;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 5px;
+    border-radius: 3px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+}
+.tawcvs-swatches .cv-tooltip:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #444;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -6px;
+    transform: rotate(45deg);
+}
+.swatch:hover .cv-tooltip {
+	opacity: 1;
+	visibility: visible;
+}
+.tawcvs-swatches,
+.variations{
+	overflow: visible;
+}
+
+.tawcvs-swatches .swatch-image {
+    overflow: visible;
+}
+.tawcvs-swatches .swatch-image img {
+    border-radius: 100%;
 }

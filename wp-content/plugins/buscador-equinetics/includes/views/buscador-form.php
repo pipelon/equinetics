@@ -252,7 +252,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['geometria_figura']) && $_POST['var']['geometria_figura']!== '0' ?
+                                                            isset($_POST['var']['geometria_figura']) && $_POST['var']['geometria_figura'] !== '0' ?
                                                                     $_POST['var']['geometria_figura'] : "-";
                                                             ?>
                                                         </span>
@@ -355,7 +355,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_horizontal']) && $_POST['var']['balance_horizontal']!== '0' ?
+                                                            isset($_POST['var']['balance_horizontal']) && $_POST['var']['balance_horizontal'] !== '0' ?
                                                                     $_POST['var']['balance_horizontal'] : "-"
                                                             ?>
                                                         </span>
@@ -381,7 +381,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_vertical']) && $_POST['var']['balance_vertical']!== '0' ?
+                                                            isset($_POST['var']['balance_vertical']) && $_POST['var']['balance_vertical'] !== '0' ?
                                                                     $_POST['var']['balance_vertical'] : "-"
                                                             ?>
                                                         </span>
@@ -457,7 +457,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cabeza']) && $_POST['var']['lineaSuperior_cabeza']!== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_cabeza']) && $_POST['var']['lineaSuperior_cabeza'] !== '0' ?
                                                                     $_POST['var']['lineaSuperior_cabeza'] : "-"
                                                             ?>
                                                         </span>
@@ -483,7 +483,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) && $_POST['var']['lineaSuperior_longitud_cuello']!== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) && $_POST['var']['lineaSuperior_longitud_cuello'] !== '0' ?
                                                                     $_POST['var']['lineaSuperior_longitud_cuello'] : "-"
                                                             ?>
                                                         </span>
@@ -509,7 +509,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello']!== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '0' ?
                                                                     $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"
                                                             ?>
                                                         </span>
@@ -535,7 +535,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz']!== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz'] !== '0' ?
                                                                     $_POST['var']['lineaSuperior_cruz'] : "-"
                                                             ?>
                                                         </span>
@@ -561,7 +561,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_pecho']) && $_POST['var']['lineaSuperior_pecho']!== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_pecho']) && $_POST['var']['lineaSuperior_pecho'] !== '0' ?
                                                                     $_POST['var']['lineaSuperior_pecho'] : "-"
                                                             ?>
                                                         </span>
@@ -637,7 +637,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_tamano']) && $_POST['var']['espalda_tamano']!== '0' ?
+                                                            isset($_POST['var']['espalda_tamano']) && $_POST['var']['espalda_tamano'] !== '0' ?
                                                                     $_POST['var']['espalda_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -663,7 +663,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_orientacion']) && $_POST['var']['espalda_orientacion']!== '0' ?
+                                                            isset($_POST['var']['espalda_orientacion']) && $_POST['var']['espalda_orientacion'] !== '0' ?
                                                                     $_POST['var']['espalda_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -740,7 +740,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['dorso_tamano']) && $_POST['var']['dorso_tamano']!== '0' ?
+                                                            isset($_POST['var']['dorso_tamano']) && $_POST['var']['dorso_tamano'] !== '0' ?
                                                                     $_POST['var']['dorso_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -765,7 +765,10 @@
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?= isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "-" ?>
+                                                            <?=
+                                                            isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '0' ?
+                                                                    $_POST['var']['dorso_linea'] : "-"
+                                                            ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Valor máximo
@@ -839,7 +842,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_tamano']) && $_POST['var']['grupa_tamano']!== '0' ?
+                                                            isset($_POST['var']['grupa_tamano']) && $_POST['var']['grupa_tamano'] !== '0' ?
                                                                     $_POST['var']['grupa_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -865,7 +868,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_orientacion']) && $_POST['var']['grupa_orientacion']!== '0' ?
+                                                            isset($_POST['var']['grupa_orientacion']) && $_POST['var']['grupa_orientacion'] !== '0' ?
                                                                     $_POST['var']['grupa_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -891,7 +894,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_amplitud']) && $_POST['var']['grupa_amplitud']!== '0' ?
+                                                            isset($_POST['var']['grupa_amplitud']) && $_POST['var']['grupa_amplitud'] !== '0' ?
                                                                     $_POST['var']['grupa_amplitud'] : "-"
                                                             ?>
                                                         </span>
@@ -967,7 +970,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_frente']) && $_POST['var']['aplomos_anteriores_frente']!== '0' ?
+                                                            isset($_POST['var']['aplomos_anteriores_frente']) && $_POST['var']['aplomos_anteriores_frente'] !== '0' ?
                                                                     $_POST['var']['aplomos_anteriores_frente'] : "-"
                                                             ?>
                                                         </span>
@@ -993,7 +996,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) && $_POST['var']['aplomos_anteriores_lateralmente']!== '0' ?
+                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) && $_POST['var']['aplomos_anteriores_lateralmente'] !== '0' ?
                                                                     $_POST['var']['aplomos_anteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1019,7 +1022,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_atras']) && $_POST['var']['aplomos_posteriores_atras']!== '0' ?
+                                                            isset($_POST['var']['aplomos_posteriores_atras']) && $_POST['var']['aplomos_posteriores_atras'] !== '0' ?
                                                                     $_POST['var']['aplomos_posteriores_atras'] : "-"
                                                             ?>
                                                         </span>
@@ -1045,7 +1048,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) && $_POST['var']['aplomos_posteriores_lateralmente']!== '0' ?
+                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) && $_POST['var']['aplomos_posteriores_lateralmente'] !== '0' ?
                                                                     $_POST['var']['aplomos_posteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1121,7 +1124,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['alzada_estatura']) && $_POST['var']['alzada_estatura']!== '0' ?
+                                                            isset($_POST['var']['alzada_estatura']) && $_POST['var']['alzada_estatura'] !== '0' ?
                                                                     $_POST['var']['alzada_estatura'] : "-"
                                                             ?>
                                                         </span>
@@ -1197,7 +1200,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_anterior']) && $_POST['var']['morfometria_cana_anterior']!== '0' ?
+                                                            isset($_POST['var']['morfometria_cana_anterior']) && $_POST['var']['morfometria_cana_anterior'] !== '0' ?
                                                                     $_POST['var']['morfometria_cana_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1224,7 +1227,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) && $_POST['var']['morfometria_cuartilla_anterior']!== '0' ?
+                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) && $_POST['var']['morfometria_cuartilla_anterior'] !== '0' ?
                                                                     $_POST['var']['morfometria_cuartilla_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1250,7 +1253,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_femur']) && $_POST['var']['morfometria_femur']!== '0' ?
+                                                            isset($_POST['var']['morfometria_femur']) && $_POST['var']['morfometria_femur'] !== '0' ?
                                                                     $_POST['var']['morfometria_femur'] : "-"
                                                             ?>
                                                         </span>
@@ -1276,7 +1279,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_posterior']) && $_POST['var']['morfometria_cana_posterior']!== '0' ?
+                                                            isset($_POST['var']['morfometria_cana_posterior']) && $_POST['var']['morfometria_cana_posterior'] !== '0' ?
                                                                     $_POST['var']['morfometria_cana_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1302,7 +1305,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) && $_POST['var']['morfometria_cuartilla_posterior']!== '0' ?
+                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) && $_POST['var']['morfometria_cuartilla_posterior'] !== '0' ?
                                                                     $_POST['var']['morfometria_cuartilla_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1378,7 +1381,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_velocidad']) && $_POST['var']['movimiento_velocidad']!== '0' ?
+                                                            isset($_POST['var']['movimiento_velocidad']) && $_POST['var']['movimiento_velocidad'] !== '0' ?
                                                                     $_POST['var']['movimiento_velocidad'] : "-"
                                                             ?>
                                                         </span>
@@ -1404,7 +1407,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_anterior']) && $_POST['var']['movimiento_elevacion_anterior']!== '0' ?
+                                                            isset($_POST['var']['movimiento_elevacion_anterior']) && $_POST['var']['movimiento_elevacion_anterior'] !== '0' ?
                                                                     $_POST['var']['movimiento_elevacion_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1430,7 +1433,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_posterior']) && $_POST['var']['movimiento_elevacion_posterior']!== '0' ?
+                                                            isset($_POST['var']['movimiento_elevacion_posterior']) && $_POST['var']['movimiento_elevacion_posterior'] !== '0' ?
                                                                     $_POST['var']['movimiento_elevacion_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1456,7 +1459,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_pisada']) && $_POST['var']['movimiento_pisada']!== '0' ?
+                                                            isset($_POST['var']['movimiento_pisada']) && $_POST['var']['movimiento_pisada'] !== '0' ?
                                                                     $_POST['var']['movimiento_pisada'] : "-"
                                                             ?>
                                                         </span>
@@ -1482,7 +1485,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento']!== '0' ?
+                                                            isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '0' ?
                                                                     $_POST['var']['movimiento_pulimento'] : "-"
                                                             ?>
                                                         </span>
@@ -1508,7 +1511,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad']!== '0' ?
+                                                            isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '0' ?
                                                                     $_POST['var']['movimiento_elasticidad'] : "-"
                                                             ?>
                                                         </span>
@@ -1534,7 +1537,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion']!== '0' ?
+                                                            isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion'] !== '0' ?
                                                                     $_POST['var']['movimiento_compensacion'] : "-"
                                                             ?>
                                                         </span>
@@ -1712,7 +1715,7 @@
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
-                                        
+
 
                                     </div>
                                     <h3 class="h3subtitu margin-space">Línea Superior</h3>
@@ -1892,7 +1895,7 @@
 
     <div id="search-results-eq">
 
-        <?php if((int)$products->found_posts > 0) : ?>
+        <?php if ((int) $products->found_posts > 0) : ?>
             <div class="fullresult">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -1904,13 +1907,13 @@
 
                     <?php wc_get_template_part('content', 'product'); ?>
 
-                <?php endwhile; // end of the loop.                                                          ?>
+                <?php endwhile; ?>
 
                 <?php woocommerce_product_loop_end(); ?>
             </div>
         <?php endif; ?>
-    
-        <?php if((int)$products90->found_posts > 0) : ?>
+
+        <?php if ((int) $products90->found_posts > 0) : ?>
             <div class="result90">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -1922,13 +1925,13 @@
 
                     <?php wc_get_template_part('content', 'product'); ?>
 
-                <?php endwhile; // end of the loop.                                                          ?>
+                <?php endwhile; ?>
 
                 <?php woocommerce_product_loop_end(); ?>
             </div>
         <?php endif; ?>
 
-        <?php if((int)$products80->found_posts > 0) : ?>
+        <?php if ((int) $products80->found_posts > 0) : ?>
             <div class="result80">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -1940,7 +1943,7 @@
 
                     <?php wc_get_template_part('content', 'product'); ?>
 
-                <?php endwhile; // end of the loop.                                                          ?>
+                <?php endwhile; ?>
 
                 <?php woocommerce_product_loop_end(); ?>
             </div>
@@ -1996,20 +1999,20 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
     });
 
     jQuery('form.buscadr').submit(function () {
-        
+
         /* VALIDAR QUE AL MENOS UNA TIPIFICACION SEA SELECCIONADA */
-        var bandera1= false;
+        var bandera1 = false;
         jQuery('form.buscadr input.custom-range').each(function () {
-            if (jQuery(this).val() !== "0") {                
+            if (jQuery(this).val() !== "0") {
                 bandera1 = true;
                 return false;
             }
         });
-        if(!bandera1){
+        if (!bandera1) {
             alert('Debe tipificar al menos una variable de su Yegua.');
             return false;
         }
-        
+
         /* VALIDAR QUE AL MENOS UN CHECK DE MEJORA SEA SELECCIONADO */
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
         if (numberOfChecked <= 0) {
@@ -2021,18 +2024,18 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         if (numberOfChecked > 6) {
             alert('Solo puedes seleccionar 6 variables');
             return false;
-        }        
+        }
 
         /* VALIDACION DE VARIABLES TIPIFICADAS VS MEJORADAS */
-        var bandera= true;
+        var bandera = true;
         jQuery('form.buscadr input.form-check-input:checked').each(function () {
             var variableChk = jQuery(this).attr("id").replace('chk_', '');
-            if (jQuery("#" + variableChk).val() === "0") {                
+            if (jQuery("#" + variableChk).val() === "0") {
                 bandera = false;
                 return false;
             }
         });
-        if(!bandera){
+        if (!bandera) {
             alert('Todas las características que desea mejorar en el reproductor, \n\
 deben estar tipificadas en la información de su Yegua.\n\
 Por favor revise la información suministrada.');
@@ -2040,11 +2043,11 @@ Por favor revise la información suministrada.');
         }
 
         /* VALIDAR QUE SI SE MEJORA EL DORSO SE DEBA SELECCIONAR LA CRUZ */
-        if((jQuery("#chk_lineaSuperior_cruz").is(':checked') 
-        &&  !jQuery("#chk_dorso_tamano").is(':checked')) ||
-        (jQuery("#chk_dorso_tamano").is(':checked') 
-        && !jQuery("#chk_lineaSuperior_cruz").is(':checked')) 
-        ){
+        if ((jQuery("#chk_lineaSuperior_cruz").is(':checked')
+                && !jQuery("#chk_dorso_tamano").is(':checked')) ||
+                (jQuery("#chk_dorso_tamano").is(':checked')
+                        && !jQuery("#chk_lineaSuperior_cruz").is(':checked'))
+                ) {
             alert("Las variables 'Dorso' y 'Cruz' están directamente relacionadas. \n\
             Por favor tipifique ambas variables");
             return false;
@@ -2106,68 +2109,76 @@ Por favor revise la información suministrada.');
         }, 1000);
 <?php endif; ?>
 
-        /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */   
+    /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */
 
-        jQuery(document).ready (function (){
+    jQuery(document).ready(function () {
+        
+        jQuery('input[type="range"]').each( function () {
+            if (jQuery(this).val() !== "0") {                
+                jQuery(this).parent().parent().addClass("selectedVar");
+                jQuery(this).parent().prev(".emptyVar").show();
+                jQuery(this).next().children(".valor").html(jQuery(this).val());
+            }
+        });
 
-            var prioritySelected = jQuery("#priority").val().split(",");
-            console.info(prioritySelected);
-            jQuery.each( prioritySelected, function (i, val) {
-                if(jQuery("#" + val).is(":checked")){
-                    selectedImprovements.push(jQuery("#" + val).attr('id'));
-                }
-                setPriority();
-            });
-
-            <?php if(!empty($lblpriority)): ?>
-                var chkSelected = "<?php echo $lblpriority; ?>".split(",");            
-                var varchkSelected = []
-                jQuery.each( chkSelected, function (i, val){
-                    varchkSelected.push(jQuery("label[for='" + val + "']").text());
-                });
-                jQuery(".variables_resultados").text(varchkSelected.join(', '));
-            <?php endif; ?>
-
-            <?php if(!empty($lblpriority90)): ?>
-                var chkSelected90 = "<?php echo $lblpriority90; ?>".split(",");            
-                var varchkSelected90 = []
-                jQuery.each( chkSelected90, function (i, val){
-                    varchkSelected90.push(jQuery("label[for='" + val + "']").text());
-                });
-                jQuery(".variables_resultados_90").text(varchkSelected90.join(', '));
-            <?php endif; ?>
-
-            <?php if(!empty($lblpriority80)): ?>
-                var chkSelected80 = "<?php echo $lblpriority80; ?>".split(",");
-                var varchkSelected80 = []
-                jQuery.each( chkSelected80, function (i, val){
-                    varchkSelected80.push(jQuery("label[for='" + val + "']").text());
-                });
-                jQuery(".variables_resultados_80").text(varchkSelected80.join(', '));
-            <?php endif; ?>
-
-        });   
-		
-		jQuery("input[type='checkbox']").click(function (){
-			if(jQuery(this).is(":checked")){
-				selectedImprovements.push(jQuery(this).attr('id'));				
-			} else {
-				selectedImprovements.splice(selectedImprovements.indexOf(jQuery(this).attr('id')), 1);
-			}
+        var prioritySelected = jQuery("#priority").val().split(",");
+        console.info(prioritySelected);
+        jQuery.each(prioritySelected, function (i, val) {
+            if (jQuery("#" + val).is(":checked")) {
+                selectedImprovements.push(jQuery("#" + val).attr('id'));
+            }
             setPriority();
-		});
+        });
 
-        function setPriority(){
-            jQuery(".prioridad").html("");
-			jQuery(".prioridad").removeClass("haspriority");
-			jQuery(".form-check.form-check-inline").removeClass("haspriority");
-			jQuery.each( selectedImprovements, function (i, val){
-				let prioridad = i + 1;
-				jQuery("#" + val).siblings(".prioridad").html(prioridad);
-				jQuery("#" + val).parent(".form-check.form-check-inline").addClass("haspriority");
-				jQuery("#" + val).siblings(".prioridad").addClass("haspriority");
-			});
-            jQuery("#priority").val(selectedImprovements.join());
+<?php if (!empty($lblpriority)): ?>
+            var chkSelected = "<?php echo $lblpriority; ?>".split(",");
+            var varchkSelected = []
+            jQuery.each(chkSelected, function (i, val) {
+                varchkSelected.push(jQuery("label[for='" + val + "']").text());
+            });
+            jQuery(".variables_resultados").text(varchkSelected.join(', '));
+<?php endif; ?>
+
+<?php if (!empty($lblpriority90)): ?>
+            var chkSelected90 = "<?php echo $lblpriority90; ?>".split(",");
+            var varchkSelected90 = []
+            jQuery.each(chkSelected90, function (i, val) {
+                varchkSelected90.push(jQuery("label[for='" + val + "']").text());
+            });
+            jQuery(".variables_resultados_90").text(varchkSelected90.join(', '));
+<?php endif; ?>
+
+<?php if (!empty($lblpriority80)): ?>
+            var chkSelected80 = "<?php echo $lblpriority80; ?>".split(",");
+            var varchkSelected80 = []
+            jQuery.each(chkSelected80, function (i, val) {
+                varchkSelected80.push(jQuery("label[for='" + val + "']").text());
+            });
+            jQuery(".variables_resultados_80").text(varchkSelected80.join(', '));
+<?php endif; ?>
+
+    });
+
+    jQuery("input[type='checkbox']").click(function () {
+        if (jQuery(this).is(":checked")) {
+            selectedImprovements.push(jQuery(this).attr('id'));
+        } else {
+            selectedImprovements.splice(selectedImprovements.indexOf(jQuery(this).attr('id')), 1);
         }
+        setPriority();
+    });
+
+    function setPriority() {
+        jQuery(".prioridad").html("");
+        jQuery(".prioridad").removeClass("haspriority");
+        jQuery(".form-check.form-check-inline").removeClass("haspriority");
+        jQuery.each(selectedImprovements, function (i, val) {
+            let prioridad = i + 1;
+            jQuery("#" + val).siblings(".prioridad").html(prioridad);
+            jQuery("#" + val).parent(".form-check.form-check-inline").addClass("haspriority");
+            jQuery("#" + val).siblings(".prioridad").addClass("haspriority");
+        });
+        jQuery("#priority").val(selectedImprovements.join());
+    }
 
 </script>

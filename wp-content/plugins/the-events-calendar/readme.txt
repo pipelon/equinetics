@@ -4,7 +4,7 @@ Contributors: ModernTribe, borkweb, barry.hughes, bordoni, brianjessee, aguseo, 
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, modern tribe, tribe, widget
 Donate link: http://m.tri.be/29
 Requires at least: 4.9
-Stable tag: 5.0.0.1
+Stable tag: 5.0.0.2
 Tested up to: 5.3.2
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -94,14 +94,17 @@ That's it! Just configure your settings as you see fit, and you're on your way t
 == Screenshots ==
 
 1. Month View with hover
-2. Mobile Views
-3. Single event
-4. List View
-5. Event Editor
-6. Events admin listing
-7. General Settings
-8. Display Settings
-9. CSV Importer
+2. Month View
+3. List View
+4. Day View
+5. Single event
+6. Event Editor
+7. Events admin listing
+8. General Settings
+9. Display Settings
+10. Events List Widget
+11. Mobile Month View
+12. CSV Importer
 
 == Frequently Asked Questions ==
 
@@ -211,6 +214,11 @@ Some things to consider before posting on the forum:
 Still not happy? Shoot us an email to support@theeventscalendar.com or tweet to [@TheEventsCal](https://twitter.com/TheEventsCal) and tell us why. We'll do what we can to make it right.
 
 == Changelog ==
+
+= [5.0.0.2] 2020-02-05 =
+
+* Fix - Datepicker format now properly defaults to the correct value when Display Settings have not been saved. [TEC-3229]
+* Fix - New views mobile breakpoints interactions with Caching plugins resolved. [TEC-3221]
 
 = [5.0.0.1] 2020-01-31 =
 

@@ -114,7 +114,6 @@ class TA_WC_Variation_Swatches_Admin {
 	public function edit_attribute_fields( $term, $taxonomy ) {
 		$attr  = TA_WCVS()->get_tax_attribute( $taxonomy );
 		$value = get_term_meta( $term->term_id, $attr->attribute_type, true );
-
 		do_action( 'tawcvs_product_attribute_field', $attr->attribute_type, $value, 'edit' );
 	}
 
@@ -175,9 +174,10 @@ class TA_WC_Variation_Swatches_Admin {
 	 * @param int $tt_id
 	 */
 	public function save_term_meta( $term_id, $tt_id ) {
+
 		foreach ( TA_WCVS()->types as $type => $label ) {
 			if ( isset( $_POST[$type] ) ) {
-				update_term_meta( $term_id, $type, $_POST[$type] );
+				update_term_meta( $term_id, $type, sanitize_text_field($_POST[$type]) );
 			}
 		}
 	}

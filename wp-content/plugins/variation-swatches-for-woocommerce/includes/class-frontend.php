@@ -51,9 +51,9 @@ class TA_WC_Variation_Swatches_Frontend {
 	 * @return string
 	 */
 	public function get_swatch_html( $html, $args ) {
+
 		$swatch_types = TA_WCVS()->types;
 		$attr         = TA_WCVS()->get_tax_attribute( $args['attribute'] );
-
 		// Return if this is normal attribute
 		if ( empty( $attr ) ) {
 			return $html;
@@ -88,7 +88,6 @@ class TA_WC_Variation_Swatches_Frontend {
 
 			if ( ! empty( $swatches ) ) {
 				$class .= ' hidden';
-
 				$swatches = '<div class="tawcvs-swatches" data-attribute_name="attribute_' . esc_attr( $attribute ) . '">' . $swatches . '</div>';
 				$html     = '<div class="' . esc_attr( $class ) . '">' . $html . '</div>' . $swatches;
 			}
@@ -111,19 +110,27 @@ class TA_WC_Variation_Swatches_Frontend {
 		$selected = sanitize_title( $args['selected'] ) == $term->slug ? 'selected' : '';
 		$name     = esc_html( apply_filters( 'woocommerce_variation_option_name', $term->name ) );
 
+		if ($term->description) {
+			$tooltip = $term->description;
+		}
+		else {
+			$tooltip = $name;
+		}
+
 		switch ( $type ) {
 			case 'color':
 				$color = get_term_meta( $term->term_id, 'color', true );
 				list( $r, $g, $b ) = sscanf( $color, "#%02x%02x%02x" );
 				$html = sprintf(
-					'<span class="swatch swatch-color swatch-%s %s" style="background-color:%s;color:%s;" title="%s" data-value="%s">%s</span>',
+					'<span class="swatch swatch-color swatch-%s %s" style="background-color:%s;color:%s;" data-value="%s">%s<p class="cv-tooltip">%s</p></span>',
 					esc_attr( $term->slug ),
 					$selected,
 					esc_attr( $color ),
 					"rgba($r,$g,$b,0.5)",
-					esc_attr( $name ),
+					// esc_attr( $term->description ),
 					esc_attr( $term->slug ),
-					$name
+					$name,
+					esc_attr( $tooltip )
 				);
 				break;
 
@@ -132,14 +139,15 @@ class TA_WC_Variation_Swatches_Frontend {
 				$image = $image ? wp_get_attachment_image_src( $image ) : '';
 				$image = $image ? $image[0] : WC()->plugin_url() . '/assets/images/placeholder.png';
 				$html  = sprintf(
-					'<span class="swatch swatch-image swatch-%s %s" title="%s" data-value="%s"><img src="%s" alt="%s">%s</span>',
+					'<span class="swatch swatch-image swatch-%s %s" data-value="%s"><img src="%s" alt="%s"><p class="cv-tooltip">%s</p></span>',
 					esc_attr( $term->slug ),
 					$selected,
-					esc_attr( $name ),
+					// esc_attr( $term->description ),
 					esc_attr( $term->slug ),
 					esc_url( $image ),
 					esc_attr( $name ),
-					esc_attr( $name )
+					// esc_attr( $name ),
+					esc_attr( $tooltip )
 				);
 				break;
 
@@ -147,12 +155,13 @@ class TA_WC_Variation_Swatches_Frontend {
 				$label = get_term_meta( $term->term_id, 'label', true );
 				$label = $label ? $label : $name;
 				$html  = sprintf(
-					'<span class="swatch swatch-label swatch-%s %s" title="%s" data-value="%s">%s</span>',
+					'<span class="swatch swatch-label swatch-%s %s" data-value="%s">%s<p class="cv-tooltip">%s</p></span>',
 					esc_attr( $term->slug ),
 					$selected,
-					esc_attr( $name ),
+					// esc_attr( $term->description ),
 					esc_attr( $term->slug ),
-					esc_html( $label )
+					esc_html( $label ),
+					esc_attr( $tooltip )
 				);
 				break;
 		}

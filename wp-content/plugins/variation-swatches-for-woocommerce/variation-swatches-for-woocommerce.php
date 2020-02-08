@@ -1,19 +1,19 @@
 <?php
 /**
- * Plugin Name: WooCommerce Variation Swatches
- * Plugin URI: http://themealien.com/wordpress-plugin/woocommerce-variation-swatches
+ * Plugin Name: Variation Swatches for WooCommerce
+ * Plugin URI: https://rextheme.com/variation-swatches-for-woocommerce/
  * Description: An extension of WooCommerce to make variable products be more beauty and friendly to users.
- * Version: 1.0.4
- * Author: ThemeAlien
- * Author URI: http://themealien.com/
+ * Version: 1.0.5
+ * Author: RexTheme
+ * Author URI: https://rextheme.com
  * Requires at least: 4.5
- * Tested up to: 5.0
+ * Tested up to: 5.3
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wcvs
  * Domain Path: /languages/
  * WC requires at least: 3.0.0
- * WC tested up to: 3.5.1
+ * WC tested up to: 3.9.1
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -32,7 +32,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_wc_notice' ) ) {
 		?>
 
 		<div class="error">
-			<p><?php esc_html_e( 'WooCommerce Variation Swatches is enabled but not effective. It requires WooCommerce in order to work.', 'wcvs' ); ?></p>
+			<p><?php esc_html_e( 'Variation Swatches for WooCommerce is enabled but not effective. It requires WooCommerce in order to work.', 'wcvs' ); ?></p>
 		</div>
 
 		<?php
@@ -47,7 +47,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_pro_notice' ) ) {
 		?>
 
 		<div class="error">
-			<p><?php esc_html_e( 'No need to activate the free version of WooCommerce Variation Swatches plugin while the pro version is activated.', 'wcvs' ); ?></p>
+			<p><?php esc_html_e( 'No need to activate the free version of Variation Swatches for WooCommerce plugin while the pro version is activated.', 'wcvs' ); ?></p>
 		</div>
 
 		<?php
@@ -143,3 +143,22 @@ if ( ! function_exists( 'ta_wc_variation_swatches_deactivate' ) ) {
 
 add_action( 'plugins_loaded', 'ta_wc_variation_swatches_constructor', 20 );
 register_deactivation_hook( __FILE__, 'ta_wc_variation_swatches_deactivate' );
+
+/**
+ * Initialize the plugin tracker
+ *
+ * @return void
+ */
+function appsero_init_tracker_variation_swatches_for_woocommerce() {
+
+	if ( ! class_exists( 'Appsero\Client' ) ) {
+		require_once __DIR__ . '/appsero/src/Client.php';
+	}
+
+	$client = new Appsero\Client( '454ebec6-6008-4065-b639-ba70ed7f9640', 'variation-swatches-for-woocommerce', __FILE__ );
+	$client->insights()->init();
+	$client->updater();
+
+}
+
+appsero_init_tracker_variation_swatches_for_woocommerce();
