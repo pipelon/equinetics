@@ -68,13 +68,25 @@ if (!class_exists('FormularioBuscador')) :
                  */
 
                 //CONTAR VARIABLES PARA EL MENSAJE EN PANTALLA
-                $countVars = 0;
+                /*$countVars = 0;
                 foreach ($_POST["var"] as $value) {
                     $countVars += (int) $value > 1;
                 }
-                $countVars += isset($_POST["chk"]) ? count($_POST["chk"]) : 0;
+                $countVars += isset($_POST["chk"]) ? count($_POST["chk"]) : 0;*/      
+                
+                $priority = explode(",", $_POST['priority']);   
+                $lblpriority =  implode(",",$priority);         
+                if(count($priority) >= 5){                    
+                    array_pop($priority);  
+                    $lblpriority90 =  implode(",",$priority);                 
+                    $products90 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",",$priority));
+                    array_pop($priority);   
+                    $lblpriority80 =  implode(",",$priority);                 
+                    $products80 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",",$priority));                    
+                }
 
-                $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar']);
+                $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], $_POST['priority']);                
+
             }
 
             //SELECTOR DE YEGUAS GUARDADAS SOLO PARA USUARIOS REGISTRADOS
@@ -98,7 +110,7 @@ if (!class_exists('FormularioBuscador')) :
             }
         }
 
-        private function getHorses($variables, $mejoras, $categoy) {
+        private function getHorses($variables, $mejoras, $categoy, $priority) {
 
             //SETTINGS
             $settings = Buscador_equinetics()->get_settings();
@@ -113,7 +125,7 @@ if (!class_exists('FormularioBuscador')) :
             $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
 
             //QUERY DE BUSQUEDA
-            $meta_query = $this->getVariables($variables, $mejoras, $selectedCat);
+            $meta_query = $this->getVariables($variables, $mejoras, $selectedCat, $priority);
 
             //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
             $args = array(
@@ -142,16 +154,18 @@ if (!class_exists('FormularioBuscador')) :
             ob_start();
             //echo "<pre>"; print_r($args);echo "</pre>";
             //$res = new WP_Query($args);
-            //echo $res->request;
+            //echo $res->found_posts;
             return new WP_Query($args);
         }
 
-        private function getVariables($variables, $mejoras, $selectedCat) {
+        private function getVariables($variables, $mejoras, $selectedCat, $priority) {            
+
+            $mejorasPriorizadas = explode(",", $priority);            
             $meta_query = [];
             $boolDorsoPlusCruz = false;
-            foreach ($mejoras as $mejora) {
+            foreach ($mejorasPriorizadas as $mejora) {
                 $nmVariable = substr($mejora, 4);
-                $func = "get_" . $nmVariable;
+                $func = "get_" . $nmVariable;               
 
                 //Si las variables dependen de la categoria
                 if ($nmVariable == 'espalda_tamano' || $nmVariable == 'espalda_orientacion' || $nmVariable == 'movimiento_velocidad' || $nmVariable == 'movimiento_pisada' || $nmVariable == 'movimiento_elevacion_posterior' || $nmVariable == 'movimiento_elevacion_anterior') {

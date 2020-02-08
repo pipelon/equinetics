@@ -447,7 +447,7 @@ ins .woocommerce-Price-amount.amount{
 }
 .titleproduct{
     margin-bottom: 0; 
-    line-height: 10px; 
+    line-height: 12px; 
     text-align:center
 }
 div.divVeterinario li a.woocommerce-LoopProduct-link img.attachment-woocommerce_thumbnail,
@@ -1902,7 +1902,26 @@ h1{
     width: 20%;
     box-sizing: border-box;
     padding: 0 10px;
+    min-height: 270px;
 }
+.prioridad.haspriority{
+    background: var(--eqcolor);
+}
+.fullresult{
+    background: green;
+}
+.result90{
+    background: red;
+}
+.result80{
+    background: blue;
+}
+.variables_resultados,
+.variables_resultados_80,
+.variables_resultados_90{
+    font-weight: bold;
+}
+
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
