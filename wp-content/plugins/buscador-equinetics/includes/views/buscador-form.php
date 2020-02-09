@@ -1888,7 +1888,15 @@
 </form>
 <!-- FIN FORM SOFTWARE -->
 
-<?php if (isset($_POST) && ((isset($products) && $products->have_posts()) || (isset($products90) && $products90->have_posts()) || (isset($products80) && $products80->have_posts()))) : ?>
+<?php
+if (isset($_POST) &&
+        (
+        (isset($products) && $products->have_posts()) ||
+        (isset($products90) && $products90->have_posts()) ||
+        (isset($products80) && $products80->have_posts())
+        )
+) :
+    ?>
     <span id="hr-search-results-eq"></span>
     <hr />    
     <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Resultados encontrados</h3>
@@ -1950,7 +1958,15 @@
         <?php endif; ?>
 
     </div>
-<?php else: ?>
+    <?php
+elseif (!empty($_POST) &&
+        (
+        (!isset($products) || !$products->have_posts()) &&
+        (!isset($products90) || !$products90->have_posts()) &&
+        (!isset($products80) || !$products80->have_posts())
+        )
+):
+    ?>
     <span id="hr-search-results-eq"></span>
     <hr />    
     <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Resultados encontrados</h3>
@@ -2112,9 +2128,9 @@ Por favor revise la información suministrada.');
     /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */
 
     jQuery(document).ready(function () {
-        
-        jQuery('input[type="range"]').each( function () {
-            if (jQuery(this).val() !== "0") {                
+
+        jQuery('input[type="range"]').each(function () {
+            if (jQuery(this).val() !== "0") {
                 jQuery(this).parent().parent().addClass("selectedVar");
                 jQuery(this).parent().prev(".emptyVar").show();
                 jQuery(this).next().children(".valor").html(jQuery(this).val());
