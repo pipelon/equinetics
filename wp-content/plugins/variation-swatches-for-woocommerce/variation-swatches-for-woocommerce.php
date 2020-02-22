@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Variation Swatches for WooCommerce
- * Plugin URI: https://rextheme.com/variation-swatches-for-woocommerce/
+ * Plugin Name: Variation Swatcher for WooCommerce
+ * Plugin URI: http://themealien.com/wordpress-plugin/woocommerce-variation-swatches
  * Description: An extension of WooCommerce to make variable products be more beauty and friendly to users.
- * Version: 1.0.5
- * Author: RexTheme
- * Author URI: https://rextheme.com
+ * Version: 1.0.6
+ * Author: ThemeAlien
+ * Author URI: http://themealien.com/
  * Requires at least: 4.5
  * Tested up to: 5.3
  * License: GPLv2 or later
@@ -32,7 +32,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_wc_notice' ) ) {
 		?>
 
 		<div class="error">
-			<p><?php esc_html_e( 'Variation Swatches for WooCommerce is enabled but not effective. It requires WooCommerce in order to work.', 'wcvs' ); ?></p>
+			<p><?php esc_html_e( 'Variation Swatcher for WooCommerce is enabled but not effective. It requires WooCommerce in order to work.', 'wcvs' ); ?></p>
 		</div>
 
 		<?php
@@ -47,7 +47,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_pro_notice' ) ) {
 		?>
 
 		<div class="error">
-			<p><?php esc_html_e( 'No need to activate the free version of Variation Swatches for WooCommerce plugin while the pro version is activated.', 'wcvs' ); ?></p>
+			<p><?php esc_html_e( 'No need to activate the free version of Variation Swatcher for WooCommerce plugin while the pro version is activated.', 'wcvs' ); ?></p>
 		</div>
 
 		<?php
@@ -99,7 +99,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_deactivate' ) ) {
 				switch_to_blog( $blog_id );
 			}
 
-			// Backup attribute types
+			// Backup attribute types.
 			$attributes         = wc_get_attribute_taxonomies();
 			$default_types      = array( 'text', 'select' );
 			$ta_wcvs_attributes = array();
@@ -118,7 +118,7 @@ if ( ! function_exists( 'ta_wc_variation_swatches_deactivate' ) ) {
 				update_option( 'tawcvs_backup_attributes_time', time() );
 			}
 
-			// Reset attributes
+			// Reset attributes.
 			if ( ! empty( $ta_wcvs_attributes ) ) {
 				foreach ( $ta_wcvs_attributes as $id => $attribute ) {
 					$wpdb->update(
@@ -131,8 +131,8 @@ if ( ! function_exists( 'ta_wc_variation_swatches_deactivate' ) ) {
 				}
 			}
 
-			// Delete the ignore restore
-			delete_option( 'tawcvs_ignore_restore_attributes' );
+			// Delete the option of restoring time.
+			delete_option( 'tawcvs_restore_attributes_time' );
 		}
 
 		if ( $network ) {
@@ -143,22 +143,3 @@ if ( ! function_exists( 'ta_wc_variation_swatches_deactivate' ) ) {
 
 add_action( 'plugins_loaded', 'ta_wc_variation_swatches_constructor', 20 );
 register_deactivation_hook( __FILE__, 'ta_wc_variation_swatches_deactivate' );
-
-/**
- * Initialize the plugin tracker
- *
- * @return void
- */
-function appsero_init_tracker_variation_swatches_for_woocommerce() {
-
-	if ( ! class_exists( 'Appsero\Client' ) ) {
-		require_once __DIR__ . '/appsero/src/Client.php';
-	}
-
-	$client = new Appsero\Client( '454ebec6-6008-4065-b639-ba70ed7f9640', 'variation-swatches-for-woocommerce', __FILE__ );
-	$client->insights()->init();
-	$client->updater();
-
-}
-
-appsero_init_tracker_variation_swatches_for_woocommerce();

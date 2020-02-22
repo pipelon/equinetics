@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Fifteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-04-16 18:47:29+0000\n"
+"PO-Revision-Date: 2020-02-22 11:13:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -145,7 +145,7 @@ msgstr "Navegación de comentarios"
 msgid "Blue"
 msgstr "Azul"
 
-#: functions.php:228 inc/customizer.php:226
+#: inc/customizer.php:226 functions.php:228
 msgid "Purple"
 msgstr "Púrpura"
 
@@ -153,13 +153,13 @@ msgstr "Púrpura"
 msgid "Pink"
 msgstr "Rosa"
 
-#: functions.php:203 inc/customizer.php:204
+#: inc/customizer.php:204 functions.php:203
 msgid "Yellow"
 msgstr "Amarillo"
 
 #: inc/customizer.php:193
 msgid "Dark"
-msgstr "Negro"
+msgstr "Oscuro"
 
 #: inc/customizer.php:182
 msgid "Default"
@@ -198,11 +198,11 @@ msgstr "Imagen siguiente"
 msgid "Previous Image"
 msgstr "Imagen anterior"
 
-#: header.php:49
+#: header.php:50
 msgid "Menu and widgets"
 msgstr "Menú y widgets"
 
-#: header.php:26
+#: header.php:27
 msgid "Skip to content"
 msgstr "Saltar al contenido"
 
@@ -270,17 +270,17 @@ msgstr "¿Preparado para publicar tu primera entrada? <a href=\"%1$s\">Empieza a
 msgid "Nothing Found"
 msgstr "No se ha encontrado nada"
 
-#: content-page.php:37 content.php:61 content-search.php:28
-#: content-search.php:33 image.php:74 content-link.php:60
+#: content-link.php:60 content-page.php:37 image.php:74 content-search.php:28
+#: content-search.php:33 content.php:61
 msgid "Edit"
 msgstr "Editar"
 
-#: content-page.php:26 content.php:41 image.php:61 content-link.php:39
+#: content-link.php:39 content-page.php:26 image.php:61 content.php:41
 msgid "Pages:"
 msgstr "Páginas:"
 
 #. translators: %s: Name of current post
-#: content.php:34 inc/template-tags.php:249 content-link.php:32
+#: inc/template-tags.php:249 content-link.php:32 content.php:34
 msgid "Continue reading %s"
 msgstr "Sigue leyendo %s"
 
@@ -304,16 +304,16 @@ msgstr "Ver todas las entradas de %s"
 msgid "Published by"
 msgstr "Publicado por"
 
-#: content-page.php:30 content.php:45 image.php:65 search.php:43 archive.php:53
-#: index.php:50 content-link.php:43
+#: archive.php:53 content-link.php:43 index.php:50 content-page.php:30
+#: image.php:65 content.php:45 search.php:43
 msgid "Page"
 msgstr "Página"
 
-#: search.php:42 archive.php:52 index.php:49
+#: archive.php:52 index.php:49 search.php:42
 msgid "Next page"
 msgstr "Página siguiente"
 
-#: search.php:41 archive.php:51 index.php:48
+#: archive.php:51 index.php:48 search.php:41
 msgid "Previous page"
 msgstr "Página anterior"
 

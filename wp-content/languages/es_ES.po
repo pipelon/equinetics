@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.3.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-01-09 12:35:27+0000\n"
+"PO-Revision-Date: 2020-02-18 08:39:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -305,7 +305,7 @@ msgstr "// Un «bloque» es el término abstracto utilizado"
 
 #: wp-includes/js/dist/block-library.js:15745
 msgid "One of the hardest things to do in technology is disrupt yourself."
-msgstr "Una de las cosas más difíciles de hacer en tecnología es interrumpirte a ti mismo."
+msgstr "Una de las cosas más difíciles de hacer en tecnología es reinventarte."
 
 #: wp-includes/js/dist/block-library.js:19218
 msgid "    With the dragon-fly on the river."

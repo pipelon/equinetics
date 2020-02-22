@@ -1,9 +1,9 @@
 === Variation Swatches for WooCommerce ===
-Contributors: rextheme, coderexco, themealien
+Contributors: themealien, coderexco
 Tags: woocommerce, product attribute, product color, product size, variation swatches, variable products
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,16 +25,7 @@ With a friendly and easy-to-use interface, you can add default color, image or l
 * Create attribute label/text swatches
 * Manage attribute globally
 * Create new attribute swatch in product editing page
-* New options in WooCommerce Settings that help control swatches easier without touching code
 
-## Privacy Policy
-Variation Swatches for WooCommerce uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
-
-Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure great user experience for all our users.
-
-Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
-
-Learn more how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
 
 == Installation ==
 
@@ -84,8 +75,14 @@ Yes, it will work with any theme, but may require some styling to make it match 
 
 == Changelog ==
 
+= 1.0.6 =
+* New - Add a notice in admin area to restore attribute types after re-activating the plugin.
+* Tweak - Rename the tooltip CSS class following WooCommerce standard.
+* Tweak - Remove opacity from swatches.
+* Security - Using $wpdb->prepare to get attribute data.
+
 = 1.0.5 =
-* Added variation description on hover.
+* Add tooltip
 
 = 1.0.4 =
 * Fix the issue of product attributes are not saved.

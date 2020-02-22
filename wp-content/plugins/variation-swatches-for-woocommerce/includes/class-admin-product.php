@@ -28,7 +28,7 @@ class TA_WC_Variation_Swatches_Admin_Product {
 		$taxonomy_name = wc_attribute_taxonomy_name( $taxonomy->attribute_name );
 		global $thepostid;
 
-		$product_id = isset( $_POST['post_id'] ) ? absint( sanitize_text_field($_POST['post_id']) ) : $thepostid;
+		$product_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : $thepostid;
 		?>
 
 		<select multiple="multiple" data-placeholder="<?php esc_attr_e( 'Select terms', 'wcvs' ); ?>" class="multiselect attribute_values wc-enhanced-select" name="attribute_values[<?php echo $index; ?>][]">
@@ -54,11 +54,11 @@ class TA_WC_Variation_Swatches_Admin_Product {
 	 */
 	public function add_new_attribute_ajax() {
 		$nonce  = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
-		$tax    = isset( $_POST['taxonomy'] ) ? sanitize_text_field($_POST['taxonomy']) : '';
-		$type   = isset( $_POST['type'] ) ? sanitize_text_field($_POST['type']) : '';
-		$name   = isset( $_POST['name'] ) ? sanitize_text_field($_POST['name']) : '';
-		$slug   = isset( $_POST['slug'] ) ? sanitize_text_field($_POST['slug']) : '';
-		$swatch = isset( $_POST['swatch'] ) ? sanitize_text_field($_POST['swatch']) : '';
+		$tax    = isset( $_POST['taxonomy'] ) ? sanitize_text_field( $_POST['taxonomy'] ) : '';
+		$type   = isset( $_POST['type'] ) ? sanitize_text_field( $_POST['type'] ) : '';
+		$name   = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
+		$slug   = isset( $_POST['slug'] ) ? sanitize_text_field( $_POST['slug'] ) : '';
+		$swatch = isset( $_POST['swatch'] ) ? sanitize_text_field( $_POST['swatch'] ) : '';
 
 		if ( ! wp_verify_nonce( $nonce, '_tawcvs_create_attribute' ) ) {
 			wp_send_json_error( esc_html__( 'Wrong request', 'wcvs' ) );
@@ -72,7 +72,7 @@ class TA_WC_Variation_Swatches_Admin_Product {
 			wp_send_json_error( esc_html__( 'Taxonomy is not exists', 'wcvs' ) );
 		}
 
-		if ( term_exists( sanitize_text_field($_POST['name']), sanitize_text_field($_POST['tax']) ) ) {
+		if ( term_exists( $_POST['name'], $_POST['tax'] ) ) {
 			wp_send_json_error( esc_html__( 'This term is exists', 'wcvs' ) );
 		}
 

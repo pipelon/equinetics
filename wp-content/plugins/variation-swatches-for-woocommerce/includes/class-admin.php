@@ -32,6 +32,10 @@ class TA_WC_Variation_Swatches_Admin {
 		add_action( 'admin_init', array( $this, 'init_attribute_hooks' ) );
 		add_action( 'admin_print_scripts', array( $this, 'enqueue_scripts' ) );
 
+		// Restore attributes
+		add_action( 'admin_notices', array( $this, 'restore_attributes_notice' ) );
+		add_action( 'admin_init', array( $this, 'restore_attribute_types' ) );
+
 		// Display attribute fields
 		add_action( 'tawcvs_product_attribute_field', array( $this, 'attribute_fields' ), 10, 3 );
 	}
@@ -95,6 +99,83 @@ class TA_WC_Variation_Swatches_Admin {
 	}
 
 	/**
+	 * Display a notice of restoring attribute types
+	 */
+	public function restore_attributes_notice() {
+		if ( get_transient( 'tawcvs_attribute_taxonomies' ) && ! get_option( 'tawcvs_restore_attributes_time' ) ) {
+			?>
+			<div class="notice-warning notice is-dismissible">
+				<p>
+					<?php
+					esc_html_e( 'Found a backup of product attributes types. This backup was generated at', 'wcvs' );
+					echo ' ' . date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), get_option( 'tawcvs_backup_attributes_time' ) ) . '.';
+					?>
+				</p>
+				<p>
+					<a href="<?php echo esc_url( add_query_arg( array( 'tawcvs_action' => 'restore_attributes_types', 'tawcvs_nonce' => wp_create_nonce( 'restore_attributes_types' ) ) ) ); ?>">
+						<strong><?php esc_html_e( 'Restore product attributes types', 'wcvs' ); ?></strong>
+					</a>
+					|
+					<a href="<?php echo esc_url( add_query_arg( array( 'tawcvs_action' => 'dismiss_restore_notice', 'tawcvs_nonce' => wp_create_nonce( 'dismiss_restore_notice' ) ) ) ); ?>">
+						<strong><?php esc_html_e( 'Dismiss this notice', 'wcvs' ); ?></strong>
+					</a>
+				</p>
+			</div>
+			<?php
+		} elseif ( isset( $_GET['tawcvs_message'] ) && 'restored' == $_GET['tawcvs_message'] ) {
+			?>
+			<div class="notice-warning settings-error notice is-dismissible">
+				<p><?php esc_html_e( 'All attributes types have been restored.', 'wcvs' ) ?></p>
+			</div>
+			<?php
+		}
+	}
+
+	/**
+	 * Restore attribute types
+	 */
+	public function restore_attribute_types() {
+		if ( ! isset( $_GET['tawcvs_action'] ) || ! isset( $_GET['tawcvs_nonce'] ) ) {
+			return;
+		}
+
+		if ( ! wp_verify_nonce( $_GET['tawcvs_nonce'], $_GET['tawcvs_action'] ) ) {
+			return;
+		}
+
+		if ( 'restore_attributes_types' == $_GET['tawcvs_action'] ) {
+			global $wpdb;
+
+			$attribute_taxnomies = get_transient( 'tawcvs_attribute_taxonomies' );
+
+			foreach ( $attribute_taxnomies as $id => $attribute ) {
+				$wpdb->update(
+					$wpdb->prefix . 'woocommerce_attribute_taxonomies',
+					array( 'attribute_type' => $attribute->attribute_type ),
+					array( 'attribute_id' => $id ),
+					array( '%s' ),
+					array( '%d' )
+				);
+			}
+
+			update_option( 'tawcvs_restore_attributes_time', time() );
+			delete_transient( 'tawcvs_attribute_taxonomies' );
+			delete_transient( 'wc_attribute_taxonomies' );
+
+			$url = remove_query_arg( array( 'tawcvs_action', 'tawcvs_nonce' ) );
+			$url = add_query_arg( array( 'tawcvs_message' => 'restored' ), $url );
+		} elseif ( 'dismiss_restore_notice' == $_GET['tawcvs_action'] ) {
+			update_option( 'tawcvs_restore_attributes_time', 'ignored' );
+			$url = remove_query_arg( array( 'tawcvs_action', 'tawcvs_nonce' ) );
+		}
+
+		if ( isset( $url ) ) {
+			wp_redirect( $url );
+			exit;
+		}
+	}
+
+	/**
 	 * Create hook to add fields to add attribute term screen
 	 *
 	 * @param string $taxonomy
@@ -114,6 +195,7 @@ class TA_WC_Variation_Swatches_Admin {
 	public function edit_attribute_fields( $term, $taxonomy ) {
 		$attr  = TA_WCVS()->get_tax_attribute( $taxonomy );
 		$value = get_term_meta( $term->term_id, $attr->attribute_type, true );
+
 		do_action( 'tawcvs_product_attribute_field', $attr->attribute_type, $value, 'edit' );
 	}
 
@@ -174,10 +256,9 @@ class TA_WC_Variation_Swatches_Admin {
 	 * @param int $tt_id
 	 */
 	public function save_term_meta( $term_id, $tt_id ) {
-
 		foreach ( TA_WCVS()->types as $type => $label ) {
 			if ( isset( $_POST[$type] ) ) {
-				update_term_meta( $term_id, $type, sanitize_text_field($_POST[$type]) );
+				update_term_meta( $term_id, $type, sanitize_text_field( $_POST[$type] ) );
 			}
 		}
 	}
