@@ -456,7 +456,7 @@ vc_map( array(
             "type" => "dropdown",
             "heading" => esc_html__("Portofolio Columns", "horseclub"),
             "param_name" => "porcol",
-            "value" => array(2, 3, 4 , '3wide',  '4wide', '5wide'),
+            "value" => array(2, 3, 4 , '3widehola',  '4wide', '5wide'),
             "description" => esc_html__("Two, three , fore or 'four wide(set row to full width)'", "horseclub")
         ),
 			array(

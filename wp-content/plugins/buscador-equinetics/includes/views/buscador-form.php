@@ -123,7 +123,7 @@
                     </li>
                     <li class="vc_tta-tab" data-vc-tab="">
                         <a href="#dorso" data-vc-tabs="" data-vc-container=".vc_tta">
-                            <span class="vc_tta-title-text">Dorso</span>
+                            <span class="vc_tta-title-text">Cruz - Dorso</span>
                         </a>
                     </li>
                     <li class="vc_tta-tab" data-vc-tab="">
@@ -153,7 +153,7 @@
                     </li>
                     <li class="vc_tta-tab" data-vc-tab="">
                         <a href="#mejoramiento" data-vc-tabs="" data-vc-container=".vc_tta">
-                            <span class="vc_tta-title-text">Mejoramiento del reproductor</span>
+                            <span class="vc_tta-title-text">MEJORAMIENTO DEL REPRODUCTOR</span>
                         </a>
                     </li>
                 </ul>
@@ -248,7 +248,7 @@
                                                            ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Cuadrado
+                                                            Cuadrada
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -453,7 +453,7 @@
                                                            value="<?= isset($_POST['var']['lineaSuperior_cabeza']) ? $_POST['var']['lineaSuperior_cabeza'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Valor mínimo
+                                                            Ordinaria
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -462,7 +462,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Valor máximo
+                                                            Estética
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -518,33 +518,7 @@
                                                         </span>
                                                     </div>
                                                 </div>                                    
-                                            </div>
-                                            <div class="form-row">
-                                                <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
-                                                <div class="form-group col-md-12 divVariable" 
-                                                     data-image="cabeza.jpg">
-                                                    <label for="lineaSuperior_cruz">Cruz</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
-                                                           id="lineaSuperior_cruz" 
-                                                           name="var[lineaSuperior_cruz]" 
-                                                           value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : 0; ?>">
-                                                    <div class="valores">
-                                                        <span class="minvalor">
-                                                            Corta
-                                                        </span>
-                                                        <span class="valor">
-                                                            <?=
-                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz'] !== '0' ?
-                                                                    $_POST['var']['lineaSuperior_cruz'] : "-"
-                                                            ?>
-                                                        </span>
-                                                        <span class="maxvalor">
-                                                            Larga
-                                                        </span>
-                                                    </div>
-                                                </div>                                    
-                                            </div>
+                                            </div>                                            
                                             <div class="form-row">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
@@ -710,7 +684,7 @@
                         <div class="vc_tta-panel-heading">
                             <h4 class="vc_tta-panel-title">
                                 <a href="#dorso" data-vc-accordion="" data-vc-container=".vc_tta-container">
-                                    <span class="vc_tta-title-text">DORSO</span>
+                                    <span class="vc_tta-title-text">CRUZ - DORSO</span>
                                 </a>
                             </h4>
                         </div>
@@ -721,8 +695,35 @@
                                     <div class="row">
 
                                         <!-- INICIO VARIABLES -->
+                                        
                                         <div class="col-md-6">   
-                                            <h4 class="tituVar">Dorso</h4>
+                                            <h4 class="tituVar">Cruz - Dorso</h4>
+                                            <div class="form-row">
+                                                <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
+                                                <div class="form-group col-md-12 divVariable" 
+                                                     data-image="cabeza.jpg">
+                                                    <label for="lineaSuperior_cruz">Cruz</label>
+                                                    <input type="range" min="0" max="3"
+                                                           class="custom-range" 
+                                                           id="lineaSuperior_cruz" 
+                                                           name="var[lineaSuperior_cruz]" 
+                                                           value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : 0; ?>">
+                                                    <div class="valores">
+                                                        <span class="minvalor">
+                                                            Corta
+                                                        </span>
+                                                        <span class="valor">
+                                                            <?=
+                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz'] !== '0' ?
+                                                                    $_POST['var']['lineaSuperior_cruz'] : "-"
+                                                            ?>
+                                                        </span>
+                                                        <span class="maxvalor">
+                                                            Larga
+                                                        </span>
+                                                    </div>
+                                                </div>                                    
+                                            </div>
                                             <div class="form-row">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
@@ -1112,7 +1113,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="alzada">Estatura</label>
+                                                    <label for="alzada">Alzada</label>
                                                     <input type="range" min="0" max="3"
                                                            class="custom-range" 
                                                            id="alzada_estatura" 
@@ -1120,7 +1121,7 @@
                                                            value="<?= isset($_POST['var']['alzada_estatura']) ? $_POST['var']['alzada_estatura'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Bajo
+                                                            Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1129,7 +1130,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Alto
+                                                            Alta
                                                         </span>
                                                     </div>                                                    
                                                 </div>                                    
@@ -1377,7 +1378,7 @@
                                                            value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Lento
+                                                            Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1386,7 +1387,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Elevado
+                                                            Alta
                                                         </span>
                                                     </div>
                                                 </div>                                    
@@ -1687,37 +1688,34 @@
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label class="form-check-label" style="padding-top: 20px">Aplomos anteriores</label>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($_POST['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_anteriores_frente">Aplomos anteriores (frente)</label>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_frente">Frontal</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Aplomos anteriores (lateralmente)</label>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Lateral</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                        </div>                                        
+                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                            <label class="form-check-label" style="padding-top: 20px">Aplomos posteriores</label>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($_POST['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_posteriores_atras">Aplomos posteriores (atrás)</label>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_atras">Frontal</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Aplomos posteriores (lateralmente)</label>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Lateral</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
-
-
+                                        </div>                                        
                                     </div>
+
                                     <h3 class="h3subtitu margin-space">Línea Superior</h3>
                                     <div class="row well">
                                         <div class="col-md-3 col-sm-6 col-xs-6">

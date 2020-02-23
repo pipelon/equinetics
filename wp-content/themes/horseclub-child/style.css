@@ -1911,9 +1911,9 @@ h1{
     background: var(--eqcolor);
 }
 .fullresult{
-    background: #dcf7cd;
+    background: #d7cfc4;
     border-radius: 5px;
-    border: 1px solid #b9e2ba;
+    border: 1px solid #d7cfc4;
 }
 .result90,
 .result80{
@@ -1951,6 +1951,19 @@ h1{
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+    .container-line-chart-eq{
+        width: 25px;
+        height: 100px;
+    }
+    .value-line-chart-eq{
+        width: 25px;
+    }
+    .label-line-chart-eq{
+        font-size: 13px;
+        width: 60px;
+        line-height: 10px;
+        height: 30px;
+    }
     .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body .chartsara_container canvas{
         min-width: 100px !important;
     }

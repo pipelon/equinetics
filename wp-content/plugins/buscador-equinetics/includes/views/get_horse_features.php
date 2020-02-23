@@ -35,25 +35,25 @@
                         <li class="vc_tta-tab" data-vc-tab="">
                             <a href="#dorso" data-vc-tabs="" 
                                data-vc-container=".vc_tta">
-                                <span class="vc_tta-title-text">dorso</span>
+                                <span class="vc_tta-title-text">Dorso</span>
                             </a>
                         </li>
                         <li class="vc_tta-tab" data-vc-tab="">
                             <a href="#alzada" data-vc-tabs="" 
                                data-vc-container=".vc_tta">
-                                <span class="vc_tta-title-text">alzada</span>
+                                <span class="vc_tta-title-text">Alzada</span>
                             </a>
                         </li>
                         <li class="vc_tta-tab" data-vc-tab="">
                             <a href="#morfometria" data-vc-tabs="" 
                                data-vc-container=".vc_tta">
-                                <span class="vc_tta-title-text">morfometria</span>
+                                <span class="vc_tta-title-text">Morfometría</span>
                             </a>
                         </li>
                         <li class="vc_tta-tab" data-vc-tab="">
                             <a href="#movimiento" data-vc-tabs="" 
                                data-vc-container=".vc_tta">
-                                <span class="vc_tta-title-text">movimiento</span>
+                                <span class="vc_tta-title-text">Movimiento</span>
                             </a>
                         </li>
                     </ul>

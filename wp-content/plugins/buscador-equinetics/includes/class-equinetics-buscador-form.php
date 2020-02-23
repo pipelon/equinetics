@@ -122,7 +122,7 @@ if (!class_exists('FormularioBuscador')) :
             $selectedCat = trim($categoy);
 
             // ARGUMENTOS DE ORDENAMIENTO
-            $ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
+            //$ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
 
             //QUERY DE BUSQUEDA
             $meta_query = $this->getVariables($variables, $mejoras, $selectedCat, $priority);
@@ -132,8 +132,8 @@ if (!class_exists('FormularioBuscador')) :
                 'post_type' => 'product',
                 'post_status' => 'publish',
                 'ignore_sticky_posts' => 1,
-                'orderby' => $ordering_args['orderby'],
-                'order' => $ordering_args['order'],
+                //'orderby' => $ordering_args['orderby'],
+                //'order' => $ordering_args['order'],
                 'posts_per_page' => $settings["result_per_page"],
                 'tax_query' => array(
                     array(
@@ -318,7 +318,7 @@ if (!class_exists('FormularioBuscador')) :
                     $arrValores = [1, 3, 2];
                     break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = [1, 2];
                     break;
                 default:
                     $arrValores = [3];
