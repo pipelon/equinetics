@@ -1928,6 +1928,26 @@ h1{
     font-weight: bold;
 }
 
+/* GRAFICAS DE VALORES DE CADA CABALLO */
+.container-line-chart-eq{
+    width: 50px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    background: #e3e3e3;
+    position: relative; 
+    border: 1px solid #e3e3e3;
+}
+.value-line-chart-eq{
+    position: absolute;
+    background: var(--eqcolor);;
+    width: 50px;
+    bottom: 0;
+    color: #FFFFFF;
+}
+
+
+
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {

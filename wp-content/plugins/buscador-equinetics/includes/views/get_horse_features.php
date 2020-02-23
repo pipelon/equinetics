@@ -90,47 +90,31 @@
                                                 <div class="chartsara_container">
                                                     <div class="vc_column-inner">
                                                         <div class="wpb_wrapper">
-                                                            <div class="vc_pie_chart" 
-                                                                 data-pie-value="<?= $vChart; ?>" 
-                                                                 data-pie-label-value="<?= $v; ?>" 
-                                                                 data-pie-units="" 
-                                                                 data-pie-color="#be1e2d">
-                                                                <div class="wpb_wrapper">
-                                                                    <div class="vc_pie_wrapper" style="width: 170px;">
-                                                                        <span class="vc_pie_chart_back" 
-                                                                              style="border-color: rgb(205,205,205); width: 170px; height: 170px"></span>
-                                                                        <span class="vc_pie_chart_value" 
-                                                                              style="width: 170px; height: 170px; line-height: 170px;">
-                                                                                  <?= $v; ?>
-                                                                        </span>
-                                                                        <canvas width="170px" height="170px"></canvas>
-                                                                        <span class="tituvarsara">
-                                                                            <?=
-                                                                            isset($arrayTextos[trim($k)]) ?
-                                                                                    $arrayTextos[trim($k)] :
-                                                                                    $k;
-                                                                            ?>
-                                                                        </span>
+
+                                                            <div class="line-chart-eq">
+                                                                <div class="container-line-chart-eq">
+                                                                    <div class="value-line-chart-eq" style="height: <?= $vChart; ?>%">
+                                                                        <?= $v; ?>
                                                                     </div>
                                                                 </div>
+                                                                <div class="label-line-chart-eq">
+                                                                    <?=
+                                                                    isset($arrayTextos[trim($k)]) ?
+                                                                            $arrayTextos[trim($k)] :
+                                                                            $k;
+                                                                    ?>
+                                                                </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
-
-
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
-
                     </div>
                 </div>
             </div>
