@@ -21,6 +21,8 @@ if (!class_exists('FormularioBuscador')) :
 
             //SI HUBO POST
             if (!empty($_POST)) {
+                
+                echo "<pre>";                var_dump($_POST); echo "</pre>";
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
                 if (isset($_POST["guardar"])) {

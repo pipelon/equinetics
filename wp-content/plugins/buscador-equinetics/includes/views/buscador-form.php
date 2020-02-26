@@ -238,10 +238,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">                                                                                                    
                                                     <label for="geometria_figura">Figura</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_geometria_figura" data-input="geometria_figura" >
+                                                    <input type="hidden"                                                            
                                                            id="geometria_figura" 
-                                                           name="var[geometria_figura]" 
+                                                           name="var[geometria_figura]"
+                                                           data-range="range_geometria_figura"
                                                            value="<?=
                                                            isset($_POST['var']['geometria_figura']) ?
                                                                    $_POST['var']['geometria_figura'] : 0;
@@ -267,10 +268,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="geometria_orientacion">Orientación</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_geometria_orientacion" data-input="geometria_orientacion" >
+                                                    <input type="hidden"                                                            
                                                            id="geometria_orientacion" 
-                                                           name="var[geometria_orientacion]" 
+                                                           name="var[geometria_orientacion]"
+                                                           data-range="range_geometria_orientacion"
                                                            value="<?= isset($_POST['var']['geometria_orientacion']) ? $_POST['var']['geometria_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -344,10 +346,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="balance_horizontal">Horizontal</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_balance_horizontal" data-input="balance_horizontal" >
+                                                    <input type="hidden"                                                            
                                                            id="balance_horizontal" 
-                                                           name="var[balance_horizontal]" 
+                                                           name="var[balance_horizontal]"
+                                                           data-range="range_balance_horizontal"
                                                            value="<?= isset($_POST['var']['balance_horizontal']) ? $_POST['var']['balance_horizontal'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -370,10 +373,12 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="balance_vertical">Vertical</label>
-                                                    <input type="range" min="0" max="5"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="5" class="custom-range" id="range_balance_vertical" data-input="balance_vertical" >
+                                                    <input type="hidden"
+
                                                            id="balance_vertical" 
-                                                           name="var[balance_vertical]" 
+                                                           name="var[balance_vertical]"
+                                                           data-range="range_balance_vertical"
                                                            value="<?= isset($_POST['var']['balance_vertical']) ? $_POST['var']['balance_vertical'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -446,10 +451,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg"> 
                                                     <label for="lineaSuperior_cabeza">Cabeza</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_lineaSuperior_cabeza" data-input="lineaSuperior_cabeza" >
+                                                    <input type="hidden"                                                            
                                                            id="lineaSuperior_cabeza" 
-                                                           name="var[lineaSuperior_cabeza]" 
+                                                           name="var[lineaSuperior_cabeza]"
+                                                           data-range="range_lineaSuperior_cabeza"
                                                            value="<?= isset($_POST['var']['lineaSuperior_cabeza']) ? $_POST['var']['lineaSuperior_cabeza'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -472,10 +478,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="lineaSuperior_longitud_cuello">Longitud cuello</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_lineaSuperior_longitud_cuello" data-input="lineaSuperior_longitud_cuello" >
+                                                    <input type="hidden"                                                            
                                                            id="lineaSuperior_longitud_cuello" 
-                                                           name="var[lineaSuperior_longitud_cuello]" 
+                                                           name="var[lineaSuperior_longitud_cuello]"
+                                                           data-range="range_lineaSuperior_longitud_cuello"
                                                            value="<?= isset($_POST['var']['lineaSuperior_longitud_cuello']) ? $_POST['var']['lineaSuperior_longitud_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -498,10 +505,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="lineaSuperior_orientacion_cuello">Orientación Cuello</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_lineaSuperior_orientacion_cuello" data-input="lineaSuperior_orientacion_cuello" >
+                                                    <input type="hidden"                                                            
                                                            id="lineaSuperior_orientacion_cuello" 
-                                                           name="var[lineaSuperior_orientacion_cuello]" 
+                                                           name="var[lineaSuperior_orientacion_cuello]"
+                                                           data-range="range_lineaSuperior_orientacion_cuello"
                                                            value="<?= isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -524,10 +532,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="lineaSuperior_pecho">Pecho</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_lineaSuperior_pecho" data-input="lineaSuperior_pecho" >
+                                                    <input type="hidden"                                                            
                                                            id="lineaSuperior_pecho" 
-                                                           name="var[lineaSuperior_pecho]" 
+                                                           name="var[lineaSuperior_pecho]"
+                                                           data-range="range_lineaSuperior_pecho"
                                                            value="<?= isset($_POST['var']['lineaSuperior_pecho']) ? $_POST['var']['lineaSuperior_pecho'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -600,10 +609,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="espalda_tamano">Tamaño</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_espalda_tamano" data-input="espalda_tamano" >
+                                                    <input type="hidden"                                                            
                                                            id="espalda_tamano" 
-                                                           name="var[espalda_tamano]" 
+                                                           name="var[espalda_tamano]"
+                                                           data-range="range_espalda_tamano"
                                                            value="<?= isset($_POST['var']['espalda_tamano']) ? $_POST['var']['espalda_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -626,10 +636,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="espalda_orientacion">Orientación</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_espalda_orientaciono" data-input="espalda_orientacion" >
+                                                    <input type="hidden"                                                            
                                                            id="espalda_orientacion" 
-                                                           name="var[espalda_orientacion]" 
+                                                           name="var[espalda_orientacion]"
+                                                           data-range="range_espalda_orientacion"
                                                            value="<?= isset($_POST['var']['espalda_orientacion']) ? $_POST['var']['espalda_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -695,7 +706,7 @@
                                     <div class="row">
 
                                         <!-- INICIO VARIABLES -->
-                                        
+
                                         <div class="col-md-6">   
                                             <h4 class="tituVar">Cruz - Dorso</h4>
                                             <div class="form-row">
@@ -703,10 +714,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="lineaSuperior_cruz">Cruz</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_lineaSuperior_cruz" data-input="lineaSuperior_cruz" >
+                                                    <input type="hidden"                                                            
                                                            id="lineaSuperior_cruz" 
-                                                           name="var[lineaSuperior_cruz]" 
+                                                           name="var[lineaSuperior_cruz]"
+                                                           data-range="range_lineaSuperior_cruz"
                                                            value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -730,10 +742,11 @@
                                                      data-image="cuello.jpg">                                               
 
                                                     <label for="dorso_tamano">Tamaño</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_dorso_tamano" data-input="dorso_tamano" >
+                                                    <input type="hidden"                                                            
                                                            id="dorso_tamano" 
-                                                           name="var[dorso_tamano]" 
+                                                           name="var[dorso_tamano]"
+                                                           data-range="range_dorso_tamano"
                                                            value="<?= isset($_POST['var']['dorso_tamano']) ? $_POST['var']['dorso_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -756,10 +769,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="dorso_linea">Línea</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_dorso_linea" data-input="dorso_linea" >
+                                                    <input type="hidden"                                                            
                                                            id="dorso_linea" 
-                                                           name="var[dorso_linea]" 
+                                                           name="var[dorso_linea]"
+                                                           data-range="range_dorso_linea"
                                                            value="<?= isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -832,10 +846,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="grupa_tamano">Tamaño</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_grupa_tamano" data-input="grupa_tamano" >
+                                                    <input type="hidden"                                                            
                                                            id="grupa_tamano" 
-                                                           name="var[grupa_tamano]" 
+                                                           name="var[grupa_tamano]"
+                                                           data-range="range_grupa_tamano"
                                                            value="<?= isset($_POST['var']['grupa_tamano']) ? $_POST['var']['grupa_tamano'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -858,10 +873,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="grupa_orientacion">Orientación</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_grupa_orientacion" data-input="grupa_orientacion" >
+                                                    <input type="hidden"                                                            
                                                            id="grupa_orientacion" 
-                                                           name="var[grupa_orientacion]" 
+                                                           name="var[grupa_orientacion]"
+                                                           data-range="range_grupa_orientacion"
                                                            value="<?= isset($_POST['var']['grupa_orientacion']) ? $_POST['var']['grupa_orientacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -884,10 +900,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="grupa_amplitud">Amplitud</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_grupa_amplitud" data-input="grupa_amplitud" >
+                                                    <input type="hidden"                                                            
                                                            id="grupa_amplitud" 
-                                                           name="var[grupa_amplitud]" 
+                                                           name="var[grupa_amplitud]"
+                                                           data-range="range_grupa_amplitud"
                                                            value="<?= isset($_POST['var']['grupa_amplitud']) ? $_POST['var']['grupa_amplitud'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -960,10 +977,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="aplomos_anteriores_frente">Anteriores (Frente)</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_aplomos_anteriores_frente" data-input="aplomos_anteriores_frente" >
+                                                    <input type="hidden"                                                            
                                                            id="aplomos_anteriores_frente" 
-                                                           name="var[aplomos_anteriores_frente]" 
+                                                           name="var[aplomos_anteriores_frente]"
+                                                           data-range="range_aplomos_anteriores_frente"
                                                            value="<?= isset($_POST['var']['aplomos_anteriores_frente']) ? $_POST['var']['aplomos_anteriores_frente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -986,10 +1004,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="aplomos_anteriores_lateralmente">Anteriores (Lateralmente)</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_aplomos_anteriores_lateralmente" data-input="aplomos_anteriores_lateralmente" >
+                                                    <input type="hidden"                                                            
                                                            id="aplomos_anteriores_lateralmente" 
-                                                           name="var[aplomos_anteriores_lateralmente]" 
+                                                           name="var[aplomos_anteriores_lateralmente]"
+                                                           data-range="range_aplomos_anteriores_lateralmente"
                                                            value="<?= isset($_POST['var']['aplomos_anteriores_lateralmente']) ? $_POST['var']['aplomos_anteriores_lateralmente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1012,10 +1031,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="aplomos_posteriores_atras">Posteriores (Atrás)</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_aplomos_posteriores_atras" data-input="aplomos_posteriores_atras" >
+                                                    <input type="hidden"                                                            
                                                            id="aplomos_posteriores_atras" 
-                                                           name="var[aplomos_posteriores_atras]" 
+                                                           name="var[aplomos_posteriores_atras]"
+                                                           data-range="range_aplomos_posteriores_atras"
                                                            value="<?= isset($_POST['var']['aplomos_posteriores_atras']) ? $_POST['var']['aplomos_posteriores_atras'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1038,10 +1058,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="aplomos_posteriores_lateralmente">Posteriores (Lateralmente)</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_aplomos_posteriores_lateralmente" data-input="aplomos_posteriores_lateralmente" >
+                                                    <input type="hidden"                                                            
                                                            id="aplomos_posteriores_lateralmente" 
-                                                           name="var[aplomos_posteriores_lateralmente]" 
+                                                           name="var[aplomos_posteriores_lateralmente]"
+                                                           data-range="range_aplomos_posteriores_lateralmente"
                                                            value="<?= isset($_POST['var']['aplomos_posteriores_lateralmente']) ? $_POST['var']['aplomos_posteriores_lateralmente'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1114,10 +1135,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="alzada">Alzada</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_alzada_estatura" data-input="alzada_estatura" >
+                                                    <input type="hidden"                                                            
                                                            id="alzada_estatura" 
-                                                           name="var[alzada_estatura]" 
+                                                           name="var[alzada_estatura]"
+                                                           data-range="range_alzada_estatura"
                                                            value="<?= isset($_POST['var']['alzada_estatura']) ? $_POST['var']['alzada_estatura'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1190,10 +1212,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_cana_anterior">Caña anterior</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cana_anterior" data-input="morfometria_cana_anterior" >
+                                                    <input type="hidden"                                                            
                                                            id="morfometria_cana_anterior" 
-                                                           name="var[morfometria_cana_anterior]" 
+                                                           name="var[morfometria_cana_anterior]"
+                                                           data-range="range_morfometria_cana_anterior"
                                                            value="<?= isset($_POST['var']['morfometria_cana_anterior']) ? $_POST['var']['morfometria_cana_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1217,10 +1240,11 @@
                                                      data-image="cuello.jpg">                                                
 
                                                     <label for="morfometria_cuartilla_anterior">Cuartilla anterior</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cuartilla_anterior" data-input="morfometria_cuartilla_anterior" >
+                                                    <input type="hidden"                                                            
                                                            id="morfometria_cuartilla_anterior" 
-                                                           name="var[morfometria_cuartilla_anterior]" 
+                                                           name="var[morfometria_cuartilla_anterior]"
+                                                           data-range="range_morfometria_cuartilla_anterior"
                                                            value="<?= isset($_POST['var']['morfometria_cuartilla_anterior']) ? $_POST['var']['morfometria_cuartilla_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1243,10 +1267,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_femur">Femur</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_femur" data-input="morfometria_femur" >
+                                                    <input type="hidden"                                                            
                                                            id="morfometria_femur" 
-                                                           name="var[morfometria_femur]" 
+                                                           name="var[morfometria_femur]"
+                                                           data-range="range_morfometria_femur"
                                                            value="<?= isset($_POST['var']['morfometria_femur']) ? $_POST['var']['morfometria_femur'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1269,10 +1294,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="morfometria_cana_posterior">Caña posterior</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cana_posterior" data-input="morfometria_cana_posterior" >
+                                                    <input type="hidden"                                                            
                                                            id="morfometria_cana_posterior" 
-                                                           name="var[morfometria_cana_posterior]" 
+                                                           name="var[morfometria_cana_posterior]"
+                                                           data-range="range_morfometria_cana_posterior"
                                                            value="<?= isset($_POST['var']['morfometria_cana_posterior']) ? $_POST['var']['morfometria_cana_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1295,10 +1321,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_cuartilla_posterior">Cuartilla posterior</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cuartilla_posterior" data-input="morfometria_cuartilla_posterior" >
+                                                    <input type="hidden"                                                            
                                                            id="morfometria_cuartilla_posterior" 
-                                                           name="var[morfometria_cuartilla_posterior]" 
+                                                           name="var[morfometria_cuartilla_posterior]"
+                                                           data-range="range_morfometria_cuartilla_posterior"
                                                            value="<?= isset($_POST['var']['morfometria_cuartilla_posterior']) ? $_POST['var']['morfometria_cuartilla_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1371,10 +1398,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_velocidad">Velocidad</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_velocidad" data-input="movimiento_velocidad" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_velocidad" 
-                                                           name="var[movimiento_velocidad]" 
+                                                           name="var[movimiento_velocidad]"
+                                                           data-range="range_movimiento_velocidad"
                                                            value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1397,10 +1425,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="movimiento_elevacion_anterior">Elevación anteriores</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_elevacion_anterior" data-input="movimiento_elevacion_anterior" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_elevacion_anterior" 
-                                                           name="var[movimiento_elevacion_anterior]" 
+                                                           name="var[movimiento_elevacion_anterior]"
+                                                           data-range="range_movimiento_elevacion_anterior"
                                                            value="<?= isset($_POST['var']['movimiento_elevacion_anterior']) ? $_POST['var']['movimiento_elevacion_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1423,10 +1452,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_elevacion_posterior">Elevación posteriores</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_elevacion_posterior" data-input="movimiento_elevacion_posterior" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_elevacion_posterior" 
-                                                           name="var[movimiento_elevacion_posterior]" 
+                                                           name="var[movimiento_elevacion_posterior]"
+                                                           data-range="range_movimiento_elevacion_posterior"
                                                            value="<?= isset($_POST['var']['movimiento_elevacion_posterior']) ? $_POST['var']['movimiento_elevacion_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1449,10 +1479,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="movimiento_pisada">Pisada</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_pisada" data-input="movimiento_pisada" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_pisada" 
-                                                           name="var[movimiento_pisada]" 
+                                                           name="var[movimiento_pisada]"
+                                                           data-range="range_movimiento_pisada"
                                                            value="<?= isset($_POST['var']['movimiento_pisada']) ? $_POST['var']['movimiento_pisada'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1475,10 +1506,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_pulimento">Pulimento</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_pulimento" data-input="movimiento_pulimento" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_pulimento" 
-                                                           name="var[movimiento_pulimento]" 
+                                                           name="var[movimiento_pulimento]"
+                                                           data-range="range_movimiento_pulimento"
                                                            value="<?= isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1501,10 +1533,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="movimiento_elasticidad">Elasticidad</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_elasticidad" data-input="movimiento_elasticidad" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_elasticidad" 
-                                                           name="var[movimiento_elasticidad]" 
+                                                           name="var[movimiento_elasticidad]"
+                                                           data-range="range_movimiento_elasticidad"
                                                            value="<?= isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -1527,10 +1560,11 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_compensacion">Compensación</label>
-                                                    <input type="range" min="0" max="3"
-                                                           class="custom-range" 
+                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_compensacion" data-input="movimiento_compensacion" >
+                                                    <input type="hidden"                                                            
                                                            id="movimiento_compensacion" 
-                                                           name="var[movimiento_compensacion]" 
+                                                           name="var[movimiento_compensacion]"
+                                                           data-range="range_movimiento_compensacion"
                                                            value="<?= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -2071,21 +2105,27 @@ Por favor revise la información suministrada.');
         return true;
     });
 
-    jQuery('input[type="range"]').on("change", function () {
-        if (jQuery(this).val() == 0) {
-            jQuery(this).parent().parent().removeClass("selectedVar");
-            jQuery(this).parent().prev(".emptyVar").hide();
-            jQuery(this).next().children(".valor").html("-");
-        } else {
-            jQuery(this).parent().parent().addClass("selectedVar");
-            jQuery(this).parent().prev(".emptyVar").show();
-            jQuery(this).next().children(".valor").html(jQuery(this).val());
-        }
+    //SI SE DESLIZA ALGUNA VARIABLE CON EL RANGO DEBO LLENAR EL VALOR OCULTO
+    jQuery('input[type="range"]').change(function () {
+        /*if (jQuery(this).val() == 0) {
+         jQuery(this).parent().parent().removeClass("selectedVar");
+         jQuery(this).parent().prev(".emptyVar").hide();
+         jQuery(this).next().children(".valor").html("-");
+         } else {*/
+        jQuery("#" + jQuery(this).data('input')).val(jQuery(this).val());
+        jQuery(this).parent().parent().addClass("selectedVar");
+        jQuery(this).parent().prev(".emptyVar").show();
+        jQuery(this).next().next(".valores").children(".valor").html(jQuery(this).val());
+        /*}*/
     });
 
     jQuery('.emptyVar').click(function () {
-        jQuery(this).next().children('input[type="range"]').val(0);
+        jQuery(this).next().children('input[type="range"]').val(2);
         jQuery(this).next().children('input[type="range"]').trigger('change');
+        jQuery(this).next().children('input[type="hidden"]').val(0);
+        jQuery(this).parent().removeClass("selectedVar");
+        jQuery(this).hide();
+        jQuery(this).next().children(".valores").children(".valor").html("-");
     });
 
     jQuery('.divVariable').on("hover", function () {
@@ -2127,16 +2167,19 @@ Por favor revise la información suministrada.');
 
     jQuery(document).ready(function () {
 
-        jQuery('input[type="range"]').each(function () {
-            if (jQuery(this).val() !== "0") {
-                jQuery(this).parent().parent().addClass("selectedVar");
-                jQuery(this).parent().prev(".emptyVar").show();
-                jQuery(this).next().children(".valor").html(jQuery(this).val());
+        //VALOR INICIAL PARA LOS RANGOS DE LAS VARIABLES
+        jQuery('input[type="hidden"]').each(function () {
+            if (jQuery(this).attr("id") !== "priority") {
+                if (jQuery(this).val() !== "" && jQuery(this).val() !== "0") {
+                    jQuery("#" + jQuery(this).data("range")).val(jQuery(this).val());
+                    jQuery(this).parent().parent().addClass("selectedVar");
+                    jQuery(this).parent().prev(".emptyVar").show();
+                    jQuery(this).next().children(".valor").html(jQuery(this).val());
+                }
             }
         });
 
         var prioritySelected = jQuery("#priority").val().split(",");
-        console.info(prioritySelected);
         jQuery.each(prioritySelected, function (i, val) {
             if (jQuery("#" + val).is(":checked")) {
                 selectedImprovements.push(jQuery("#" + val).attr('id'));
