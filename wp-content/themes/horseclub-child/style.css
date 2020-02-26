@@ -1862,6 +1862,10 @@ h1{
     padding: 5px 10px !important;
     font-size: 14px !important;
 }
+.compareProduct .tab-caracteristicas .vc_tta.vc_general ul li.vc_tta-tab > a{
+    padding: 0px 5px !important;
+    font-size: 12px !important;
+}
 .tab-caracteristicas .vc_tta.vc_general ul li.vc_tta-tab.vc_active > a{
     background-color: var(--eqcolor);
     color: white !important;
@@ -1869,6 +1873,11 @@ h1{
 
 .chartsara_container{
     width: 170px;
+    float: left;
+    margin: 10px;
+}
+.compareProduct .chartsara_container{
+    width: auto;
     float: left;
     margin: 10px;
 }
@@ -1893,6 +1902,10 @@ h1{
 }
 .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
     width: max-content !important;
+    margin: 0 auto !important;
+}
+.compareProduct .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper{
+    width: auto !important;
     margin: 0 auto !important;
 }
 #search-results-eq ul.products li.product.first{
@@ -1945,12 +1958,27 @@ h1{
     bottom: 0;
     color: #FFFFFF;
 }
-
+.compareProduct .container-line-chart-eq{
+    width: 30px;
+    height: 150px;
+}
+.compareProduct .value-line-chart-eq{
+    width: 30px;
+}
+.compareProduct .label-line-chart-eq{
+    font-size: 12px;
+}
+a.compare.button{
+    margin-left: 25% !important;
+}
 
 
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+    a.compare.button{
+        margin-left: 15% !important;
+    }
     .container-line-chart-eq{
         width: 25px;
         height: 100px;
