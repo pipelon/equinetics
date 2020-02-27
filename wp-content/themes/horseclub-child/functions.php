@@ -145,6 +145,228 @@ function my_child_theme_setup() {
 
     }
 
+    //OVERRIDE GRID PORTFOLIO
+    add_shortcode('horseclub_grid_portofoliio_home', 'get_horseclub_grid_portofoliio_home');
+
+    function get_horseclub_grid_portofoliio_home($atts, $content = null) {
+
+        extract(shortcode_atts(array(
+            'el_position' => '',
+            'porcol' => '',
+            'nospace' => '',
+            'perpage' => '',
+            'port_category' => '',
+            'filter' => '',
+            'show_more_grid' => '',
+            'gridporhover' => '',
+            'filter_posit' => '',
+            'gridporlayout' => false,
+            'ppta' => '',
+            'gpbtn' => '',
+            'pgall' => 'ALL',
+            'pgsm' => 'SHOW MORE'
+                        ), $atts));
+        global $wp_query;
+        $sghover = $pptalg = '';
+        $sghover = "";
+        $fpos = '';
+        if ($gridporhover != "") {
+            $sghover = $gridporhover;
+        }
+        if ($filter_posit != "") {
+            $fpos = $filter_posit;
+        }
+        if ($ppta != "") {
+            $pptalg = 'center';
+        }
+        if (get_query_var('paged')) {
+            $paged = get_query_var('paged');
+        } elseif (get_query_var('page')) {
+            $paged = get_query_var('page');
+        } else {
+            $paged = 1;
+        }
+        $curpage = $paged ? $paged : 1;
+        
+        $args = array(
+            'post_type' => 'portfolio',
+            'orderby' => 'rand',
+            'portfolio-type' => $port_category,
+            'posts_per_page' => $perpage,
+            'paged' => $paged
+        );
+        if ($port_category = "") {
+            $port_category = '';
+        }
+        global $wp_query;
+
+        $taxonomy = 'portfolio-type';
+        $terms = get_terms($taxonomy);
+        $space = "";
+        if ($nospace != "") {
+            $space = $nospace;
+        }
+        $output = '';
+        $output .= '<div class="container_r">';
+        if ($filter == "yes") {
+            $output .= '<div class="filter_wrap ' . $fpos . '">';
+            $output .= '<ul id="up_filters" class="clearfix ' . $space . '">';
+            $output .= '<li><span class="filter active" data-filter="all">' . $pgall . '</span></li>';
+            $count = count($terms);
+            $i = 0;
+            if ($count > 0) {
+                foreach ($terms as $term) {
+                    $i++;
+                    $output .= '<li><span class="filter" data-filter="' . $term->term_id . '">' . $term->name . '</span></li>';
+                }
+            }
+            $output .= '</ul>';
+            $output .= '</div>';
+        }
+        $output .= '<div id="portfoliolist">';
+        query_posts($args);
+        if (have_posts()) : while (have_posts()) : the_post();
+                $terms = wp_get_post_terms(get_the_ID(), 'portfolio-type');
+                if ($porcol == '1') {
+                    $columnnum = 'onecolumn';
+                    $imgwidth = 1150;
+                    $imgheight = 643;
+                    $sliderheight = 643;
+                } else if ($porcol == '2') {
+                    $columnnum = 'p2';
+                    $imgwidth = 600;
+                    $imgheight = 600;
+                    $sliderheight = 600;
+                } else if ($porcol == '3') {
+                    $columnnum = 'p3';
+                    $imgwidth = 400;
+                    $imgheight = 400;
+                    $sliderheight = 400;
+                } else if ($porcol == '4wide') {
+                    $columnnum = 'p4w';
+                    $imgwidth = 650;
+                    $imgheight = 650;
+                    $sliderheight = 650;
+                } else if ($porcol == '5wide') {
+                    $columnnum = 'p5w';
+                    $imgwidth = 600;
+                    $imgheight = 600;
+                    $sliderheight = 600;
+                } else if ($porcol == '3wide') {
+                    $columnnum = 'p3w';
+                    $imgwidth = 700;
+                    $imgheight = 700;
+                    $sliderheight = 700;
+                } else {
+                    $columnnum = 'p4';
+                    $imgwidth = 400;
+                    $imgheight = 400;
+                    $sliderheight = 400;
+                }
+
+                $thumb = get_post_thumbnail_id();
+                $img_url = wp_get_attachment_url($thumb, 'full');
+                $image = horseclub_resize($img_url, $imgwidth, $imgheight, true);
+
+                foreach ($terms as $term) {
+                    $k = 1;
+                    if (count($terms) != $k) {
+                        $output .= ' ';
+                    }
+                    $k++;
+                }
+                $output .= "<div class='mix portfolio ";
+                foreach ($terms as $term) {
+                    $output .= "$term->term_id ";
+                }
+                ;
+                $output .= "$columnnum ";
+                $output .= "$space";
+                $output .= "'> ";
+
+                $output .= '<div class="portfolio-wrapper ' . $sghover . '">';
+
+                if ($image) {
+                    $output .= '<img width="' . $imgwidth . '" height="' . $imgheight . '" src="' . $image . '" alt="' . get_the_title() . '" >';
+                } else {
+                    $output .= '<img src="' . get_template_directory_uri() . '/assets/img/no-thumbs.png" alt="No Image">';
+                }
+
+                if ($gridporlayout == true) {
+
+                    $output .= '<div class="label-pp"><div class="label-text"><div class="mrko">';
+                    if (empty($gpbtn)) {
+                        $output .= ' <a class="image-popup-no-margins up-button  port_but"  href="' . $img_url . '"><span><i class="fa fa-expand"></i></span></a>';
+                        $output .= ' <a class="up-button  port_but"  href="' . get_permalink(get_the_ID()) . '"><span><i class="fa fa-link"></i></span></a>';
+                    }
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '<div class="bottom-pp ' . $pptalg . '">';
+                    $output .= '<a href="' . get_permalink(get_the_ID()) . '">';
+                    $output .= '<div class="text-title">' . get_the_title() . '</div>';
+                    $output .= '</a>';
+                    $output .= '<span class="text-category">';
+                    $k = 1;
+                    foreach ($terms as $term) {
+                        $output .= "$term->name";
+                        if (count($terms) != $k) {
+                            $output .= ', ';
+                        }
+                        $k++;
+                    }
+                    $output .= '</span>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+                } else {
+                    $output .= '<div class="label-pp"><div class="label-text"><div class="mrko"><div class="mrko_iner">';
+                    $output .= '<a href="' . get_permalink(get_the_ID()) . '">';
+                    $output .= '<div class="text-title">' . get_the_title() . '</div>';
+                    $output .= '</a>';
+                    $output .= '<span class="text-category">';
+                    $k = 1;
+                    foreach ($terms as $term) {
+                        $output .= "$term->name";
+                        if (count($terms) != $k) {
+                            $output .= ', ';
+                        }
+                        $k++;
+                    }
+                    $output .= '</span>';
+//$output .='<div class="line"></div>';
+                    if (empty($gpbtn)) {
+                        $output .= ' <a class="image-popup-no-margins up-button  port_but"  href="' . $img_url . '"><span><i class="fa fa-expand"></i></span></a>';
+                        $output .= ' <a class="up-button  port_but"  href="' . get_permalink(get_the_ID()) . '"><span><i class="fa fa-link"></i></span></a>';
+                    }
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+                    $output .= '</div>';
+
+                    $output .= '</div>';
+
+                    $output .= '</div>';
+                }
+            endwhile;
+        else:
+            ?>
+            <p><?php esc_html__('Sorry, no posts matched your criteria.', 'horseclub'); ?></p>
+        <?php
+        endif;
+
+        $output .= '</div>';
+        $output .= '</div>';
+
+        if ($show_more_grid == "yes") {
+            if (get_next_posts_link()) {
+                $output .= '<div class="grid_port_paging"><span rel="' . $wp_query->max_num_pages . '" class="loading_more">' . get_next_posts_link($pgsm) . '</span></div>';
+            }
+        }
+        wp_reset_query();
+        return $output;
+    }
+
 }
 
 /**
