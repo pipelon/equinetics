@@ -1918,7 +1918,7 @@ h1{
     width: 20%;
     box-sizing: border-box;
     padding: 0 10px;
-    min-height: 270px;
+    min-height: 300px;
 }
 .prioridad.haspriority{
     background: var(--eqcolor);

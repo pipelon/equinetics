@@ -22,7 +22,7 @@ if (!class_exists('FormularioBuscador')) :
             //SI HUBO POST
             if (!empty($_POST)) {
                 
-                echo "<pre>";                var_dump($_POST); echo "</pre>";
+                //echo "<pre>";                var_dump($_POST); echo "</pre>";
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
                 if (isset($_POST["guardar"])) {
@@ -185,7 +185,7 @@ if (!class_exists('FormularioBuscador')) :
                                     'compare' => '='
                                 ],
                                 [
-                                    'key' => 'varsara_varsara_dorso_tamano',
+                                    'key' => 'varsara_dorso_tamano',
                                     'value' => $searchValue['dorso_tamano'],
                                     'compare' => '='
                                 ]
@@ -209,7 +209,7 @@ if (!class_exists('FormularioBuscador')) :
                     ]
                 ];
             }
-            //echo "<pre>"; print_r($meta_query); echo "</pre>";
+            echo "<pre>"; print_r($meta_query); echo "</pre>";
             return $meta_query;
         }
 
@@ -488,6 +488,8 @@ if (!class_exists('FormularioBuscador')) :
                     ];
                     break;
             }
+            
+            //var_dump($lineaSuperior_cruz, $dorso_tamano, $arrValores);
             return $arrValores;
         }
 
@@ -778,7 +780,7 @@ if (!class_exists('FormularioBuscador')) :
         private function get_movimiento_elevacion_posterior($valor, $category) {
             switch ($valor) {
                 case 1:
-                    $arrValores = $category == '46' ? [3, 2] : [3];
+                    $arrValores = $category == '46' ? [2, 3] : [3];
                     break;
                 case 2:
                     $arrValores = $category == '46' ? [2] : [3, 2];
