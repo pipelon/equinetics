@@ -1890,18 +1890,18 @@
                                             <input type="submit" 
                                                    value="<?= $settings["search_field_text"]; ?>" 
                                                    class="up-button up_btn-s btn-grey btn-buscarguardar"
-                                                   style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>
+                                                   style="line-height: 40px !important; padding: 3px 50px;"/>
                                                    <?php if (is_user_logged_in()) : ?>        
                                                 <input type="submit" 
                                                        name="guardar"
-                                                       value="Buscar y guardar información de la Yegua" 
+                                                       value="Buscar y guardar" 
                                                        class="up-button btn-grey btn-buscarguardar"
-                                                       style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>               
+                                                       style="line-height: 40px !important; padding: 3px 50px;"/>               
                                                    <?php endif; ?>
                                             <input type="submit" 
                                                    value="Sugerencias S. A. R. A." 
                                                    class="up-button up_btn-s btn-red btn-buscarguardar"
-                                                   style="line-height: 40px !important; margin: 0 10px; padding: 3px 50px;"/>
+                                                   style="line-height: 40px !important; padding: 3px 50px;"/>
                                         </div>
                                     </div>
                                 </div>

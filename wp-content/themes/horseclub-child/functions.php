@@ -405,7 +405,7 @@ function equinetics_template_single_price() {
  * FUNCION PARA EL BOTON AGREGAR AL CARRITO
  */
 function equinetics_switch_loop_add_to_cart() {
-    remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+    //remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
     add_action('woocommerce_before_shop_loop_item_title', 'equinetics_woocommerce_template_loop_add_to_cart', 10);
 }
 
@@ -475,9 +475,7 @@ function wdo_custom_wc_add_to_cart_message($message, $product_id) {
     $message = sprintf(esc_html__('Has solicitado un servicio de « %s ».', 'tm-organik'), get_the_title($product_id));
     return $message;
 }
-?>
 
-<?php
 add_action('show_user_profile', 'agregar_campos_perfil');
 add_action('edit_user_profile', 'agregar_campos_perfil');
 add_action('personal_options_update', 'guardar_campos_perfil');
@@ -637,4 +635,16 @@ function pippin_login_fail($username) {
         wp_redirect(site_url('/software-de-cruza/') . '/?login=failed');  // let's append some information (login=failed) to the URL for the theme to use
         exit;
     }
+}
+
+//FUNCION PARA CAMBIAR EL ENLACE DE LAS BUSQUEDAS Y QUE VAYA AL PORTAFOLIO
+if ( ! function_exists( 'woocommerce_template_loop_product_link_open' ) ) {
+	/**
+	 * Insert the opening anchor tag for products in the loop.
+	 */
+	function woocommerce_template_loop_product_link_open() {
+		
+	var_dump(get_the_ID());
+		echo '<a href="hola" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+	}
 }
