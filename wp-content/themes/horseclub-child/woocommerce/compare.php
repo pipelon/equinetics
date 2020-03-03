@@ -73,7 +73,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 <!-- START BODY -->
 <body <?php body_class('woocommerce') ?>>
 
-    <h1 style="font-size: 25px !important">
+    <h1 style="font-size: 23px !important; background: #d7cfc4; color: black;">
         <?php echo $localized_table_text ?>
         <?php if (!$is_iframe) : ?><a class="close" href="#"><?php _e('Close window [X]', 'yith-woocommerce-compare') ?></a><?php endif; ?>
     </h1>
@@ -109,7 +109,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                 <?php else : ?>
                     <tr class="remove">
-                        <th>&nbsp;</th>
+                        <!--<th>&nbsp;</th>-->
                         <?php
                         $index = 0;
                         foreach ($products as $product_id => $product) :
@@ -123,18 +123,20 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
                         endforeach;
                         ?>
                     </tr>
-
+					
+					<?php $fields["category"] = "Categoría"; ?>
                     <?php foreach ($fields as $field => $name) : ?>
 
                         <tr class="<?php echo $field ?>">
 
-                            <th>
-                                <?php if ($field != 'image') echo $name ?>
-                            </th>
+                            <!--<th>
+                                <?php //if ($field != 'image') echo $name ?>
+                            </th>-->
 
                             <?php
                             $index = 0;
                             foreach ($products as $product_id => $product) :
+
                                 $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id;
                                 ?>
                                 <td class="<?php echo $product_class; ?>"><?php
@@ -146,6 +148,16 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                                         case 'add-to-cart':
                                             woocommerce_template_loop_add_to_cart();
+                                            break;
+											
+										case 'category':
+											//CATEGORIAS
+											$terms = get_the_terms( $product_id, 'product_cat' );	
+											$cat = [];
+                                            foreach($terms as $v){
+												$cat[] = $v->name;
+											}
+											echo implode(" - ", $cat);
                                             break;
 
                                         default:
@@ -165,7 +177,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                     <?php if ($repeat_price == 'yes' && isset($fields['price'])) : ?>
                         <tr class="price repeated">
-                            <th><?php echo $fields['price'] ?></th>
+                            <!--<th><?php //echo $fields['price'] ?></th>-->
 
                             <?php
                             $index = 0;
@@ -183,7 +195,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                     <?php if ($repeat_add_to_cart == 'yes' && isset($fields['add-to-cart'])) : ?>
                         <tr class="add-to-cart repeated">
-                            <th><?php echo $fields['add-to-cart'] ?></th>
+                            <!--<th><?php //echo $fields['add-to-cart'] ?></th>-->
 
                             <?php
                             $index = 0;
@@ -203,7 +215,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                     <!-- VARIABLES SARA -->
                     <tr>
-                        <th>SARA</th>
+                        <!--<th>SARA</th>-->
 
                         <?php
                         $index = 0;

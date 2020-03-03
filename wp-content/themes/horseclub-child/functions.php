@@ -644,7 +644,7 @@ if ( ! function_exists( 'woocommerce_template_loop_product_link_open' ) ) {
 	 */
 	function woocommerce_template_loop_product_link_open() {
 		
-	var_dump(get_the_ID());
+	//var_dump(get_the_ID());
 		echo '<a href="hola" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
 	}
 }

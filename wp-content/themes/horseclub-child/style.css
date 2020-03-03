@@ -1985,6 +1985,24 @@ h1{
 	top: 0;
 	left: -15px;
 }
+table.compare-list td{
+	width: auto;
+	max-width: none;
+	min-width: auto;
+}
+table.dataTable.compare-list tbody th, 
+table.dataTable.compare-list tbody td{
+	border-right: 1px solid #e7e7e7;
+	border-top: 0;
+}
+table.dataTable.compare-list tbody th:last-child, 
+table.dataTable.compare-list tbody td:last-child{
+	border-right: 0;
+	border-top: 0;
+}
+table.compare-list td.odd{
+	background: #FFFFFF;	
+}
 
 
 /* RESOLUCION CELULAR */
