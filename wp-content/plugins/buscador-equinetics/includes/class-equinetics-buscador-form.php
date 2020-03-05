@@ -209,7 +209,7 @@ if (!class_exists('FormularioBuscador')) :
                     ]
                 ];
             }
-            echo "<pre>"; print_r($meta_query); echo "</pre>";
+            //echo "<pre>"; print_r($meta_query); echo "</pre>";
             return $meta_query;
         }
 

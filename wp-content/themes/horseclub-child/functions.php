@@ -187,7 +187,7 @@ function my_child_theme_setup() {
             $paged = 1;
         }
         $curpage = $paged ? $paged : 1;
-        
+
         $args = array(
             'post_type' => 'portfolio',
             'orderby' => 'rand',
@@ -638,13 +638,16 @@ function pippin_login_fail($username) {
 }
 
 //FUNCION PARA CAMBIAR EL ENLACE DE LAS BUSQUEDAS Y QUE VAYA AL PORTAFOLIO
-if ( ! function_exists( 'woocommerce_template_loop_product_link_open' ) ) {
-	/**
-	 * Insert the opening anchor tag for products in the loop.
-	 */
-	function woocommerce_template_loop_product_link_open() {
-		
-	//var_dump(get_the_ID());
-		echo '<a href="hola" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
-	}
+if (!function_exists('woocommerce_template_loop_product_link_open')) {
+
+    /**
+     * Insert the opening anchor tag for products in the loop.
+     */
+    function woocommerce_template_loop_product_link_open() {
+        global $product;
+        $portfolio_id = get_post_meta($product->id, 'portfolio_id', true);
+        $link = get_permalink($portfolio_id);
+        echo '<a href="' . esc_url( $link ) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+    }
+
 }
