@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-04 11:55:08+0000\n"
+"PO-Revision-Date: 2020-03-06 18:13:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -459,15 +459,6 @@ msgstr "Mostrar menos"
 msgid "Show less options"
 msgstr "Mostrar menos opciones"
 
-#. translators: %s number of options to reveal.
-#: packages/woocommerce-blocks/assets/js/base/components/checkbox-list/index.js:63
-#: packages/woocommerce-blocks/build/attribute-filter.js:1
-#: packages/woocommerce-blocks/build/attribute-filter-frontend.js:6
-msgid "Show %s more"
-msgid_plural "Show %s more"
-msgstr[0] "Mostrar %s más"
-msgstr[1] ""
-
 #: packages/woocommerce-blocks/assets/js/base/components/checkbox-list/index.js:52
 #: packages/woocommerce-blocks/build/attribute-filter.js:1
 #: packages/woocommerce-blocks/build/attribute-filter-frontend.js:6
@@ -493,15 +484,6 @@ msgstr "No hemos podido encontrar ningún resultado basados en tu búsqueda."
 #: packages/woocommerce-blocks/build/all-products.js:1
 msgid "There are currently no products available to display."
 msgstr "Actualmente no hay productos disponibles que mostrar."
-
-#. translators: %s number of products in cart.
-#: packages/woocommerce-blocks/assets/js/atomic/components/product/button/index.js:108
-#: packages/woocommerce-blocks/build/all-products-frontend.js:6
-#: packages/woocommerce-blocks/build/all-products.js:1
-msgid "%d in cart"
-msgid_plural "%d in cart"
-msgstr[0] "%d en el carrito"
-msgstr[1] ""
 
 #: packages/woocommerce-blocks/assets/js/base/components/product-sort-select/index.js:52
 #: packages/woocommerce-blocks/build/all-products-frontend.js:6
@@ -583,6 +565,24 @@ msgstr "¡Despliega tu estandarte de WordPress con esta belleza! Decora tu ofici
 #: packages/woocommerce-blocks/build/vendors-legacy.js:6
 msgid "No data to display"
 msgstr "No hay datos para mostrar"
+
+#. translators: %s number of products in cart.
+#: packages/woocommerce-blocks/assets/js/atomic/components/product/button/index.js:108
+#: packages/woocommerce-blocks/build/all-products-frontend.js:6
+#: packages/woocommerce-blocks/build/all-products.js:1
+msgid "%d in cart"
+msgid_plural "%d in cart"
+msgstr[0] "%d en el carrito"
+msgstr[1] "%d en el carrito"
+
+#. translators: %s number of options to reveal.
+#: packages/woocommerce-blocks/assets/js/base/components/checkbox-list/index.js:63
+#: packages/woocommerce-blocks/build/attribute-filter.js:1
+#: packages/woocommerce-blocks/build/attribute-filter-frontend.js:6
+msgid "Show %s more"
+msgid_plural "Show %s more"
+msgstr[0] "Mostrar %s más"
+msgstr[1] "Mostrar %s más"
 
 #: packages/woocommerce-blocks/build/product-category.js:1
 #: packages/woocommerce-blocks/build/product-category-legacy.js:1
@@ -13369,17 +13369,17 @@ msgstr "Lilangeni"
 msgid "%1$s is not of type %2$s"
 msgstr "%1$s no es del tipo %2$s"
 
+#: includes/wc-template-functions.php:27
+msgid "Checkout is not available whilst your cart is empty."
+msgstr "Finalizar compra no está disponible mientras tu carrito esté vacío."
+
 #. translators: %s: product count
 #: includes/admin/reports/class-wc-report-stock.php:154
 #: includes/widgets/class-wc-widget-product-tag-cloud.php:90
 msgid "%s product"
 msgid_plural "%s products"
 msgstr[0] "%s producto"
-msgstr[1] ""
-
-#: includes/wc-template-functions.php:27
-msgid "Checkout is not available whilst your cart is empty."
-msgstr "Finalizar compra no está disponible mientras tu carrito esté vacío."
+msgstr[1] "%s productos"
 
 #: includes/wc-core-functions.php:442
 msgid "Nepalese rupee"
@@ -18507,10 +18507,6 @@ msgstr "Libra egipcia"
 msgid "Free shipping coupon"
 msgstr "Cupón de envío gratuito"
 
-#: templates/loop/result-count.php:27
-msgid "Showing the single result"
-msgstr "Mostrando el único resultado"
-
 #: templates/checkout/form-billing.php:24
 msgid "Billing &amp; Shipping"
 msgstr "Facturación y envío"
@@ -18793,6 +18789,10 @@ msgstr "Sin productos"
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:84
 msgid "Email address"
 msgstr "Dirección de correo electrónico"
+
+#: templates/loop/result-count.php:27
+msgid "Showing the single result"
+msgstr "Mostrando el único resultado"
 
 #. translators: %s: order number
 #. translators: %s: order ID

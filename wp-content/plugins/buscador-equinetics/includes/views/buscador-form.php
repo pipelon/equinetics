@@ -185,22 +185,73 @@
                                             <div class="description" >
                                                 <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
+                                                    Con el objetivo facilitar la selección y descarte de 
+                                                    reproductores S.A.R.A posee 2 fases principales.
                                                 </p>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
+                                                    <b>Fase 1 o Fase de Descripción</b>
                                                 </p>
+                                                <p style="text-align: justify">
+                                                    Consiste en la caracterización morfológica y descripción 
+                                                    del desplazamiento del ejemplar a mejorar, implica 
+                                                    llenar parcial o totalmente el formulario de variables, 
+                                                    esto le permite al programa perfilar la yegua 
+                                                    que se desea mejorar.
+                                                </p>
+                                                <p>&nbsp;</p>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
+                                                    <b>Fase 2 o Fase de Mejoramiento Esperado</b>
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    Durante esta fase existen 2 opciones que 
+                                                    le permitirán identificar los potenciales 
+                                                    reproductores para su yegua.
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    La primera opción es utilizar el botón <b>BUSCAR</b>, 
+                                                    con el cual usted selecciona las características 
+                                                    que según su criterio son las fundamentales a 
+                                                    mejorar por el Reproductor, el programa buscará 
+                                                    los ejemplares que cumplan con estas características.
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    Opción 2 o Botón de <b>SUGERENCIAS</b>, con este S.A.R.A 
+                                                    identifica según las variables de la fase 1 
+                                                    los reproductores necesarios para este ejemplar.
+                                                </p>
+                                                <p>&nbsp;</p>
+                                                <p>
+                                                    <b>Resultados</b>
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    Finalizadas las fases 1 y 2 puede 
+                                                    abrir el perfil completo de los 
+                                                    reproductores seleccionados por nuestro 
+                                                    software para su yegua, 
+                                                    y analizar la compatibilidad de 
+                                                    los ejemplares de manera detallada.
+                                                </p>
+                                                <p>&nbsp;</p>
+                                                <p>
+                                                    <b>Importante </b>
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    Si no comprende la evaluación de 
+                                                    alguna variable, es preferible dejar 
+                                                    la casilla en blanco y nuestro software 
+                                                    omitirá esta casilla evitando resultados erróneos.
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    Recomendamos usar información de ejemplares 
+                                                    mayores a los 36 meses esto garantiza que la 
+                                                    información usada sea compatible con la manejada 
+                                                    por nuestro programa.
+                                                </p>
+                                                <p style="text-align: justify">
+                                                    A medida que aumente el número de variables 
+                                                    evaluadas, S.A.R.A arrojara resultados 
+                                                    mas específicos y detallados para 
+                                                    cada ejemplar.
                                                 </p>
                                             </div>    
 
@@ -304,12 +355,44 @@
                                             </a>
                                             <div class="description" style="display: none">
                                                 <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
+                                                <p style="text-align: justify">
+                                                    Para apreciar la figura geométrica del 
+                                                    caballo disponga este sobre una superficie 
+                                                    plana, con los miembros anteriores y 
+                                                    posteriores ubicados lo más verticalmente posible, 
+                                                    luego trace dos líneas verticales 
+                                                    perpendiculares al suelo, una pasando 
+                                                    por la punta del hombro (encuentro) y 
+                                                    la segunda por la punta del corvejón, 
+                                                    posteriormente continue con 2 líneas horizontales, 
+                                                    la primera línea a nivel del suelo y la 
+                                                    segunda va a cerrar el cuadrilátero 
+                                                    al cruzar la parte superior de la 
+                                                    cruz y la parte alta de la 
+                                                    grupa (unión sacro-iliaca).
+                                                    <br /><br />
+                                                    Finalizado lo anterior puede 
+                                                    observar si la figura obtenida es 
+                                                    cuadrada ( Alto de la cruz y Longitud corporal similar) 
+                                                    o Rectangular ( longitud corporal superior que la altura a la cruz).
+                                                    <br /><br />
+                                                    Puede ser mas exacto con esta medida, 
+                                                    puede medir la alzada a nivel de la cruz 
+                                                    y la longitud corporal partiendo de la 
+                                                    punta del hombro a lo largo del 
+                                                    flanco hasta la punta de la nalga o isquion.
+                                                    <br /><br />
+                                                    Con estos datos es factible calcular la geometría del ejemplar,
+                                                    <br />
+                                                    Caracterización
+                                                    <br />
                                                 </p>
+                                                <ul>
+                                                    <li>Relación largo/alto inferior a 0,96, se define como una forma geométrica “cuadrada”.</li>
+                                                    <li>Relación largo/alto entre 0,96 a 1,03  se define como una forma ligeramente cuadrada.</li>
+                                                    <li>Relación largo/alto entre 1,04 a 1,10  se define como ligeramente rectangular.</li>
+                                                    <li>Relación largo/alto  superior a 1,10 se define una forma rectangular.</li>
+                                                </ul> 
                                             </div>    
 
                                         </div>
@@ -741,7 +824,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">                                               
 
-                                                    <label for="dorso_tamano">Tamaño</label>
+                                                    <label for="dorso_tamano">Tamaño dorso</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_dorso_tamano" data-input="dorso_tamano" >
                                                     <input type="hidden"                                                            
                                                            id="dorso_tamano" 
@@ -768,7 +851,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="dorso_linea">Línea</label>
+                                                    <label for="dorso_linea">Línea dorso</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_dorso_linea" data-input="dorso_linea" >
                                                     <input type="hidden"                                                            
                                                            id="dorso_linea" 

@@ -161,6 +161,20 @@ function get_horse_features($atts){
         "compensacion" => "Compensación",
         "elevacion anterior" => "Elevación Anterior",
         "elevacion posterior" => "Elevación Posterior",
+        "figura" => "Figura",
+        "horizontal" => "Horizontal",
+        "longitud cuello" => "Longitud cuello",
+        "cruz" => "Cruz",
+        "pecho" => "Pecho",
+        "tamaño" => "Tamaño",
+        "estatura" => "Estatura",
+        "caña anterior" => "Caña anterior",
+        "cuartilla anterior" => "Cuartilla anterior",
+        "femur" => "Femur",
+        "caña posterior" => "Caña posterior",
+        "cuartilla posterior" => "Cuartilla posterior",
+        "velocidad" => "Velocidad",
+        "pisada" => "Pisada",
     ];
     
     include dirname(__FILE__) . '/includes/views/get_horse_features.php';

@@ -1968,52 +1968,62 @@ h1{
 .compareProduct .label-line-chart-eq{
     font-size: 12px;
 }
+.related.products a.compare.button,
+.divVeterinario a.compare.button{
+    display: none;
+}
 #search-results-eq a.add_to_cart_button{
-	font-size: 12px;
-	padding: 3px 10px;
-	font-weight: normal;
-	border: 1px solid #000;
+    font-size: 12px;
+    padding: 3px 10px;
+    font-weight: normal;
+    border: 1px solid #000;
 }
 #search-results-eq a.compare.button{
-	background: none !important;
-	border: 0;
-	color: var(--eqcolor) !important;
-	padding: 0;
-	float: right;
+    background: none !important;
+    border: 0;
+    color: var(--eqcolor) !important;
+    padding: 0;
+    float: right;
 }
 #search-results-eq a.button.added::before{
-	top: 0;
-	left: -15px;
+    top: 0;
+    left: -15px;
 }
 table.compare-list td{
-	width: auto;
-	max-width: none;
-	min-width: auto;
+    width: auto;
+    max-width: none;
+    min-width: auto;
 }
 table.dataTable.compare-list tbody th, 
 table.dataTable.compare-list tbody td{
-	border-right: 1px solid #e7e7e7;
-	border-top: 0;
+    border-right: 1px solid #e7e7e7;
+    border-top: 0;
 }
 table.dataTable.compare-list tbody th:last-child, 
 table.dataTable.compare-list tbody td:last-child{
-	border-right: 0;
-	border-top: 0;
+    border-right: 0;
+    border-top: 0;
 }
 table.compare-list td.odd{
-	background: #FFFFFF;	
+    background: #FFFFFF;	
+}
+.normal.white #up_topbar #nav-main ul > li.up-megamenu > ul > li > a{
+    text-align: center
+}
+.topbarmenu ul li.menu_icon a img{
+    height: 200px;
 }
 
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
     #search-results-eq a.compare.button{
-		display: block;
-		width: 100%;
-		line-height: 1;
-		text-align: center;
-		margin-top: 5px;
-		font-size: 12px;
+        display: block;
+        width: 100%;
+        line-height: 1;
+        text-align: center;
+        margin-top: 5px;
+        font-size: 12px;
 
     }
     .container-line-chart-eq{
@@ -2032,14 +2042,14 @@ table.compare-list td.odd{
     .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body .chartsara_container canvas{
         min-width: 100px !important;
     }
-	#search-results-eq a.add_to_cart_button{
-		width: 100% !important;
-		display: block;
-		line-height: 1;
-		text-align: center;
-		padding: 5px 0;
-		margin-top: 5px;
-	}
+    #search-results-eq a.add_to_cart_button{
+        width: 100% !important;
+        display: block;
+        line-height: 1;
+        text-align: center;
+        padding: 5px 0;
+        margin-top: 5px;
+    }
     #search-results-eq ul.products li.product {
         width: 50%;
     }
