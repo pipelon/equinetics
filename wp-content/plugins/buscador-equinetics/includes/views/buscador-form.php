@@ -354,46 +354,8 @@
                                                 <i class="fas fa-arrow-down"></i>
                                             </a>
                                             <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p style="text-align: justify">
-                                                    Para apreciar la figura geométrica del 
-                                                    caballo disponga este sobre una superficie 
-                                                    plana, con los miembros anteriores y 
-                                                    posteriores ubicados lo más verticalmente posible, 
-                                                    luego trace dos líneas verticales 
-                                                    perpendiculares al suelo, una pasando 
-                                                    por la punta del hombro (encuentro) y 
-                                                    la segunda por la punta del corvejón, 
-                                                    posteriormente continue con 2 líneas horizontales, 
-                                                    la primera línea a nivel del suelo y la 
-                                                    segunda va a cerrar el cuadrilátero 
-                                                    al cruzar la parte superior de la 
-                                                    cruz y la parte alta de la 
-                                                    grupa (unión sacro-iliaca).
-                                                    <br /><br />
-                                                    Finalizado lo anterior puede 
-                                                    observar si la figura obtenida es 
-                                                    cuadrada ( Alto de la cruz y Longitud corporal similar) 
-                                                    o Rectangular ( longitud corporal superior que la altura a la cruz).
-                                                    <br /><br />
-                                                    Puede ser mas exacto con esta medida, 
-                                                    puede medir la alzada a nivel de la cruz 
-                                                    y la longitud corporal partiendo de la 
-                                                    punta del hombro a lo largo del 
-                                                    flanco hasta la punta de la nalga o isquion.
-                                                    <br /><br />
-                                                    Con estos datos es factible calcular la geometría del ejemplar,
-                                                    <br />
-                                                    Caracterización
-                                                    <br />
-                                                </p>
-                                                <ul>
-                                                    <li>Relación largo/alto inferior a 0,96, se define como una forma geométrica “cuadrada”.</li>
-                                                    <li>Relación largo/alto entre 0,96 a 1,03  se define como una forma ligeramente cuadrada.</li>
-                                                    <li>Relación largo/alto entre 1,04 a 1,10  se define como ligeramente rectangular.</li>
-                                                    <li>Relación largo/alto  superior a 1,10 se define una forma rectangular.</li>
-                                                </ul> 
-                                            </div>    
+                                                <?php include dirname(__FILE__) . '/descriptions/geometria_figura.html'; ?>                                                
+                                            </div>   
 
                                         </div>
                                         <!-- FIN INFO -->
