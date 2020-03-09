@@ -2013,7 +2013,11 @@ table.compare-list td.odd{
 .topbarmenu ul li.menu_icon a img{
     height: 200px;
 }
-
+.info{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {

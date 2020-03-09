@@ -312,7 +312,12 @@
                                                             Rectangular
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                    <span class="info" 
+                                                        data-toggle="modal" 
+                                                        data-target="#mdl_geometria_figura">
+                                                        <i class="fa fa-info-circle"></i>
+                                                    </span>
+                                                </div>                                                                                    
                                             </div>
                                             <div class="form-row">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
@@ -2054,7 +2059,8 @@ elseif (!empty($_POST) &&
 wp_reset_postdata();
 echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
 ?>
-
+<!-- incluye los modales de las variables -->
+<?php include dirname(__FILE__) . '/descriptions/modals.php'; ?>
 <script type='text/javascript' src='<?= plugins_url("js_composer/assets/lib/vc_accordion/vc-accordion.min.js?ver=5.1"); ?>'></script>
 <script type='text/javascript' src='<?= plugins_url("js_composer/assets/lib/vc_tabs/vc-tabs.min.js?ver=5.1"); ?>'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
