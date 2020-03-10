@@ -182,8 +182,8 @@
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>"
                                                      style="width: 20%"/>
                                             </div>                                            
-                                            <div class="description" >
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
+                                            <div class="description">
+                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;"></h3>
                                                 <p>
                                                     Con el objetivo facilitar la selección y descarte de 
                                                     reproductores S.A.R.A posee 2 fases principales.
@@ -284,7 +284,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">  
                                             <h4 class="tituVar">Geometría</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">                                                                                                    
@@ -312,14 +312,14 @@
                                                             Rectangular
                                                         </span>
                                                     </div>
-                                                    <span class="info" 
-                                                        data-toggle="modal" 
-                                                        data-target="#mdl_geometria_figura">
-                                                        <i class="fa fa-info-circle"></i>
-                                                    </span>
-                                                </div>                                                                                    
+                                                </div>   
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_geometria_figura">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -344,7 +344,12 @@
                                                             Ascendente
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_geometria_orientacion">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -354,14 +359,6 @@
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
                                             </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <?php include dirname(__FILE__) . '/descriptions/geometria_figura.html'; ?>                                                
-                                            </div>   
-
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -391,7 +388,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">   
                                             <h4 class="tituVar">Balance</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -416,9 +413,14 @@
                                                             Cercano al piso
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_balance_horizontal">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -444,7 +446,12 @@
                                                             Angosto zona 3
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_balance_vertical">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -453,20 +460,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -496,7 +490,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6"> 
                                             <h4 class="tituVar">Línea superior</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg"> 
@@ -521,9 +515,14 @@
                                                             Estética
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_lineaSuperior_cabeza">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -548,9 +547,14 @@
                                                             Largo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_lineaSuperior_longitud_cuello">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -575,9 +579,14 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_lineaSuperior_orientacion_cuello">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>                                            
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -602,7 +611,12 @@
                                                             Amplio
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_lineaSuperior_pecho">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -611,20 +625,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -654,7 +655,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">    
                                             <h4 class="tituVar">Espalda</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -679,9 +680,14 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_espalda_tamano">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -706,7 +712,12 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_espalda_orientacion">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -715,20 +726,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -759,7 +757,7 @@
 
                                         <div class="col-md-6">   
                                             <h4 class="tituVar">Cruz - Dorso</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -784,13 +782,17 @@
                                                             Larga
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_lineaSuperior_cruz">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
-                                                     data-image="cuello.jpg">                                               
-
+                                                     data-image="cuello.jpg">
                                                     <label for="dorso_tamano">Tamaño dorso</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_dorso_tamano" data-input="dorso_tamano" >
                                                     <input type="hidden"                                                            
@@ -812,9 +814,14 @@
                                                             Largos
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_dorso_tamano">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -839,7 +846,12 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_dorso_linea">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -848,20 +860,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -891,7 +890,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">  
                                             <h4 class="tituVar">Grupa</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -916,9 +915,14 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_grupa_tamano">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -943,9 +947,14 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_grupa_orientacion">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -970,7 +979,12 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_grupa_amplitud">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -979,20 +993,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -1022,7 +1023,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6"> 
                                             <h4 class="tituVar">Aplomos</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1047,9 +1048,14 @@
                                                             Estevado
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_aplomos_anteriores_frente">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1074,9 +1080,14 @@
                                                             Remetido
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_aplomos_anteriores_lateralmente">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1101,9 +1112,14 @@
                                                             Abiertos
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_aplomos_posteriores_atras">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1128,7 +1144,12 @@
                                                             Remetido
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_aplomos_posteriores_lateralmente">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -1137,20 +1158,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -1180,7 +1188,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">          
                                             <h4 class="tituVar">Alzada</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1205,7 +1213,12 @@
                                                             Alta
                                                         </span>
                                                     </div>                                                    
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_alzada_estatura">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>                                                                                       
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -1214,20 +1227,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -1257,7 +1257,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">        
                                             <h4 class="tituVar">Morfometría</h4>                                            
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1282,13 +1282,17 @@
                                                             Larga
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_morfometria_cana_anterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
-                                                     data-image="cuello.jpg">                                                
-
+                                                     data-image="cuello.jpg">
                                                     <label for="morfometria_cuartilla_anterior">Cuartilla anterior</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cuartilla_anterior" data-input="morfometria_cuartilla_anterior" >
                                                     <input type="hidden"                                                            
@@ -1310,13 +1314,18 @@
                                                             Larga
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_morfometria_cuartilla_anterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="morfometria_femur">Femur</label>
+                                                    <label for="morfometria_femur">Fémur</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_femur" data-input="morfometria_femur" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_femur" 
@@ -1337,9 +1346,14 @@
                                                             Largo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_morfometria_femur">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1364,9 +1378,14 @@
                                                             Larga
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_morfometria_cana_posterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1391,7 +1410,12 @@
                                                             Larga
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_morfometria_cuartilla_posterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>                                            
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -1400,20 +1424,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -1443,7 +1454,7 @@
                                         <!-- INICIO VARIABLES -->
                                         <div class="col-md-6">      
                                             <h4 class="tituVar">Movimiento</h4>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1468,9 +1479,14 @@
                                                             Alta
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_velocidad">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1495,9 +1511,14 @@
                                                             Alta
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_elevacion_anterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1522,9 +1543,14 @@
                                                             Alta
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_elevacion_posterior">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1549,9 +1575,14 @@
                                                             Potente
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_pisada">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1576,9 +1607,14 @@
                                                             Valor máximo
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_pulimento">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1603,9 +1639,14 @@
                                                             Muy elástico
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_elasticidad">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
-                                            <div class="form-row">
+                                            <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1630,7 +1671,12 @@
                                                             Compensado
                                                         </span>
                                                     </div>
-                                                </div>                                    
+                                                </div>
+                                                <span class="info" 
+                                                      data-toggle="modal" 
+                                                      data-target="#mdl_movimiento_compensacion">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </span>
                                             </div>
                                         </div>
                                         <!-- FIN VARIABLES -->
@@ -1639,20 +1685,7 @@
                                         <div class="col-md-6">
                                             <div class="horse-image">
                                                 <img src="<?= plugins_url("buscador-equinetics/includes/views/assets/images/cuello.jpg"); ?>" />
-                                            </div>
-                                            <a class="moreinfo" href="javascript:void(0)">
-                                                Más información 
-                                                <i class="fas fa-arrow-down"></i>
-                                            </a>
-                                            <div class="description" style="display: none">
-                                                <h3 class="h3subtitu" style="font-weight: bold; font-size: 16px;">Descripción</h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                                    Pellentesque varius lectus eget nisi consectetur iaculis. 
-                                                    Pellentesque at nunc sed felis congue mollis. 
-                                                    Aliquam lobortis venenatis leo, at mattis sem.
-                                                </p>
-                                            </div>
+                                            </div>                                            
                                         </div>
                                         <!-- FIN INFO -->
 
@@ -2188,11 +2221,6 @@ Por favor revise la información suministrada.');
                 .children()
                 .children()
                 .attr("src", "<?= plugins_url("buscador-equinetics/includes/views/assets/images/"); ?>" + img);
-    });
-
-    jQuery('.moreinfo').click(function (e) {
-        e.preventDefault();
-        jQuery(this).siblings('.description').toggle('slow');
     });
 
     jQuery('form.buscadr input.form-check-input').change(function () {

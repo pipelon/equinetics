@@ -348,11 +348,11 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 			?>
 			<tr valign="top">
 				<th scope="row" class="titledesc">
-					<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo $value['name']; ?></label>
+					<label for="<?php echo esc_attr( $value['id'] ); ?>"><?php echo esc_html( $value['name'] ); ?></label>
 				</th>
 
 				<td class="forminp attributes">
-					<p class="description"><?php echo $value['desc'] ?></p>
+					<p class="description"><?php echo wp_kses_post( $value['desc'] ); ?></p>
 					<ul class="fields">
 						<?php foreach ( $checkboxes as $slug => $checked ) :
 							if( ! isset( $fields[ $slug ] ) )
@@ -360,14 +360,14 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 							?>
 							<li>
 								<label>
-									<input type="checkbox" name="<?php echo $value['id'] ?>[]" id="<?php echo $value['id'] ?>_<?php echo $slug ?>" value="<?php echo $slug ?>"<?php checked( $checked ) ?> /> <?php echo $fields[ $slug ] ?>
+									<input type="checkbox" name="<?php echo esc_attr( $value['id'] ); ?>[]" id="<?php echo esc_attr( $value['id'] ); ?>_<?php echo esc_attr( $slug ); ?>" value="<?php echo esc_html( $slug ); ?>"<?php checked( $checked ) ?> /> <?php echo esc_html( $fields[ $slug ]); ?>
 								</label>
 							</li>
 						<?php
 						endforeach;
 						?>
 					</ul>
-					<input type="hidden" name="<?php echo $value['id'] ?>_positions" value="<?php echo implode( ',', array_keys( $checkboxes ) ) ?>" />
+					<input type="hidden" name="<?php echo esc_attr( $value['id'] ); ?>_positions" value="<?php echo implode( ',', array_keys( $checkboxes ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" />
 				</td>
 			</tr>
 		<?php
@@ -394,12 +394,12 @@ if ( ! class_exists( 'YITH_Woocompare_Admin' ) ) {
 			<th scope="row" class="titledesc"><?php echo esc_html( $value['title'] ) ?></th>
 			<td class="forminp image_width_settings">
 
-				<input name="<?php echo esc_attr( $value['id'] ); ?>[width]" id="<?php echo esc_attr( $value['id'] ); ?>-width" type="text" size="3" value="<?php echo $width; ?>" /> &times;
-				<input name="<?php echo esc_attr( $value['id'] ); ?>[height]" id="<?php echo esc_attr( $value['id'] ); ?>-height" type="text" size="3" value="<?php echo $height; ?>" />px
+				<input name="<?php echo esc_attr( $value['id'] ); ?>[width]" id="<?php echo esc_attr( $value['id'] ); ?>-width" type="text" size="3" value="<?php echo esc_attr( $width ); ?>" /> &times;
+				<input name="<?php echo esc_attr( $value['id'] ); ?>[height]" id="<?php echo esc_attr( $value['id'] ); ?>-height" type="text" size="3" value="<?php echo esc_attr( $height ); ?>" />px
 
-				<label><input name="<?php echo esc_attr( $value['id'] ); ?>[crop]" id="<?php echo esc_attr( $value['id'] ); ?>-crop" type="checkbox" <?php echo $crop; ?> /> <?php _e( 'Do you want to hard crop the image?', 'yith-woocommerce-compare' ); ?>
+				<label><input name="<?php echo esc_attr( $value['id'] ); ?>[crop]" id="<?php echo esc_attr( $value['id'] ); ?>-crop" type="checkbox" <?php echo esc_html( $crop ); ?> /> <?php esc_html_e( 'Do you want to hard crop the image?', 'yith-woocommerce-compare' ); ?>
 				</label>
-				<p class="description"><?php echo $value['desc'] ?></p>
+				<p class="description"><?php echo esc_html( $value['desc'] ); ?></p>
 
 			</td>
 			</tr><?php

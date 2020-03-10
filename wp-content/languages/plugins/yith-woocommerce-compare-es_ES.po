@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - YITH WooCommerce Compare - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-02-17 08:49:01+0000\n"
+"PO-Revision-Date: 2020-03-10 11:34:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,19 +11,29 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - YITH WooCommerce Compare - Stable (latest release)\n"
 
-#: plugin-fw/lib/yit-plugin-panel.php:1237
+#: plugin-fw/templates/fields/onoff.php:25
+msgctxt "ON/OFF button: use MAX 3 characters!"
+msgid "OFF"
+msgstr "OFF"
+
+#: plugin-fw/templates/fields/onoff.php:24
+msgctxt "ON/OFF button: use MAX 3 characters!"
+msgid "ON"
+msgstr "ON"
+
+#: plugin-fw/lib/yit-plugin-panel.php:1238
 msgid ":) Thanks!"
 msgstr ":) ¡Gracias!"
 
-#: plugin-fw/lib/yit-plugin-panel.php:1236
+#: plugin-fw/lib/yit-plugin-panel.php:1237
 msgid "help us by leaving a five-star rating"
 msgstr "ayúdanos dejando una valoración de cinco estrellas"
 
-#: plugin-fw/lib/yit-plugin-panel.php:1234
+#: plugin-fw/lib/yit-plugin-panel.php:1235
 msgid "to keep updating and improving the plugin. Please,"
 msgstr "para seguir actualizando y manteniendo el plugin. Por favor,"
 
-#: plugin-fw/lib/yit-plugin-panel.php:1233
+#: plugin-fw/lib/yit-plugin-panel.php:1234
 msgid "We need your support"
 msgstr "Necesitamos tu apoyo"
 
@@ -124,72 +134,72 @@ msgstr "%1$s (#%2$s &ndash; %3$s)"
 msgid "Search Customers"
 msgstr "Buscar clientes"
 
-#: plugin-fw/lib/yith-system-status.php:292
+#: plugin-fw/lib/yith-system-status.php:298
 msgid "The system check has detected some compatibility issues on your installation. %sClick here%s to know more"
 msgstr "La comprobación del sistema ha detectado algunos problemas de compatibilidad en tu instalación. %sHaz clic aquí%s para saber más"
 
-#: plugin-fw/lib/yith-system-status.php:291
+#: plugin-fw/lib/yith-system-status.php:297
 msgid "Warning!"
 msgstr "¡Advertencia!"
 
-#: plugin-fw/lib/yith-system-status.php:174
+#: plugin-fw/lib/yith-system-status.php:180
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: plugin-fw/lib/yith-system-status.php:116
+#: plugin-fw/lib/yith-system-status.php:117
 msgid "URL FOpen"
 msgstr "URL de FOpen"
 
-#: plugin-fw/lib/yith-system-status.php:115
+#: plugin-fw/lib/yith-system-status.php:116
 msgid "OPCache Save Comments"
 msgstr "Guardar comentarios OPCache"
 
-#: plugin-fw/lib/yith-system-status.php:114
+#: plugin-fw/lib/yith-system-status.php:115
 msgid "Iconv Module"
 msgstr "Módulo Iconv"
 
-#: plugin-fw/lib/yith-system-status.php:113
+#: plugin-fw/lib/yith-system-status.php:114
 msgid "GD Library"
 msgstr "Biblioteca GD"
 
-#: plugin-fw/lib/yith-system-status.php:112
+#: plugin-fw/lib/yith-system-status.php:113
 msgid "ImageMagick Version"
 msgstr "Versión de ImageMagick"
 
-#: plugin-fw/lib/yith-system-status.php:111
+#: plugin-fw/lib/yith-system-status.php:112
 msgid "MultiByte String"
 msgstr "Cadena MultiByte"
 
-#: plugin-fw/lib/yith-system-status.php:110
+#: plugin-fw/lib/yith-system-status.php:111
 msgid "SimpleXML"
 msgstr "SimpleXML"
 
-#: plugin-fw/lib/yith-system-status.php:109
+#: plugin-fw/lib/yith-system-status.php:110
 msgid "WordPress Cron"
 msgstr "Cron de WordPress"
 
-#: plugin-fw/lib/yith-system-status.php:108
+#: plugin-fw/lib/yith-system-status.php:109
 msgid "TLS Version"
 msgstr "Versión de TLS"
 
-#: plugin-fw/lib/yith-system-status.php:107
+#: plugin-fw/lib/yith-system-status.php:108
 msgid "PHP Version"
 msgstr "Versión de PHP"
 
-#: plugin-fw/lib/yith-system-status.php:106
+#: plugin-fw/lib/yith-system-status.php:107
 msgid "Available Memory"
 msgstr "Memoria disponible"
 
-#: plugin-fw/lib/yith-system-status.php:105
+#: plugin-fw/lib/yith-system-status.php:106
 msgid "WooCommerce Version"
 msgstr "Versión de WooCommerce"
 
-#: plugin-fw/lib/yith-system-status.php:104
+#: plugin-fw/lib/yith-system-status.php:105
 msgid "WordPress Version"
 msgstr "Versión de WordPress"
 
-#: plugin-fw/lib/yith-system-status.php:97
-#: plugin-fw/lib/yith-system-status.php:98
+#: plugin-fw/lib/yith-system-status.php:135
+#: plugin-fw/lib/yith-system-status.php:136
 msgid "System Status"
 msgstr "Estado del sistema"
 
@@ -245,15 +255,15 @@ msgstr "YITH"
 msgid "YITH"
 msgstr "YITH"
 
-#: templates/admin/premium.php:435
+#: templates/admin/premium.php:436
 msgid "Moreover, if you want to give your users the chance to see in a glance how many products they have added to the Compare list, feel free to use the widget or the shortcode included. And their Compare list is always no more than one click away."
 msgstr "Además, si quieres ofrecerle a tus usuarios la posibilidad de ver de un vistazo cuántos productos han añadido a la lista de comparación, no dudes en utilizar el widget o el shortcode incluidos. Y su lista de comparación está siempre a no más de un clic de distancia."
 
-#: templates/admin/premium.php:432
+#: templates/admin/premium.php:433
 msgid "Compare counter - widget and shortcode"
 msgstr "Contador de comparación - widget y shortcode"
 
-#: templates/admin/premium.php:419
+#: templates/admin/premium.php:420
 msgid "Compare list - widget"
 msgstr "Lista de comparación - widget"
 
@@ -354,8 +364,8 @@ msgstr "Dimensiones"
 msgid "Weight"
 msgstr "Peso"
 
-#: plugin-fw/lib/yit-plugin-panel.php:424
-#: plugin-fw/lib/yit-plugin-panel.php:427
+#: plugin-fw/lib/yit-plugin-panel.php:425
+#: plugin-fw/lib/yit-plugin-panel.php:428
 msgid "How to install premium version"
 msgstr "Cómo instalar la versión premium"
 
@@ -363,7 +373,7 @@ msgstr "Cómo instalar la versión premium"
 msgid "https://yithemes.com/themes/plugins/yith-woocommerce-compare/"
 msgstr "https://yithemes.com/themes/plugins/yith-woocommerce-compare/"
 
-#: templates/admin/premium.php:422
+#: templates/admin/premium.php:423
 msgid "Thanks to YITH WooCommerce Comapre Widget users could verify at any time the complete list of products added to the compare tab and avoid to open the popup to check its existence. "
 msgstr "Gracias al Widget YITH WooCommerce Compare los usuarios podrán verificar en cualquier momento la lista completa de productos añadida a la pestaña de comparación y evitar abrir el popup para comprobar su existencia"
 
@@ -371,19 +381,19 @@ msgstr "Gracias al Widget YITH WooCommerce Compare los usuarios podrán verifica
 msgid "Reset"
 msgstr "Restablecer"
 
-#: templates/admin/premium.php:403
+#: templates/admin/premium.php:404
 msgid "Select the products you want to compare and the system will offer you the %1$sshortcode%2$s to generate a comparing table. Simple, rapid and useful."
 msgstr "Selecciona los productos que quieres comparar y el sistema te ofrecerá el %1$sshortcode%2$s para generar la tabla de comparación. Simple, rápido y útil."
 
-#: templates/admin/premium.php:400
+#: templates/admin/premium.php:401
 msgid "A TAILORED TABLE"
 msgstr "UNA TABLA A MEDIDA"
 
-#: templates/admin/premium.php:390
+#: templates/admin/premium.php:391
 msgid "Let you users compare products following every feature, and considering also all those %1$sattributes%2$s that can be manually created in within the product detail page. Every single detail will be included."
 msgstr "Permite que tus usuarios comparen productos siguiendo cada característica, y considerando también todos aquellos %1$satributos%2$s que se pueden crear manualmente en la página de detalles del producto. Cada detalle puede incluirse."
 
-#: templates/admin/premium.php:387
+#: templates/admin/premium.php:388
 msgid "CUSTOMIZED ATTRIBUTES"
 msgstr "ATRIBUTOS PERSONALIZADOS"
 
@@ -407,7 +417,7 @@ msgstr "YITH WooCommerce Compare Widget"
 msgid "The widget shows the list of products added in the comparison table."
 msgstr "El widget muestra la lista de productos añadidos en la tabla de comparación."
 
-#: templates/compare.php:106
+#: templates/compare.php:107
 msgid "No products added in the compare table."
 msgstr "Comparador de productos"
 
@@ -415,83 +425,83 @@ msgstr "Comparador de productos"
 msgid "Close window [X]"
 msgstr "Cerrar ventana [X]"
 
-#: templates/admin/premium.php:371
+#: templates/admin/premium.php:372
 msgid "An advanced option panel that let you change all the colors of the plugin, so that you can adapt stylistically all its elements %1$sto the layout%2$s of your shop.We know it, looks also count... and we give you the right tools to get to the best result."
 msgstr "Un panel de opciones avanzado que te permite cambiar todos lso colores del plugin, para que puedas adaptar estilísticamente todos sus elementos %1$spara el diseño%2$s de tu tienda. Lo sabemos, las apariencias también cuentan... y te damos las herramientas adecuadas para el mejor resultado."
 
-#: templates/admin/premium.php:368
+#: templates/admin/premium.php:369
 msgid "CUSTOMIZABLE STYLE"
 msgstr "ESTILO PERSONALIZABLE"
 
-#: templates/admin/premium.php:358
+#: templates/admin/premium.php:359
 msgid "All the products that have common categories and/or tags with those in the comparison table will be showed in a slider, right under the comparison table.%3$sA completely %1$s\"touch friendly\"%2$s slider to encourage your users to discover the shop products of the shop related to those they are interested into."
 msgstr "Todos los productos que tienen categorías comunes y/o etiquetas con aquellos en la tabla de comparación se mostrarán en un slider, justo bajo la tabla de comparación.%3$s Un  slider completamente %1$s«touch friendly»%2$s para animar a tus usuarios a descubrir los productos de tu tienda relacionados con aquellos con los que están interesados."
 
-#: templates/admin/premium.php:355
+#: templates/admin/premium.php:356
 msgid "RELATED PRODUCTS"
 msgstr "PRODUCTOS RELACIONADOS"
 
-#: templates/admin/premium.php:339
+#: templates/admin/premium.php:340
 msgid "One of the most appealing features of the premium version of the plugin.Four social network sites for your users (Facebook, Twitter, Google + and Pinterest) and the email system %1$sto share%2$s the comparison table of the products they have selected."
 msgstr "Una de las características más atractivas de la versión premium del plugin. Cuatro redes sociales para tus usuarios (Facebook, Twitter, Google+ y Pinterest) y el sistema de emails %1$spara compartir%2$s la tabla de comparación de productos que han seleccionado."
 
-#: templates/admin/premium.php:336
+#: templates/admin/premium.php:337
 msgid "SOCIAL NETWORK SHARING"
 msgstr "COMPARTIR EN REDES SOCIALES"
 
-#: templates/admin/premium.php:326
+#: templates/admin/premium.php:327
 msgid "With this precious feature, you will be able to show in the table only the fields that have information in at least one of the selected products.%3$sActivate the %1$s\"Dynamic Attribute fields\"%2$s option and there will be no more empty lines in your comparison table."
 msgstr "Con esta valiosa característica, podrás mostrar en la tabla sólo los cambios que tienen información con al menos uno de los productos seleccionados.%3$sActiva la opción de %1$s«Campos de Atributos Dinámicos»%2$s y no habrá mas filas vacías en tu tabla de comparación."
 
-#: templates/admin/premium.php:323
+#: templates/admin/premium.php:324
 msgid "DYNAMIC FIELDS"
 msgstr "CAMPOS DINÁMICOS"
 
-#: templates/admin/premium.php:307
+#: templates/admin/premium.php:308
 msgid "Give a personal touch to the %1$scomparison table%2$s your users will see. Select an image, upload it from the option panel and show it ahead of the table to your users. "
 msgstr "Da un toque personal a la %1$stabla de comparación%2$s que verán tus usuarios. Selecciona una imagen, cárgala en el panel de opciones y muéstrala en la tabla a tus usuarios."
 
-#: templates/admin/premium.php:304
+#: templates/admin/premium.php:305
 msgid "TABLE IMAGE"
 msgstr "IMAGEN DE TABLA"
 
-#: templates/admin/premium.php:294
+#: templates/admin/premium.php:295
 msgid "In your shop there may be product categories you don't want to be affected by the plugin features, deleting the comparison button for them. The premium version of the plugin offers this too.%3$sAnd there's more! Activating the %1$s\"Reverse exclusion list\"%2$s option, you can also invert the behavior of the feature, allowing the comparison only to those products of the selected categories."
 msgstr "En tu tienda podría haber categorías de productos que no quieres que sean afectadas por las características del plugin, borrando el botón de comparación para ellas. La versión premium del plugin también ofrece esto.%3$s¡Y hay más! Activa la opción de%1$s«Lista de exclusión contraria»%2$s, también puedes invertir el comportamiento de la característica, permitiendo la comparación sólo a los productos de las categorías seleccionadas."
 
-#: templates/admin/premium.php:291
+#: templates/admin/premium.php:292
 msgid "CATEGORY EXCLUSION "
 msgstr "EXCLUSIÓN DE CATEGORÍAS"
 
-#: templates/admin/premium.php:275
+#: templates/admin/premium.php:276
 msgid "People are often confused by finding products of different categories in the comparison table, creating difficulties in comparing the products they are interested into.The %1$s\"Compare by category\"%2$s option exists for this need: you will be able to separate the products in the table by category affinity."
 msgstr "La gente a menudo se confunde al encontrar productos de diferentes categorías en la tabla de comparación, creándoles dificultades al comparar productos en los que están interesados. La opción %1$s«Comparar por categoría»%2$s existe para esta necesidad: podrás separar los productos en la tabla por afinidad de categoría."
 
-#: templates/admin/premium.php:272
+#: templates/admin/premium.php:273
 msgid "CATEGORY COMPARATION"
 msgstr "COMPARACIÓN DE CATEGORÍAS"
 
-#: templates/admin/premium.php:262
+#: templates/admin/premium.php:263
 msgid "Don't you want to compare your products in a modal window anymore?%3$sWith the premium version of %1$sYITH WooCommerce Compare%2$s, a new page will be created automatically in your site and, adding it among the menu entries, you will be able to give to your users the chance to access it easily whenever they want."
 msgstr "¿No quieres comparar más tus productos en una ventana modal?%3$s Con la versión premium de %1$sYITH WooCommerce Compare%2$s, se creará una nueva página automáticamente en tu sitio y, añadiéndola entre las entradas del menú, podrás dar a tus usuarios la oportunidad de acceder fácilmente cuando quieran."
 
-#: templates/admin/premium.php:259
+#: templates/admin/premium.php:260
 msgid "A DEDICATED PAGE"
 msgstr "UNA PÁGINA DEDICADA"
 
-#: templates/admin/premium.php:251
+#: templates/admin/premium.php:252
 msgid "Premium Features"
 msgstr "Características premium"
 
-#: templates/admin/premium.php:245 templates/admin/premium.php:451
+#: templates/admin/premium.php:246 templates/admin/premium.php:452
 msgid "to the premium version"
 msgstr "a la versión premium"
 
-#: templates/admin/premium.php:244 templates/admin/premium.php:450
+#: templates/admin/premium.php:245 templates/admin/premium.php:451
 msgid "UPGRADE"
 msgstr "ACTUALIZA"
 
-#: templates/admin/premium.php:241 templates/admin/premium.php:447
+#: templates/admin/premium.php:242 templates/admin/premium.php:448
 msgid "Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Compare%2$s to benefit from all features!"
 msgstr "¡Actualiza a la %1$sversión premim%2$s de %1$sYITH WooCommerce Compare%2$s para beneficiarte de todas las características!"
 
@@ -684,9 +694,9 @@ msgstr "Cerrar todo"
 msgid "Image preview"
 msgstr "Vista previa de la imagen"
 
-#: plugin-fw/templates/metaboxes/types/icon-list.php:70
 #: plugin-fw/templates/fields/upload.php:27
 #: plugin-fw/templates/panel/woocommerce/woocommerce-upload.php:40
+#: plugin-fw/templates/metaboxes/types/icon-list.php:70
 msgid "Upload"
 msgstr "Subir"
 
@@ -726,71 +736,71 @@ msgstr ""
 msgid "Plugins Activated"
 msgstr "Plugins activados"
 
-#: plugin-fw/lib/yit-plugin-panel.php:785
+#: plugin-fw/lib/yit-plugin-panel.php:786
 msgid "Sorting successful."
 msgstr "Ordenado cono éxito."
 
-#: plugin-fw/lib/yit-plugin-panel.php:784
+#: plugin-fw/lib/yit-plugin-panel.php:785
 msgid "Sorry, import is disabled."
 msgstr "Lo siento, la importación está desactivada."
 
-#: plugin-fw/lib/yit-plugin-panel.php:783
+#: plugin-fw/lib/yit-plugin-panel.php:784
 msgid "The added file is not valid."
 msgstr "El archivo añadido no es válido."
 
-#: plugin-fw/lib/yit-plugin-panel.php:782
+#: plugin-fw/lib/yit-plugin-panel.php:783
 msgid "An error has occurred during import. Please try again."
 msgstr "Ocurrió un error durante la importación. Por favor, inténtalo de nuevo."
 
-#: plugin-fw/lib/yit-plugin-panel.php:781
+#: plugin-fw/lib/yit-plugin-panel.php:782
 msgid "Database imported correctly."
 msgstr "Base de datos importada correctamente."
 
-#: plugin-fw/lib/yit-plugin-panel.php:779
 #: plugin-fw/lib/yit-plugin-panel.php:780
+#: plugin-fw/lib/yit-plugin-panel.php:781
 msgid "Element updated correctly."
 msgstr "Elemento actualizado correctamente."
 
-#: plugin-fw/lib/yit-plugin-panel.php:778
+#: plugin-fw/lib/yit-plugin-panel.php:779
 msgid "Element deleted correctly."
 msgstr "Elemento borrado correctamente."
 
-#: plugin-fw/lib/yit-plugin-panel.php:777
+#: plugin-fw/lib/yit-plugin-panel.php:778
 msgid "Settings reset"
 msgstr "Restablecer ajustes"
 
-#: plugin-fw/lib/yit-plugin-panel.php:776
+#: plugin-fw/lib/yit-plugin-panel.php:777
 msgid "Settings saved"
 msgstr "Ajustes guardados"
 
-#: plugin-fw/lib/yit-plugin-panel.php:775
+#: plugin-fw/lib/yit-plugin-panel.php:776
 msgid "The element you have entered already exists. Please, enter another name."
 msgstr "El elemento que has introducido ya existe. Por favor, introduce otro nombre."
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:21
-#: plugin-fw/lib/yit-plugin-panel.php:577
+#: plugin-fw/lib/yit-plugin-panel.php:578
 #: plugin-fw/lib/yit-plugin-subpanel.php:157
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:21
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: plugin-fw/lib/yit-plugin-panel.php:576
+#: plugin-fw/lib/yit-plugin-panel.php:577
 #: plugin-fw/lib/yit-plugin-subpanel.php:156
 msgid "Reset to default"
 msgstr "Restablecer valores por defecto"
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:17
-#: plugin-fw/lib/yit-plugin-panel.php:574
+#: plugin-fw/lib/yit-plugin-panel.php:575
 #: plugin-fw/lib/yit-plugin-subpanel.php:154
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:17
 msgid "If you continue with this action, you will reset all options in this page."
 msgstr "Si sigues con esta acción restablecerás todos los ajustes de esta página."
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:14
-#: plugin-fw/lib/yit-plugin-panel.php:571
+#: plugin-fw/lib/yit-plugin-panel.php:572
 #: plugin-fw/lib/yit-plugin-subpanel.php:151
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:14
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: plugin-fw/lib/yith-system-status.php:173
+#: plugin-fw/lib/yith-system-status.php:179
 msgid "YITH Plugins"
 msgstr "Plugins de YITH"
 
@@ -798,7 +808,7 @@ msgstr "Plugins de YITH"
 msgid "Plugin Settings"
 msgstr "Ajustes del plugin"
 
-#: plugin-fw/lib/yit-plugin-panel-wc.php:397
+#: plugin-fw/lib/yit-plugin-panel-wc.php:399
 msgid "The changes you have made will be lost if you leave this page."
 msgstr "Los cambios que has hecho se perderán si abandonas esta página."
 
@@ -810,9 +820,9 @@ msgstr "Subir varios archivos"
 msgid "Add %s from images"
 msgstr "Añadir %s desde imágenes"
 
+#: plugin-fw/lib/yit-cpt-unlimited.php:1484
 #: plugin-fw/templates/fields/customtabs.php:46
 #: plugin-fw/templates/fields/customtabs.php:89
-#: plugin-fw/lib/yit-cpt-unlimited.php:1484
 msgid "Name"
 msgstr "Nombre"
 
@@ -925,8 +935,8 @@ msgstr "Categoría superior"
 msgid "All Categories"
 msgstr "Todas las categorías"
 
-#: plugin-fw/templates/fields/ajax-terms.php:56
 #: plugin-fw/lib/yit-cpt-unlimited.php:629
+#: plugin-fw/templates/fields/ajax-terms.php:56
 msgid "Search Categories"
 msgstr "Buscar categorías"
 
@@ -1015,8 +1025,8 @@ msgstr "Añadir al carrito"
 msgid "Price"
 msgstr "Precio"
 
-#: widgets/class.yith-woocompare-widget.php:68
 #: includes/class.yith-woocompare-helper.php:47
+#: widgets/class.yith-woocompare-widget.php:68
 msgid "Title"
 msgstr "Título"
 
@@ -1024,7 +1034,7 @@ msgstr "Título"
 msgid "Image"
 msgstr "Imagen"
 
-#: templates/compare.php:117 includes/class.yith-woocompare-frontend.php:709
+#: includes/class.yith-woocompare-frontend.php:709 templates/compare.php:119
 #: plugin-fw/templates/fields/customtabs.php:37
 #: plugin-fw/templates/fields/customtabs.php:81
 msgid "Remove"
@@ -1038,7 +1048,7 @@ msgstr "No hay productos que comparar"
 msgid "In stock"
 msgstr "En stock"
 
-#: templates/compare.php:50 includes/class.yith-woocompare-frontend.php:224
+#: includes/class.yith-woocompare-frontend.php:224 templates/compare.php:50
 msgid "Product Comparison"
 msgstr "Comparación de productos"
 
@@ -1066,10 +1076,10 @@ msgstr "En la pestaña YIT Plugin tab puedes encontrar las opciones YITH WooComm
 msgid "YITH WooCommerce Compare Activated"
 msgstr "YITH WooCommerce Compare Activado"
 
-#: widgets/class.yith-woocompare-widget.php:51
-#: plugin-options/general-options.php:40
 #: includes/class.yith-woocompare-frontend.php:227
 #: includes/class.yith-woocompare-frontend.php:505
+#: widgets/class.yith-woocompare-widget.php:51
+#: plugin-options/general-options.php:40
 msgid "Compare"
 msgstr "Compare"
 
