@@ -21,8 +21,10 @@ if (!class_exists('FormularioBuscador')) :
 
             //SI HUBO POST
             if (!empty($_POST)) {
-                
-                //echo "<pre>";                var_dump($_POST); echo "</pre>";
+
+                echo "<pre>";
+                var_dump($_POST);
+                echo "</pre>";
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
                 if (isset($_POST["guardar"])) {
@@ -69,26 +71,26 @@ if (!class_exists('FormularioBuscador')) :
                  * *************************************************************
                  */
 
-                //CONTAR VARIABLES PARA EL MENSAJE EN PANTALLA
-                /*$countVars = 0;
-                foreach ($_POST["var"] as $value) {
-                    $countVars += (int) $value > 1;
+                //SI SE SOLICITO BUSCAR O BUSCAR Y GUARDAR      
+                if (isset($_POST["buscar"]) || isset($_POST["guardar"])) {
+                    $priority = explode(",", $_POST['priority']);
+                    $lblpriority = implode(",", $priority);
+                    if (count($priority) >= 5) {
+                        array_pop($priority);
+                        $lblpriority90 = implode(",", $priority);
+                        $products90 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",", $priority));
+                        array_pop($priority);
+                        $lblpriority80 = implode(",", $priority);
+                        $products80 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",", $priority));
+                    }
+
+                    $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], $_POST['priority']);
                 }
-                $countVars += isset($_POST["chk"]) ? count($_POST["chk"]) : 0;*/      
                 
-                $priority = explode(",", $_POST['priority']);   
-                $lblpriority =  implode(",",$priority);         
-                if(count($priority) >= 5){                    
-                    array_pop($priority);  
-                    $lblpriority90 =  implode(",",$priority);                 
-                    $products90 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",",$priority));
-                    array_pop($priority);   
-                    $lblpriority80 =  implode(",",$priority);                 
-                    $products80 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",",$priority));                    
+                //SI SE PRESIONO EL BOTON DE SUGERENCIAS SARA
+                if (isset($_POST["sugerencia"])) {
+                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar']);
                 }
-
-                $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], $_POST['priority']);                
-
             }
 
             //SELECTOR DE YEGUAS GUARDADAS SOLO PARA USUARIOS REGISTRADOS
@@ -112,6 +114,10 @@ if (!class_exists('FormularioBuscador')) :
             }
         }
 
+        private function getHorsesSaraSuggestions($variables, $categoy) {
+            var_dump($variables, $categoy);
+        }
+        
         private function getHorses($variables, $mejoras, $categoy, $priority) {
 
             //SETTINGS
@@ -125,7 +131,6 @@ if (!class_exists('FormularioBuscador')) :
 
             // ARGUMENTOS DE ORDENAMIENTO
             //$ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
-
             //QUERY DE BUSQUEDA
             $meta_query = $this->getVariables($variables, $mejoras, $selectedCat, $priority);
 
@@ -160,14 +165,14 @@ if (!class_exists('FormularioBuscador')) :
             return new WP_Query($args);
         }
 
-        private function getVariables($variables, $mejoras, $selectedCat, $priority) {            
+        private function getVariables($variables, $mejoras, $selectedCat, $priority) {
 
-            $mejorasPriorizadas = explode(",", $priority);            
+            $mejorasPriorizadas = explode(",", $priority);
             $meta_query = [];
             $boolDorsoPlusCruz = false;
             foreach ($mejorasPriorizadas as $mejora) {
                 $nmVariable = substr($mejora, 4);
-                $func = "get_" . $nmVariable;               
+                $func = "get_" . $nmVariable;
 
                 //Si las variables dependen de la categoria
                 if ($nmVariable == 'espalda_tamano' || $nmVariable == 'espalda_orientacion' || $nmVariable == 'movimiento_velocidad' || $nmVariable == 'movimiento_pisada' || $nmVariable == 'movimiento_elevacion_posterior' || $nmVariable == 'movimiento_elevacion_anterior') {
@@ -488,7 +493,7 @@ if (!class_exists('FormularioBuscador')) :
                     ];
                     break;
             }
-            
+
             //var_dump($lineaSuperior_cruz, $dorso_tamano, $arrValores);
             return $arrValores;
         }
@@ -820,6 +825,8 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
 
     
 

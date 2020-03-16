@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - The Events Calendar - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-02-23 10:42:57+0000\n"
+"PO-Revision-Date: 2020-03-12 21:18:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +59,7 @@ msgstr "Usuario de Eventbrite no encontrado."
 
 #: src/Tribe/Aggregator/Service.php:770
 msgid "Eventbrite venue not found."
-msgstr "Lugar de Eventbrite no encontrado."
+msgstr "Local de Eventbrite no encontrado."
 
 #: src/Tribe/Aggregator/Service.php:769
 msgid "Eventbrite organizer not found."
@@ -112,15 +112,15 @@ msgstr "Evento sincronizado correctamente con Eventbrite"
 
 #: src/Tribe/Aggregator/Service.php:749
 msgid "Successfully marked event for import from Eventbrite"
-msgstr "Evento marcado con éxito para importar desde Eventbrite"
+msgstr "Evento marcado para importar desde Eventbrite correctamente"
 
 #: src/Tribe/Aggregator/Service.php:748
 msgid "Successfully disconnected Eventbrite"
-msgstr "Te has desconectado con éxito de Eventbrite"
+msgstr "Te has desconectado de Eventbrite correctamente"
 
 #: src/Tribe/Aggregator/Service.php:747
 msgid "Successfully connected to Eventbrite"
-msgstr "Te has conectado con éxito a Eventbrite"
+msgstr "Te has conectado a Eventbrite correctamente"
 
 #: src/Tribe/Aggregator/Service.php:698
 msgid "https://m.tri.be/1afb"
@@ -366,7 +366,7 @@ msgstr "Ver el último registro de cambios"
 
 #: src/admin-views/admin-welcome-message.php:40
 msgid "Frequent maintenance releases keep your ticket sales running smoothly."
-msgstr "Versiones de mantenimiento frecuentes mantienen tus ventas de tiques funcionando sin problemas."
+msgstr "Las frecuentes versiones de mantenimiento mantienen las ventas de entradas funcionando sin problemas."
 
 #: src/admin-views/admin-welcome-message.php:39
 msgid "The Latest and Greatest"
@@ -402,7 +402,7 @@ msgstr "Vista general de los ajustes"
 
 #: src/admin-views/admin-welcome-message.php:17
 msgid "Start strong with these helpful resources."
-msgstr "Inicia con fuerza con estos recursos útiles."
+msgstr "Empieza fuerte con estos recursos útiles."
 
 #: src/admin-views/admin-welcome-message.php:11
 msgid "Check out the resources below for a comprehensive introduction to your new plugin. With just a few quick clicks, you’ll be sharing and promoting your events in no time!"
@@ -424,7 +424,7 @@ msgstr "(no anular)"
 
 #: src/admin-views/aggregator/origins/refine.php:104
 msgid "Start date for Eventbrite Tickets is Required"
-msgstr "La fecha de inicio de los tiques de Eventbrite es obligatoria"
+msgstr "La fecha de inicio para Eventbrite Tickets es obligatoria"
 
 #: src/admin-views/aggregator/origins/meetup.php:41
 msgid "Log into Meetup"
@@ -1014,7 +1014,7 @@ msgstr ", "
 #: src/resources/js/app/blocks.js:11142 src/resources/js/app/blocks.js:44935
 #: src/resources/js/app/elements.js:7712
 msgid "(Untitled)"
-msgstr "(sin título)"
+msgstr "(Sin título)"
 
 #: src/resources/js/app/blocks.js:13548 src/resources/js/app/elements.js:10118
 msgctxt "linked text for plugin add-ons"
@@ -1126,7 +1126,7 @@ msgstr "<strong>The Events Calendar y Gutenberg</strong>"
 
 #: src/Tribe/Google/Maps_API_Key.php:107
 msgid "(click here for details)"
-msgstr "(clic aquí para más detalles)"
+msgstr "(haz clic aquí para más detalles)"
 
 #: src/Tribe/Editor.php:534
 msgid "Event Blocks"
@@ -1261,7 +1261,7 @@ msgstr "El ID o nombre de la etiqueta del evento"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:332
 msgid "The event category ID or name"
-msgstr "El id o nombre de la categoría del evento"
+msgstr "El ID o nombre de la categoría del evento"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:533
 msgid "Events should be filtered by their post_parent being the specified one."
@@ -1315,7 +1315,7 @@ msgstr "Si has extendido nuestro(s) plugin(s) para enviar datos a servicios de t
 
 #: src/admin-views/privacy.php:61
 msgid "Modern Tribe does not send any user data outside of your website by default."
-msgstr "Por defecto, Modern Tribe no envía datos de usuarios fuera de tu sitio."
+msgstr "Por defecto, Modern Tribe no envía datos de usuarios fuera de tu web."
 
 #: src/admin-views/privacy.php:59
 msgid "Where We Send Your Data"
@@ -1331,7 +1331,7 @@ msgstr "Toda la información (datos) es almacenada en la base de datos local de 
 
 #: src/admin-views/privacy.php:53
 msgid "How Long You Retain this Data"
-msgstr "Durante cuánto tiempo retienes esta Información"
+msgstr "Durante cuánto tiempo retienes esta información"
 
 #: src/admin-views/privacy.php:51
 msgid "These API keys may include the following third party services: Google Maps, Meetup, PayPal, and Eventbrite (API key, auth URL and Client Secret)."
@@ -1427,11 +1427,11 @@ msgstr "Hola,"
 
 #: src/admin-views/aggregator/settings.php:523
 msgid "The default event category for events imported via Eventbrite"
-msgstr "Categoría por defecto para eventos importados a través de Eventbrite"
+msgstr "La categoría por defecto para eventos importados a través de Eventbrite"
 
 #: src/admin-views/aggregator/settings.php:511
 msgid "The default post status for events imported via Eventbrite"
-msgstr "Estado de la entrada por defecto para eventos importados a través de Eventbrite"
+msgstr "El estado de publicación por defecto para los eventos importados mediante Eventbrite"
 
 #: src/admin-views/aggregator/settings.php:505
 msgid "Eventbrite Import Settings"
@@ -1567,7 +1567,7 @@ msgstr "Desde marzo de 2019, %1$s dejará de funcionar con versiones anteriores 
 
 #: common/src/Tribe/Admin/Notice/Php_Version.php:98
 msgid "Starting March 2019, %1$s will no longer support versions prior to PHP 5.6. Your site is currently using PHP version %2$s which will no longer be supported by %1$s. For best results, we recommend using PHP 5.6 or above."
-msgstr "A partir de Marzo de 2019, %1$s dejará de ser compatible con versiones de PHP anteriores a la 5.6. Tu sitio utiliza actualmente la versión %2$s, que va ha dejar de ser compatible con %1$s. Te recomendamos que utilices PHP 5.6 o superior para obtener mejores resultados."
+msgstr "A partir de marzo de 2019, %1$s dejará de ser compatible con versiones de PHP anteriores a la 5.6. Tu sitio utiliza actualmente la versión %2$s, que va a dejar de ser compatible con %1$s. Te recomendamos que utilices PHP 5.6 o superior para obtener mejores resultados."
 
 #: src/admin-views/tribe-options-addons-api.php:101
 msgid "You need to connect Event Aggregator to Eventbrite to import your events from Eventbrite."
@@ -2023,7 +2023,7 @@ msgstr "el nombre de la entrada del local"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Venue.php:309
 msgid "The venue state and province"
-msgstr "Comunidad autónoma y provincia del lugar"
+msgstr "Comunidad autónoma y provincia del local"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Venue.php:253
 msgid "Whether events linked to the venue should show a map link or not"
@@ -2087,7 +2087,7 @@ msgstr "Devuelve los datos del local creado"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Venue.php:129
 msgid "Returns the data of the updated venue"
-msgstr "Devuelve los datos del lugar actualizado"
+msgstr "Devuelve los datos del local actualizado"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Venue.php:120
 msgid "A venue with the specified post ID does not exist."
@@ -2099,7 +2099,7 @@ msgstr "El ID de entrada del local falta."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Venue.php:108
 msgid "Returns the data of the venue with the specified post ID"
-msgstr "Devuelve los datos del lugar con la ID de publicación especificada"
+msgstr "Devuelve los datos del local con el ID de publicación especificada"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Tag.php:142
 msgid "the event tag term ID"
@@ -2143,7 +2143,7 @@ msgstr "No se encuentra el ID de la etiqueta del evento."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Tag.php:66
 msgid "Returns the data of the event tag with the specified term ID"
-msgstr "Devuelve los datos de la etiqueta del evento con la ID indicada"
+msgstr "Devuelve los datos de la etiqueta del evento con el ID de término especificado"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Tag.php:37
 msgid "The event tag slug"
@@ -2192,7 +2192,7 @@ msgstr "ID de la entrada del organizador"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:184
 msgid "The organizer with the specified ID could not be deleted."
-msgstr "El organizador con el ID proporcionado no puede ser eliminado."
+msgstr "El organizador con el ID especificado no se pudo eliminar."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:181
 msgid "The organizer with the specified ID has been deleted already."
@@ -2200,7 +2200,7 @@ msgstr "El organizador con el ID especificado ya se ha borrado."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:178
 msgid "The current user cannot delete the organizer with the specified ID."
-msgstr "El usuario actual no puede eliminar al organizador con el ID proporcionado."
+msgstr "El usuario actual no puede eliminar al organizador con el ID especificado."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:175
 msgid "The organizer post ID is missing or does not exist."
@@ -2224,7 +2224,7 @@ msgstr "Falta el ID de la entrada del organizador."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:131
 msgid "Returns the data of the organizer with the specified post ID"
-msgstr "Devuelve los datos del organizador con el ID indicado"
+msgstr "Devuelve los datos del organizador con el ID especificado"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event_Slug.php:36
 msgid "the event post name"
@@ -2268,7 +2268,7 @@ msgstr "La URL o ID de la imagen destacada del evento"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:281
 msgid "The event end date and time"
-msgstr "Finalización del evento fecha y hora"
+msgstr "Fecha y hora de finalización del evento "
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:275
 msgid "The event start date and time"
@@ -2308,7 +2308,7 @@ msgstr "ID del autor del evento"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:177
 msgid "The event with the specified ID could not be deleted."
-msgstr "El evento con el ID definido podría no ser eliminado."
+msgstr "El evento con el ID especificado no se pudo eliminar."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:174
 msgid "The event with the specified ID has been deleted already."
@@ -2316,11 +2316,11 @@ msgstr "El evento con el ID especificado ya se ha borrado."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:171
 msgid "The current user cannot delete the event with the specified ID."
-msgstr "El usuario actual no puede eliminar el evento con el ID definido."
+msgstr "El usuario actual no puede eliminar el evento con el ID especificado."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:168
 msgid "The event post ID is missing or does not exist."
-msgstr "La ID de la entrada del evento falta o no existe."
+msgstr "El ID de la entrada del evento falta o no existe."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:162
 msgid "Deletes an event and returns its data"
@@ -2500,7 +2500,7 @@ msgstr "Los eventos deben filtrarse por si están destacados o no"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:487
 msgid "Events should be assigned one of the specified organizer IDs"
-msgstr "Se deben asignar a los eventos la ID de un organizador específico"
+msgstr "Se debe asignar a los eventos uno de los IDs de organizadores especificados"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:479
 msgid "Events should be assigned one of the specified venue IDs"
@@ -2665,7 +2665,7 @@ msgstr "Por rango de fecha"
 #: src/Tribe/Aggregator/Service.php:740
 msgctxt "The placeholder is for the localized version of the iCal UID specification link"
 msgid "Some events at the requested source are missing the UID attribute required by the iCalendar Specification. One-Time and ICS File imports are allowed but successive imports will create duplicated events on your site. Please contact the source provider to fix the UID issue; linking them to %s may help them more quickly resolve their feed's UID issue."
-msgstr "Algunos eventos del origen solicitado no tienen el atributo UID requerido en la especificación de iCalendar. Se pueden hacer importaciones de una vez y de ficheros ICS, pero las impotaciones sucesivas crearían eventos sucesivos en tu sitio. Contacta con el proveedor del origen para que arregle el problema del UID; darles un enlace a %s puede ayudarles."
+msgstr "Algunos eventos del origen solicitado no tienen el atributo UID requerido por la especificación del iCalendar. Se pueden hacer importaciones de una vez y de archivos ICS, pero las importaciones sucesivas crearán eventos duplicados en tu sitio. Por favor, contacta con el proveedor del origen para que arregle el problema del UID; si les pasas un enlace a %s puede ayudarles a resolver el problema del UID de tu feed más rápidamente."
 
 #: src/Tribe/Aggregator/Service.php:731
 msgctxt "The placeholder is for the localized version of the iCal UID specification link"
@@ -2786,7 +2786,7 @@ msgstr "La respuesta del servidor Event Aggregator se creó mal y no se pudo com
 
 #: src/Tribe/Integrations/WPML/Defaults.php:117
 msgid "The Events Calendar could not write WPML default config file: please create the file manually."
-msgstr "The Events Calendar no puede escribir en el fichero de configuración por defecto de WPML: por favor, crea uno manualmente."
+msgstr "The Events Calendar no puede escribir en el archivo de configuración por defecto de WPML: por favor, crea uno manualmente."
 
 #: common/src/Tribe/Plugins_API.php:104
 msgid "Accept user-submitted events on your site! With Community Events, you can accept public submissions or require account sign-on. Settings give you the options to save as a draft or publish automatically, enable categories and tags, and choose whether users can edit/manage their own events or simply submit. Best of all - setup is easy! Just activate, configure the options, and off you go."
@@ -2872,7 +2872,7 @@ msgstr "Importar ajustes de evento"
 
 #: src/admin-views/aggregator/settings.php:468
 msgid "When importing from a website that uses The Events Calendar, the REST API will attempt to fetch events this far in the future. That website's hosting resources may impact the success of imports. Selecting a shorter time period may improve results."
-msgstr "Al importar desde un sitio web que utiliza The Events Calendar, la API REST intentará obtener los eventos desde ahora hasta el futuro. Los recursos de alojamiento de este sitio web pueden afectar el éxito de las importaciones. Seleccionar un período de tiempo más corto puede mejorar los resultados."
+msgstr "Al importar desde una web que utiliza The Events Calendar, la API REST intentará obtener los eventos desde ahora hasta el futuro. Los recursos del alojamiento de esta web pueden afectar al éxito de las importaciones. Seleccionar un período de tiempo más corto puede mejorar los resultados."
 
 #: src/admin-views/aggregator/origins/url.php:84
 msgid "Enter the url for the calendar, website, or event you would like to import. Event Aggregator will attempt to import events at that location."
@@ -2884,11 +2884,11 @@ msgstr "El parámetro 'categories' contiene slugs o IDs de categoría no válido
 
 #: src/Tribe/REST/V1/Messages.php:14
 msgid "The requested post ID does not exist or is not an event"
-msgstr "La ID de publicación solicitada no existe o no se trata de un evento"
+msgstr "El ID de publicación solicitado no existe o no se trata de un evento"
 
 #: src/Tribe/REST/V1/Messages.php:13
 msgid "The event ID is missing from the request"
-msgstr "La ID de evento no aparece en la solicitud"
+msgstr "El ID de evento no aparece en la solicitud"
 
 #: src/Tribe/REST/V1/Messages.php:15
 msgid "The event does not have a venue assigned"
@@ -2900,7 +2900,7 @@ msgstr "Devuelve los datos del evento con el ID de publicación especificado"
 
 #: src/Tribe/REST/V1/Messages.php:27
 msgid "The requested post ID does not exist or is not an organizer"
-msgstr "La ID de publicación solicitada no existe o no se trata de un organizador"
+msgstr "El ID de publicación solicitado no existe o no se trata de un organizador"
 
 #: src/Tribe/REST/V1/Documentation/Event_Definition_Provider.php:53
 msgid "The event last modification date in UTC time"
@@ -2920,7 +2920,7 @@ msgstr "No existe etiqueta de evento con el ID de término especificado."
 
 #: src/Tribe/REST/V1/Endpoints/Swagger_Documentation.php:91
 msgid "The Events Calendar REST API"
-msgstr "La REST API de The Events Calendar"
+msgstr "La API REST de The Events Calendar"
 
 #: src/Tribe/REST/V1/Endpoints/Swagger_Documentation.php:92
 msgid "The Events Calendar REST API allows accessing upcoming events information easily and conveniently."
@@ -3040,16 +3040,16 @@ msgstr "Cadena abreviada de la zona horaria del evento"
 
 #: src/Tribe/REST/V1/Documentation/Event_Definition_Provider.php:138
 msgid "The event cost including the currency symbol"
-msgstr "Costo del evento incluyendo el símbolo de moneda"
+msgstr "Coste del evento incluyendo el símbolo de moneda"
 
 #: src/Tribe/REST/V1/Documentation/Event_Definition_Provider.php:142
 msgid "The event cost details"
-msgstr "Detalles del costo del evento"
+msgstr "Detalles del coste del evento"
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:299
 #: src/Tribe/REST/V1/Documentation/Event_Definition_Provider.php:147
 msgid "The event website URL"
-msgstr "URL del sitio web del evento"
+msgstr "URL de la web del evento"
 
 #: src/Tribe/REST/V1/Documentation/Event_Definition_Provider.php:151
 msgid "Whether the map should be shown for the event or not"
@@ -3094,7 +3094,7 @@ msgstr "ID de publicación de WordPress del organizador"
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:33
 #: src/Tribe/REST/V1/Documentation/Venue_Definition_Provider.php:33
 msgid "An Array containing the lineage of where this organizer comes from, this should not change after the organizer is created."
-msgstr "Una array que contiene el indice de donde proviene este organizador, esto no debería cambiar después de que se haya creado el organizador."
+msgstr "Un array que contiene el linaje de donde proviene este organizador, esto no debería cambiar después de que se haya creado el organizador."
 
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:37
 msgid "The organizer author WordPress post ID"
@@ -3137,7 +3137,7 @@ msgstr "Número de teléfono del organizador"
 #: src/Tribe/REST/V1/Endpoints/Single_Organizer.php:277
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:90
 msgid "The organizer website"
-msgstr "Sitio web del organizador"
+msgstr "Web del organizador"
 
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:94
 msgid "The organizer email address"
@@ -3145,7 +3145,7 @@ msgstr "Correo electrónico del organizador"
 
 #: src/Tribe/REST/V1/Documentation/Venue_Definition_Provider.php:28
 msgid "The venue ID used to globally identify in Event Aggregator"
-msgstr "ID del lugar usada para identificarla globalmente en Event Aggregator"
+msgstr "El ID de local usado para identificarlo globalmente en Event Aggregator"
 
 #: src/Tribe/REST/V1/Documentation/Venue_Definition_Provider.php:41
 msgid "The venue creation date in the site time zone"
@@ -3255,11 +3255,11 @@ msgstr "El número de eventos a devolver en cada página"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:463
 msgid "Events should be assigned one of the specified categories slugs or IDs"
-msgstr "Los eventos deben ser asignados a uno de los slugs o IDs de las categorías especificadas"
+msgstr "Se debe asignar a los eventos uno de los slugs o IDs de las categorías especificadas"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:471
 msgid "Events should be assigned one of the specified tags slugs or IDs"
-msgstr "Los eventos deben ser asignados a uno de los slugs o IDs de las etiquetas especificadas"
+msgstr "Se debe asignar a los eventos uno de los slugs o IDs de las etiquetas especificadas"
 
 #: src/Tribe/REST/V1/Endpoints/Archive_Event.php:399
 msgid "Returns all the upcoming events matching the search criteria"
@@ -3339,7 +3339,7 @@ msgstr "Cadena de la zona horaria del evento"
 
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:28
 msgid "The organizer ID used to globally identify in Event Aggregator"
-msgstr "La ID del organizador utilizada para identificarlo globalmente en Event Aggregator"
+msgstr "El ID de organizador usado para identificarlo globalmente en Event Aggregator"
 
 #: src/Tribe/REST/V1/Documentation/Organizer_Definition_Provider.php:53
 msgid "The organizer last modification date in UTC time"
@@ -3402,7 +3402,7 @@ msgstr "Intenta ajustar la configuración de la importación y prueba de nuevo."
 
 #: src/Tribe/REST/V1/Endpoints/Single_Event.php:124
 msgid "The event post ID is missing."
-msgstr "No se encuentra la ID de publicación del evento."
+msgstr "No se encuentra el ID de publicación del evento."
 
 #: src/Tribe/REST/V1/Messages.php:21
 msgid "The 'end_date' parameter must be in a supported format"
@@ -3559,7 +3559,7 @@ msgstr "%s debe ser un número entero."
 
 #: common/src/Tribe/Documentation/Swagger/Term_Definition_Provider.php:52
 msgid "The URL to the term archive page"
-msgstr "La URL del término página de archivo"
+msgstr "La URL de la página de archivo del término"
 
 #: common/src/Tribe/Documentation/Swagger/Term_Definition_Provider.php:48
 msgid "The number of posts associated with the term"
@@ -3603,7 +3603,7 @@ msgstr "Altura de la imagen en píxeles en el tamaño especificado"
 
 #: common/src/Tribe/Documentation/Swagger/Image_Size_Definition_Provider.php:24
 msgid "The image width in pixels in the specified size"
-msgstr "Anchura de la imagen en píxeles en el tamaño especificado"
+msgstr "Ancho de la imagen en píxeles en el tamaño especificado"
 
 #: common/src/Tribe/Documentation/Swagger/Image_Definition_Provider.php:45
 msgid "The details about each size available for the image"
@@ -3615,7 +3615,7 @@ msgstr "Altura original de la imagen en píxeles"
 
 #: common/src/Tribe/Documentation/Swagger/Image_Definition_Provider.php:37
 msgid "The image natural width in pixels"
-msgstr "Anchura original de la imagen en píxeles"
+msgstr "Ancho original de la imagen en píxeles"
 
 #: common/src/Tribe/Documentation/Swagger/Image_Definition_Provider.php:33
 msgid "The image file extension"
@@ -3663,7 +3663,7 @@ msgstr "La posición del símbolo de moneda junto al precio"
 
 #: common/src/Tribe/Documentation/Swagger/Cost_Details_Definition_Provider.php:24
 msgid "The cost currency symbol"
-msgstr "Símbolo de la moneda"
+msgstr "El símbolo de moneda del coste"
 
 #: src/Tribe/Main.php:4279
 msgid "Keyword"
@@ -4080,7 +4080,7 @@ msgstr "No se ha introducido ninguna licencia. Consulta tu administrador de red.
 
 #: common/src/Tribe/PUE/Checker.php:1688
 msgid "A valid license has been entered by your network administrator."
-msgstr "Una licencia valida ha sido introducida por tu administrador de red."
+msgstr "Tu administrador de red ha introducido un licencia válida."
 
 #: common/src/Tribe/PUE/Checker.php:553
 msgid "Site License Key"
@@ -4108,7 +4108,7 @@ msgstr "Instalado"
 
 #: common/src/admin-views/app-shop.php:29
 msgid "Installed Add-Ons"
-msgstr "Extensiones instalados"
+msgstr "Extensiones instaladas"
 
 #: common/src/Tribe/Extension.php:377
 msgid "Unable to run Tribe Extensions. Your website host is running PHP 5.2 or older, and has likely disabled or misconfigured debug_backtrace(). You, or your website host, will need to upgrade PHP or properly configure debug_backtrace() for Tribe Extensions to work."
@@ -4157,7 +4157,7 @@ msgstr "Generar datos JSON-LD"
 
 #: src/admin-views/tribe-options-addons-api.php:126
 msgid "Some features and add-ons require you to enter an API key or log into a third-party website so that The Events Calendar can communicate with an outside source."
-msgstr "Algunas características y complementos requieren que ingrese una clave API o inicie sesión en un sitio web de un tercero para que The Events Calendar pueda comunicarse con una fuente externa."
+msgstr "Algunas características y extensiones requieren que introduzcas una clave API o inicies sesión en una web de un tercero para que The Events Calendar pueda comunicarse con una fuente externa."
 
 #: src/admin-views/tribe-options-addons-api.php:49
 msgid "You need to connect Event Aggregator to Meetup to import your events from Meetup."
@@ -4221,7 +4221,7 @@ msgstr "Cuando guardes esta importación programada, los eventos de arriba comen
 
 #: src/admin-views/aggregator/tabs/import-form.php:170
 msgid "Select the Event Field that best matches your CSV file column. The contents of that column will then be mapped to the specified event field when the event is created."
-msgstr "Elige el campo de evento que mejor se asjuste a la columna del archivo CSV. Los contenidos de esa columna serán mapeados al campo específco del evento cuando se cree el evento."
+msgstr "Elige el campo de evento que mejor se ajuste a la columna del archivo CSV. Los contenidos de esa columna se mapearán al campo de evento especificado cuando se cree el evento."
 
 #: src/admin-views/aggregator/tabs/import-form.php:168
 msgid "These settings will also apply to events imported in the future via this scheduled import."
@@ -4381,7 +4381,7 @@ msgstr "Actualizar autoridad"
 
 #: src/admin-views/aggregator/settings.php:678
 msgid "Help page"
-msgstr "Pagina de ayuda"
+msgstr "Página de ayuda"
 
 #: src/admin-views/aggregator/settings.php:674
 msgid "Use the options below to configure your imports. Global Import Settings apply to all imports, but you can also override the global settings by adjusting the origin-specific options. Check your Event Aggregator Service Status on the %1$s."
@@ -4409,7 +4409,7 @@ msgstr "La categoría de evento predeterminada para eventos importados a través
 
 #: src/admin-views/aggregator/settings.php:332
 msgid "The default post status for events imported via Google Calendar"
-msgstr "The default post status for events imported via Google Calendar"
+msgstr "El estado de publicación por defecto para los eventos importados mediante Google Calendar"
 
 #: src/admin-views/aggregator/settings.php:326
 msgid "Google Calendar Import Settings"
@@ -4421,7 +4421,7 @@ msgstr "La categoría por defecto para los eventos importados mediante archivos 
 
 #: src/admin-views/aggregator/settings.php:288
 msgid "The default post status for events imported via .ics files"
-msgstr "La estado de publicación por defecto para los eventos importados mediante archivos .ics"
+msgstr "El estado de publicación por defecto para los eventos importados mediante archivos .ics"
 
 #: src/admin-views/aggregator/settings.php:282
 msgid "ICS File Import Settings"
@@ -4455,7 +4455,7 @@ msgstr "Categoría de evento por defecto para eventos"
 
 #: src/admin-views/aggregator/settings.php:136
 msgid "The default post status for events"
-msgstr "Estado de publicación por defecto para eventos"
+msgstr "El estado de publicación por defecto para los eventos"
 
 #: src/admin-views/aggregator/settings.php:130
 msgid "Global Import Settings"
@@ -4571,7 +4571,7 @@ msgstr "Selecciona tu archivo ICS en la biblioteca de medios de WordPress. Puede
 
 #: src/admin-views/aggregator/origins/ics.php:6
 msgid "Choose File"
-msgstr "Elegir fichero"
+msgstr "Elegir archivo"
 
 #: src/admin-views/aggregator/origins/ical.php:84
 msgid "Enter the url for the iCalendar feed you wish to import, e.g. https://central.wordcamp.org/calendar.ics"
@@ -4696,7 +4696,7 @@ msgstr "Previsualizar"
 #: src/admin-views/aggregator/origins/ics.php:35
 #: src/admin-views/aggregator/origins/csv.php:68
 msgid "No file chosen"
-msgstr "Fichero no elegido"
+msgstr "No se ha elegido ningún archivo"
 
 #: src/admin-views/aggregator/origins/csv.php:43
 msgid "Upload a CSV File"
@@ -4713,12 +4713,12 @@ msgstr "Selecciona tu archivo CSV en la biblioteca de medios de WordPress. Puede
 
 #: src/admin-views/aggregator/origins/csv.php:40
 msgid "Choose a CSV file"
-msgstr "Elige un fichero CSV"
+msgstr "Elige un archivo CSV"
 
 #: src/admin-views/aggregator/origins/ics.php:5
 #: src/admin-views/aggregator/origins/csv.php:39
 msgid "Choose File:"
-msgstr "Elegir fichero:"
+msgstr "Elegir archivo:"
 
 #: src/admin-views/aggregator/origins/csv.php:8
 msgid "For the best results, import venue and organizer files before importing event files."
@@ -4759,7 +4759,7 @@ msgstr "Última importación:"
 
 #: src/admin-views/admin-welcome-message.php:68
 msgid "Rate us today!"
-msgstr "Valóranos hoy!"
+msgstr "¡Valóranos hoy!"
 
 #: src/admin-views/admin-welcome-message.php:66
 msgid "We Need Your Help"
@@ -5106,7 +5106,7 @@ msgstr "Ver todo %s"
 
 #: src/Tribe/Aggregator/Tabs/New.php:279
 msgid "No %1$s were imported or updated."
-msgstr "No %1$s fueron importados o actualizados."
+msgstr "Ningún %1$s se ha importado o actualizado."
 
 #: src/Tribe/Aggregator/Tabs/New.php:272
 msgid "%1$d new image was imported."
@@ -5163,7 +5163,7 @@ msgstr "Ver todas las importaciones programadas"
 
 #: src/Tribe/Aggregator/Tabs/Edit.php:131
 msgid "Scheduled import was successfully updated."
-msgstr "Las importaciones programadas se actualizaron con éxito."
+msgstr "La importación programada se ha actualizado correctamente."
 
 #: src/Tribe/Aggregator/Tabs/Edit.php:52
 msgid "Edit Import"
@@ -5195,7 +5195,7 @@ msgstr "Importación en cola"
 
 #: src/Tribe/Aggregator/Service.php:726
 msgid "Import is complete"
-msgstr "La importación esta completa"
+msgstr "La importación se ha completado"
 
 #: src/Tribe/Aggregator/Service.php:725
 msgid "Successfully loaded import origins"
@@ -5203,7 +5203,7 @@ msgstr "Orígenes de importación cargados correctamente"
 
 #: src/Tribe/Aggregator/Service.php:746
 msgid "Successfully fetched Facebook Token"
-msgstr "Obtenido con éxito Token de Facebook"
+msgstr "Obtenido token de Facebook correctamente"
 
 #: src/Tribe/Aggregator/Service.php:723
 msgid "Import created"
@@ -5753,7 +5753,7 @@ msgstr "No se puede adjuntar una imagen al evento"
 
 #: src/Tribe/Aggregator/Errors.php:57
 msgid "Unable to find an import record with the ID of %s."
-msgstr "No se puede encontrar un registro de importación con la ID de %s."
+msgstr "No se ha podido encontrar ningún registro de importación con el ID de %s."
 
 #: src/Tribe/Aggregator/Errors.php:56
 msgid "The Event Aggregator API responded with bad data. Please <a href=\"https://theeventscalendar.com/support/post/\" target=\"_blank\">contact support</a>."
@@ -5761,7 +5761,7 @@ msgstr "El API de Event Aggregator ha respondido con datos erróneos. <a href=\"
 
 #: src/Tribe/Aggregator/Errors.php:55
 msgid "Unable to find an event with the ID of %s."
-msgstr "No se puede encontrar un evento con la ID de %s."
+msgstr "No se ha podido encontrar ningún evento con el ID de %s."
 
 #: src/Tribe/Aggregator/Errors.php:54
 msgid "Only scheduled import records can be edited."
@@ -6246,7 +6246,7 @@ msgstr "Imagen destacada del organizador"
 
 #: src/Tribe/Importer/Column_Mapper.php:111
 msgid "Venue Featured Image"
-msgstr "Imagen del Lugar del Evento"
+msgstr "Imagen destacada del local"
 
 #: src/Tribe/Importer/Column_Mapper.php:86
 msgid "Event Featured Image"
@@ -6285,7 +6285,7 @@ msgstr "El nombre de %s no puede estar vacío"
 
 #: src/admin-views/admin-update-message.php:32
 msgid "Keep the Core Plugin %sFREE%s!"
-msgstr "¡Manten el núcleo del plugin %sGRATIS%s!"
+msgstr "¡Mantén el plugin principal %sGRATIS%s!"
 
 #: src/Tribe/Template_Factory.php:233
 msgid "No results were found for %1$s in or near %2$s."
@@ -6361,7 +6361,7 @@ msgstr "<strong>¿Buscas una asistencia más inmediata?</strong> Ofrecemos %s co
 
 #: src/Tribe/Main.php:1369 src/Tribe/Main.php:1377
 msgid "premium support on our website"
-msgstr "soporte premium en nuestro sitio web"
+msgstr "soporte premium en nuestra web"
 
 #: src/Tribe/Main.php:1367
 msgid "If you have tried the above steps and are still having trouble, you can post a new thread to our WordPress.org forums for %1$s or %2$s. Our support staff monitors these forums once a week and would be happy to assist you there. "
@@ -6439,7 +6439,7 @@ msgstr "Este filtro está obsoleto, para cumplir con los estándares de WordPres
 
 #: src/deprecated/Tribe__Events__Importer__Admin_Page.php:139
 msgid "This Action has been deprecated, to comply with WordPress Standards we are now using Underscores (_) instead of Dashes (-). From: \"%s\" To: \"%s\""
-msgstr "Esta acción ha quedado en desuso, para cumplir con los estándares de WordPress, ahora estamos usando subrayados (_) en lugar de guiones (-). Desde: \"%s\" Hasta: \"%s\""
+msgstr "Esta acción está obsoleta, para cumplir con los estándares de WordPress, ahora usamos subrayados (_) en lugar de guiones (-). De: \"%s\" A: \"%s\""
 
 #: src/deprecated/Tribe__Events__Importer__Admin_Page.php:97
 msgid "Default status to use for imported events"
@@ -6481,7 +6481,7 @@ msgstr "%s Hay muy pocos problemas que no hayamos visto y es probable que otro u
 
 #: common/src/admin-views/tribe-options-help.php:32
 msgid "Test for a theme or plugin conflict"
-msgstr "Prueba de un conflicto de tema o complemento"
+msgstr "Hacer una prueba para ver si hay algún conflicto con un tema o plugin"
 
 #: common/src/admin-views/tribe-options-help.php:32
 msgid "%s. Testing for an existing conflict is the best start for in-depth troubleshooting. We will often ask you to follow these steps when opening a new thread, so doing this ahead of time will be super helpful."
@@ -6533,7 +6533,7 @@ msgstr "¡Gracias por utilizar Event Tickets! Todos en Modern Tribe apreciamos s
 
 #: src/admin-views/tribe-options-display.php:81
 msgid "Enter the format to use for displaying dates with the year. Used when displaying a date in a future year."
-msgstr "Introduzca el formato a utilizar para mostrar las fechas con el año. Es utilizado cuando se muestra una fecha futura."
+msgstr "Introduce el formato a utilizar para mostrar las fechas con el año. Se utiliza cuando se muestra una fecha futura."
 
 #: common/src/Tribe/PUE/Checker.php:943
 msgid "Thanks for setting up a valid key. It will expire on %s"
@@ -6595,7 +6595,7 @@ msgstr "Eventos en Facebook"
 #: common/src/Tribe/Plugins_API.php:121
 #: common/src/Tribe/Admin/Help_Page.php:223
 msgid "Eventbrite Tickets"
-msgstr "Entradas de Eventbrite"
+msgstr "Eventbrite Tickets"
 
 #: common/src/Tribe/Admin/Help_Page.php:190
 msgid " and "
@@ -6616,7 +6616,7 @@ msgstr "Events Tickets es un plugin extensible, realizado con cuidado, que te pe
 #: common/src/Tribe/Plugins_API.php:57 common/src/Tribe/Admin/Help_Page.php:95
 #: src/Tribe/Main.php:1689 src/Tribe/Main.php:1690
 msgid "Event Tickets"
-msgstr "Tickets del evento"
+msgstr "Event Tickets"
 
 #: common/src/Tribe/Admin/Help_Page.php:83
 msgid "The Events Calendar is a carefully crafted, extensible plugin that lets you easily share your events."
@@ -6626,7 +6626,7 @@ msgstr "The Events Calendar es un plugin extensible, realizado con cuidado, que 
 msgid "View %1$s %2$s"
 msgid_plural "View All %1$s %2$s"
 msgstr[0] "Ver %1$s %2$s"
-msgstr[1] "Ver Todos %1$s %2$s"
+msgstr[1] "Ver todos %1$s %2$s"
 
 #: src/Tribe/Aggregator/Record/Queue_Realtime.php:54
 msgid "Completed!"
@@ -6778,7 +6778,7 @@ msgstr "+ Google Map"
 #: src/functions/template-tags/google-map.php:79
 #: src/resources/js/app/blocks.js:47247
 msgid "Click to view a Google Map"
-msgstr "Click para ver mapa de Google"
+msgstr "Haz clic para ver un mapa de Google"
 
 #: src/functions/template-tags/general.php:1237
 msgid "%s for"
@@ -6884,7 +6884,7 @@ msgstr "Anexa la zona horaria al final de la información del evento &ndash; pue
 
 #: src/admin-views/tribe-options-timezones.php:48
 msgid "Show time zone"
-msgstr "Mostar zona horaria"
+msgstr "Mostrar zona horaria"
 
 #: src/admin-views/tribe-options-timezones.php:43
 msgid "Use the site-wide time zone everywhere"
@@ -7097,7 +7097,7 @@ msgstr "Mostrar comentarios"
 
 #: src/admin-views/tribe-options-general.php:53
 msgid "This option is disabled when \"Disable the Event Search Bar\" is checked on the Display settings tab."
-msgstr "Esta opción está deshabilitada cuando \"Deshabilitar la barra de búsqueda de eventos.\" está marcada en la pestaña Visualización."
+msgstr "Esta opción se desactiva cuando «Desactivar la barra de búsqueda de eventos» está marcada en la pestaña de ajustes de visualización."
 
 #: src/admin-views/tribe-options-general.php:44
 msgid "Number of events to show per page"
@@ -7181,7 +7181,7 @@ msgstr "Introduce el separador que se colocará entre la fecha y la hora, cuando
 
 #: src/admin-views/tribe-options-display.php:88
 msgid "Date time separator"
-msgstr "Separador de fecha - hora"
+msgstr "Separador de fecha y hora"
 
 #: src/admin-views/tribe-options-display.php:112
 msgid "Enter the format to use for dates that show a month and year only. Used on month view."
@@ -9172,7 +9172,7 @@ msgstr "Buscar %s"
 #: src/Tribe/Main.php:2012 src/Tribe/Venue.php:114 src/Tribe/Organizer.php:95
 #: src/views/month/single-day.php:26
 msgid "View %s"
-msgstr "Mostrar %s"
+msgstr "Ver %s"
 
 #: src/Tribe/Main.php:2011 src/Tribe/Venue.php:113 src/Tribe/Organizer.php:94
 msgid "New %s"

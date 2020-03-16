@@ -87,28 +87,31 @@
                                         <div class="wpb_wrapper">
                                             <?php foreach ($value as $k => $v): ?>
                                                 <?php $vChart = floor(((int) $v * 100) / 3); ?>
-                                                <div class="chartsara_container">
-                                                    <div class="vc_column-inner">
-                                                        <div class="wpb_wrapper">
 
-                                                            <div class="line-chart-eq">
-                                                                <div class="container-line-chart-eq">
-                                                                    <div class="value-line-chart-eq" style="height: <?= $vChart; ?>%">
-                                                                        <?= $v; ?>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="label-line-chart-eq">
-                                                                    <?=
-                                                                    isset($arrayTextos[trim($k)]) ?
-                                                                            $arrayTextos[trim($k)] :
-                                                                            $k;
-                                                                    ?>
-                                                                </div>
-                                                            </div>
 
-                                                        </div>
+                                                <div class="div-circular-chart">
+                                                    <svg viewBox="0 0 36 36" class="circular-chart">
+                                                    <path class="circle"
+                                                          stroke-dasharray="<?= $vChart; ?>, 100"
+                                                          d="M18 2.0845
+                                                          a 15.9155 15.9155 0 0 1 0 31.831
+                                                          a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                          />
+                                                    </svg>
+                                                    <div class="value-circular-chart">
+                                                        <?= $v; ?>
+                                                    </div>
+                                                    <div class="label-circular-chart">
+                                                        <?=
+                                                        isset($arrayTextos[trim($k)]) ?
+                                                                $arrayTextos[trim($k)] :
+                                                                $k;
+                                                        ?>
                                                     </div>
                                                 </div>
+
+
+                                                
                                             <?php endforeach; ?>
                                         </div>
                                     </div>

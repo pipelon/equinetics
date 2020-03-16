@@ -1971,6 +1971,7 @@
                                         </div>
                                         <div class="col-md-12 text-center">
                                             <input type="submit" 
+                                                   name="buscar"
                                                    value="<?= $settings["search_field_text"]; ?>" 
                                                    class="up-button up_btn-s btn-grey btn-buscarguardar"
                                                    style="line-height: 40px !important; padding: 3px 50px;"/>
@@ -1982,6 +1983,7 @@
                                                        style="line-height: 40px !important; padding: 3px 50px;"/>               
                                                    <?php endif; ?>
                                             <input type="submit" 
+                                                   name="sugerencia"
                                                    value="Sugerencias S. A. R. A." 
                                                    class="up-button up_btn-s btn-red btn-buscarguardar"
                                                    style="line-height: 40px !important; padding: 3px 50px;"/>
