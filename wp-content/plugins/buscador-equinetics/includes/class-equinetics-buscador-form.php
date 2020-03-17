@@ -14,6 +14,95 @@ if (!class_exists('FormularioBuscador')) :
          * Generate search box markup
          */
 
+        private $variablesPrioritySaraSuggestion = [
+            'chk_geometria_orientacion',
+            'chk_balance_horizontal',
+            'chk_lineaSuperior_cruz',
+            'chk_lineaSuperior_pecho',
+            'chk_aplomos_anteriores_frente',
+            'chk_aplomos_anteriores_lateralmente',
+            'chk_aplomos_posteriores_atras',
+            'chk_aplomos_posteriores_lateralmente',
+            'chk_morfometria_cana_anterior',
+            'chk_morfometria_cuartilla_anterior',
+            'chk_morfometria_femur',
+            'chk_morfometria_cana_posterior',
+            'chk_morfometria_cuartilla_posterior',
+            'chk_movimiento_velocidad',
+            'chk_movimiento_elevacion_anterior',
+            'chk_movimiento_elevacion_posterior',
+            'chk_movimiento_pisada',
+            'chk_dorso_tamano',
+        ];
+        //Variables a tener en cuenta para Paso Fino (Buenas y malas)
+        private $variablesSaraSuggestion46 = [
+            'geometria_orientacion' => ['1', '3'],
+            'balance_horizontal' => ['1', '3'],
+            'lineaSuperior_pecho' => ['1', '3'],
+            'aplomos_anteriores_frente' => ['1', '2', '3'],
+            'aplomos_anteriores_lateralmente' => ['1', '2', '3'],
+            'aplomos_posteriores_atras' => ['1', '2', '3'],
+            'aplomos_posteriores_lateralmente' => ['1', '2', '3'],
+            'morfometria_cana_anterior' => ['1', '3'],
+            'morfometria_cuartilla_anterior' => ['1', '3'],
+            'morfometria_femur' => ['1', '3'],
+            'morfometria_cana_posterior' => ['1', '3'],
+            'morfometria_cuartilla_posterior' => ['1', '3'],
+            'movimiento_velocidad' => ['1', '3'],
+            'movimiento_pisada' => ['1', '2', '3'],
+        ];
+        //Variables a tener en cuenta para Trocha (Buenas y malas)
+        private $variablesSaraSuggestion47 = [
+            'geometria_orientacion' => ['1', '3'],
+            'balance_horizontal' => ['1', '3'],
+            'lineaSuperior_pecho' => ['1', '3'],
+            'aplomos_anteriores_frente' => ['1', '2', '3'],
+            'aplomos_anteriores_lateralmente' => ['1', '2', '3'],
+            'aplomos_posteriores_atras' => ['1', '2', '3'],
+            'aplomos_posteriores_lateralmente' => ['1', '2', '3'],
+            'morfometria_cana_anterior' => ['1', '3'],
+            'morfometria_cuartilla_anterior' => ['1', '3'],
+            'morfometria_femur' => ['2', '3'],
+            'morfometria_cana_posterior' => ['1', '3'],
+            'morfometria_cuartilla_posterior' => ['1', '3'],
+            'movimiento_velocidad' => ['1', '3'],
+            'movimiento_pisada' => ['1', '3'],
+        ];
+        //Variables a tener en cuenta para Trocha y galope (Buenas y malas)
+        private $variablesSaraSuggestion48 = [
+            'geometria_orientacion' => ['1', '3'],
+            'balance_horizontal' => ['1', '3'],
+            'lineaSuperior_pecho' => ['1', '3'],
+            'aplomos_anteriores_frente' => ['1', '2', '3'],
+            'aplomos_anteriores_lateralmente' => ['1', '2', '3'],
+            'aplomos_posteriores_atras' => ['1', '2', '3'],
+            'aplomos_posteriores_lateralmente' => ['1', '2', '3'],
+            'morfometria_cana_anterior' => ['1', '3'],
+            'morfometria_cuartilla_anterior' => ['1', '3'],
+            'morfometria_femur' => ['1', '3'],
+            'morfometria_cana_posterior' => ['1', '3'],
+            'morfometria_cuartilla_posterior' => ['1', '3'],
+            'movimiento_velocidad' => ['1', '3'],
+            'movimiento_pisada' => ['1', '3'],
+        ];
+        //Variables a tener en cuenta para Trote y galope (Buenas y malas)
+        private $variablesSaraSuggestion49 = [
+            'geometria_orientacion' => ['1', '3'],
+            'balance_horizontal' => ['1', '3'],
+            'lineaSuperior_pecho' => ['1', '3'],
+            'aplomos_anteriores_frente' => ['1', '2', '3'],
+            'aplomos_anteriores_lateralmente' => ['1', '2', '3'],
+            'aplomos_posteriores_atras' => ['1', '2', '3'],
+            'aplomos_posteriores_lateralmente' => ['1', '2', '3'],
+            'morfometria_cana_anterior' => ['1', '3'],
+            'morfometria_cuartilla_anterior' => ['2', '3'],
+            'morfometria_femur' => ['1', '3'],
+            'morfometria_cana_posterior' => ['1', '3'],
+            'morfometria_cuartilla_posterior' => ['2', '3'],
+            'movimiento_velocidad' => ['1', '3'],
+            'movimiento_pisada' => ['1', '3'],
+        ];
+
         public function buscador() {
 
             $products = null;
@@ -22,9 +111,9 @@ if (!class_exists('FormularioBuscador')) :
             //SI HUBO POST
             if (!empty($_POST)) {
 
-                echo "<pre>";
-                var_dump($_POST);
-                echo "</pre>";
+                /* echo "<pre>";
+                  var_dump($_POST);
+                  echo "</pre>"; */
 
                 //SI SE SELECCIONO EL BOTON GUARDAR
                 if (isset($_POST["guardar"])) {
@@ -86,10 +175,11 @@ if (!class_exists('FormularioBuscador')) :
 
                     $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], $_POST['priority']);
                 }
-                
+
                 //SI SE PRESIONO EL BOTON DE SUGERENCIAS SARA
                 if (isset($_POST["sugerencia"])) {
-                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar']);
+                    $lblpriority = implode(",", $this->variablesPrioritySaraSuggestion);
+                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);
                 }
             }
 
@@ -114,10 +204,62 @@ if (!class_exists('FormularioBuscador')) :
             }
         }
 
-        private function getHorsesSaraSuggestions($variables, $categoy) {
-            var_dump($variables, $categoy);
+        private function getHorsesSaraSuggestions($variables, $categoy, $priority) {
+
+            //SETTINGS
+            $settings = Buscador_equinetics()->get_settings();
+
+            //VARIABLES GLOBALES
+            global $woocommerce, $woocommerce_loop;
+
+            //CATEGORIA SELECCIONADA
+            $selectedCat = trim($categoy);
+
+            //QUERY DE BUSQUEDA
+            $meta_query = $this->getVariablesSaraSuggestion($variables, $selectedCat, $priority);
+            //SI ME DEVUELVE VACIO EL META QUERY INVENTO UNA CONSULTA PARA QUE FALLE           
+            if (empty($meta_query)) {
+                $meta_query[] = [
+                    'relation' => 'AND',
+                    [
+                        'key' => 'varsara_geometria_orientacion',
+                        'value' => [100],
+                        'compare' => 'IN',
+                    ]
+                ];
+            }
+
+            //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
+            $args = array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'ignore_sticky_posts' => 1,
+                //'orderby' => $ordering_args['orderby'],
+                //'order' => $ordering_args['order'],
+                'posts_per_page' => $settings["result_per_page"],
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                        'terms' => $selectedCat, //CATEGORIA DEL ANDAR
+                        'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                    ),
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'term_id',
+                        'terms' => 52, //CATEGORIA DEL SOLO MACHOS
+                        'operator' => 'AND'
+                    ),
+                ),
+                'meta_query' => $meta_query
+            );
+            ob_start();
+            //echo "<pre>"; print_r($args);echo "</pre>";
+            //$res = new WP_Query($args);
+            //echo $res->found_posts;
+            return new WP_Query($args);
         }
-        
+
         private function getHorses($variables, $mejoras, $categoy, $priority) {
 
             //SETTINGS
@@ -163,6 +305,81 @@ if (!class_exists('FormularioBuscador')) :
             //$res = new WP_Query($args);
             //echo $res->found_posts;
             return new WP_Query($args);
+        }
+
+        private function getVariablesSaraSuggestion($variables, $selectedCat, $priority) {
+
+            $meta_query = [];
+            $boolDorsoPlusCruz = false;
+            foreach ($priority as $mejora) {
+                $nmVariable = substr($mejora, 4);
+
+                //SI LA VARIABLE ESTA VACIA O ES CERO BUSCO EL NUEVO REGISTRO
+                if (!isset($variables[$nmVariable]) ||
+                        is_empty($variables[$nmVariable]) ||
+                        $variables[$nmVariable] == '0') {
+                    continue;
+                }
+
+                //VALIDO QUE LAS VARAIBLES A MEJORAR SEAN IDEALES O NEGATIVAS
+                $variablesSaraSuggestion = 'variablesSaraSuggestion' . $selectedCat;
+                if (!in_array($variables[$nmVariable], $this->$variablesSaraSuggestion[$nmVariable])) {
+                    continue;
+                }
+                $func = "get_" . $nmVariable;
+
+                //CASO DE MOVIMIENTO Y PISADA QUE DEPENDE DEL ANDAR
+                if ($nmVariable == 'movimiento_pisada' ||
+                        $nmVariable == 'movimiento_velocidad') {
+                    $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
+
+                    //CASO ESPECIAL DE CRUZ + DORSO
+                } elseif ($nmVariable == 'lineaSuperior_cruz' || $nmVariable == 'dorso_tamano') {
+
+
+                    if (!$boolDorsoPlusCruz) {
+
+                        $searchValues = $this->get_dorso_cruz_sara_suggestion($variables['lineaSuperior_cruz'], $variables['dorso_tamano']);
+                        if (!$searchValues) {
+                            continue;
+                        }
+
+                        foreach ($searchValues as $searchValue) {
+                            $meta_querytmp = [
+                                'relation' => 'AND',
+                                [
+                                    'key' => 'varsara_lineaSuperior_cruz',
+                                    'value' => $searchValue['lineaSuperior_cruz'],
+                                    'compare' => '='
+                                ],
+                                [
+                                    'key' => 'varsara_dorso_tamano',
+                                    'value' => $searchValue['dorso_tamano'],
+                                    'compare' => '='
+                                ]
+                            ];
+                            array_push($meta_query, $meta_querytmp);
+                        }
+                        $meta_query['relation'] = 'OR';
+                        $boolDorsoPlusCruz = true;
+                    }
+                    continue;
+                } else {
+                    //resto de variables
+                    $searchValues = $this->$func($variables[$nmVariable]);
+                }
+
+                $meta_query[] = [
+                    'relation' => 'AND',
+                    [
+                        'key' => 'varsara_' . $nmVariable,
+                        'value' => $searchValues,
+                        'compare' => 'IN',
+                    ]
+                ];
+            }
+            //echo "<pre>"; print_r($meta_query); echo "</pre>";
+            return $meta_query;
         }
 
         private function getVariables($variables, $mejoras, $selectedCat, $priority) {
@@ -363,6 +580,161 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_dorso_cruz($lineaSuperior_cruz, $dorso_tamano) {
+            switch (true) {
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 1):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 2):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 1 && $dorso_tamano == 3):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 2):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 1):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 2 && $dorso_tamano == 3):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 3
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 1
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 3):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 1):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;
+                case ($lineaSuperior_cruz == 3 && $dorso_tamano == 2):
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 3,
+                            'dorso_tamano' => 3
+                        ]
+                    ];
+                    break;
+                default:
+                    $arrValores = [
+                        [
+                            'lineaSuperior_cruz' => 1,
+                            'dorso_tamano' => 1
+                        ],
+                        [
+                            'lineaSuperior_cruz' => 2,
+                            'dorso_tamano' => 2
+                        ],
+                    ];
+                    break;
+            }
+
+            //var_dump($lineaSuperior_cruz, $dorso_tamano, $arrValores);
+            return $arrValores;
+        }
+
+        /**
+         * Funcion encargada de buscar ejemplares para linea superior cruz + dorso
+         * @param string $lineaSuperior_cruz
+         * @param string $dorso_tamano
+         * @return array
+         */
+        private function get_dorso_cruz_sara_suggestion($lineaSuperior_cruz, $dorso_tamano) {
+
+            if ($lineaSuperior_cruz == "0" || $dorso_tamano == "0") {
+                return false;
+            }
+
+            if (($lineaSuperior_cruz == "1" && $dorso_tamano == "2") ||
+                    ($lineaSuperior_cruz == "2" && $dorso_tamano == "1") ||
+                    ($lineaSuperior_cruz == "2" && $dorso_tamano == "3") ||
+                    ($lineaSuperior_cruz == "3" && $dorso_tamano == "2")) {
+                return false;
+            }
+
+
             switch (true) {
                 case ($lineaSuperior_cruz == 1 && $dorso_tamano == 1):
                     $arrValores = [
@@ -832,6 +1204,16 @@ if (!class_exists('FormularioBuscador')) :
 
     
 
-            
+    
 
+    
+
+    
+
+    
+
+    
+
+    
+    
 endif;
