@@ -2,7 +2,7 @@
 /**
  * Framework Name: YIT Plugin Framework
  * Version: 3.4.13
- * Author: YITHEMES
+ * Author: YITH
  * Text Domain: yith-plugin-fw
  * Domain Path: /languages/
  *

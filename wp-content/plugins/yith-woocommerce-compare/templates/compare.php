@@ -116,7 +116,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
                     $product_class = ($index % 2 == 0 ? 'odd' : 'even') . ' product_' . $product_id ?>
                     <td class="<?php echo esc_attr( $product_class ); ?>">
                         <a href="<?php echo add_query_arg('redirect', 'view', $this->remove_product_url($product_id)); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"
-                           data-product_id="<?php echo esc_attr( product_id ); ?>"><?php esc_html_e('Remove', 'yith-woocommerce-compare') ?>
+                           data-product_id="<?php echo esc_attr( $product_id ); ?>"><?php esc_html_e('Remove', 'yith-woocommerce-compare') ?>
                             <span class="remove">x</span></a>
                     </td>
                     <?php

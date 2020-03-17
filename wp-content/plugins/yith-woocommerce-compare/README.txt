@@ -66,15 +66,16 @@ yith-woocommerce-compare-<WORDPRESS LOCALE >.mo
 
 == Changelog ==
 
+= 2.3.20 = Released on 17 March 2020
+
+* Fix: Use of undefined constant product_id
+
 = 2.3.19 = Released on 10 March 2020
 
 * New: Support for WooCommerce 4.0
 * New: Support for WordPress 5.4
 * Update: Plugin framework
 
-* New: Support for WooCommerce 3.9
-* New: Support for WordPress 5.3.2
-* Update: Plugin framework
 
 = 2.3.18 = Released on 21 December 2019
 

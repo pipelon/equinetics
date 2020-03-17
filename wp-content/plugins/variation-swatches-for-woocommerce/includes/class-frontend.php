@@ -38,8 +38,8 @@ class TA_WC_Variation_Swatches_Frontend {
 	 * Enqueue scripts and stylesheets
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'tawcvs-frontend', plugins_url( 'assets/css/frontend.css', dirname( __FILE__ ) ), array(), '20200222' );
-		wp_enqueue_script( 'tawcvs-frontend', plugins_url( 'assets/js/frontend.js', dirname( __FILE__ ) ), array( 'jquery' ), '20160615', true );
+		wp_enqueue_style( 'tawcvs-frontend', plugins_url( 'assets/css/frontend.css', TAWC_VS_PLUGIN_FILE ), array(), '20200222' );
+		wp_enqueue_script( 'tawcvs-frontend', plugins_url( 'assets/js/frontend.js', TAWC_VS_PLUGIN_FILE ), array( 'jquery' ), '20200317', true );
 	}
 
 	/**
@@ -114,7 +114,7 @@ class TA_WC_Variation_Swatches_Frontend {
 		$name     = esc_html( apply_filters( 'woocommerce_variation_option_name', $term->name ) );
 		$tooltip  = '';
 
-		if ( $args['tooltip'] ) {
+		if ( ! empty( $args['tooltip'] ) ) {
 			$tooltip = '<span class="swatch__tooltip">' . ( $term->description ? $term->description : $name ) . '</span>';
 		}
 

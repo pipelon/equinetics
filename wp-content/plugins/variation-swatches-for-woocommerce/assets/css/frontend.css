@@ -4,7 +4,6 @@
 }
 
 .tawcvs-swatches {
-	/*overflow: hidden;*/
 	padding: 5px;
 }
 
@@ -20,18 +19,16 @@
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	line-height: 30px;
+	line-height: 28px;
 	text-align: center;
 	margin-right: 15px;
 	cursor: pointer;
-	border: 1px solid transparent;
+	border: 2px solid transparent;
 	position: relative;
+	white-space: nowrap;
 }
 
 .tawcvs-swatches .swatch.selected {
-	-webkit-box-shadow: 0 0 5px;
-	-moz-box-shadow: 0 0 5px;
-	box-shadow: 0 0 5px;
 	border-color: #999;
 }
 
@@ -65,11 +62,22 @@
 }
 
 .tawcvs-swatches .swatch-label {
+	font-size: 14px;
 	background-color: #f1f1f1;
 }
 
 .tawcvs-swatches .swatch-image {
-	overflow: hidden;
+	font-size: 0;
+}
+
+.tawcvs-swatches .swatch-image img {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.tawcvs-swatches .swatch-image .swatch__tooltip {
+	font-size: 14px;
 }
 
 .tawcvs-swatches .swatch__tooltip {

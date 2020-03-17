@@ -2,8 +2,10 @@
 Contributors: themealien, coderexco
 Tags: woocommerce, product attribute, product color, product size, variation swatches, variable products
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.0.6
+Tested up to: 5.4
+Stable tag: 1.0.7
+WC requires at least: 3.2.0
+WC tested up to: 4.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +76,10 @@ Yes, it will work with any theme, but may require some styling to make it match 
 1. Add new attribute color when edit a product
 
 == Changelog ==
+
+= 1.0.7 =
+* Tweak - Update CSS for active state of swatches, remove the box shadow.
+* Fix - Tooltip is not showed on image swatches.
 
 = 1.0.6 =
 * New - Add a notice in admin area to restore attribute types after re-activating the plugin.
