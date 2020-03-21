@@ -647,7 +647,24 @@ if (!function_exists('woocommerce_template_loop_product_link_open')) {
         global $product;
         $portfolio_id = get_post_meta($product->id, 'portfolio_id', true);
         $link = get_permalink($portfolio_id);
-        echo '<a href="' . esc_url( $link ) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+        echo '<a href="' . esc_url($link) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
     }
 
 }
+
+//FUNCION AJAX PARA BUSCAR LA YEGUA GUARDADA
+function get_selected_yegua() {
+    if (isset($_POST["nmYegua"])) {
+        $selectedYegua = get_option("buscador_equinetics_yeguas");
+        $selectedYegua = $selectedYegua[get_current_user_id()]
+                [trim($_POST["nmYegua"])];
+        $res = json_encode($selectedYegua);
+        echo $res;
+    } else {
+        die(header("HTTP/1.0 404 Not Found")); //Throw an error on failure
+    }
+    die();
+}
+
+add_action('wp_ajax_get_selected_yegua', 'get_selected_yegua');
+add_action('wp_ajax_nopriv_get_selected_yegua', 'get_selected_yegua');

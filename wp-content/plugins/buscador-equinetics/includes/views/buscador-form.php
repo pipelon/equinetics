@@ -29,7 +29,7 @@
                     </span>                
                 </span>
             </div>
-            <?php if (is_user_logged_in()) : ?>   
+            <?php if (is_user_logged_in()) : ?>
                 <div class="form-row margin-space">
                     <div class="form-group col-md-12"> 
                         <label for="selectedYegua">Seleccione una de las yeguas almacenadas</label>
@@ -38,7 +38,7 @@
                             <?php foreach ($infoYeguas as $key => $value) : ?>
                                 <option value="<?= trim($key); ?> "
                                         <?= (isset($_POST["selectedYegua"]) && trim($_POST["selectedYegua"]) == $key) ? 'selected' : ''; ?>>
-                                            <?= $value["nombre"]; ?>
+                                            <?= $value["nombre_yegua"]; ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -49,12 +49,12 @@
                 <div class="form-group col-md-4">
                     <label for="nombre_yegua">Nombre</label>
                     <input type="text" class="form-control" name="form[nombre_yegua]" id="nombre_yegua"
-                           value="<?= isset($_POST["nombre_yegua"]) ? $_POST["nombre_yegua"] : '' ?>">
+                           value="<?= isset($_POST["form"]["nombre_yegua"]) ? $_POST["form"]["nombre_yegua"] : '' ?>">
                 </div>                
                 <div class="form-group col-md-4">
                     <label for="registro">Registro</label>
                     <input type="text" class="form-control" name="form[registro]" id="registro"
-                           value="<?= isset($_POST["registro"]) ? $_POST["registro"] : '' ?>">
+                           value="<?= isset($_POST["form"]["registro"]) ? $_POST["form"]["registro"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="andar">Andar</label>
@@ -73,17 +73,17 @@
                 <div class="form-group col-md-4">
                     <label for="padre">Padre</label>
                     <input type="text" class="form-control" name="form[padre]" id="padre"
-                           value="<?= isset($_POST["padre"]) ? $_POST["padre"] : '' ?>">
+                           value="<?= isset($_POST["form"]["padre"]) ? $_POST["form"]["padre"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="madre">Madre</label>
                     <input type="text" class="form-control" name="form[madre]" id="madre"
-                           value="<?= isset($_POST["madre"]) ? $_POST["madre"] : '' ?>">
+                           value="<?= isset($_POST["form"]["madre"]) ? $_POST["form"]["madre"] : '' ?>">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="abuelo_materno">Abuelo materno</label>
                     <input type="text" class="form-control" name="form[abuelo_materno]" id="abuelo_materno"
-                           value="<?= isset($_POST["abuelo_materno"]) ? $_POST["abuelo_materno"] : '' ?>">
+                           value="<?= isset($_POST["form"]["abuelo_materno"]) ? $_POST["form"]["abuelo_materno"] : '' ?>">
                 </div>
             </div>             
         </div>
@@ -2127,8 +2127,47 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
     var selectedImprovements = [];
 
     jQuery('#selectedYegua').change(function () {
-        if (jQuery(this).val() != "") {
-            jQuery('form.buscadr').submit();
+        if (jQuery(this).val() !== "") {
+            //BUSCO LOS DATOS DE LA YEGUA SELECCIONADA
+            jQuery.ajax({
+                beforeSend: function () {},
+                type: "POST",
+                url: "<?= get_site_url(); ?>/wp-admin/admin-ajax.php",
+                data: {'action': 'get_selected_yegua', 'nmYegua': jQuery(this).val()},
+                dataType: "json",
+                success: function (data) {
+                    //INGRESO LOS DATOS PERSONALES DE LA YEGUA GUARDADA
+                    jQuery("#nombre_yegua").val(data.nombre_yegua);
+                    jQuery("#registro").val(data.registro);
+                    jQuery("#padre").val(data.padre);
+                    jQuery("#madre").val(data.madre);
+                    jQuery("#abuelo_materno").val(data.abuelo_materno);
+                    jQuery("#andar").val(data.andar);
+                    //INGRESO LAS TIPIFICACIONES GUARDADAS
+                    jQuery.each(data.var, function (i, val) {
+                        jQuery("#" + i).val(val);
+                    });
+                    set_selected_values();
+                    //CHECKEO LAS MEJORAS GUARDADAS
+                    jQuery("input[type='checkbox']").prop('checked', false);
+                    jQuery.each(data.chk, function (i, val) {
+                        jQuery("#" + i).prop('checked', true);
+                    });                    
+                    var prioritySelected2 = data.priority.split(",");
+                    selectedImprovements = [];
+                    jQuery.each(prioritySelected2, function (i, val) {
+                        if (jQuery("#" + val).is(":checked")) {
+                            selectedImprovements.push(jQuery("#" + val).attr('id'));
+                        }
+                        setPriority();
+                    });
+
+                },
+                error: function (error) {
+                    alert("Ha ocurrido un error: Código: (" + error.status + ") '" + error.statusText + "'");
+                }
+            });
+            //jQuery('form.buscadr').submit();
         }
     });
 
@@ -2244,10 +2283,8 @@ Por favor revise la información suministrada.');
         }, 1000);
 <?php endif; ?>
 
-    /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */
-
-    jQuery(document).ready(function () {
-
+    /* FUNCION ENCARGADA DE DAR LOS VALORES INICIALES DE LOS RANGOS */
+    function set_selected_values() {
         //VALOR INICIAL PARA LOS RANGOS DE LAS VARIABLES
         jQuery('input[type="hidden"]').each(function () {
             if (jQuery(this).attr("id") !== "priority") {
@@ -2259,6 +2296,13 @@ Por favor revise la información suministrada.');
                 }
             }
         });
+    }
+
+    /* FUNCION ENCARGADA DE DEFINIR LA PRIORIDAD DE LAS MEJORAS */
+
+    jQuery(document).ready(function () {
+
+        set_selected_values();
 
         var prioritySelected = jQuery("#priority").val().split(",");
         jQuery.each(prioritySelected, function (i, val) {

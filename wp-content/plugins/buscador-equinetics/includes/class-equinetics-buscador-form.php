@@ -132,13 +132,14 @@ if (!class_exists('FormularioBuscador')) :
                         //TODA LA DATA DE LA YEGUA
                         $yeguas[get_current_user_id()][$nmYegua] = [
                             'nombre_yegua' => $_POST["form"]["nombre_yegua"],
-                            'andar' => $_POST["form"]["andar"],
+                            'andar' => $_POST["andar"],
                             'registro' => $_POST["form"]["registro"],
                             'padre' => $_POST["form"]["padre"],
                             'madre' => $_POST["form"]["madre"],
                             'abuelo_materno' => $_POST["form"]["abuelo_materno"],
                             'var' => $_POST["var"],
-                            'chk' => $_POST["chk"]
+                            'chk' => $_POST["chk"],
+                            'priority' => $_POST["priority"]
                         ];
                         //ALMACENO LA DATA DE LA YEGUA GUARDADA
                         update_option('buscador_equinetics_yeguas', $yeguas);
@@ -185,8 +186,8 @@ if (!class_exists('FormularioBuscador')) :
 
             //SELECTOR DE YEGUAS GUARDADAS SOLO PARA USUARIOS REGISTRADOS
             if (is_user_logged_in()) {
-                $infoYeguas = get_option('buscador_equinetics_yeguas');
-                $infoYeguas = $infoYeguas[get_current_user_id()];
+                $infoYeguasTmp = get_option('buscador_equinetics_yeguas');
+                $infoYeguas = $infoYeguasTmp[get_current_user_id()];
             }
 
             //CATEGORIAS            
@@ -1148,7 +1149,6 @@ if (!class_exists('FormularioBuscador')) :
                         break;
                 }
             }
-            var_dump($lineaSuperior_cruz, $dorso_tamano, $arrValores);
             return $arrValores;
         }
 
