@@ -104,8 +104,12 @@ function pmwi_pmxi_after_xml_import($importID) {
         }
         delete_option('wp_all_import_not_linked_products_' . $importID);
         // Regenerate product lookup tables.
-        if ( ! wc_update_product_lookup_tables_is_running() ) {
-            wc_update_product_lookup_tables();
+        $regenerate_lookup_tables = TRUE;
+        $regenerate_lookup_tables = apply_filters('wp_all_import_regenerate_lookup_tables', $regenerate_lookup_tables, $importID);
+        if ( $regenerate_lookup_tables && function_exists('wc_update_product_lookup_tables_is_running') && ! wc_update_product_lookup_tables_is_running() ) {
+            try {
+                wc_update_product_lookup_tables();
+            } catch (Exception $e) {}
         }
     }
 }

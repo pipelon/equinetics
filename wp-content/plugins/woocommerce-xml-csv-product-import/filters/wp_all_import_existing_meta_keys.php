@@ -18,7 +18,7 @@ function pmwi_wp_all_import_existing_meta_keys($existing_meta_keys, $custom_type
             $hide_fields[] = '_featured';
         }
         foreach ($existing_meta_keys as $key => $value) {
-            if ( in_array($value, $hide_fields) || strpos($value, '_v_') === 0 ) {
+            if ( in_array($value, $hide_fields) || strpos($value, '_v_') === 0 || strpos($value, 'attribute_') === 0 ) {
                 unset($existing_meta_keys[$key]);
             }
         }

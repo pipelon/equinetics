@@ -78,12 +78,7 @@ abstract class ImportProduct extends ImportProductBase {
      *  Save product data into database.
      */
     public function save() {
-        /**
-         * @since 3.0.0 to set props before save.
-         */
-        do_action( 'woocommerce_admin_process_product_object', $this->product );
         $this->product->save();
-        do_action( 'woocommerce_process_product_meta_' . $this->product->get_type(), $this->product->get_id() );
         wc_delete_product_transients($this->product->get_id());
     }
 

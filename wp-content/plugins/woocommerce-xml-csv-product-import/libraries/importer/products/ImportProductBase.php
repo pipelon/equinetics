@@ -172,7 +172,7 @@ abstract class ImportProductBase extends ImportBase {
                     'type' => $type,
                     'not_linked_products' => $not_found
                 ];
-                update_option('wp_all_import_not_linked_products_' . $this->getImport()->id, $not_founded_linked_products);
+                update_option('wp_all_import_not_linked_products_' . $this->getImport()->id, $not_founded_linked_products, false);
             }
         }
         return $linked_products;

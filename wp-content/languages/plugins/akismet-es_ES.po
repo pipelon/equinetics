@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Akismet Anti-Spam - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-03-17 21:00:56+0000\n"
+"PO-Revision-Date: 2020-04-14 19:30:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -85,7 +85,7 @@ msgstr "No mostrar el aviso de privacidad."
 
 #: views/config.php:159
 msgid "Display a privacy notice under your comment forms."
-msgstr "Muestra un aviso de privacidad debajo de tus formularios de comentario."
+msgstr "Mostrar un aviso de privacidad debajo de tus formularios de comentarios."
 
 #: views/config.php:158
 msgid "Akismet privacy notice"
@@ -214,11 +214,11 @@ msgstr "Estadísticas"
 
 #: class.akismet-admin.php:1218
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started, just go to <a href=\"admin.php?page=akismet-key-config\">your Akismet Settings page</a> to set up your API key."
-msgstr "Utilizado por millones de personas, Akismet es posiblemente la mejor manera de <strong>proteger tu blog del spam</strong>. Mientras duermes, mantiene el sitio protegido. Para comenzar, simplemente ve a <a href=\"admin.php?page=akismet-key-config\">tu página de ajustes de Akismet</a> y configura tu clave de la API."
+msgstr "Utilizado por millones de personas, Akismet es posiblemente la mejor manera de <strong>proteger tu blog del spam</strong>. Mantiene tu blog protegido incluso cuando duermes. Para comenzar, simplemente ve a <a href=\"admin.php?page=akismet-key-config\">tu página de ajustes de Akismet</a> y configura tu clave de la API."
 
 #: class.akismet-admin.php:1215
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. Your site is fully configured and being protected, even while you sleep."
-msgstr "Utilizado por millones, Akismet es, posiblemente, la mejor manera del mundo de <strong>proteger tu blog del spam</strong>. Mantiene tu blog protegido incluso cuando duermes."
+msgstr "Utilizado por millones, Akismet es posiblemente la mejor manera de <strong>proteger tu blog del spam</strong>. Mantiene tu blog protegido incluso cuando duermes."
 
 #: class.akismet-admin.php:1099
 msgid "%s comment was caught as spam."
@@ -233,7 +233,7 @@ msgstr "Ningún comentario ha sido detectado como spam."
 #: class.akismet-admin.php:1092
 msgid "Akismet checked %s comment."
 msgid_plural "Akismet checked %s comments."
-msgstr[0] "Akismet ha comprobado %s el comentario."
+msgstr[0] "Akismet ha comprobado %s comentario."
 msgstr[1] "Akismet ha comprobado %s comentarios."
 
 #: class.akismet-admin.php:1089
@@ -519,7 +519,7 @@ msgstr "Tipo de suscripción"
 
 #: class.akismet-admin.php:263
 msgid "The subscription status - active, cancelled or suspended"
-msgstr "Estado de la suscripción - activo, cancelado o suspendido"
+msgstr "Estado de la suscripción - activa, cancelada o suspendida"
 
 #: views/config.php:203 class.akismet-admin.php:263
 msgid "Status"
@@ -559,8 +559,8 @@ msgstr[1] "<a href=\"%1$s\">Akismet</a> ha protegido tu sitio de <a href=\"%2$s\
 #: class.akismet-admin.php:362
 msgid "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comment already. "
 msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comments already. "
-msgstr[0] "<a href=\"%1$s\">Akismet</a> ha protegido tu sitio de %2$s comentario de spam hasta ahora. "
-msgstr[1] "<a href=\"%1$s\">Akismet</a> ha protegido tu sitio de %2$s comentarios de spam hasta ahora. "
+msgstr[0] "<a href=\"%1$s\">Akismet</a> te ha protegido de %2$s comentario de spam. "
+msgstr[1] "<a href=\"%1$s\">Akismet</a> te ha protegido de %2$s comentarios de spam. "
 
 #: class.akismet-admin.php:368
 msgid "<a href=\"%s\">Akismet</a> blocks spam from getting to your blog. "
@@ -644,7 +644,7 @@ msgstr "Widget de Akismet"
 
 #: class.akismet-widget.php:13
 msgid "Display the number of spam comments Akismet has caught"
-msgstr "Muestra el número de comentarios de spam que Akismet ha capturado"
+msgstr "Mostrar el número de comentarios de spam que Akismet ha capturado"
 
 #: class.akismet-widget.php:74
 msgid "Title:"
@@ -712,11 +712,11 @@ msgstr[1] ""
 
 #: views/config.php:35
 msgid "Past six months"
-msgstr "Los últimos seis meses"
+msgstr "Últimos seis meses"
 
 #: views/config.php:40
 msgid "All time"
-msgstr "Constantemente"
+msgstr "Desde el inicio"
 
 #: views/config.php:45
 msgid "Accuracy"
@@ -736,11 +736,11 @@ msgstr "Severidad antispam de Akismet"
 
 #: views/config.php:132
 msgid "Silently discard the worst and most pervasive spam so I never see it."
-msgstr "Descarta en segundo plano el spam peor y más persistente, para que no lo veas nunca."
+msgstr "Descartar en segundo plano el peor y más persistente spam, para que no lo veas nunca."
 
 #: views/config.php:133
 msgid "Always put spam in the Spam folder for review."
-msgstr "Pone el spam siempre en la carpeta de spam para que lo revises."
+msgstr "Poner siempre el spam en la carpeta de spam para su revisión."
 
 #: views/config.php:141
 msgid "Spam in the <a href=\"%1$s\">spam folder</a> older than 1 day is deleted automatically."
