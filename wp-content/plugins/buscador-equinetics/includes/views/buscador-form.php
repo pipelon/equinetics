@@ -554,7 +554,7 @@
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
                                             </div>
-                                            <div class="form-row" style="position: relative;">
+                                            <!--<div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -564,15 +564,15 @@
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]"
                                                            data-range="range_lineaSuperior_orientacion_cuello"
-                                                           value="<?= isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
+                                                           value="<?php// isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?=
+                                                            <?php /*
                                                             isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '0' ?
-                                                                    $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"
+                                                                    $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"*/
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -585,7 +585,7 @@
                                                       data-target="#mdl_lineaSuperior_orientacion_cuello">
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
-                                            </div>                                            
+                                            </div>-->                                            
                                             <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
@@ -821,7 +821,7 @@
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
                                             </div>
-                                            <div class="form-row" style="position: relative;">
+                                            <!--<div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -831,15 +831,15 @@
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]"
                                                            data-range="range_dorso_linea"
-                                                           value="<?= isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0; ?>">
+                                                           value="<?php// isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?=
+                                                            <?php /*
                                                             isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '0' ?
-                                                                    $_POST['var']['dorso_linea'] : "-"
+                                                                    $_POST['var']['dorso_linea'] : "-"*/
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -852,7 +852,7 @@
                                                       data-target="#mdl_dorso_linea">
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <!-- FIN VARIABLES -->
 
@@ -1582,7 +1582,7 @@
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
                                             </div>
-                                            <div class="form-row" style="position: relative;">
+                                            <!--<div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1592,15 +1592,15 @@
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]"
                                                            data-range="range_movimiento_pulimento"
-                                                           value="<?= isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?=
+                                                            <?php /*
                                                             isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '0' ?
-                                                                    $_POST['var']['movimiento_pulimento'] : "-"
+                                                                    $_POST['var']['movimiento_pulimento'] : "-"*/
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1613,8 +1613,8 @@
                                                       data-target="#mdl_movimiento_pulimento">
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
-                                            </div>
-                                            <div class="form-row" style="position: relative;">
+                                            </div>-->
+                                            <!--<div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
@@ -1624,15 +1624,15 @@
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]"
                                                            data-range="range_movimiento_elasticidad"
-                                                           value="<?= isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
                                                         </span>
                                                         <span class="valor">
-                                                            <?=
+                                                            <?php /*
                                                             isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '0' ?
-                                                                    $_POST['var']['movimiento_elasticidad'] : "-"
+                                                                    $_POST['var']['movimiento_elasticidad'] : "-"*/
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1645,7 +1645,7 @@
                                                       data-target="#mdl_movimiento_elasticidad">
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
-                                            </div>
+                                            </div>-->
                                             <div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
@@ -1770,13 +1770,13 @@
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?= isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_grupa_tamano" name="chk[chk_grupa_tamano]" value="chk_grupa_tamano" <?= isset($_POST['chk']['chk_grupa_tamano']) ? 'checked' : '' ?>>
@@ -1802,6 +1802,13 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_alzada_estatura" name="chk[chk_alzada_estatura]" value="chk_alzada_estatura" <?= isset($_POST['chk']['chk_alzada_estatura']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_alzada_estatura">Alzada</label>
+                                                <span class="prioridad badge badge-secondary"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-6" style="visibility: hidden">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
+                                                <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
@@ -1849,13 +1856,13 @@
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?= isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_cruz" name="chk[chk_lineaSuperior_cruz]" value="chk_lineaSuperior_cruz" <?= isset($_POST['chk']['chk_lineaSuperior_cruz']) ? 'checked' : '' ?>>
@@ -1927,7 +1934,7 @@
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_elevacion_posterior" name="chk[chk_movimiento_elevacion_posterior]" value="chk_movimiento_elevacion_posterior" <?= isset($_POST['chk']['chk_movimiento_elevacion_posterior']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_movimiento_elevacion_posterior">Elevacion posterior</label>
+                                                <label class="form-check-label" for="chk_movimiento_elevacion_posterior">Elevación posterior</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>
@@ -1938,20 +1945,20 @@
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?= isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>        
-                                        <div class="col-md-3 col-sm-6 col-xs-6">
+                                        </div>-->   
+                                        <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?= isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
-                                        </div>        
+                                        </div>-->
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_compensacion" name="chk[chk_movimiento_compensacion]" value="chk_movimiento_compensacion" <?= isset($_POST['chk']['chk_movimiento_compensacion']) ? 'checked' : '' ?>>
@@ -2013,6 +2020,7 @@ if (isset($_POST) &&
         (isset($products80) && $products80->have_posts())
         )
 ) :
+    $anyShown = false;
     ?>
     <span id="hr-search-results-eq"></span>
     <hr />    
@@ -2021,6 +2029,7 @@ if (isset($_POST) &&
     <div id="search-results-eq">
 
         <?php if ((int) $products->found_posts > 0) : ?>
+            <?php $anyShown = true; ?>
             <div class="fullresult">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -2038,7 +2047,8 @@ if (isset($_POST) &&
             </div>
         <?php endif; ?>
 
-        <?php if ((int) $products90->found_posts > 0) : ?>
+        <?php if ((int) $products90->found_posts > 0 && !$anyShown) : ?>
+            <?php $anyShown = true; ?>
             <div class="result90">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -2052,11 +2062,12 @@ if (isset($_POST) &&
 
                 <?php endwhile; ?>
 
-                <?php woocommerce_product_loop_end(); ?>
+                <?php woocommerce_product_loop_end(); ?>                
             </div>
         <?php endif; ?>
 
-        <?php if ((int) $products80->found_posts > 0) : ?>
+        <?php if ((int) $products80->found_posts > 0 && !$anyShown) : ?>
+            <?php $anyShown = true; ?>
             <div class="result80">
                 <p class="text-center" style="padding: 10px 0;">
                     Los siguientes resultados se basan en las solicitudes de mejora de: 
@@ -2064,13 +2075,13 @@ if (isset($_POST) &&
                 </p>
                 <?php woocommerce_product_loop_start(); ?>
 
-                <?php while ($products80->have_posts()) : $products80->the_post(); ?>
+                <?php while ($products80->have_posts()) : $products80->the_post(); ?>                   
 
                     <?php wc_get_template_part('content', 'product'); ?>
 
                 <?php endwhile; ?>
 
-                <?php woocommerce_product_loop_end(); ?>
+                <?php woocommerce_product_loop_end(); ?>                
             </div>
         <?php endif; ?>
 
@@ -2152,7 +2163,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
                     jQuery("input[type='checkbox']").prop('checked', false);
                     jQuery.each(data.chk, function (i, val) {
                         jQuery("#" + i).prop('checked', true);
-                    });                    
+                    });
                     var prioritySelected2 = data.priority.split(",");
                     selectedImprovements = [];
                     jQuery.each(prioritySelected2, function (i, val) {

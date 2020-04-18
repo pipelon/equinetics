@@ -461,6 +461,9 @@ function my_text_strings($translated_text, $text, $domain) {
         case "Productos relacionados":
             $translated_text = __('Otros profesionales', 'woocommerce');
             break;
+        case "Seleccionar opciones":
+            $translated_text = __('Seleccionar servicios', 'woocommerce');
+            break;
         default:
             break;
     }
