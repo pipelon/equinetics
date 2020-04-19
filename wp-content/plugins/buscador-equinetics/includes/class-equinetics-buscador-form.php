@@ -431,7 +431,16 @@ if (!class_exists('FormularioBuscador')) :
                 $func = "get_" . $nmVariable;
 
                 //Si las variables dependen de la categoria
-                if ($nmVariable == 'espalda_tamano' || $nmVariable == 'espalda_orientacion' || $nmVariable == 'movimiento_velocidad' || $nmVariable == 'movimiento_pisada' || $nmVariable == 'movimiento_elevacion_posterior' || $nmVariable == 'movimiento_elevacion_anterior') {
+                if ($nmVariable == 'espalda_tamano' ||
+                        $nmVariable == 'espalda_orientacion' ||
+                        $nmVariable == 'movimiento_velocidad' ||
+                        $nmVariable == 'movimiento_pisada' ||
+                        $nmVariable == 'movimiento_elevacion_posterior' ||
+                        $nmVariable == 'movimiento_elevacion_anterior' ||
+                        $nmVariable == 'geometria_orientacion' ||
+                        $nmVariable == 'alzada_estatura' ||
+                        $nmVariable == 'morfometria_cana_anterior' ||
+                        $nmVariable == 'morfometria_cana_posterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
                 } elseif ($nmVariable == 'lineaSuperior_cruz' || $nmVariable == 'dorso_tamano') {
                     //Caso especial de cruz + dorso
@@ -470,8 +479,10 @@ if (!class_exists('FormularioBuscador')) :
                     ]
                 ];
             }
-            //echo "<pre>"; print_r($meta_query); echo "</pre>";
-            return $meta_query;
+            echo "<pre>";
+            print_r($meta_query);
+            echo "</pre>";
+            //return $meta_query;
         }
 
         /**
@@ -483,16 +494,16 @@ if (!class_exists('FormularioBuscador')) :
         private function get_geometria_figura($valor) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
                 case 2:
                     $arrValores = [1, 3];
                     break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = [1, 2];
                     break;
                 default:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
             }
             return $arrValores;
@@ -504,14 +515,16 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_geometria_orientacion($valor) {
+        private function get_geometria_orientacion($valor, $category) {
             switch ($valor) {
                 case 1:
-                case 3:
-                    $arrValores = [3];
+                    $arrValores = $category == '46' ? [3] : [2, 3];
                     break;
                 case 2:
                     $arrValores = [3, 2];
+                    break;
+                case 2:
+                    $arrValores = [3];
                     break;
                 default:
                     $arrValores = [3, 2];
@@ -529,10 +542,10 @@ if (!class_exists('FormularioBuscador')) :
         private function get_balance_horizontal($valor) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
                 case 2:
-                    $arrValores = [3, 2];
+                    $arrValores = [3];
                     break;
                 case 3:
                     $arrValores = [3];
@@ -553,11 +566,13 @@ if (!class_exists('FormularioBuscador')) :
         private function get_lineaSuperior_pecho($valor) {
             switch ($valor) {
                 case 1:
-                case 3:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
                 case 2:
-                    $arrValores = [3, 2];
+                    $arrValores = [3];
+                    break;
+                case 3:
+                    $arrValores = [3];
                     break;
                 default:
                     $arrValores = [3];
@@ -575,10 +590,10 @@ if (!class_exists('FormularioBuscador')) :
         private function get_lineaSuperior_longitud_cuello($valor) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
                 case 2:
-                    $arrValores = [1, 3, 2];
+                    $arrValores = [1, 3];
                     break;
                 case 3:
                     $arrValores = [1, 2];
@@ -599,11 +614,13 @@ if (!class_exists('FormularioBuscador')) :
         private function get_lineaSuperior_cabeza($valor) {
             switch ($valor) {
                 case 1:
-                case 3:
-                    $arrValores = [3];
+                    $arrValores = [3, 2];
                     break;
                 case 2:
-                    $arrValores = [3, 2];
+                    $arrValores = [3];
+                    break;
+                case 3:
+                    $arrValores = [3];
                     break;
                 default:
                     $arrValores = [3];
@@ -917,30 +934,87 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_compensacion_sara_suggestion($movimiento_elevacion_anterior, $movimiento_elevacion_posterior, $category) {
 
-            if ($movimiento_elevacion_anterior == "0" || $movimiento_elevacion_posterior == "0") {
+            if ($movimiento_elevacion_anterior == "" || $movimiento_elevacion_posterior == "") {
                 return false;
             }
 
-            if ($category == '46') {
-                if (($movimiento_elevacion_anterior == "1" && $movimiento_elevacion_posterior == "2") ||
-                        ($movimiento_elevacion_anterior == "2" && $movimiento_elevacion_posterior == "1") ||
-                        ($movimiento_elevacion_anterior == "2" && $movimiento_elevacion_posterior == "3") ||
-                        ($movimiento_elevacion_anterior == "3" && $movimiento_elevacion_posterior == "2")) {
-                    return false;
-                }
-            }
-
-            if ($category == '47' || $category == '48' || $category == '49') {
-                if (($movimiento_elevacion_anterior == "2" && $movimiento_elevacion_posterior == "3")) {
-                    return false;
-                }
-            }
-
-            //BUSQUEDAS PARA TROCHA, GALOPE Y TROTE
-            if ($category == '47' || $category == '48' || $category == '49') {
+            //BUSQUEDAS PARA TROCHA, TROCHA y GALOPE
+            if ($category == '47' || $category == '48') {
                 switch (true) {
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
                     case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 1):
                         $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
                             [
                                 'movimiento_elevacion_anterior' => 3,
                                 'movimiento_elevacion_posterior' => 3
@@ -976,10 +1050,22 @@ if (!class_exists('FormularioBuscador')) :
                             [
                                 'movimiento_elevacion_anterior' => 2,
                                 'movimiento_elevacion_posterior' => 2
-                            ],
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
                             [
                                 'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
                                 'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 3
                             ],
                         ];
                         break;
@@ -1004,10 +1090,30 @@ if (!class_exists('FormularioBuscador')) :
                             [
                                 'movimiento_elevacion_anterior' => 2,
                                 'movimiento_elevacion_posterior' => 2
-                            ],
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
                             [
                                 'movimiento_elevacion_anterior' => 3,
                                 'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
                             ],
                         ];
                         break;
@@ -1045,11 +1151,7 @@ if (!class_exists('FormularioBuscador')) :
                             [
                                 'movimiento_elevacion_anterior' => 3,
                                 'movimiento_elevacion_posterior' => 3
-                            ],
-                            [
-                                'movimiento_elevacion_anterior' => 2,
-                                'movimiento_elevacion_posterior' => 2
-                            ],
+                            ]
                         ];
                         break;
 
@@ -1067,11 +1169,273 @@ if (!class_exists('FormularioBuscador')) :
                         break;
                 }
             }
+            //BUSQUEDAS TROTE y GALOPE
+            if ($category == '49') {
+                switch (true) {
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
 
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ]
+                        ];
+                        break;
+
+                    default:
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                        ];
+                        break;
+                }
+            }
             //BUSQUEDA PARA PASO FINO
             if ($category == '46') {
                 switch (true) {
-                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 1):
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [                            
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 0 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [                            
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 0):
                         $arrValores = [
                             [
                                 'movimiento_elevacion_anterior' => 1,
@@ -1081,6 +1445,26 @@ if (!class_exists('FormularioBuscador')) :
                                 'movimiento_elevacion_anterior' => 2,
                                 'movimiento_elevacion_posterior' => 2
                             ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ]                            
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
                         ];
                         break;
                     case ($movimiento_elevacion_anterior == 1 && $movimiento_elevacion_posterior == 3):
@@ -1099,7 +1483,7 @@ if (!class_exists('FormularioBuscador')) :
                             ],
                         ];
                         break;
-                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 2):
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 0):
                         $arrValores = [
                             [
                                 'movimiento_elevacion_anterior' => 2,
@@ -1111,11 +1495,79 @@ if (!class_exists('FormularioBuscador')) :
                             ],
                         ];
                         break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 1):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 2 && $movimiento_elevacion_posterior == 3):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ]
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 0):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 1
+                            ]
+                        ];
+                        break;
                     case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 1):
                         $arrValores = [
                             [
                                 'movimiento_elevacion_anterior' => 1,
                                 'movimiento_elevacion_posterior' => 1
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
+                        ];
+                        break;
+                    case ($movimiento_elevacion_anterior == 3 && $movimiento_elevacion_posterior == 2):
+                        $arrValores = [
+                            [
+                                'movimiento_elevacion_anterior' => 2,
+                                'movimiento_elevacion_posterior' => 2
+                            ],
+                            [
+                                'movimiento_elevacion_anterior' => 1,
+                                'movimiento_elevacion_posterior' => 2
                             ],
                             [
                                 'movimiento_elevacion_anterior' => 3,
@@ -1133,6 +1585,10 @@ if (!class_exists('FormularioBuscador')) :
                                 'movimiento_elevacion_anterior' => 1,
                                 'movimiento_elevacion_posterior' => 1
                             ],
+                            [
+                                'movimiento_elevacion_anterior' => 3,
+                                'movimiento_elevacion_posterior' => 3
+                            ],
                         ];
                         break;
                     default:
@@ -1149,6 +1605,7 @@ if (!class_exists('FormularioBuscador')) :
                         break;
                 }
             }
+            
             return $arrValores;
         }
 
@@ -1230,7 +1687,7 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_alzada_estatura($valor) {
+        private function get_alzada_estatura($valor, $category) {
             switch ($valor) {
                 case 1:
                     $arrValores = [3, 2];
@@ -1239,7 +1696,7 @@ if (!class_exists('FormularioBuscador')) :
                     $arrValores = [3];
                     break;
                 case 3:
-                    $arrValores = [2, 1];
+                    $arrValores = ($category == '46' || $category == '47') ? [2, 1] : [2, 3];
                     break;
                 default:
                     $arrValores = [3, 2];
@@ -1254,14 +1711,19 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cana_anterior($valor) {
+        private function get_morfometria_cana_anterior($valor, $category) {
             switch ($valor) {
                 case 1:
+                    $arrValores = ($category == '46' || $category == '47') ? [1] : [1, 2];
+                    break;
                 case 2:
-                    $arrValores = [1, 2];
+                    $arrValores = ($category == '46' || $category == '47') ? [1, 2] : [1];
                     break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = ($category == '46' || $category == '47') ? [1, 2] : [1, 2];
+                    break;
+                case 4:
+                    $arrValores = ($category == '46' || $category == '47') ? [1] : [1];
                     break;
                 default:
                     $arrValores = [1, 2];
@@ -1276,14 +1738,19 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cuartilla_anterior($valor) {
+        private function get_morfometria_cuartilla_anterior($valor, $category) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [1, 2];
+                    $arrValores = ($category == '49') ? [1, 2] : [1];
                     break;
                 case 2:
+                    $arrValores = ($category == '49') ? [1] : [1, 1];
+                    break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = ($category == '49') ? [1, 2] : [1, 2];
+                    break;
+                case 4:
+                    $arrValores = ($category == '49') ? [1] : [1];
                     break;
                 default:
                     $arrValores = [1, 2];
@@ -1300,11 +1767,16 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_morfometria_femur($valor) {
             switch ($valor) {
-                case 1:
-                case 3:
+                case 0:
                     $arrValores = [3];
                     break;
+                case 1:
+                    $arrValores = [3, 2];
+                    break;
                 case 2:
+                    $arrValores = [3];
+                    break;
+                case 3:
                     $arrValores = [3, 2];
                     break;
                 default:
@@ -1320,14 +1792,19 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cana_posterior($valor) {
+        private function get_morfometria_cana_posterior($valor, $category) {
             switch ($valor) {
                 case 1:
+                    $arrValores = ($category == '46' || $category == '47') ? [1] : [1, 2];
+                    break;
                 case 2:
-                    $arrValores = [1, 2];
+                    $arrValores = ($category == '46' || $category == '47') ? [1, 2] : [1];
                     break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = ($category == '46' || $category == '47') ? [1, 2] : [1, 2];
+                    break;
+                case 4:
+                    $arrValores = ($category == '46' || $category == '47') ? [1] : [1];
                     break;
                 default:
                     $arrValores = [1, 2];
@@ -1342,14 +1819,19 @@ if (!class_exists('FormularioBuscador')) :
          * @param string $nmVariable
          * @return array
          */
-        private function get_morfometria_cuartilla_posterior($valor) {
+        private function get_morfometria_cuartilla_posterior($valor, $category) {
             switch ($valor) {
                 case 1:
-                    $arrValores = [1, 2];
+                    $arrValores = ($category == '49') ? [1, 2] : [1];
                     break;
                 case 2:
+                    $arrValores = ($category == '49') ? [1] : [1, 1];
+                    break;
                 case 3:
-                    $arrValores = [1];
+                    $arrValores = ($category == '49') ? [1, 2] : [1, 2];
+                    break;
+                case 4:
+                    $arrValores = ($category == '49') ? [1] : [1];
                     break;
                 default:
                     $arrValores = [1, 2];
@@ -1390,14 +1872,17 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_movimiento_velocidad($valor, $category) {
             switch ($valor) {
-                case 1:
+                case 0:
                     $arrValores = $category == '49' ? [1, 2] : [3];
                     break;
+                case 1:
+                    $arrValores = $category == '49' ? [1] : [3, 2];
+                    break;
                 case 2:
-                    $arrValores = $category == '49' ? [1, 2] : [3, 2];
+                    $arrValores = $category == '49' ? [1, 2] : [3];
                     break;
                 case 3:
-                    $arrValores = $category == '49' ? [1] : [3];
+                    $arrValores = $category == '49' ? [1] : [3, 2];
                     break;
                 default:
                     $arrValores = [1];
@@ -1413,19 +1898,65 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_movimiento_elevacion_anterior($valor, $category) {
-            switch ($valor) {
-                case 1:
-                    $arrValores = $category == '46' ? [1, 2] : [3];
-                    break;
-                case 2:
-                    $arrValores = $category == '46' ? [2, 1] : [3, 2];
-                    break;
-                case 3:
-                    $arrValores = $category == '46' ? [1] : [3];
-                    break;
-                default:
-                    $arrValores = [1];
-                    break;
+            //Si es trocha, trocha y galope 
+            if ($category == '47' || $category == '48') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [3, 2];
+                        break;
+                    case 2:
+                        $arrValores = [3];
+                        break;
+                    case 3:
+                        $arrValores = [3, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
+            }
+            //Si es paso fino
+            if ($category == '46') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [1, 2, 3];
+                        break;
+                    case 2:
+                        $arrValores = [2, 1];
+                        break;
+                    case 3:
+                        $arrValores = [1, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
+            }
+            //Si es trote y galope
+            if ($category == '49') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [3];
+                        break;
+                    case 2:
+                        $arrValores = [3, 2];
+                        break;
+                    case 3:
+                        $arrValores = [3, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
             }
             return $arrValores;
         }
@@ -1437,19 +1968,65 @@ if (!class_exists('FormularioBuscador')) :
          * @return array
          */
         private function get_movimiento_elevacion_posterior($valor, $category) {
-            switch ($valor) {
-                case 1:
-                    $arrValores = $category == '46' ? [2, 3] : [3];
-                    break;
-                case 2:
-                    $arrValores = $category == '46' ? [2] : [3, 2];
-                    break;
-                case 3:
-                    $arrValores = $category == '46' ? [1, 2] : [3, 2];
-                    break;
-                default:
-                    $arrValores = [1];
-                    break;
+            //Si es trocha, trocha y galope 
+            if ($category == '47' || $category == '48') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [3, 2];
+                        break;
+                    case 2:
+                        $arrValores = [3];
+                        break;
+                    case 3:
+                        $arrValores = [3, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
+            }
+            //Si es paso fino
+            if ($category == '46') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [1, 2, 3];
+                        break;
+                    case 2:
+                        $arrValores = [2, 1];
+                        break;
+                    case 3:
+                        $arrValores = [1, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
+            }
+            //Si es trote y galope
+            if ($category == '49') {
+                switch ($valor) {
+                    case 0:
+                        $arrValores = [3];
+                        break;
+                    case 1:
+                        $arrValores = [3];
+                        break;
+                    case 2:
+                        $arrValores = [3, 2];
+                        break;
+                    case 3:
+                        $arrValores = [3, 2];
+                        break;
+                    default:
+                        $arrValores = [1];
+                        break;
+                }
             }
             return $arrValores;
         }
@@ -1462,14 +2039,17 @@ if (!class_exists('FormularioBuscador')) :
          */
         private function get_movimiento_pisada($valor, $category) {
             switch ($valor) {
-                case 1:
+                case 0:
                     $arrValores = $category == '46' ? [3] : [3];
                     break;
-                case 2:
+                case 1:
                     $arrValores = $category == '46' ? [3, 2] : [3, 2];
                     break;
+                case 2:
+                    $arrValores = $category == '46' ? [3] : [3];
+                    break;
                 case 3:
-                    $arrValores = $category == '46' ? [2, 3] : [2, 3];
+                    $arrValores = $category == '46' ? [2] : [3, 2];
                     break;
                 default:
                     $arrValores = [1];
@@ -1479,6 +2059,14 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
+
+    
+
+    
+
+    
 
     
 

@@ -1262,7 +1262,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_cana_anterior">Caña anterior</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cana_anterior" data-input="morfometria_cana_anterior" >
+                                                    <input type="range" min="1" max="4" class="custom-range" id="range_morfometria_cana_anterior" data-input="morfometria_cana_anterior" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_cana_anterior" 
                                                            name="var[morfometria_cana_anterior]"
@@ -1279,7 +1279,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Larga
+                                                            Muy larga
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1294,7 +1294,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="morfometria_cuartilla_anterior">Cuartilla anterior</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cuartilla_anterior" data-input="morfometria_cuartilla_anterior" >
+                                                    <input type="range" min="1" max="4" class="custom-range" id="range_morfometria_cuartilla_anterior" data-input="morfometria_cuartilla_anterior" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_cuartilla_anterior" 
                                                            name="var[morfometria_cuartilla_anterior]"
@@ -1311,7 +1311,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Larga
+                                                            Muy larga
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1326,7 +1326,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_femur">Fémur</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_femur" data-input="morfometria_femur" >
+                                                    <input type="range" min="0" max="3" class="custom-range" id="range_morfometria_femur" data-input="morfometria_femur" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_femur" 
                                                            name="var[morfometria_femur]"
@@ -1334,7 +1334,7 @@
                                                            value="<?= isset($_POST['var']['morfometria_femur']) ? $_POST['var']['morfometria_femur'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Corto
+                                                            Muy corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1358,7 +1358,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="morfometria_cana_posterior">Caña posterior</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cana_posterior" data-input="morfometria_cana_posterior" >
+                                                    <input type="range" min="1" max="4" class="custom-range" id="range_morfometria_cana_posterior" data-input="morfometria_cana_posterior" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_cana_posterior" 
                                                            name="var[morfometria_cana_posterior]"
@@ -1375,7 +1375,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Larga
+                                                            Muy larga
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1390,7 +1390,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="morfometria_cuartilla_posterior">Cuartilla posterior</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_morfometria_cuartilla_posterior" data-input="morfometria_cuartilla_posterior" >
+                                                    <input type="range" min="1" max="4" class="custom-range" id="range_morfometria_cuartilla_posterior" data-input="morfometria_cuartilla_posterior" >
                                                     <input type="hidden"                                                            
                                                            id="morfometria_cuartilla_posterior" 
                                                            name="var[morfometria_cuartilla_posterior]"
@@ -1407,7 +1407,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Larga
+                                                            Muy larga
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1459,7 +1459,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_velocidad">Velocidad</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_velocidad" data-input="movimiento_velocidad" >
+                                                    <input type="range" min="0" max="3" class="custom-range" id="range_movimiento_velocidad" data-input="movimiento_velocidad" >
                                                     <input type="hidden"                                                            
                                                            id="movimiento_velocidad" 
                                                            name="var[movimiento_velocidad]"
@@ -1467,7 +1467,7 @@
                                                            value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Baja
+                                                            Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1476,7 +1476,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Alta
+                                                            Muy alta
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1491,7 +1491,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="movimiento_elevacion_anterior">Elevación anteriores</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_elevacion_anterior" data-input="movimiento_elevacion_anterior" >
+                                                    <input type="range" min="0" max="3" class="custom-range" id="range_movimiento_elevacion_anterior" data-input="movimiento_elevacion_anterior" >
                                                     <input type="hidden"                                                            
                                                            id="movimiento_elevacion_anterior" 
                                                            name="var[movimiento_elevacion_anterior]"
@@ -1555,7 +1555,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
                                                     <label for="movimiento_pisada">Pisada</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_pisada" data-input="movimiento_pisada" >
+                                                    <input type="range" min="0" max="3" class="custom-range" id="range_movimiento_pisada" data-input="movimiento_pisada" >
                                                     <input type="hidden"                                                            
                                                            id="movimiento_pisada" 
                                                            name="var[movimiento_pisada]"
@@ -1563,7 +1563,7 @@
                                                            value="<?= isset($_POST['var']['movimiento_pisada']) ? $_POST['var']['movimiento_pisada'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Baja
+                                                            Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1572,7 +1572,7 @@
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-                                                            Potente
+                                                            Muy potente
                                                         </span>
                                                     </div>
                                                 </div>
@@ -1902,7 +1902,7 @@
                                         </div>        
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_posterior" name="chk[chk_cana_posterior]" value="chk_morfometria_cana_posterior" <?= isset($_POST['chk']['chk_morfometria_cana_posterior']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_morfometria_cana_posterior" name="chk[chk_morfometria_cana_posterior]" value="chk_morfometria_cana_posterior" <?= isset($_POST['chk']['chk_morfometria_cana_posterior']) ? 'checked' : '' ?>>
                                                 <label class="form-check-label" for="chk_morfometria_cana_posterior">Caña posterior</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2214,7 +2214,13 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         var bandera = true;
         jQuery('form.buscadr input.form-check-input:checked').each(function () {
             var variableChk = jQuery(this).attr("id").replace('chk_', '');
-            if (jQuery("#" + variableChk).val() === "0") {
+            alert(variableChk);
+            if (jQuery("#" + variableChk).val() === "0" && 
+                    variableChk !== "morfometria_femur" && 
+                    variableChk !== "movimiento_velocidad" &&
+                    variableChk !== "movimiento_pisada" &&
+                    variableChk !== "elevacion_anterior" &&
+                    variableChk !== "elevacion_posterior") {
                 bandera = false;
                 return false;
             }
