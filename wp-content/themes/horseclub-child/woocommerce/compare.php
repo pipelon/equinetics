@@ -69,9 +69,30 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 <!-- END HEAD -->
 
 <?php global $product; ?>
+<?php
+//DEJO SOLO LAS MISMAS CATEGORIAS
+$firstCategory = 0;
+foreach ($products as $product_id => $product) {
+    if ($firstCategory == 0) {
+        $firstCategory = $product->category_ids[2];
+    }
+    if ($product->category_ids[2] != $firstCategory) {
+        unset($products[$product_id]);
+    }
+}
+//DEJO SOLO TRES PRODUCOTOS
+$products = array_slice($products, 0, 3, true);
+//REORDENAR ORDEN 
+$fields = [
+    'title' => 'Título',
+    'image' => 'Imagen',
+    'price' => 'Precio',
+    'add-to-cart' => 'Contratar servicio'
+];
+?>
 
 <!-- START BODY -->
-<body <?php body_class('woocommerce') ?>>
+<body <?php body_class('woocommerce') ?> style="background: #f5f5f5 !important">
 
     <h1 style="font-size: 23px !important; background: #d7cfc4; color: black;">
         <?php echo $localized_table_text ?>
@@ -123,15 +144,15 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
                         endforeach;
                         ?>
                     </tr>
-					
-					<?php $fields["category"] = "Categoría"; ?>
+
+                    <?php //$fields["category"] = "Categoría"; ?>
                     <?php foreach ($fields as $field => $name) : ?>
 
                         <tr class="<?php echo $field ?>">
 
-                            <!--<th>
-                                <?php //if ($field != 'image') echo $name ?>
-                            </th>-->
+                                                    <!--<th>
+                            <?php //if ($field != 'image') echo $name ?>
+                                                    </th>-->
 
                             <?php
                             $index = 0;
@@ -146,18 +167,22 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
                                             echo '<div class="image-wrap">' . $product->get_image('yith-woocompare-image') . '</div>';
                                             break;
 
+                                        case 'title':
+                                            echo '<h3 class="h3subtitusara margin-space">' . $product->name . '</h3>';
+                                            break;
+
                                         case 'add-to-cart':
                                             woocommerce_template_loop_add_to_cart();
                                             break;
-											
-										case 'category':
-											//CATEGORIAS
-											$terms = get_the_terms( $product_id, 'product_cat' );	
-											$cat = [];
-                                            foreach($terms as $v){
-												$cat[] = $v->name;
-											}
-											echo implode(" - ", $cat);
+
+                                        case 'category':
+                                            //CATEGORIAS
+                                            $terms = get_the_terms($product_id, 'product_cat');
+                                            $cat = [];
+                                            foreach ($terms as $v) {
+                                                $cat[] = $v->name;
+                                            }
+                                            echo implode(" - ", $cat);
                                             break;
 
                                         default:
@@ -177,7 +202,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                     <?php if ($repeat_price == 'yes' && isset($fields['price'])) : ?>
                         <tr class="price repeated">
-                            <!--<th><?php //echo $fields['price'] ?></th>-->
+                            <!--<th><?php //echo $fields['price']    ?></th>-->
 
                             <?php
                             $index = 0;
@@ -195,7 +220,7 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
                     <?php if ($repeat_add_to_cart == 'yes' && isset($fields['add-to-cart'])) : ?>
                         <tr class="add-to-cart repeated">
-                            <!--<th><?php //echo $fields['add-to-cart'] ?></th>-->
+                            <!--<th><?php //echo $fields['add-to-cart']    ?></th>-->
 
                             <?php
                             $index = 0;

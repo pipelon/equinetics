@@ -1499,7 +1499,7 @@
                                                            value="<?= isset($_POST['var']['movimiento_elevacion_anterior']) ? $_POST['var']['movimiento_elevacion_anterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Baja
+                                                            Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -1523,7 +1523,7 @@
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
                                                     <label for="movimiento_elevacion_posterior">Elevación posteriores</label>
-                                                    <input type="range" min="1" max="3" class="custom-range" id="range_movimiento_elevacion_posterior" data-input="movimiento_elevacion_posterior" >
+                                                    <input type="range" min="0" max="3" class="custom-range" id="range_movimiento_elevacion_posterior" data-input="movimiento_elevacion_posterior" >
                                                     <input type="hidden"                                                            
                                                            id="movimiento_elevacion_posterior" 
                                                            name="var[movimiento_elevacion_posterior]"
@@ -1531,7 +1531,7 @@
                                                            value="<?= isset($_POST['var']['movimiento_elevacion_posterior']) ? $_POST['var']['movimiento_elevacion_posterior'] : 0; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-                                                            Baja
+                                                            Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -2214,7 +2214,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         var bandera = true;
         jQuery('form.buscadr input.form-check-input:checked').each(function () {
             var variableChk = jQuery(this).attr("id").replace('chk_', '');
-            alert(variableChk);
+            
             if (jQuery("#" + variableChk).val() === "0" && 
                     variableChk !== "morfometria_femur" && 
                     variableChk !== "movimiento_velocidad" &&

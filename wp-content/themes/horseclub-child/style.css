@@ -1391,11 +1391,23 @@ form input[type="password"]{
 .h3subtitu.margin-space{
     margin-bottom: 30px;
 }
+.h3subtitusara.margin-space{
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
 .h3subtitu::after{
     content: "";
     display: block;
     position: relative;
     width: 5%;
+    height: 3px;
+    background: var(--eqcolor);
+}
+.h3subtitusara::after{
+    content: "";
+    display: block;
+    position: relative;
+    width: 100%;
     height: 3px;
     background: var(--eqcolor);
 }
@@ -2005,8 +2017,9 @@ table.dataTable.compare-list tbody td:last-child{
     border-right: 0;
     border-top: 0;
 }
-table.compare-list td.odd{
-    background: #FFFFFF;	
+table.compare-list td.odd,
+table.compare-list td.even{
+    background: #f5f5f5;	
 }
 .normal.white #up_topbar #nav-main ul > li.up-megamenu > ul > li > a{
     text-align: center
