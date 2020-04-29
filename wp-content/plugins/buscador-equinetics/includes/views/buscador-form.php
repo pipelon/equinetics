@@ -2219,8 +2219,8 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
                     variableChk !== "morfometria_femur" && 
                     variableChk !== "movimiento_velocidad" &&
                     variableChk !== "movimiento_pisada" &&
-                    variableChk !== "elevacion_anterior" &&
-                    variableChk !== "elevacion_posterior") {
+                    variableChk !== "movimiento_elevacion_anterior" &&
+                    variableChk !== "movimiento_elevacion_posterior") {
                 bandera = false;
                 return false;
             }

@@ -255,9 +255,9 @@ if (!class_exists('FormularioBuscador')) :
                 'meta_query' => $meta_query
             );
             ob_start();
-            //echo "<pre>"; print_r($args);echo "</pre>";
-            //$res = new WP_Query($args);
-            //echo $res->found_posts;
+            /*echo "<pre>"; print_r($args);echo "</pre>";
+            $res = new WP_Query($args);
+            echo $res->request;*/
             return new WP_Query($args);
         }
 
@@ -336,7 +336,10 @@ if (!class_exists('FormularioBuscador')) :
 
                 //CASO DE MOVIMIENTO Y PISADA QUE DEPENDE DEL ANDAR
                 if ($nmVariable == 'movimiento_pisada' ||
-                        $nmVariable == 'movimiento_velocidad') {
+                        $nmVariable == 'movimiento_velocidad' ||
+                        $nmVariable == 'geometria_orientacion' ||
+                        $nmVariable == 'morfometria_cuartilla_anterior' ||
+                        $nmVariable == 'morfometria_cuartilla_posterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
 
                     //CASO ESPECIAL DE CRUZ + DORSO
@@ -418,7 +421,7 @@ if (!class_exists('FormularioBuscador')) :
                 ];
             }
             //echo "<pre>"; print_r($meta_query); echo "</pre>";
-            //return $meta_query;
+            return $meta_query;
         }
 
         private function getVariables($variables, $mejoras, $selectedCat, $priority) {
@@ -440,7 +443,9 @@ if (!class_exists('FormularioBuscador')) :
                         $nmVariable == 'geometria_orientacion' ||
                         $nmVariable == 'alzada_estatura' ||
                         $nmVariable == 'morfometria_cana_anterior' ||
-                        $nmVariable == 'morfometria_cana_posterior') {
+                        $nmVariable == 'morfometria_cana_posterior'||
+                        $nmVariable == 'morfometria_cuartilla_anterior' ||
+                        $nmVariable == 'morfometria_cuartilla_posterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
                 } elseif ($nmVariable == 'lineaSuperior_cruz' || $nmVariable == 'dorso_tamano') {
                     //Caso especial de cruz + dorso
@@ -518,12 +523,12 @@ if (!class_exists('FormularioBuscador')) :
         private function get_geometria_orientacion($valor, $category) {
             switch ($valor) {
                 case 1:
-                    $arrValores = $category == '46' ? [3] : [2, 3];
+                    $arrValores = $category == '46' ? [2, 3] : [3];
                     break;
                 case 2:
                     $arrValores = [3, 2];
                     break;
-                case 2:
+                case 3:
                     $arrValores = [3];
                     break;
                 default:
@@ -1825,7 +1830,7 @@ if (!class_exists('FormularioBuscador')) :
                     $arrValores = ($category == '49') ? [1, 2] : [1];
                     break;
                 case 2:
-                    $arrValores = ($category == '49') ? [1] : [1, 1];
+                    $arrValores = ($category == '49') ? [1] : [1, 2];
                     break;
                 case 3:
                     $arrValores = ($category == '49') ? [1, 2] : [1, 2];
