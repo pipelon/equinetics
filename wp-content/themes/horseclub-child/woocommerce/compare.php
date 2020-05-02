@@ -92,7 +92,7 @@ $fields = [
 ?>
 
 <!-- START BODY -->
-<body <?php body_class('woocommerce') ?> style="background: #f5f5f5 !important">
+<body <?php body_class('woocommerce') ?> style="background: #f5f5f5 !important; font-family: 'Open Sans', san-serif !important; ">
 
     <h1 style="font-size: 23px !important; background: #d7cfc4; color: black;">
         <?php echo $localized_table_text ?>
@@ -150,9 +150,9 @@ $fields = [
 
                         <tr class="<?php echo $field ?>">
 
-                                                    <!--<th>
+                                                            <!--<th>
                             <?php //if ($field != 'image') echo $name ?>
-                                                    </th>-->
+                                                            </th>-->
 
                             <?php
                             $index = 0;
@@ -202,7 +202,7 @@ $fields = [
 
                     <?php if ($repeat_price == 'yes' && isset($fields['price'])) : ?>
                         <tr class="price repeated">
-                            <!--<th><?php //echo $fields['price']    ?></th>-->
+                            <!--<th><?php //echo $fields['price']     ?></th>-->
 
                             <?php
                             $index = 0;
@@ -220,7 +220,7 @@ $fields = [
 
                     <?php if ($repeat_add_to_cart == 'yes' && isset($fields['add-to-cart'])) : ?>
                         <tr class="add-to-cart repeated">
-                            <!--<th><?php //echo $fields['add-to-cart']    ?></th>-->
+                            <!--<th><?php //echo $fields['add-to-cart']     ?></th>-->
 
                             <?php
                             $index = 0;
@@ -239,31 +239,42 @@ $fields = [
                     <?php endif; ?>
 
                     <!-- VARIABLES SARA -->
-                    <tr>
+                    <!--<tr>-->
                         <!--<th>SARA</th>-->
 
                         <?php
-                        $index = 0;
-                        foreach ($products as $product_id => $product) :
-                            $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id
-                            ?>
-                            <td class="<?php echo $product_class ?>" style="vertical-align: top">
-                                <div class="compareProduct">
-                                    <?= do_shortcode('[get_horse_features horseID=' . $product_id . ']'); ?>
-                                </div>
-                            </td>
+//                        $index = 0;
+//                        foreach ($products as $product_id => $product) :
+//                            $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id
+//                            ?>
+                            <!--<td class="<?php //echo $product_class ?>" style="vertical-align: top">-->
+                                <!--<div class="compareProduct">-->
+                                    <?php //= do_shortcode('[get_horse_features horseID=' . $product_id . ']'); ?>
+                                <!--</div>-->
+                            <!--</td>-->
                             <?php
-                            ++$index;
-                        endforeach;
+//                            ++$index;
+//                        endforeach;
                         ?>
 
-                    </tr>
+                    <!--</tr>-->
 
                 <?php endif; ?>
 
             </tbody>
         </table>
 
+
+        <!--VARIABLES SARA -->
+        <div class="comparesara">
+            <?php
+            $varIdsProducts = [];
+            foreach ($products as $product_id => $product) {
+                $varIdsProducts[] = $product_id;
+            }
+            do_shortcode('[get_horse_features_compare horseIDs=' . implode(",", $varIdsProducts) . ']');
+            ?>
+        </div>
         <?php do_action('yith_woocompare_after_main_table'); ?>
 
     </div>

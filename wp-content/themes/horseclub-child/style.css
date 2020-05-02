@@ -2072,6 +2072,54 @@ table.compare-list td.even{
     }
 }
 
+.container-compare-graphs{
+    float: left; 
+    border: 1px solid #e7e7e7; 
+    border-radius: 10px; 
+    padding: 20px 0 0 0; 
+    margin: 0 10px;
+}
+.container-compare-graphs .container-compare-graph{
+    float: left; 
+    width: 110px;
+}
+.container-compare-graphs .container-compare-graph .compare-graph{
+    height: 200px; 
+    width: 30px; 
+    background: #e7e7e7; 
+    margin: 0 auto; 
+    position: relative; 
+    clear: both;
+}
+.container-compare-graphs .container-compare-graph .compare-graph .compare-graph-value{
+    width: 30px; 
+    background: var(--eqcolor); 
+    position:absolute; 
+    bottom: 0;
+}
+.container-compare-graphs .container-compare-graph .compare-graph-horse-namme{
+    float: left; 
+    clear: both; 
+    font-size: 12px; 
+    width: 100%; 
+    text-align: center; 
+    line-height: 1;
+    margin-top: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.container-compare-graphs .compare-cat-name{
+    float: left; 
+    clear: both; 
+    width: 100%; 
+    text-align: center; 
+    font-weight: bold;
+    background: #eaeaea;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
     .tab-caracteristicas .div-circular-chart{
