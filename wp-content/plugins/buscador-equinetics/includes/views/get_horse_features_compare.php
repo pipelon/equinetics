@@ -84,14 +84,20 @@
                                 </div>
                                 <div class="vc_tta-panel-body">
                                     <div class="wpb_text_column wpb_content_element">
-                                        <div class="wpb_wrapper" style="width: 100% !important; max-width: none;">
+                                        <div class="wpb_wrapper" style="width: 70% !important">
                                             <?php foreach ($value as $k => $v): ?>
                                                 <div class="container-compare-graphs">
+                                                    <div class="references">
+                                                        <span class="v3">--3</span>
+                                                        <span class="v2">--2</span>
+                                                        <span class="v1">--1</span>
+                                                    </div>
                                                     <?php foreach ($v as $k2 => $v2): ?>
                                                         <div class="container-compare-graph">
                                                             <div class="compare-graph">
                                                                 <div class="compare-graph-value" 
                                                                      style=" height: <?= (int) $v2 * 100 / 3 ?>%">
+                                                                    <?= $v2 ?>
                                                                 </div>
                                                             </div>
                                                             <div class="compare-graph-horse-namme">

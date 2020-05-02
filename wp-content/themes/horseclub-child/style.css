@@ -2077,7 +2077,7 @@ table.compare-list td.even{
     border: 1px solid #e7e7e7; 
     border-radius: 10px; 
     padding: 20px 0 0 0; 
-    margin: 0 10px;
+    margin: 10px;
 }
 .container-compare-graphs .container-compare-graph{
     float: left; 
@@ -2092,10 +2092,21 @@ table.compare-list td.even{
     clear: both;
 }
 .container-compare-graphs .container-compare-graph .compare-graph .compare-graph-value{
-    width: 30px; 
-    background: var(--eqcolor); 
+    width: 30px;     
     position:absolute; 
     bottom: 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.container-compare-graphs > .container-compare-graph:nth-child(2) .compare-graph .compare-graph-value{
+    background: #FE5043; 
+}
+.container-compare-graphs > .container-compare-graph:nth-child(3) .compare-graph .compare-graph-value{
+    background: #D7CFC4; 
+}
+.container-compare-graphs > .container-compare-graph:nth-child(4) .compare-graph .compare-graph-value{
+    background: #F7BE68; 
 }
 .container-compare-graphs .container-compare-graph .compare-graph-horse-namme{
     float: left; 
@@ -2118,6 +2129,30 @@ table.compare-list td.even{
     border-radius: 0 0 10px 10px;
     padding: 10px 0;
     margin-top: 20px;
+}
+.container-compare-graphs .references{
+    width: 2px;
+    height: 200px;
+    background: #e7e7e7;
+    float: left;
+    position: relative;
+    margin: 0 0 0 10px;
+}
+.container-compare-graphs .references .v1,
+.container-compare-graphs .references .v2,
+.container-compare-graphs .references .v3{
+    position: absolute;
+    color: #b7b7b7;
+    font-size: 10px;
+}
+.container-compare-graphs .references .v3{
+    top: 0px;
+}
+.container-compare-graphs .references .v2{
+    top: 60px;
+}
+.container-compare-graphs .references .v1{
+    bottom: 50px;
 }
 
 /* RESOLUCION CELULAR */
