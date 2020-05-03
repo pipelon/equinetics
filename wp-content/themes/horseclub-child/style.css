@@ -2074,7 +2074,7 @@ table.compare-list td.even{
 
 .container-compare-graphs{
     float: left; 
-    border: 1px solid #e7e7e7; 
+    border: 1px solid #d7cfc4; 
     border-radius: 10px; 
     padding: 20px 0 0 0; 
     margin: 10px;
@@ -2086,7 +2086,7 @@ table.compare-list td.even{
 .container-compare-graphs .container-compare-graph .compare-graph{
     height: 200px; 
     width: 30px; 
-    background: #e7e7e7; 
+    background: #d7cfc4; 
     margin: 0 auto; 
     position: relative; 
     clear: both;
@@ -2103,7 +2103,7 @@ table.compare-list td.even{
     background: #FE5043; 
 }
 .container-compare-graphs > .container-compare-graph:nth-child(3) .compare-graph .compare-graph-value{
-    background: #D7CFC4; 
+    background: #3C5ECC; 
 }
 .container-compare-graphs > .container-compare-graph:nth-child(4) .compare-graph .compare-graph-value{
     background: #F7BE68; 
@@ -2125,7 +2125,7 @@ table.compare-list td.even{
     width: 100%; 
     text-align: center; 
     font-weight: bold;
-    background: #eaeaea;
+    background: #d7cfc4;
     border-radius: 0 0 10px 10px;
     padding: 10px 0;
     margin-top: 20px;
@@ -2133,7 +2133,7 @@ table.compare-list td.even{
 .container-compare-graphs .references{
     width: 2px;
     height: 200px;
-    background: #e7e7e7;
+    background: #d7cfc4;
     float: left;
     position: relative;
     margin: 0 0 0 10px;
@@ -2142,7 +2142,7 @@ table.compare-list td.even{
 .container-compare-graphs .references .v2,
 .container-compare-graphs .references .v3{
     position: absolute;
-    color: #b7b7b7;
+    color: black;
     font-size: 10px;
 }
 .container-compare-graphs .references .v3{
@@ -2153,6 +2153,9 @@ table.compare-list td.even{
 }
 .container-compare-graphs .references .v1{
     bottom: 50px;
+}
+#yith-woocompare .image-wrap img{
+    width: 300px;
 }
 
 /* RESOLUCION CELULAR */

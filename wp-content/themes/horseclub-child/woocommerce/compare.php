@@ -129,30 +129,15 @@ $fields = [
                     </tr>
 
                 <?php else : ?>
-                    <tr class="remove">
-                        <!--<th>&nbsp;</th>-->
-                        <?php
-                        $index = 0;
-                        foreach ($products as $product_id => $product) :
-                            $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id
-                            ?>
-                            <td class="<?php echo $product_class; ?>">
-                                <a href="<?php echo add_query_arg('redirect', 'view', $this->remove_product_url($product_id)) ?>" data-product_id="<?php echo $product_id; ?>"><?php _e('Remove', 'yith-woocommerce-compare') ?> <span class="remove">x</span></a>
-                            </td>
-                            <?php
-                            ++$index;
-                        endforeach;
-                        ?>
-                    </tr>
 
                     <?php //$fields["category"] = "Categoría"; ?>
                     <?php foreach ($fields as $field => $name) : ?>
 
                         <tr class="<?php echo $field ?>">
 
-                                                            <!--<th>
+                                                                                            <!--<th>
                             <?php //if ($field != 'image') echo $name ?>
-                                                            </th>-->
+                                                                                            </th>-->
 
                             <?php
                             $index = 0;
@@ -164,11 +149,13 @@ $fields = [
                                     switch ($field) {
 
                                         case 'image':
-                                            echo '<div class="image-wrap">' . $product->get_image('yith-woocompare-image') . '</div>';
+                                            $portfolio_id = get_post_meta($product_id, 'portfolio_id', true);
+                                            $link = get_permalink($portfolio_id);
+                                            echo '<div class="image-wrap"><a href="' . esc_url($link) . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' . $product->get_image('yith-woocompare-image') . '</a></div>';
                                             break;
 
                                         case 'title':
-                                            echo '<h3 class="h3subtitusara margin-space">' . $product->name . '</h3>';
+                                            echo '<h3 class="h3subtitusara margin-space" style="font-size:30px">' . $product->name . '</h3>';
                                             break;
 
                                         case 'add-to-cart':
@@ -200,9 +187,25 @@ $fields = [
 
                     <?php endforeach; ?>
 
+                    <tr class="remove">
+                    <!--<th>&nbsp;</th>-->
+                        <?php
+                        $index = 0;
+                        foreach ($products as $product_id => $product) :
+                            $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id
+                            ?>
+                            <td class="<?php echo $product_class; ?>" style="text-align: right">
+                                <a href="<?php echo add_query_arg('redirect', 'view', $this->remove_product_url($product_id)) ?>" data-product_id="<?php echo $product_id; ?>"><?php _e('Remove', 'yith-woocommerce-compare') ?> <span class="remove">x</span></a>
+                            </td>
+                            <?php
+                            ++$index;
+                        endforeach;
+                        ?>
+                    </tr>
+
                     <?php if ($repeat_price == 'yes' && isset($fields['price'])) : ?>
                         <tr class="price repeated">
-                            <!--<th><?php //echo $fields['price']     ?></th>-->
+                            <!--<th><?php //echo $fields['price']         ?></th>-->
 
                             <?php
                             $index = 0;
@@ -220,7 +223,7 @@ $fields = [
 
                     <?php if ($repeat_add_to_cart == 'yes' && isset($fields['add-to-cart'])) : ?>
                         <tr class="add-to-cart repeated">
-                            <!--<th><?php //echo $fields['add-to-cart']     ?></th>-->
+                            <!--<th><?php //echo $fields['add-to-cart']         ?></th>-->
 
                             <?php
                             $index = 0;
@@ -242,20 +245,21 @@ $fields = [
                     <!--<tr>-->
                         <!--<th>SARA</th>-->
 
-                        <?php
+                    <?php
 //                        $index = 0;
 //                        foreach ($products as $product_id => $product) :
 //                            $product_class = ( $index % 2 == 0 ? 'odd' : 'even' ) . ' product_' . $product_id
-//                            ?>
-                            <!--<td class="<?php //echo $product_class ?>" style="vertical-align: top">-->
-                                <!--<div class="compareProduct">-->
-                                    <?php //= do_shortcode('[get_horse_features horseID=' . $product_id . ']'); ?>
-                                <!--</div>-->
-                            <!--</td>-->
-                            <?php
+//                            
+                    ?>
+                                            <!--<td class="<?php //echo $product_class     ?>" style="vertical-align: top">-->
+                    <!--<div class="compareProduct">-->
+                    <?php //= do_shortcode('[get_horse_features horseID=' . $product_id . ']');  ?>
+                    <!--</div>-->
+                    <!--</td>-->
+                    <?php
 //                            ++$index;
 //                        endforeach;
-                        ?>
+                    ?>
 
                     <!--</tr>-->
 
