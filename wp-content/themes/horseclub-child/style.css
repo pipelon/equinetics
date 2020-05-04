@@ -2157,9 +2157,26 @@ table.compare-list td.even{
 #yith-woocompare .image-wrap img{
     width: 300px;
 }
+.tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper.wpb_wrappercompare-graphs{
+    width: 35% !important
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {
+    .pruebah1{
+        width: 768px !important;
+    }
+    .tab-caracteristicas .vc_tta-panels .vc_tta-panel-body div.wpb_wrapper.wpb_wrappercompare-graphs{
+        width: 55% !important
+    }
+    #search-results-eq a.button.added::before {
+        top: 0;
+        left: 25px;
+    }
+    body #yith-woocompare{
+        width: 768px !important;
+        overflow: auto;
+    }
     .tab-caracteristicas .div-circular-chart{
         margin: 15px 20%;
     }

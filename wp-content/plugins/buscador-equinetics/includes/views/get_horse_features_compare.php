@@ -84,7 +84,7 @@
                                 </div>
                                 <div class="vc_tta-panel-body">
                                     <div class="wpb_text_column wpb_content_element">
-                                        <div class="wpb_wrapper" style="width: 35% !important">
+                                        <div class="wpb_wrapper wpb_wrappercompare-graphs">
                                             <?php foreach ($value as $k => $v): ?>
                                                 <div class="container-compare-graphs">
                                                     <div class="references">

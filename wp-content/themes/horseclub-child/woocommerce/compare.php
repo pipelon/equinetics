@@ -94,9 +94,9 @@ $fields = [
 <!-- START BODY -->
 <body <?php body_class('woocommerce') ?> style="background: #f5f5f5 !important; font-family: 'Open Sans', san-serif !important; ">
 
-    <h1 style="font-size: 23px !important; background: #d7cfc4; color: black;">
+    <h1 style="font-size: 23px !important; background: #d7cfc4; color: black;" class="pruebah1">
         <?php echo $localized_table_text ?>
-        <?php if (!$is_iframe) : ?><a class="close" href="#"><?php _e('Close window [X]', 'yith-woocommerce-compare') ?></a><?php endif; ?>
+        <?php if (!$is_iframe) : ?><a class="close" href="#" style="color: black"><?php _e('[X]', 'yith-woocommerce-compare') ?></a><?php endif; ?>
     </h1>
 
     <div id="yith-woocompare" class="woocommerce">
