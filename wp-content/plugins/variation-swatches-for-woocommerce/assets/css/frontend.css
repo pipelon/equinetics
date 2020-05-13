@@ -33,7 +33,12 @@
 }
 
 .tawcvs-swatches .swatch.disabled {
-	opacity: 0.1;
+	cursor: default;
+	opacity: 0.1 !important;
+}
+
+.tawcvs-swatches .swatch.disabled .swatch__tooltip {
+	display: none;
 }
 
 .tawcvs-swatches .swatch-color {

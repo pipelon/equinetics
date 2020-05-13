@@ -163,6 +163,7 @@ if (!class_exists('FormularioBuscador')) :
 
                 //SI SE SOLICITO BUSCAR O BUSCAR Y GUARDAR      
                 if (isset($_POST["buscar"]) || isset($_POST["guardar"])) {
+                    $isSaraResults = false;
                     $priority = explode(",", $_POST['priority']);
                     $lblpriority = implode(",", $priority);
                     if (count($priority) >= 5) {
@@ -179,7 +180,8 @@ if (!class_exists('FormularioBuscador')) :
 
                 //SI SE PRESIONO EL BOTON DE SUGERENCIAS SARA
                 if (isset($_POST["sugerencia"])) {
-                    $lblpriority = implode(",", $this->variablesPrioritySaraSuggestion);
+                    //$lblpriority = implode(",", $this->variablesPrioritySaraSuggestion);
+                    $isSaraResults = true;
                     $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);
                 }
             }

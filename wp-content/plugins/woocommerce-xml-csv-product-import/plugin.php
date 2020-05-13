@@ -3,9 +3,9 @@
 Plugin Name: WP All Import - WooCommerce Add-On
 Plugin URI: http://www.wpallimport.com/woocommerce-product-import/?utm_source=import-wooco-products-addon-free&utm_medium=wp-plugins-page&utm_campaign=upgrade-to-pro
 Description: An extremely easy, drag & drop importer to import WooCommerce simple products. A paid upgrade is available for premium support and support for Variable, Grouped, and External/Affiliate products
-Version: 1.4.4
+Version: 1.4.5
 Author: Soflyy
-WC tested up to: 4.0.1
+WC tested up to: 4.1.0
 */
 
 if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -25,7 +25,7 @@ if ( is_plugin_active('wpai-woocommerce-add-on/wpai-woocommerce-add-on.php') ) {
 }
 else {
 
-    define('PMWI_FREE_VERSION', '1.4.4');
+    define('PMWI_FREE_VERSION', '1.4.5');
 
     define('PMWI_EDITION', 'free');
 

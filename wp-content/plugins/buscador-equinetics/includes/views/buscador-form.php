@@ -564,16 +564,16 @@
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]"
                                                            data-range="range_lineaSuperior_orientacion_cuello"
-                                                           value="<?php// isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0;      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?php /*
-                                                            isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '0' ?
-                                                                    $_POST['var']['lineaSuperior_orientacion_cuello'] : "-"*/
-                                                            ?>
+                                            <?php /*
+                                              isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '0' ?
+                                              $_POST['var']['lineaSuperior_orientacion_cuello'] : "-" */
+                                            ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Valor máximo
@@ -831,16 +831,16 @@
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]"
                                                            data-range="range_dorso_linea"
-                                                           value="<?php// isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0;      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?php /*
-                                                            isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '0' ?
-                                                                    $_POST['var']['dorso_linea'] : "-"*/
-                                                            ?>
+                                            <?php /*
+                                              isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '0' ?
+                                              $_POST['var']['dorso_linea'] : "-" */
+                                            ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Valor máximo
@@ -1592,16 +1592,16 @@
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]"
                                                            data-range="range_movimiento_pulimento"
-                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0;      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
-                                                            <?php /*
-                                                            isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '0' ?
-                                                                    $_POST['var']['movimiento_pulimento'] : "-"*/
-                                                            ?>
+                                            <?php /*
+                                              isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '0' ?
+                                              $_POST['var']['movimiento_pulimento'] : "-" */
+                                            ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Valor máximo
@@ -1624,16 +1624,16 @@
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]"
                                                            data-range="range_movimiento_elasticidad"
-                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0; ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0;      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
                                                         </span>
                                                         <span class="valor">
-                                                            <?php /*
-                                                            isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '0' ?
-                                                                    $_POST['var']['movimiento_elasticidad'] : "-"*/
-                                                            ?>
+                                            <?php /*
+                                              isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '0' ?
+                                              $_POST['var']['movimiento_elasticidad'] : "-" */
+                                            ?>
                                                         </span>
                                                         <span class="maxvalor">
                                                             Muy elástico
@@ -1772,7 +1772,7 @@
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''      ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1807,7 +1807,7 @@
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6" style="visibility: hidden">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''      ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1858,7 +1858,7 @@
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : ''      ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1947,14 +1947,14 @@
                                         </div>        
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : ''      ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>-->   
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : '' ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : ''      ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2032,9 +2032,12 @@ if (isset($_POST) &&
             <?php $anyShown = true; ?>
             <div class="fullresult">
                 <p class="text-center" style="padding: 10px 0;">
-                    Los siguientes resultados se basan en las solicitudes de mejora de: 
-                    <span class="variables_resultados"></span>.
+                    <?php if (!$isSaraResults): ?>
+                        Los siguientes resultados se basan en las solicitudes de mejora de: 
+                        <span class="variables_resultados"></span>.
+                    <?php endif; ?>
                 </p>
+
                 <?php woocommerce_product_loop_start(); ?>
 
                 <?php while ($products->have_posts()) : $products->the_post(); ?>
@@ -2182,24 +2185,35 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         }
     });
 
+    jQuery("form.buscadr input[type=submit]").click(function () {
+        jQuery("input[type=submit]", jQuery(this).parents("form")).removeAttr("clicked");
+        jQuery(this).attr("clicked", "true");
+    });
     jQuery('form.buscadr').submit(function () {
+        /* BOTON QUE HIZO SUBMIT */
+        var buttonSubmited = jQuery("input[type=submit][clicked=true]").attr('name');
 
         /* VALIDAR QUE AL MENOS UNA TIPIFICACION SEA SELECCIONADA */
-        var bandera1 = false;
-        jQuery('form.buscadr input.custom-range').each(function () {
-            if (jQuery(this).val() !== "0") {
-                bandera1 = true;
-                return false;
-            }
-        });
-        if (!bandera1) {
-            alert('Debe tipificar al menos una variable de su Yegua.');
-            return false;
-        }
+        /*var bandera1 = false;
+         jQuery('form.buscadr input.custom-range-hidden').each(function () {            
+         if (jQuery(this).val() !== "0" ||
+         jQuery(this).attr('id') !== "morfometria_femur" &&
+         jQuery(this).attr('id') !== "movimiento_velocidad" &&
+         jQuery(this).attr('id') !== "movimiento_pisada" &&
+         jQuery(this).attr('id') !== "movimiento_elevacion_anterior" &&
+         jQuery(this).attr('id') !== "movimiento_elevacion_posterior") {
+         bandera1 = true;
+         return false;
+         }
+         });
+         if (!bandera1) {
+         alert('Debe tipificar al menos una variable de su Yegua.');
+         return false;
+         }*/
 
         /* VALIDAR QUE AL MENOS UN CHECK DE MEJORA SEA SELECCIONADO */
         var numberOfChecked = jQuery('form.buscadr input.form-check-input:checked').length;
-        if (numberOfChecked <= 0) {
+        if (numberOfChecked <= 0 && buttonSubmited !== "sugerencia") {
             alert('Debe selecionar al menos una variable de mejoramiento');
             return false;
         }
@@ -2214,9 +2228,9 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         var bandera = true;
         jQuery('form.buscadr input.form-check-input:checked').each(function () {
             var variableChk = jQuery(this).attr("id").replace('chk_', '');
-            
-            if (jQuery("#" + variableChk).val() === "0" && 
-                    variableChk !== "morfometria_femur" && 
+
+            if (jQuery("#" + variableChk).val() === "0" &&
+                    variableChk !== "morfometria_femur" &&
                     variableChk !== "movimiento_velocidad" &&
                     variableChk !== "movimiento_pisada" &&
                     variableChk !== "movimiento_elevacion_anterior" &&
