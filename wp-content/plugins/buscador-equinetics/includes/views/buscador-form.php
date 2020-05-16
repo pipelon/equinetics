@@ -296,7 +296,7 @@
                                                            data-range="range_geometria_figura"
                                                            value="<?=
                                                            isset($_POST['var']['geometria_figura']) ?
-                                                                   $_POST['var']['geometria_figura'] : 0;
+                                                                   $_POST['var']['geometria_figura'] : "";
                                                            ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
@@ -304,7 +304,7 @@
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['geometria_figura']) && $_POST['var']['geometria_figura'] !== '0' ?
+                                                            isset($_POST['var']['geometria_figura']) && $_POST['var']['geometria_figura'] !== '' ?
                                                                     $_POST['var']['geometria_figura'] : "-";
                                                             ?>
                                                         </span>
@@ -329,14 +329,14 @@
                                                            id="geometria_orientacion" 
                                                            name="var[geometria_orientacion]"
                                                            data-range="range_geometria_orientacion"
-                                                           value="<?= isset($_POST['var']['geometria_orientacion']) ? $_POST['var']['geometria_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['geometria_orientacion']) ? $_POST['var']['geometria_orientacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descendente
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['geometria_orientacion']) && $_POST['var']['geometria_orientacion'] !== '0' ?
+                                                            isset($_POST['var']['geometria_orientacion']) && $_POST['var']['geometria_orientacion'] !== '' ?
                                                                     $_POST['var']['geometria_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -398,14 +398,14 @@
                                                            id="balance_horizontal" 
                                                            name="var[balance_horizontal]"
                                                            data-range="range_balance_horizontal"
-                                                           value="<?= isset($_POST['var']['balance_horizontal']) ? $_POST['var']['balance_horizontal'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['balance_horizontal']) ? $_POST['var']['balance_horizontal'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Desbalanceado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_horizontal']) && $_POST['var']['balance_horizontal'] !== '0' ?
+                                                            isset($_POST['var']['balance_horizontal']) && $_POST['var']['balance_horizontal'] !== '' ?
                                                                     $_POST['var']['balance_horizontal'] : "-"
                                                             ?>
                                                         </span>
@@ -431,14 +431,14 @@
                                                            id="balance_vertical" 
                                                            name="var[balance_vertical]"
                                                            data-range="range_balance_vertical"
-                                                           value="<?= isset($_POST['var']['balance_vertical']) ? $_POST['var']['balance_vertical'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['balance_vertical']) ? $_POST['var']['balance_vertical'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Angosto porción 1
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['balance_vertical']) && $_POST['var']['balance_vertical'] !== '0' ?
+                                                            isset($_POST['var']['balance_vertical']) && $_POST['var']['balance_vertical'] !== '' ?
                                                                     $_POST['var']['balance_vertical'] : "-"
                                                             ?>
                                                         </span>
@@ -500,14 +500,14 @@
                                                            id="lineaSuperior_cabeza" 
                                                            name="var[lineaSuperior_cabeza]"
                                                            data-range="range_lineaSuperior_cabeza"
-                                                           value="<?= isset($_POST['var']['lineaSuperior_cabeza']) ? $_POST['var']['lineaSuperior_cabeza'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_cabeza']) ? $_POST['var']['lineaSuperior_cabeza'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Ordinaria
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cabeza']) && $_POST['var']['lineaSuperior_cabeza'] !== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_cabeza']) && $_POST['var']['lineaSuperior_cabeza'] !== '' ?
                                                                     $_POST['var']['lineaSuperior_cabeza'] : "-"
                                                             ?>
                                                         </span>
@@ -532,14 +532,14 @@
                                                            id="lineaSuperior_longitud_cuello" 
                                                            name="var[lineaSuperior_longitud_cuello]"
                                                            data-range="range_lineaSuperior_longitud_cuello"
-                                                           value="<?= isset($_POST['var']['lineaSuperior_longitud_cuello']) ? $_POST['var']['lineaSuperior_longitud_cuello'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_longitud_cuello']) ? $_POST['var']['lineaSuperior_longitud_cuello'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) && $_POST['var']['lineaSuperior_longitud_cuello'] !== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_longitud_cuello']) && $_POST['var']['lineaSuperior_longitud_cuello'] !== '' ?
                                                                     $_POST['var']['lineaSuperior_longitud_cuello'] : "-"
                                                             ?>
                                                         </span>
@@ -564,14 +564,14 @@
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]"
                                                            data-range="range_lineaSuperior_orientacion_cuello"
-                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : 0;      ?>">
+                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : "";      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                             <?php /*
-                                              isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '0' ?
+                                              isset($_POST['var']['lineaSuperior_orientacion_cuello']) && $_POST['var']['lineaSuperior_orientacion_cuello'] !== '' ?
                                               $_POST['var']['lineaSuperior_orientacion_cuello'] : "-" */
                                             ?>
                                                         </span>
@@ -596,14 +596,14 @@
                                                            id="lineaSuperior_pecho" 
                                                            name="var[lineaSuperior_pecho]"
                                                            data-range="range_lineaSuperior_pecho"
-                                                           value="<?= isset($_POST['var']['lineaSuperior_pecho']) ? $_POST['var']['lineaSuperior_pecho'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_pecho']) ? $_POST['var']['lineaSuperior_pecho'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Angosto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_pecho']) && $_POST['var']['lineaSuperior_pecho'] !== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_pecho']) && $_POST['var']['lineaSuperior_pecho'] !== '' ?
                                                                     $_POST['var']['lineaSuperior_pecho'] : "-"
                                                             ?>
                                                         </span>
@@ -665,14 +665,14 @@
                                                            id="espalda_tamano" 
                                                            name="var[espalda_tamano]"
                                                            data-range="range_espalda_tamano"
-                                                           value="<?= isset($_POST['var']['espalda_tamano']) ? $_POST['var']['espalda_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['espalda_tamano']) ? $_POST['var']['espalda_tamano'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_tamano']) && $_POST['var']['espalda_tamano'] !== '0' ?
+                                                            isset($_POST['var']['espalda_tamano']) && $_POST['var']['espalda_tamano'] !== '' ?
                                                                     $_POST['var']['espalda_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -697,14 +697,14 @@
                                                            id="espalda_orientacion" 
                                                            name="var[espalda_orientacion]"
                                                            data-range="range_espalda_orientacion"
-                                                           value="<?= isset($_POST['var']['espalda_orientacion']) ? $_POST['var']['espalda_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['espalda_orientacion']) ? $_POST['var']['espalda_orientacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['espalda_orientacion']) && $_POST['var']['espalda_orientacion'] !== '0' ?
+                                                            isset($_POST['var']['espalda_orientacion']) && $_POST['var']['espalda_orientacion'] !== '' ?
                                                                     $_POST['var']['espalda_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -767,14 +767,14 @@
                                                            id="lineaSuperior_cruz" 
                                                            name="var[lineaSuperior_cruz]"
                                                            data-range="range_lineaSuperior_cruz"
-                                                           value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['lineaSuperior_cruz']) ? $_POST['var']['lineaSuperior_cruz'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz'] !== '0' ?
+                                                            isset($_POST['var']['lineaSuperior_cruz']) && $_POST['var']['lineaSuperior_cruz'] !== '' ?
                                                                     $_POST['var']['lineaSuperior_cruz'] : "-"
                                                             ?>
                                                         </span>
@@ -799,14 +799,14 @@
                                                            id="dorso_tamano" 
                                                            name="var[dorso_tamano]"
                                                            data-range="range_dorso_tamano"
-                                                           value="<?= isset($_POST['var']['dorso_tamano']) ? $_POST['var']['dorso_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['dorso_tamano']) ? $_POST['var']['dorso_tamano'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['dorso_tamano']) && $_POST['var']['dorso_tamano'] !== '0' ?
+                                                            isset($_POST['var']['dorso_tamano']) && $_POST['var']['dorso_tamano'] !== '' ?
                                                                     $_POST['var']['dorso_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -831,14 +831,14 @@
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]"
                                                            data-range="range_dorso_linea"
-                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : 0;      ?>">
+                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "";      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                             <?php /*
-                                              isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '0' ?
+                                              isset($_POST['var']['dorso_linea']) && $_POST['var']['dorso_linea'] !== '' ?
                                               $_POST['var']['dorso_linea'] : "-" */
                                             ?>
                                                         </span>
@@ -900,14 +900,14 @@
                                                            id="grupa_tamano" 
                                                            name="var[grupa_tamano]"
                                                            data-range="range_grupa_tamano"
-                                                           value="<?= isset($_POST['var']['grupa_tamano']) ? $_POST['var']['grupa_tamano'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_tamano']) ? $_POST['var']['grupa_tamano'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_tamano']) && $_POST['var']['grupa_tamano'] !== '0' ?
+                                                            isset($_POST['var']['grupa_tamano']) && $_POST['var']['grupa_tamano'] !== '' ?
                                                                     $_POST['var']['grupa_tamano'] : "-"
                                                             ?>
                                                         </span>
@@ -932,14 +932,14 @@
                                                            id="grupa_orientacion" 
                                                            name="var[grupa_orientacion]"
                                                            data-range="range_grupa_orientacion"
-                                                           value="<?= isset($_POST['var']['grupa_orientacion']) ? $_POST['var']['grupa_orientacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_orientacion']) ? $_POST['var']['grupa_orientacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_orientacion']) && $_POST['var']['grupa_orientacion'] !== '0' ?
+                                                            isset($_POST['var']['grupa_orientacion']) && $_POST['var']['grupa_orientacion'] !== '' ?
                                                                     $_POST['var']['grupa_orientacion'] : "-"
                                                             ?>
                                                         </span>
@@ -964,14 +964,14 @@
                                                            id="grupa_amplitud" 
                                                            name="var[grupa_amplitud]"
                                                            data-range="range_grupa_amplitud"
-                                                           value="<?= isset($_POST['var']['grupa_amplitud']) ? $_POST['var']['grupa_amplitud'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['grupa_amplitud']) ? $_POST['var']['grupa_amplitud'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['grupa_amplitud']) && $_POST['var']['grupa_amplitud'] !== '0' ?
+                                                            isset($_POST['var']['grupa_amplitud']) && $_POST['var']['grupa_amplitud'] !== '' ?
                                                                     $_POST['var']['grupa_amplitud'] : "-"
                                                             ?>
                                                         </span>
@@ -1033,14 +1033,14 @@
                                                            id="aplomos_anteriores_frente" 
                                                            name="var[aplomos_anteriores_frente]"
                                                            data-range="range_aplomos_anteriores_frente"
-                                                           value="<?= isset($_POST['var']['aplomos_anteriores_frente']) ? $_POST['var']['aplomos_anteriores_frente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_anteriores_frente']) ? $_POST['var']['aplomos_anteriores_frente'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Izquierdo
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_frente']) && $_POST['var']['aplomos_anteriores_frente'] !== '0' ?
+                                                            isset($_POST['var']['aplomos_anteriores_frente']) && $_POST['var']['aplomos_anteriores_frente'] !== '' ?
                                                                     $_POST['var']['aplomos_anteriores_frente'] : "-"
                                                             ?>
                                                         </span>
@@ -1065,14 +1065,14 @@
                                                            id="aplomos_anteriores_lateralmente" 
                                                            name="var[aplomos_anteriores_lateralmente]"
                                                            data-range="range_aplomos_anteriores_lateralmente"
-                                                           value="<?= isset($_POST['var']['aplomos_anteriores_lateralmente']) ? $_POST['var']['aplomos_anteriores_lateralmente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_anteriores_lateralmente']) ? $_POST['var']['aplomos_anteriores_lateralmente'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Plantado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) && $_POST['var']['aplomos_anteriores_lateralmente'] !== '0' ?
+                                                            isset($_POST['var']['aplomos_anteriores_lateralmente']) && $_POST['var']['aplomos_anteriores_lateralmente'] !== '' ?
                                                                     $_POST['var']['aplomos_anteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1097,14 +1097,14 @@
                                                            id="aplomos_posteriores_atras" 
                                                            name="var[aplomos_posteriores_atras]"
                                                            data-range="range_aplomos_posteriores_atras"
-                                                           value="<?= isset($_POST['var']['aplomos_posteriores_atras']) ? $_POST['var']['aplomos_posteriores_atras'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_posteriores_atras']) ? $_POST['var']['aplomos_posteriores_atras'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Cerrados
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_atras']) && $_POST['var']['aplomos_posteriores_atras'] !== '0' ?
+                                                            isset($_POST['var']['aplomos_posteriores_atras']) && $_POST['var']['aplomos_posteriores_atras'] !== '' ?
                                                                     $_POST['var']['aplomos_posteriores_atras'] : "-"
                                                             ?>
                                                         </span>
@@ -1129,14 +1129,14 @@
                                                            id="aplomos_posteriores_lateralmente" 
                                                            name="var[aplomos_posteriores_lateralmente]"
                                                            data-range="range_aplomos_posteriores_lateralmente"
-                                                           value="<?= isset($_POST['var']['aplomos_posteriores_lateralmente']) ? $_POST['var']['aplomos_posteriores_lateralmente'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['aplomos_posteriores_lateralmente']) ? $_POST['var']['aplomos_posteriores_lateralmente'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Plantado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) && $_POST['var']['aplomos_posteriores_lateralmente'] !== '0' ?
+                                                            isset($_POST['var']['aplomos_posteriores_lateralmente']) && $_POST['var']['aplomos_posteriores_lateralmente'] !== '' ?
                                                                     $_POST['var']['aplomos_posteriores_lateralmente'] : "-"
                                                             ?>
                                                         </span>
@@ -1198,14 +1198,14 @@
                                                            id="alzada_estatura" 
                                                            name="var[alzada_estatura]"
                                                            data-range="range_alzada_estatura"
-                                                           value="<?= isset($_POST['var']['alzada_estatura']) ? $_POST['var']['alzada_estatura'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['alzada_estatura']) ? $_POST['var']['alzada_estatura'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['alzada_estatura']) && $_POST['var']['alzada_estatura'] !== '0' ?
+                                                            isset($_POST['var']['alzada_estatura']) && $_POST['var']['alzada_estatura'] !== '' ?
                                                                     $_POST['var']['alzada_estatura'] : "-"
                                                             ?>
                                                         </span>
@@ -1267,14 +1267,14 @@
                                                            id="morfometria_cana_anterior" 
                                                            name="var[morfometria_cana_anterior]"
                                                            data-range="range_morfometria_cana_anterior"
-                                                           value="<?= isset($_POST['var']['morfometria_cana_anterior']) ? $_POST['var']['morfometria_cana_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cana_anterior']) ? $_POST['var']['morfometria_cana_anterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_anterior']) && $_POST['var']['morfometria_cana_anterior'] !== '0' ?
+                                                            isset($_POST['var']['morfometria_cana_anterior']) && $_POST['var']['morfometria_cana_anterior'] !== '' ?
                                                                     $_POST['var']['morfometria_cana_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1299,14 +1299,14 @@
                                                            id="morfometria_cuartilla_anterior" 
                                                            name="var[morfometria_cuartilla_anterior]"
                                                            data-range="range_morfometria_cuartilla_anterior"
-                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_anterior']) ? $_POST['var']['morfometria_cuartilla_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_anterior']) ? $_POST['var']['morfometria_cuartilla_anterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) && $_POST['var']['morfometria_cuartilla_anterior'] !== '0' ?
+                                                            isset($_POST['var']['morfometria_cuartilla_anterior']) && $_POST['var']['morfometria_cuartilla_anterior'] !== '' ?
                                                                     $_POST['var']['morfometria_cuartilla_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1331,14 +1331,14 @@
                                                            id="morfometria_femur" 
                                                            name="var[morfometria_femur]"
                                                            data-range="range_morfometria_femur"
-                                                           value="<?= isset($_POST['var']['morfometria_femur']) ? $_POST['var']['morfometria_femur'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_femur']) ? $_POST['var']['morfometria_femur'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Muy corto
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_femur']) && $_POST['var']['morfometria_femur'] !== '0' ?
+                                                            isset($_POST['var']['morfometria_femur']) && $_POST['var']['morfometria_femur'] !== '' ?
                                                                     $_POST['var']['morfometria_femur'] : "-"
                                                             ?>
                                                         </span>
@@ -1363,14 +1363,14 @@
                                                            id="morfometria_cana_posterior" 
                                                            name="var[morfometria_cana_posterior]"
                                                            data-range="range_morfometria_cana_posterior"
-                                                           value="<?= isset($_POST['var']['morfometria_cana_posterior']) ? $_POST['var']['morfometria_cana_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cana_posterior']) ? $_POST['var']['morfometria_cana_posterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cana_posterior']) && $_POST['var']['morfometria_cana_posterior'] !== '0' ?
+                                                            isset($_POST['var']['morfometria_cana_posterior']) && $_POST['var']['morfometria_cana_posterior'] !== '' ?
                                                                     $_POST['var']['morfometria_cana_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1395,14 +1395,14 @@
                                                            id="morfometria_cuartilla_posterior" 
                                                            name="var[morfometria_cuartilla_posterior]"
                                                            data-range="range_morfometria_cuartilla_posterior"
-                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_posterior']) ? $_POST['var']['morfometria_cuartilla_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['morfometria_cuartilla_posterior']) ? $_POST['var']['morfometria_cuartilla_posterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Corta
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) && $_POST['var']['morfometria_cuartilla_posterior'] !== '0' ?
+                                                            isset($_POST['var']['morfometria_cuartilla_posterior']) && $_POST['var']['morfometria_cuartilla_posterior'] !== '' ?
                                                                     $_POST['var']['morfometria_cuartilla_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1464,14 +1464,14 @@
                                                            id="movimiento_velocidad" 
                                                            name="var[movimiento_velocidad]"
                                                            data-range="range_movimiento_velocidad"
-                                                           value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_velocidad']) ? $_POST['var']['movimiento_velocidad'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_velocidad']) && $_POST['var']['movimiento_velocidad'] !== '0' ?
+                                                            isset($_POST['var']['movimiento_velocidad']) && $_POST['var']['movimiento_velocidad'] !== '' ?
                                                                     $_POST['var']['movimiento_velocidad'] : "-"
                                                             ?>
                                                         </span>
@@ -1496,14 +1496,14 @@
                                                            id="movimiento_elevacion_anterior" 
                                                            name="var[movimiento_elevacion_anterior]"
                                                            data-range="range_movimiento_elevacion_anterior"
-                                                           value="<?= isset($_POST['var']['movimiento_elevacion_anterior']) ? $_POST['var']['movimiento_elevacion_anterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_elevacion_anterior']) ? $_POST['var']['movimiento_elevacion_anterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_anterior']) && $_POST['var']['movimiento_elevacion_anterior'] !== '0' ?
+                                                            isset($_POST['var']['movimiento_elevacion_anterior']) && $_POST['var']['movimiento_elevacion_anterior'] !== '' ?
                                                                     $_POST['var']['movimiento_elevacion_anterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1528,14 +1528,14 @@
                                                            id="movimiento_elevacion_posterior" 
                                                            name="var[movimiento_elevacion_posterior]"
                                                            data-range="range_movimiento_elevacion_posterior"
-                                                           value="<?= isset($_POST['var']['movimiento_elevacion_posterior']) ? $_POST['var']['movimiento_elevacion_posterior'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_elevacion_posterior']) ? $_POST['var']['movimiento_elevacion_posterior'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_elevacion_posterior']) && $_POST['var']['movimiento_elevacion_posterior'] !== '0' ?
+                                                            isset($_POST['var']['movimiento_elevacion_posterior']) && $_POST['var']['movimiento_elevacion_posterior'] !== '' ?
                                                                     $_POST['var']['movimiento_elevacion_posterior'] : "-"
                                                             ?>
                                                         </span>
@@ -1560,14 +1560,14 @@
                                                            id="movimiento_pisada" 
                                                            name="var[movimiento_pisada]"
                                                            data-range="range_movimiento_pisada"
-                                                           value="<?= isset($_POST['var']['movimiento_pisada']) ? $_POST['var']['movimiento_pisada'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_pisada']) ? $_POST['var']['movimiento_pisada'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Muy baja
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_pisada']) && $_POST['var']['movimiento_pisada'] !== '0' ?
+                                                            isset($_POST['var']['movimiento_pisada']) && $_POST['var']['movimiento_pisada'] !== '' ?
                                                                     $_POST['var']['movimiento_pisada'] : "-"
                                                             ?>
                                                         </span>
@@ -1592,14 +1592,14 @@
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]"
                                                            data-range="range_movimiento_pulimento"
-                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : 0;      ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : "";      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
                                                         </span>
                                                         <span class="valor">
                                             <?php /*
-                                              isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '0' ?
+                                              isset($_POST['var']['movimiento_pulimento']) && $_POST['var']['movimiento_pulimento'] !== '' ?
                                               $_POST['var']['movimiento_pulimento'] : "-" */
                                             ?>
                                                         </span>
@@ -1624,14 +1624,14 @@
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]"
                                                            data-range="range_movimiento_elasticidad"
-                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : 0;      ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : "";      ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
                                                         </span>
                                                         <span class="valor">
                                             <?php /*
-                                              isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '0' ?
+                                              isset($_POST['var']['movimiento_elasticidad']) && $_POST['var']['movimiento_elasticidad'] !== '' ?
                                               $_POST['var']['movimiento_elasticidad'] : "-" */
                                             ?>
                                                         </span>
@@ -1656,14 +1656,14 @@
                                                            id="movimiento_compensacion" 
                                                            name="var[movimiento_compensacion]"
                                                            data-range="range_movimiento_compensacion"
-                                                           value="<?= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : 0; ?>">
+                                                           value="<?= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descompensado
                                                         </span>
                                                         <span class="valor">
                                                             <?=
-                                                            isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion'] !== '0' ?
+                                                            isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion'] !== '' ?
                                                                     $_POST['var']['movimiento_compensacion'] : "-"
                                                             ?>
                                                         </span>
@@ -2278,7 +2278,7 @@ Por favor revise la información suministrada.');
     jQuery('.emptyVar').click(function () {
         jQuery(this).next().children('input[type="range"]').val(2);
         jQuery(this).next().children('input[type="range"]').trigger('change');
-        jQuery(this).next().children('input[type="hidden"]').val(0);
+        jQuery(this).next().children('input[type="hidden"]').val("");
         jQuery(this).parent().removeClass("selectedVar");
         jQuery(this).hide();
         jQuery(this).next().children(".valores").children(".valor").html("-");
@@ -2319,7 +2319,7 @@ Por favor revise la información suministrada.');
         //VALOR INICIAL PARA LOS RANGOS DE LAS VARIABLES
         jQuery('input[type="hidden"]').each(function () {
             if (jQuery(this).attr("id") !== "priority") {
-                if (jQuery(this).val() !== "" && jQuery(this).val() !== "0") {
+                if (jQuery(this).val() !== "") {
                     jQuery("#" + jQuery(this).data("range")).val(jQuery(this).val());
                     jQuery(this).parent().parent().addClass("selectedVar");
                     jQuery(this).parent().prev(".emptyVar").show();
