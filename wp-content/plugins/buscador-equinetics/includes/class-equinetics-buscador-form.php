@@ -323,7 +323,7 @@ if (!class_exists('FormularioBuscador')) :
                 );
                 ob_start();
                 $productstemp = new WP_Query($args);
-                var_dump($productstemp);
+                
                 if ($i == 1) {
                     $products = $productstemp;
                     $pd_posts = $products->posts;
