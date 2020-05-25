@@ -609,8 +609,8 @@
 					$('.xml-element[title*="/'+$(this).val().replace('{','').replace('}','')+'"]').addClass('selected');
 				}
 			});
-			
-			$('#title, #content, .widefat, input[name^=custom_name], textarea[name^=custom_value], input[name^=featured_image], input[name^=unique_key]').bind('focus', insertxpath );
+
+			$('input, textarea').not('#__drag').bind('focus', insertxpath );
 			
 			$(document).mousemove(function () {
 				if (parseInt($drag.css('opacity')) != 0) {
@@ -634,7 +634,7 @@
 					xpath = '{' + ($this.parent().parent().attr('title').replace(/^\/[^\/]+\/?/, '') || '.') + '}';
 
 				$this.mouseover(function (e) {
-					$drag.val(xpath).offset({left: $this.offset().left - 2, top: $this.offset().top - 2}).width(_w = $this.width() + 4).height($this.height() + 4);
+					$drag.val(xpath).offset({left: $this.offset().left - 2, top: $this.offset().top - 2}).width(_w = $this.width()).height($this.height() + 4);
 				});
 			}).eq(0).mouseover();
 		}
@@ -1888,15 +1888,8 @@
 	});	
 
 	if ($('#wp_all_import_code').length){
-		var editor = CodeMirror.fromTextArea(document.getElementById("wp_all_import_code"), {
-	        lineNumbers: true,
-	        matchBrackets: true,
-	        mode: "application/x-httpd-php",
-	        indentUnit: 4,
-	        indentWithTabs: true,
-	        lineWrapping: true
-	    });
-	    editor.setCursor(1);	 
+		var editor = wp.codeEditor.initialize($('#wp_all_import_code'), wpai_cm_settings);
+	    editor.codemirror.setCursor(1);
 	    $('.CodeMirror').resizable({
 		  resize: function() {
 		    editor.setSize("100%", $(this).height());
@@ -1922,17 +1915,12 @@
 				url: ajaxurl,
 				data: request,
 				success: function(response) {
-
 					iteration++;
-
 					$ths.parents('form:first').find('.wp_all_import_deletion_log').html('<p>' + response.msg + '</p>');
-
 					if (response.result){
 						$('.wp_all_import_functions_preloader').hide();
 						window.location.href = response.redirect;
-					}
-					else
-					{
+					} else {
 						deleteImport();
 					}
 				},
@@ -1958,7 +1946,7 @@
 		if ($parent.hasClass('closed')){
 			$parent.removeClass('closed');
 			$parent.find('.wpallimport-collapsed-content:first').slideDown(400, function(){
-				if ($('#wp_all_import_code').length) editor.setCursor(1);
+				if ($('#wp_all_import_code').length) editor.codemirror.setCursor(1);
 			});
 		}
 		else{

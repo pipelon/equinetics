@@ -15,24 +15,20 @@ if (!class_exists('FormularioBuscador')) :
          */
 
         private $variablesPrioritySaraSuggestion = [
-            'chk_geometria_orientacion',
-            'chk_balance_horizontal',
-            'chk_lineaSuperior_cruz',
-            'chk_lineaSuperior_pecho',
-            'chk_aplomos_anteriores_frente',
-            'chk_aplomos_anteriores_lateralmente',
-            'chk_aplomos_posteriores_atras',
-            'chk_aplomos_posteriores_lateralmente',
-            'chk_morfometria_cana_anterior',
-            'chk_morfometria_cuartilla_anterior',
-            'chk_morfometria_femur',
-            'chk_morfometria_cana_posterior',
-            'chk_morfometria_cuartilla_posterior',
             'chk_movimiento_velocidad',
             'chk_movimiento_elevacion_anterior',
             'chk_movimiento_elevacion_posterior',
             'chk_movimiento_pisada',
-            'chk_dorso_tamano',
+            'chk_morfometria_cana_anterior',
+            'chk_morfometria_cuartilla_anterior',
+            'chk_morfometria_cana_posterior',
+            'chk_morfometria_cuartilla_posterior',
+            'chk_alzada_estatura',
+            'chk_balance_horizontal',
+            'chk_aplomos_anteriores_frente',
+            'chk_aplomos_anteriores_lateralmente',
+            'chk_aplomos_posteriores_atras',
+            'chk_aplomos_posteriores_lateralmente'
         ];
         //Variables a tener en cuenta para Paso Fino (Buenas y malas)
         private $variablesSaraSuggestion46 = [
@@ -181,7 +177,17 @@ if (!class_exists('FormularioBuscador')) :
                 if (isset($_POST["sugerencia"])) {
                     //$lblpriority = implode(",", $this->variablesPrioritySaraSuggestion);
                     $isSaraResults = true;
-                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);
+                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);                    
+                    
+                    if ($products->post_count <= 0) {
+                        $prioritySara = $this->variablesPrioritySaraSuggestion;
+                        //ELIMINO TODOS LOS APLOMOS
+                        array_pop($prioritySara);
+                        array_pop($prioritySara);
+                        array_pop($prioritySara);
+                        array_pop($prioritySara);
+                        $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $prioritySara);
+                    }
                 }
             }
 
@@ -323,7 +329,7 @@ if (!class_exists('FormularioBuscador')) :
                 );
                 ob_start();
                 $productstemp = new WP_Query($args);
-                
+
                 if ($i == 1) {
                     $products = $productstemp;
                     $pd_posts = $products->posts;
@@ -391,72 +397,38 @@ if (!class_exists('FormularioBuscador')) :
         private function getVariablesSaraSuggestion($variables, $selectedCat, $priority) {
 
             $meta_query = [];
-            $boolDorsoPlusCruz = $boolCompensacion = false;
+            $boolCompensacion = false;
             foreach ($priority as $mejora) {
                 $nmVariable = substr($mejora, 4);
 
-                //SI LA VARIABLE ESTA VACIA O ES CERO BUSCO EL NUEVO REGISTRO
+                //SI LA VARIABLE ESTA VACIA O NO EXISTE BUSCO EL NUEVO REGISTRO
                 if (!isset($variables[$nmVariable]) ||
                         $variables[$nmVariable] == '') {
                     continue;
                 }
 
                 //VALIDO QUE LAS VARAIBLES A MEJORAR SEAN IDEALES O NEGATIVAS
-                if ($nmVariable != 'lineaSuperior_cruz' &&
-                        $nmVariable != 'dorso_tamano' &&
-                        $nmVariable != 'movimiento_elevacion_anterior' &&
-                        $nmVariable != 'movimiento_elevacion_posterior') {
-                    $variablesSaraSuggestion = 'variablesSaraSuggestion' . $selectedCat;
-                    if (!in_array($variables[$nmVariable], $this->$variablesSaraSuggestion[$nmVariable])) {
-                        continue;
-                    }
-                }
+                /* if ($nmVariable != 'movimiento_elevacion_anterior' &&
+                  $nmVariable != 'movimiento_elevacion_posterior') {
+                  $variablesSaraSuggestion = 'variablesSaraSuggestion' . $selectedCat;
+                  if (!in_array($variables[$nmVariable], $this->$variablesSaraSuggestion[$nmVariable])) {
+                  continue;
+                  }
+                  } */                
                 $func = "get_" . $nmVariable;
 
                 //CASO DE MOVIMIENTO Y PISADA QUE DEPENDE DEL ANDAR
                 if ($nmVariable == 'movimiento_pisada' ||
                         $nmVariable == 'movimiento_velocidad' ||
                         $nmVariable == 'geometria_orientacion' ||
+                        $nmVariable == 'alzada_estatura' ||
                         $nmVariable == 'morfometria_cuartilla_anterior' ||
                         $nmVariable == 'morfometria_cuartilla_posterior' ||
                         $nmVariable == 'morfometria_cana_anterior' ||
                         $nmVariable == 'morfometria_cana_posterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
 
-                    //CASO ESPECIAL DE CRUZ + DORSO
-                } elseif ($nmVariable == 'lineaSuperior_cruz' || $nmVariable == 'dorso_tamano') {
-
-
-                    if (!$boolDorsoPlusCruz) {
-
-                        $searchValues = $this->get_dorso_cruz_sara_suggestion($variables['lineaSuperior_cruz'], $variables['dorso_tamano']);
-                        if (!$searchValues) {
-                            continue;
-                        }
-
-                        foreach ($searchValues as $searchValue) {
-                            $meta_querytmp = [];
-                            $meta_querytmp['type'] = 'cruz_dorso';
-                            $meta_querytmp[] = [
-                                'relation' => 'AND',
-                                [
-                                    'key' => 'varsara_lineaSuperior_cruz',
-                                    'value' => $searchValue['lineaSuperior_cruz'],
-                                    'compare' => '='
-                                ],
-                                [
-                                    'key' => 'varsara_dorso_tamano',
-                                    'value' => $searchValue['dorso_tamano'],
-                                    'compare' => '='
-                                ]
-                            ];
-                            array_push($meta_query, $meta_querytmp);
-                        }
-                        //$meta_query['relation'] = 'OR';
-                        $boolDorsoPlusCruz = true;
-                    }
-                    continue;
-                    //CASO COMPENSACION
+                    //CASO ESPECIAL DE LAS ELEVACIONES
                 } elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
                         $nmVariable == 'movimiento_elevacion_posterior') {
 
@@ -2149,6 +2121,8 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
 
     
 

@@ -10,11 +10,7 @@ class PMXI_Admin_Import extends PMXI_Controller_Admin {
 	protected $isTemplateEdit = false; // indicates whether controlled is deligated by manage imports controller	
 
 	protected function init() {
-		parent::init();							
-		
-		error_reporting(0);
-		
-		//PMXI_Plugin::$session = PMXI_Session::get_instance();			
+		parent::init();
 
 		if ('PMXI_Admin_Manage' == PMXI_Plugin::getInstance()->getAdminCurrentScreen()->base) { // prereqisites are not checked when flow control is deligated
 			$id = $this->input->get('id');
@@ -53,7 +49,7 @@ class PMXI_Admin_Import extends PMXI_Controller_Admin {
 	 */
 	protected function _step_ready($action) {		
 		// step #1: xml selction - has no prerequisites
-		if ('index' == $action) return true;		
+		if ('index' == $action) return true;
 		
 		// step #2: element selection
 		$this->data['dom'] = $dom = new DOMDocument('1.0', PMXI_Plugin::$session->encoding);
@@ -142,32 +138,22 @@ class PMXI_Admin_Import extends PMXI_Controller_Admin {
 			$DefaultOptions['custom_type'] = $parent_import_record->options['custom_type'];
 		}
 
-		if ($id) { // update requested but corresponding import is not found
-			if ($import->getById($id)->isEmpty()){				
-
-				if (!empty($_GET['deligate']) and $_GET['deligate'] == 'wpallexport'){
-				
+		if ( $id ) { // update requested but corresponding import is not found
+			if ( $import->getById($id)->isEmpty() ) {
+				if ( ! empty($_GET['deligate']) and $_GET['deligate'] == 'wpallexport' ) {
 					wp_redirect(add_query_arg('pmxi_nt', array('error' => urlencode(__('The import associated with this export has been deleted.', 'wp_all_import_plugin')), 'updated' => urlencode(__('Please re-run your export by clicking Run Export on the All Export -> Manage Exports page. Then try your import again.', 'wp_all_import_plugin'))), remove_query_arg('id', $this->baseUrl))); die();
-
-				}
-				else{
-
+				} else {
 					wp_redirect(add_query_arg('pmxi_nt', array('error' => urlencode(__('This import has been deleted.', 'wp_all_import_plugin'))), remove_query_arg('id', $this->baseUrl))); die();
 				}
-
-			}
-			else{
+			} else {
 				$DefaultOptions['custom_type'] = $import->options['custom_type'];	
 			}
 		}			
 
-		if ( ! in_array($action, array('index')))
-		{
+		if ( ! in_array($action, array('index'))) {
 			PMXI_Plugin::$session->clean_session();				
-		}		 
-		else
-		{			
-			$DefaultOptions = (PMXI_Plugin::$session->has_session() ? PMXI_Plugin::$session->first_step : array()) + $DefaultOptions;											
+		} else {
+			$DefaultOptions = (PMXI_Plugin::$session->has_session() && !empty(PMXI_Plugin::$session->first_step) ? PMXI_Plugin::$session->first_step : array()) + $DefaultOptions;
 		}
 		
 		$this->data['post'] = $post = $this->input->post( $DefaultOptions );					

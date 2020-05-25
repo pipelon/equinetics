@@ -47,27 +47,29 @@
 					$form.find( '.swatch.disabled' ).removeClass( 'disabled' );
 				} )
 				.on( 'woocommerce_update_variation_values', function() {
-					$form.find( 'tbody tr' ).each( function() {
-						var $variationRow = $( this ),
-							options = $variationRow.find( 'select' ).find( 'option' ),
-							values = [];
+					setTimeout( function() {
+						$form.find( 'tbody tr' ).each( function() {
+							var $variationRow = $( this ),
+								options = $variationRow.find( 'select' ).find( 'option' ),
+								values = [];
 
-						options.each( function( index, option ) {
-							if ( option.value !== '' ) {
-								values.push( option.value );
-							}
+							options.each( function( index, option ) {
+								if ( option.value !== '' ) {
+									values.push( option.value );
+								}
+							} );
+
+							$variationRow.find( '.swatch' ).each( function() {
+								var $swatch = $( this );
+
+								if ( values.indexOf( $swatch.data( 'value' ) ) > -1 ) {
+									$swatch.removeClass( 'disabled' );
+								} else {
+									$swatch.addClass( 'disabled' );
+								}
+							} );
 						} );
-
-						$variationRow.find( '.swatch' ).each( function() {
-							var $swatch = $( this );
-
-							if ( values.indexOf( $swatch.data( 'value' ) ) > -1 ) {
-								$swatch.removeClass( 'disabled' );
-							} else {
-								$swatch.addClass( 'disabled' );
-							}
-						} );
-					} );
+					}, 100 );
 				} )
 				.on( 'tawcvs_no_matching_variations', function() {
 					window.alert( wc_add_to_cart_variation_params.i18n_no_matching_variations_text );

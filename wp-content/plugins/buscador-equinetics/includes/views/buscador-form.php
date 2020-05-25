@@ -215,9 +215,11 @@
                                                     los ejemplares que cumplan con estas características.
                                                 </p>
                                                 <p style="text-align: justify">
-                                                    Opción 2 o Botón de <b>SUGERENCIAS</b>, con este S.A.R.A 
-                                                    identifica según las variables de la fase 1 
-                                                    los reproductores necesarios para este ejemplar.
+                                                    Opción 2 o Botón de <b>SUGERENCIAS</b>, para utilizar esta función 
+                                                    asegurese de calificar completamente las variables de 
+                                                    ( Aplomos, Alzada, Balance, Morfometría y Movimiento) 
+                                                    con estos valores y nuestros criterios S.A.R.A identificara 
+                                                    los reproductores ideales para este ejemplar.
                                                 </p>
                                                 <p>&nbsp;</p>
                                                 <p>
@@ -564,7 +566,7 @@
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]"
                                                            data-range="range_lineaSuperior_orientacion_cuello"
-                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : "";      ?>">
+                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : "";        ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -831,7 +833,7 @@
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]"
                                                            data-range="range_dorso_linea"
-                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "";      ?>">
+                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "";        ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -1592,7 +1594,7 @@
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]"
                                                            data-range="range_movimiento_pulimento"
-                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : "";      ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : "";        ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -1624,7 +1626,7 @@
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]"
                                                            data-range="range_movimiento_elasticidad"
-                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : "";      ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : "";        ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
@@ -1772,7 +1774,7 @@
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''      ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''        ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1807,7 +1809,7 @@
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6" style="visibility: hidden">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''      ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''        ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1858,7 +1860,7 @@
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : ''      ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : ''        ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1947,14 +1949,14 @@
                                         </div>        
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : ''      ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : ''        ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>-->   
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : ''      ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : ''        ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2222,6 +2224,27 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         if (numberOfChecked > 6) {
             alert('Solo puedes seleccionar 6 variables');
             return false;
+        }
+
+        /*VALIDO QUE SI EL BOTON ES SARA HAYA SELECCIONADO LAS VARIABLES NECESARIAS */
+        if (buttonSubmited) {
+            if (jQuery('#movimiento_velocidad').val() == "" ||
+                    jQuery('#movimiento_pisada').val() == "" ||
+                    jQuery('#movimiento_elevacion_anterior').val() == "" ||
+                    jQuery('#movimiento_elevacion_posterior').val() == "" ||
+                    jQuery('#morfometria_cana_anterior').val() == "" ||
+                    jQuery('#morfometria_cuartilla_anterior').val() == "" ||
+                    jQuery('#morfometria_cana_posterior').val() == "" ||
+                    jQuery('#morfometria_cuartilla_posterior').val() == "" ||
+                    jQuery('#alzada_estatura').val() == "" ||
+                    jQuery('#balance_horizontal').val() == "" ||
+                    jQuery('#aplomos_anteriores_frente').val() == "" ||
+                    jQuery('#aplomos_anteriores_lateralmente').val() == "" ||
+                    jQuery('#aplomos_posteriores_atras').val() == "" ||
+                    jQuery('#aplomos_posteriores_lateralmente').val() == "") {
+                alert("Califique las variables de (Aplomos, Alzada, Balance, Morfometría y Movimiento) para usar esta función.");
+                return false;
+            }
         }
 
         /* VALIDACION DE VARIABLES TIPIFICADAS VS MEJORADAS */

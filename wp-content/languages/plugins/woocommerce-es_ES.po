@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-06 11:27:23+0000\n"
+"PO-Revision-Date: 2020-05-20 18:45:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,15 @@ msgstr ""
 "X-Generator: GlotPress/3.0.0-alpha\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+
+#: packages/action-scheduler/classes/abstracts/ActionScheduler.php:195
+msgid "%s() was called before the Action Scheduler data store was initialized"
+msgstr "%s() ha sido llamado antes de que el almacén de datos del programador de acciones se haya inicializado."
+
+#. translators: 1: uploads directory URL 2: documentation URL
+#: includes/admin/views/html-notice-uploads-directory-is-unprotected.php:22
+msgid "Your store's uploads directory is <a href=\"%1$s\">browsable via the web</a>. We strongly recommend <a href=\"%2$s\">configuring your web server to prevent directory indexing</a>."
+msgstr "El directorio de subidas de tu tienda es <a href=\"%1$s\">navegable a través de la web</a>. Te recomendamos encarecidamente que <a href=\"%2$s\">configures tu servidor web para impedir la indexación de directorios</a>."
 
 #: packages/woocommerce-admin/dist/app/index.js:27
 msgid "The extension has been successfully activated."
@@ -468,11 +477,6 @@ msgstr "Por favor, visita la <a href=\"%s\" target=\"_blank\">página de suscrip
 #: includes/admin/class-wc-admin-setup-wizard.php:2458
 msgid "Visit WooCommerce.com to learn more about <a href=\"%1$s\" target=\"_blank\">getting started</a>."
 msgstr "Visita WooCommerce.com para aprender más sobre los <a href=\"%1$s\" target=\"_blank\">primeros pasos</a>."
-
-#. translators: $1: open code tag, $2: function name, $3: close code tag.
-#: packages/action-scheduler/classes/abstracts/ActionScheduler.php:192
-msgid "Action Scheduler function %1$s%2$s%3$s should not be used within the WordPress %1$sshutdown%3$s hook."
-msgstr "La función %1$s%2$s%3$s del programador de acciones no debe usarse dentro del gancho %1$sshutdown%3$s de WordPress."
 
 #: packages/woocommerce-admin/src/Features/ShippingLabelBanner.php:108
 #: packages/woocommerce-admin/dist/wp-admin-scripts/print-shipping-label-banner.js:7
@@ -4969,15 +4973,15 @@ msgstr "Inactivo %s"
 msgid "If you are using X-Accel-Redirect download method along with NGINX server, make sure that you have applied settings as described in <a href='%s'>Digital/Downloadable Product Handling</a> guide."
 msgstr "Si estás utilizando el método de descarga X-Accel-Redirect junto con el servidor NGINX, asegúrate de haber aplicado los ajustes como se describe en la guía de <a href='%s'>gestión de productos digitales/descargables</a>."
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:209
+#: includes/admin/notes/class-wc-notes-run-db-update.php:242
 msgid "WooCommerce database update done"
 msgstr "Actualización de la base de datos de WooCommerce terminada"
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:173
+#: includes/admin/notes/class-wc-notes-run-db-update.php:190
 msgid "WooCommerce database update in progress"
 msgstr "Actualización de la base de datos de WooCommerce en marcha"
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:170
+#: includes/admin/notes/class-wc-notes-run-db-update.php:187
 msgid "View progress →"
 msgstr "Ver progreso ⟶"
 
@@ -9671,17 +9675,17 @@ msgid "The sale will start at 00:00:00 of \"From\" date and end at 23:59:59 of \
 msgstr "La oferta empezará a las 00:00:00 de la fecha «Desde» y finalizará a las 23:59:59 de la fecha «Hasta»."
 
 #. translators: %s: Minimum WordPress version
-#: includes/admin/class-wc-admin-notices.php:422
+#: includes/admin/class-wc-admin-notices.php:426
 msgid "Update required: WooCommerce will soon require WordPress version %s or newer."
 msgstr "Actualización obligatoria: WooCommerce pronto requerirá la versión de WordPress %s o superior."
 
 #. translators: %s: Minimum PHP version
-#: includes/admin/class-wc-admin-notices.php:416
+#: includes/admin/class-wc-admin-notices.php:420
 msgid "Update required: WooCommerce will soon require PHP version %s or newer."
 msgstr "Actualización obligatoria: WooCommerce pronto requerirá la versión de PHP %s o superior."
 
 #. translators: 1: Minimum PHP version 2: Minimum WordPress version
-#: includes/admin/class-wc-admin-notices.php:409
+#: includes/admin/class-wc-admin-notices.php:413
 msgid "Update required: WooCommerce will soon require PHP version %1$s and WordPress version %2$s or newer."
 msgstr "Actualización obligatoria: WooCommerce pronto requerirá la versión de PHP %1$s o superior y la versión de WordPress %2$s o superior."
 
@@ -9711,7 +9715,7 @@ msgstr "Se ha producido un fallo al obtener esta acción"
 msgid "Note: WP CRON has been disabled on your install which may prevent this update from completing."
 msgstr "Nota: se ha desactivado WP CRON en tu instalación, esto puede impedir que se complete esta actualización."
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:170
+#: includes/admin/notes/class-wc-notes-run-db-update.php:187
 #: includes/admin/views/html-notice-updating.php:16
 #: includes/admin/views/html-notice-regenerating-lookup-table.php:14
 msgid "You can manually run queued updates here."
@@ -9764,34 +9768,34 @@ msgstr "Aumentar el inventario existente en:"
 msgid "View progress &rarr;"
 msgstr "Ver progreso &rarr;"
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:150
+#: includes/admin/notes/class-wc-notes-run-db-update.php:134
 #: includes/admin/views/html-notice-update.php:36
 msgid "Learn more about updates"
 msgstr "Aprende más acerca de las actualizaciones"
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:143
+#: includes/admin/notes/class-wc-notes-run-db-update.php:127
 #: includes/admin/views/html-notice-update.php:33
 msgid "Update WooCommerce Database"
 msgstr "Actualizar la base de datos de WooCommerce"
 
 #. translators: %1$s: opening <a> tag %2$s: closing </a> tag
 #. translators: 1: Link to docs 2: Close link.
-#: includes/admin/notes/class-wc-notes-run-db-update.php:128
+#: includes/admin/notes/class-wc-notes-run-db-update.php:156
 #: includes/admin/views/html-notice-update.php:28
 msgid "The database update process runs in the background and may take a little while, so please be patient. Advanced users can alternatively update via %1$sWP CLI%2$s."
 msgstr "El proceso de actualización de la base de datos se ejecuta en segundo plano y puede tardar un poco, así que, por favor, ten paciencia. Los usuarios avanzados pueden actualizar a través de %1$sWP CLI%2$s."
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:126
+#: includes/admin/notes/class-wc-notes-run-db-update.php:154
 #: includes/admin/views/html-notice-update.php:25
 msgid "WooCommerce has been updated! To keep things running smoothly, we have to update your database to the newest version."
 msgstr "¡WooCommerce se ha actualizado! Para que todo funcione correctamente tenemos que actualizar tu base de datos a la versión más reciente."
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:124
+#: includes/admin/notes/class-wc-notes-run-db-update.php:152
 #: includes/admin/views/html-notice-update.php:21
 msgid "WooCommerce database update required"
 msgstr "Actualización obligatoria de la base de datos de WooCommerce "
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:174
+#: includes/admin/notes/class-wc-notes-run-db-update.php:191
 #: includes/admin/views/html-notice-updating.php:21
 msgid "WooCommerce is updating the database in the background. The database update process may take a little while, so please be patient."
 msgstr "WooCommerce está actualizando la base de datos en segundo plano. El proceso de actualización de la base de datos puede tardar un poco, así que ten paciencia."
@@ -10305,7 +10309,7 @@ msgstr "Tu pedido en %s se ha reembolsado. Hay más detalles abajo para tu infor
 msgid "Your order on %s has been partially refunded. There are more details below for your reference:"
 msgstr "Tu pedido en %s se ha reembolsado parcialmente. Hay más detalles abajo para tu información:"
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:217
+#: includes/admin/notes/class-wc-notes-run-db-update.php:228
 msgid "Thanks!"
 msgstr "¡Gracias!"
 
@@ -12560,7 +12564,7 @@ msgid "Day(s)"
 msgstr "Día(s)"
 
 #: includes/emails/class-wc-email.php:887
-#: includes/admin/class-wc-admin-notices.php:153
+#: includes/admin/class-wc-admin-notices.php:157
 msgid "You don&#8217;t have permission to do this."
 msgstr "No tienes permisos para hacer esto."
 
@@ -16365,7 +16369,7 @@ msgstr "No se han encontrado categorías"
 msgid "No tags found"
 msgstr "No se han encontrado etiquetas"
 
-#: includes/class-wc-install.php:1311
+#: includes/class-wc-install.php:1308
 msgid "Visit premium customer support"
 msgstr "Visita el soporte al cliente premium"
 
@@ -19355,7 +19359,7 @@ msgid "Zone"
 msgstr "Zona"
 
 #. translators: 1: plugin name, 2: URL to WP plugin page.
-#: includes/class-wc-install.php:1470
+#: includes/class-wc-install.php:1467
 msgid "%1$s was installed but could not be activated. <a href=\"%2$s\">Please activate it manually by clicking here.</a>"
 msgstr "%1$s está instalado pero no se pudo activar. <a href=\"%2$s\">Por favor, actívalo manualmente haciendo clic aquí.</a>"
 
@@ -19367,7 +19371,7 @@ msgstr "Volver a correos electrónicos"
 #. manually.
 #. translators: 1: theme slug, 2: error message, 3: URL to install theme
 #. manually.
-#: includes/class-wc-install.php:1442 includes/class-wc-install.php:1546
+#: includes/class-wc-install.php:1439 includes/class-wc-install.php:1543
 msgid "%1$s could not be installed (%2$s). <a href=\"%3$s\">Please install it manually by clicking here.</a>"
 msgstr "%1$s no se pudo instalar (%2$s). <a href=\"%3$s\">Por favor, instálalo manualmente haciendo clic aquí.</a>"
 
@@ -21627,6 +21631,7 @@ msgstr "Tu tema tiene un archivo woocommerce.php, no podrás sobreescribir la pl
 #: includes/wc-template-functions.php:1025
 #: includes/admin/class-wc-admin-pointers.php:250
 #: includes/admin/views/html-notice-custom.php:12
+#: includes/admin/views/html-notice-uploads-directory-is-unprotected.php:15
 #: includes/admin/views/html-notice-redirect-only-download.php:12
 #: includes/admin/views/html-notice-maxmind-license-key.php:13
 #: includes/admin/views/html-notice-legacy-shipping.php:14
@@ -22598,7 +22603,7 @@ msgstr "Código postal"
 msgid "Please select some product options before adding this product to your cart."
 msgstr "Elige las opciones del producto antes de añadir este producto a tu carrito."
 
-#: includes/admin/notes/class-wc-notes-run-db-update.php:210
+#: includes/admin/notes/class-wc-notes-run-db-update.php:243
 #: includes/admin/views/html-notice-updated.php:16
 msgid "WooCommerce database update complete. Thank you for updating to the latest version!"
 msgstr "Actualización de la base de datos de WooCommerce completa. ¡Gracias por actualizar a la última versión!"
@@ -25912,23 +25917,23 @@ msgctxt "Admin menu name"
 msgid "Shipping classes"
 msgstr "Clases de envíos"
 
-#: includes/class-wc-install.php:1311
+#: includes/class-wc-install.php:1308
 msgid "Premium support"
 msgstr "Soporte de pago"
 
-#: includes/class-wc-install.php:1310
+#: includes/class-wc-install.php:1307
 msgid "API docs"
 msgstr "Documentación de la API"
 
-#: includes/class-wc-install.php:1310
+#: includes/class-wc-install.php:1307
 msgid "View WooCommerce API docs"
 msgstr "Ver la documentación de la API de WooCommerce"
 
-#: includes/class-wc-install.php:1309
+#: includes/class-wc-install.php:1306
 msgid "View WooCommerce documentation"
 msgstr "Ver la documentación de WooCommerce"
 
-#: includes/class-wc-install.php:1292
+#: includes/class-wc-install.php:1289
 msgid "View WooCommerce settings"
 msgstr "Ver los ajustes de WooCommerce"
 
@@ -29570,7 +29575,7 @@ msgstr "Webhook creado correctamente."
 msgid "Webhooks"
 msgstr "Webhooks"
 
-#: includes/class-wc-install.php:1309
+#: includes/class-wc-install.php:1306
 #: packages/woocommerce-admin/dist/app/index.js:27
 msgid "Docs"
 msgstr "Documentación"
@@ -31438,7 +31443,7 @@ msgstr "Desconocido"
 #: includes/admin/class-wc-admin-status.php:295
 #: includes/admin/class-wc-admin-status.php:314
 #: includes/admin/class-wc-admin-status.php:330
-#: includes/admin/class-wc-admin-notices.php:149
+#: includes/admin/class-wc-admin-notices.php:153
 msgid "Action failed. Please refresh the page and retry."
 msgstr "Error en la acción. Por favor, recarga la página y vuelve a intentarlo."
 
@@ -31852,7 +31857,7 @@ msgstr "Para más información:"
 
 #: packages/woocommerce-admin/src/Features/Analytics.php:142
 #: packages/woocommerce-admin/includes/connect-existing-pages.php:33
-#: includes/class-wc-install.php:1292
+#: includes/class-wc-install.php:1289
 #: includes/admin/class-wc-admin-menus.php:82
 #: includes/admin/views/html-admin-page-status-report.php:728
 #: packages/woocommerce-admin/dist/app/index.js:27
