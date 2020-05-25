@@ -86,7 +86,6 @@ $products = array_slice($products, 0, 3, true);
 $fields = [
     'title' => 'Título',
     'image' => 'Imagen',
-    'price' => 'Precio',
     'add-to-cart' => 'Contratar servicio'
 ];
 ?>

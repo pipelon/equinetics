@@ -1029,7 +1029,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
-                                                    <label for="aplomos_anteriores_frente">Anteriores (Frente)</label>
+                                                    <label for="aplomos_anteriores_frente">Anteriores (Frontalmente)</label>
                                                     <input type="range" min="1" max="3" class="custom-range" id="range_aplomos_anteriores_frente" data-input="aplomos_anteriores_frente" >
                                                     <input type="hidden"                                                            
                                                            id="aplomos_anteriores_frente" 
@@ -1556,7 +1556,7 @@
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cabeza.jpg">
-                                                    <label for="movimiento_pisada">Pisada</label>
+                                                    <label for="movimiento_pisada">Potencia en la pisada</label>
                                                     <input type="range" min="0" max="3" class="custom-range" id="range_movimiento_pisada" data-input="movimiento_pisada" >
                                                     <input type="hidden"                                                            
                                                            id="movimiento_pisada" 
@@ -1648,7 +1648,7 @@
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
                                             </div>-->
-                                            <div class="form-row" style="position: relative;">
+                                            <!--<div class="form-row" style="position: relative;">
                                                 <span class="emptyVar" style="display: none"><i class="fa fa-ban"></i></span>
                                                 <div class="form-group col-md-12 divVariable" 
                                                      data-image="cuello.jpg">
@@ -1658,15 +1658,15 @@
                                                            id="movimiento_compensacion" 
                                                            name="var[movimiento_compensacion]"
                                                            data-range="range_movimiento_compensacion"
-                                                           value="<?= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : ""; ?>">
+                                                           value="<?php //= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descompensado
                                                         </span>
                                                         <span class="valor">
-                                                            <?=
+                                                            <?php /*=
                                                             isset($_POST['var']['movimiento_compensacion']) && $_POST['var']['movimiento_compensacion'] !== '' ?
-                                                                    $_POST['var']['movimiento_compensacion'] : "-"
+                                                                    $_POST['var']['movimiento_compensacion'] : "-"*/
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
@@ -1679,7 +1679,7 @@
                                                       data-target="#mdl_movimiento_compensacion">
                                                     <i class="fa fa-info-circle"></i>
                                                 </span>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <!-- FIN VARIABLES -->
 
@@ -1818,12 +1818,12 @@
                                             <label class="form-check-label" style="padding-top: 20px">Aplomos anteriores</label>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_frente" name="chk[chk_aplomos_anteriores_frente]" value="chk_aplomos_anteriores_frente" <?= isset($_POST['chk']['chk_aplomos_anteriores_frente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_anteriores_frente">Frontal</label>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_frente">Frontalmente</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_anteriores_lateralmente" name="chk[chk_aplomos_anteriores_lateralmente]" value="chk_aplomos_anteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_anteriores_lateralmente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Lateral</label>
+                                                <label class="form-check-label" for="chk_aplomos_anteriores_lateralmente">Lateralmente</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>                                        
@@ -1831,12 +1831,12 @@
                                             <label class="form-check-label" style="padding-top: 20px">Aplomos posteriores</label>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_atras" name="chk[chk_aplomos_posteriores_atras]" value="chk_aplomos_posteriores_atras" <?= isset($_POST['chk']['chk_aplomos_posteriores_atras']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_posteriores_atras">Frontal</label>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_atras">Posteriormente</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_aplomos_posteriores_lateralmente" name="chk[chk_aplomos_posteriores_lateralmente]" value="chk_aplomos_posteriores_lateralmente" <?= isset($_POST['chk']['chk_aplomos_posteriores_lateralmente']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Lateral</label>
+                                                <label class="form-check-label" for="chk_aplomos_posteriores_lateralmente">Lateralmente</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>                                        
@@ -1943,7 +1943,7 @@
                                         <div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="chk_movimiento_pisada" name="chk[chk_movimiento_pisada]" value="chk_movimiento_pisada" <?= isset($_POST['chk']['chk_movimiento_pisada']) ? 'checked' : '' ?>>
-                                                <label class="form-check-label" for="chk_movimiento_pisada">Pisada</label>
+                                                <label class="form-check-label" for="chk_movimiento_pisada">Potencia en la pisada</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>        
@@ -2026,7 +2026,7 @@ if (isset($_POST) &&
     ?>
     <span id="hr-search-results-eq"></span>
     <hr />    
-    <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Resultados encontrados</h3>
+    <h3 class="h3subtitu" style="margin-bottom: 30px; text-align: left">Ejemplares compatibles</h3>
 
     <div id="search-results-eq">
 
@@ -2227,7 +2227,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         }
 
         /*VALIDO QUE SI EL BOTON ES SARA HAYA SELECCIONADO LAS VARIABLES NECESARIAS */
-        if (buttonSubmited) {
+        if (buttonSubmited == "sugerencia") {
             if (jQuery('#movimiento_velocidad').val() == "" ||
                     jQuery('#movimiento_pisada').val() == "" ||
                     jQuery('#movimiento_elevacion_anterior').val() == "" ||
