@@ -1434,7 +1434,8 @@ form.buscadr .valores{
     /* css tradicional */
     /*position: relative;*/
     display: grid;
-    grid-template-columns: 43% 14% 43%;
+    /*grid-template-columns: 43% 14% 43%;*/
+    grid-template-columns: 25% 50% 25%;
 }
 form.buscadr .valores .minvalor,
 form.buscadr .valores .maxvalor{
@@ -1449,8 +1450,8 @@ form.buscadr .valores .maxvalor{
     text-align: right
 }
 form.buscadr .valores span.valor{
-    padding: 0 2px;
-    font-size: 20px;
+    padding: 10px 2px;
+    font-size: 18px;
     font-weight: 900;
     border-radius: 2px;
     background-color: #dadada;
