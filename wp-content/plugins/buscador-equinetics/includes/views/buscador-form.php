@@ -2249,18 +2249,20 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
 
         /* VALIDACION DE VARIABLES TIPIFICADAS VS MEJORADAS */
         var bandera = true;
+        var banderaC = true;
         jQuery('form.buscadr input.form-check-input:checked').each(function () {
-            var variableChk = jQuery(this).attr("id").replace('chk_', '');
-
-            if (jQuery("#" + variableChk).val() === "0" &&
-                    variableChk !== "morfometria_femur" &&
-                    variableChk !== "movimiento_velocidad" &&
-                    variableChk !== "movimiento_pisada" &&
-                    variableChk !== "movimiento_elevacion_anterior" &&
-                    variableChk !== "movimiento_elevacion_posterior") {
+            
+            var variableChk = jQuery(this).attr("id").replace('chk_', '');            
+            if (jQuery("#" + variableChk).val() === "") {
                 bandera = false;
                 return false;
             }
+            if(variableChk === "movimiento_compensacion" && (jQuery("#movimiento_compensacion").val() === "" || jQuery("#movimiento_elevacion_posterior").val() === "")){
+                banderaC = false;
+                return false;
+            }
+            
+                
         });
         if (!bandera) {
             alert('Todas las características que desea mejorar en el reproductor, \n\
@@ -2268,7 +2270,12 @@ deben estar tipificadas en la información de su Yegua.\n\
 Por favor revise la información suministrada.');
             return false;
         }
-
+        
+        if (!banderaC) {
+            alert('Para mejorar la compensación es necesario tipificar los valores de las elevaciones de la yegua.');
+            return false;
+        }
+        
         /* VALIDAR QUE SI SE MEJORA EL DORSO SE DEBA SELECCIONAR LA CRUZ */
         if ((jQuery("#chk_lineaSuperior_cruz").is(':checked')
                 && !jQuery("#chk_dorso_tamano").is(':checked')) ||

@@ -177,8 +177,8 @@ if (!class_exists('FormularioBuscador')) :
                 if (isset($_POST["sugerencia"])) {
                     //$lblpriority = implode(",", $this->variablesPrioritySaraSuggestion);
                     $isSaraResults = true;
-                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);                    
-                    
+                    $products = $this->getHorsesSaraSuggestions($_POST["var"], $_POST['andar'], $this->variablesPrioritySaraSuggestion);
+
                     if ($products->post_count <= 0) {
                         $prioritySara = $this->variablesPrioritySaraSuggestion;
                         //ELIMINO TODOS LOS APLOMOS
@@ -362,36 +362,48 @@ if (!class_exists('FormularioBuscador')) :
             //$ordering_args = $woocommerce->query->get_catalog_ordering_args('title', 'asc');
             //QUERY DE BUSQUEDA
             $meta_query = $this->getVariables($variables, $mejoras, $selectedCat, $priority);
+            $wasEmpty = false;
+            //SI ME DEVUELVE VACIO EL META QUERY INVENTO UNA CONSULTA PARA QUE FALLE           
+            if (empty($meta_query)) {
+                $wasEmpty = true;
+            }
 
-            //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
-            $args = array(
-                'post_type' => 'product',
-                'post_status' => 'publish',
-                'ignore_sticky_posts' => 1,
-                //'orderby' => $ordering_args['orderby'],
-                //'order' => $ordering_args['order'],
-                'posts_per_page' => $settings["result_per_page"],
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'product_cat',
-                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                        'terms' => $selectedCat, //CATEGORIA DEL ANDAR
-                        'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+            //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
+            if ($variables['movimiento_elevacion_anterior'] !== '' &&
+                    $variables['movimiento_elevacion_posterior'] !== '' &&
+                    !$wasEmpty) {
+                return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
+            } else {
+                //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
+                $args = array(
+                    'post_type' => 'product',
+                    'post_status' => 'publish',
+                    'ignore_sticky_posts' => 1,
+                    //'orderby' => $ordering_args['orderby'],
+                    //'order' => $ordering_args['order'],
+                    'posts_per_page' => $settings["result_per_page"],
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                            'terms' => $selectedCat, //CATEGORIA DEL ANDAR
+                            'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                        ),
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'term_id',
+                            'terms' => 52, //CATEGORIA DEL SOLO MACHOS
+                            'operator' => 'AND'
+                        ),
                     ),
-                    array(
-                        'taxonomy' => 'product_cat',
-                        'field' => 'term_id',
-                        'terms' => 52, //CATEGORIA DEL SOLO MACHOS
-                        'operator' => 'AND'
-                    ),
-                ),
-                'meta_query' => $meta_query
-            );
-            ob_start();
-            //echo "<pre>"; print_r($args);echo "</pre>";
-            //$res = new WP_Query($args);
-            //echo $res->found_posts;
-            return new WP_Query($args);
+                    'meta_query' => $meta_query
+                );
+                ob_start();
+                //echo "<pre>"; print_r($args);echo "</pre>";
+                //$res = new WP_Query($args);
+                //echo $res->found_posts;
+                return new WP_Query($args);
+            }
         }
 
         private function getVariablesSaraSuggestion($variables, $selectedCat, $priority) {
@@ -414,7 +426,7 @@ if (!class_exists('FormularioBuscador')) :
                   if (!in_array($variables[$nmVariable], $this->$variablesSaraSuggestion[$nmVariable])) {
                   continue;
                   }
-                  } */                
+                  } */
                 $func = "get_" . $nmVariable;
 
                 //CASO DE MOVIMIENTO Y PISADA QUE DEPENDE DEL ANDAR
@@ -485,7 +497,7 @@ if (!class_exists('FormularioBuscador')) :
 
             $mejorasPriorizadas = explode(",", $priority);
             $meta_query = [];
-            $boolDorsoPlusCruz = false;
+            $boolDorsoPlusCruz = $boolCompensacion = false;
             foreach ($mejorasPriorizadas as $mejora) {
                 $nmVariable = substr($mejora, 4);
                 $func = "get_" . $nmVariable;
@@ -495,8 +507,6 @@ if (!class_exists('FormularioBuscador')) :
                         $nmVariable == 'espalda_orientacion' ||
                         $nmVariable == 'movimiento_velocidad' ||
                         $nmVariable == 'movimiento_pisada' ||
-                        $nmVariable == 'movimiento_elevacion_posterior' ||
-                        $nmVariable == 'movimiento_elevacion_anterior' ||
                         $nmVariable == 'geometria_orientacion' ||
                         $nmVariable == 'alzada_estatura' ||
                         $nmVariable == 'morfometria_cana_anterior' ||
@@ -528,6 +538,42 @@ if (!class_exists('FormularioBuscador')) :
                         $boolDorsoPlusCruz = true;
                     }
                     continue;
+                    //Caso especial compensacion
+                } elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
+                        $nmVariable == 'movimiento_elevacion_posterior' ||
+                        $nmVariable == 'movimiento_compensacion') {
+
+                    if (!$boolCompensacion) {
+
+                        $searchValues = $this->get_compensacion_sara_suggestion($variables['movimiento_elevacion_anterior'],
+                                $variables['movimiento_elevacion_posterior'],
+                                $selectedCat);
+                        if (!$searchValues) {
+                            continue;
+                        }
+
+                        foreach ($searchValues as $searchValue) {
+                            $meta_querytmp = [];
+                            $meta_querytmp['type'] = 'compensacion';
+                            $meta_querytmp[] = [
+                                'relation' => 'AND',
+                                [
+                                    'key' => 'varsara_movimiento_elevacion_anterior',
+                                    'value' => $searchValue['movimiento_elevacion_anterior'],
+                                    'compare' => '='
+                                ],
+                                [
+                                    'key' => 'varsara_movimiento_elevacion_posterior',
+                                    'value' => $searchValue['movimiento_elevacion_posterior'],
+                                    'compare' => '='
+                                ]
+                            ];
+                            array_push($meta_query, $meta_querytmp);
+                        }
+                        //$meta_query['relation'] = 'OR';
+                        $boolCompensacion = true;
+                    }
+                    continue;
                 } else {
                     //resto de variables
                     $searchValues = $this->$func($variables[$nmVariable]);
@@ -541,9 +587,9 @@ if (!class_exists('FormularioBuscador')) :
                     ]
                 ];
             }
-            //echo "<pre>";
-            //print_r($meta_query);
-            //echo "</pre>";
+//            echo "<pre>";
+//            print_r($meta_query);
+//            echo "</pre>";
             return $meta_query;
         }
 
@@ -2121,6 +2167,10 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
+
+    
 
     
 
