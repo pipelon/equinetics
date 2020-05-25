@@ -509,6 +509,8 @@ if (!class_exists('FormularioBuscador')) :
                         $nmVariable == 'movimiento_pisada' ||
                         $nmVariable == 'geometria_orientacion' ||
                         $nmVariable == 'alzada_estatura' ||
+                        $nmVariable == 'movimiento_elevacion_anterior' ||
+                        $nmVariable == 'movimiento_elevacion_posterior' ||
                         $nmVariable == 'morfometria_cana_anterior' ||
                         $nmVariable == 'morfometria_cana_posterior' ||
                         $nmVariable == 'morfometria_cuartilla_anterior' ||
@@ -539,9 +541,7 @@ if (!class_exists('FormularioBuscador')) :
                     }
                     continue;
                     //Caso especial compensacion
-                } elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
-                        $nmVariable == 'movimiento_elevacion_posterior' ||
-                        $nmVariable == 'movimiento_compensacion') {
+                } elseif ($nmVariable == 'movimiento_compensacion') {
 
                     if (!$boolCompensacion) {
 
