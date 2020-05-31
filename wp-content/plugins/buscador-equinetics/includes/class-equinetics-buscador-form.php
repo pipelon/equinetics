@@ -240,13 +240,13 @@ if (!class_exists('FormularioBuscador')) :
             }
 
             //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
-            if ($variables['movimiento_elevacion_anterior'] !== '' &&
+            /*if ($variables['movimiento_elevacion_anterior'] !== '' &&
                     $variables['movimiento_elevacion_posterior'] !== '' &&
                     !$wasEmpty) {
 
                 return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
                 //SI ES CRUZ Y DORSO DEBO PARTIR LAS CONSULTAS EN VARIAS    
-            } else if ($variables['lineaSuperior_cruz'] !== '' &&
+            } else*/ if ($variables['lineaSuperior_cruz'] !== '' &&
                     $variables['dorso_tamano'] !== '' &&
                     !$wasEmpty) {
 
@@ -369,11 +369,11 @@ if (!class_exists('FormularioBuscador')) :
             }
 
             //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
-            if ($variables['movimiento_elevacion_anterior'] !== '' &&
+            /*if ($variables['movimiento_elevacion_anterior'] !== '' &&
                     $variables['movimiento_elevacion_posterior'] !== '' &&
                     !$wasEmpty) {
                 return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
-            } else {
+            } else {*/
                 //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
                 $args = array(
                     'post_type' => 'product',
@@ -403,7 +403,7 @@ if (!class_exists('FormularioBuscador')) :
                 //$res = new WP_Query($args);
                 //echo $res->found_posts;
                 return new WP_Query($args);
-            }
+            //}
         }
 
         private function getVariablesSaraSuggestion($variables, $selectedCat, $priority) {
@@ -437,11 +437,13 @@ if (!class_exists('FormularioBuscador')) :
                         $nmVariable == 'morfometria_cuartilla_anterior' ||
                         $nmVariable == 'morfometria_cuartilla_posterior' ||
                         $nmVariable == 'morfometria_cana_anterior' ||
-                        $nmVariable == 'morfometria_cana_posterior') {
+                        $nmVariable == 'morfometria_cana_posterior' ||
+                        $nmVariable == 'movimiento_elevacion_anterior' ||
+                        $nmVariable == 'movimiento_elevacion_posterior') {
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
 
                     //CASO ESPECIAL DE LAS ELEVACIONES
-                } elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
+                /*} elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
                         $nmVariable == 'movimiento_elevacion_posterior') {
 
                     if (!$boolCompensacion) {
@@ -474,7 +476,7 @@ if (!class_exists('FormularioBuscador')) :
                         //$meta_query['relation'] = 'OR';
                         $boolCompensacion = true;
                     }
-                    continue;
+                    continue;*/
                 } else {
                     //resto de variables
                     $searchValues = $this->$func($variables[$nmVariable]);
@@ -626,7 +628,7 @@ if (!class_exists('FormularioBuscador')) :
         private function get_geometria_orientacion($valor, $category) {
             switch ($valor) {
                 case 1:
-                    $arrValores = $category == '46' ? [2, 3] : [3];
+                    $arrValores = [2, 3];
                     break;
                 case 2:
                     $arrValores = [3, 2];
@@ -1852,7 +1854,7 @@ if (!class_exists('FormularioBuscador')) :
                     $arrValores = ($category == '49') ? [1, 2] : [1];
                     break;
                 case 2:
-                    $arrValores = ($category == '49') ? [1] : [1, 1];
+                    $arrValores = ($category == '49') ? [1] : [1, 2];
                     break;
                 case 3:
                     $arrValores = ($category == '49') ? [1, 2] : [1, 2];

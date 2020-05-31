@@ -2169,6 +2169,13 @@ div.comparesara .tab-caracteristicas .vc_tta.vc_general ul li.vc_tta-tab > a{
     font-size: 15px !important;
     font-weight: bold;
 }
+.grid-curso-linea .up_latest_post > ul > li .up_latest_post_inner{
+    padding: 0px 10px 17px !important;
+}
+.grid-curso-linea .up_latest_post h5.posttitle{
+    font-size: 14px;
+    text-align: center;
+}
 
 /* RESOLUCION CELULAR */
 @media (max-width: 768px) {

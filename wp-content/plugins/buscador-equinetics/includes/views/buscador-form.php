@@ -47,11 +47,6 @@ $nombreValores = [
         '2' => '2',
         '3' => '3',
     ],
-    'balance_horizontal' => [
-        '1' => 'Descendente',
-        '2' => 'Nivelado',
-        '3' => 'Ascendente',
-    ],
     'espalda_tamano' => [
         '1' => '1',
         '2' => '2',
@@ -144,10 +139,10 @@ $nombreValores = [
         '3' => 'Larga',
     ],
     'movimiento_velocidad' => [
-        '1' => 'Muy Baja',
-        '2' => 'Baja',
-        '3' => 'Promedio',
-        '4' => 'Alta'
+        '0' => 'Muy Baja',
+        '1' => 'Baja',
+        '2' => 'Promedio',
+        '3' => 'Alta'
     ],
     'movimiento_elevacion_anterior' => [
         '0' => 'Muy Baja',
