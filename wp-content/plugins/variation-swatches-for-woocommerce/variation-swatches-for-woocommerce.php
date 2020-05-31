@@ -3,7 +3,7 @@
  * Plugin Name: Variation Swatcher for WooCommerce
  * Plugin URI: http://themealien.com/wordpress-plugin/woocommerce-variation-swatches
  * Description: An extension of WooCommerce to make variable products be more beauty and friendly to users.
- * Version: 1.0.9
+ * Version: 1.0.10
  * Author: ThemeAlien
  * Author URI: http://themealien.com/
  * Requires at least: 4.5
@@ -11,7 +11,7 @@
  * Text Domain: wcvs
  * Domain Path: /languages
  * WC requires at least: 3.0.0
- * WC tested up to: 4.1.0
+ * WC tested up to: 4.1.1
  *
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html

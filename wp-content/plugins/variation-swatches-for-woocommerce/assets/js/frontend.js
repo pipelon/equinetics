@@ -15,7 +15,7 @@
 
 					var $el = $( this ),
 						$select = $el.closest( '.value' ).find( 'select' ),
-						value = $el.data( 'value' );
+						value = $el.attr( 'data-value' );
 
 					if ( $el.hasClass( 'disabled' ) ) {
 						return;
@@ -50,22 +50,28 @@
 					setTimeout( function() {
 						$form.find( 'tbody tr' ).each( function() {
 							var $variationRow = $( this ),
-								options = $variationRow.find( 'select' ).find( 'option' ),
+								$options = $variationRow.find( 'select' ).find( 'option' ),
+								$selected = $options.filter( ':selected' ),
 								values = [];
 
-							options.each( function( index, option ) {
+							$options.each( function( index, option ) {
 								if ( option.value !== '' ) {
 									values.push( option.value );
 								}
 							} );
 
 							$variationRow.find( '.swatch' ).each( function() {
-								var $swatch = $( this );
+								var $swatch = $( this ),
+									value = $swatch.attr( 'data-value' );
 
-								if ( values.indexOf( $swatch.data( 'value' ) ) > -1 ) {
+								if ( values.indexOf( value ) > -1 ) {
 									$swatch.removeClass( 'disabled' );
 								} else {
 									$swatch.addClass( 'disabled' );
+
+									if ( $selected.length && value === $selected.val() ) {
+										$swatch.removeClass( 'selected' );
+									}
 								}
 							} );
 						} );

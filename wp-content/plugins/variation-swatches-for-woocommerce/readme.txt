@@ -3,7 +3,7 @@ Contributors: themealien, coderexco
 Tags: woocommerce, product attribute, product color, product size, variation swatches, variable products
 Requires at least: 4.5
 Tested up to: 5.4.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 WC requires at least: 3.2.0
 WC tested up to: 4.1.0
 License: GPLv2 or later
@@ -76,6 +76,10 @@ Yes, it will work with any theme, but may require some styling to make it match 
 1. Add new attribute color when edit a product
 
 == Changelog ==
+
+= 1.0.10 =
+* Fix - The issue of numeric attributes are not selectable.
+* Fix - Display custom column content incorrectly in admin area.
 
 = 1.0.9 =
 * Fix - Sometimes can't select attributes.

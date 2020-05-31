@@ -287,6 +287,10 @@ class TA_WC_Variation_Swatches_Admin {
 	 * @param $term_id
 	 */
 	public function add_attribute_column_content( $columns, $column, $term_id ) {
+		if ( 'thumb' !== $column ) {
+			return $columns;
+		}
+
 		$attr  = TA_WCVS()->get_tax_attribute( $_REQUEST['taxonomy'] );
 		$value = get_term_meta( $term_id, $attr->attribute_type, true );
 
