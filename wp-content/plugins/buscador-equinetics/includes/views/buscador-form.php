@@ -169,7 +169,7 @@ $nombreValores = [
 
     <div class="row" style="margin-bottom: 20px;">
         <div class="col-md-12 well infollegua">
-            <h1 style="font-size: 20px;"
+            <h1 style="font-size: 16px;"
                 class="vc_custom_heading text-center space">DATOS DE LA YEGUA</h1>
             <div class="vc_separator wpb_content_element vc_separator_align_center 
                  vc_sep_width_20 vc_sep_double vc_sep_pos_align_center 
@@ -184,6 +184,7 @@ $nombreValores = [
                     </span>                
                 </span>
             </div>
+            <p class="text-center">Registre todos los datos de su Yegua.</p>
             <?php if (is_user_logged_in()) : ?>
                 <div class="form-row margin-space">
                     <div class="form-group col-md-12"> 
@@ -216,7 +217,7 @@ $nombreValores = [
                     <select id="andar" name="andar" class="form-control" required>
                         <option value="">Seleccione un andar...</option>
                         <?php foreach ($categories as $idCat => $nmCat) : ?>
-                            <option value="<?= trim($idCat); ?> "
+                            <option value="<?= trim($idCat); ?>"
                                     <?= (isset($_POST["andar"]) && trim($_POST["andar"]) == $idCat) ? 'selected' : ''; ?>>
                                         <?= $nmCat; ?>
                             </option>
@@ -240,8 +241,27 @@ $nombreValores = [
                     <input type="text" class="form-control" name="form[abuelo_materno]" id="abuelo_materno"
                            value="<?= isset($_POST["form"]["abuelo_materno"]) ? $_POST["form"]["abuelo_materno"] : '' ?>">
                 </div>
-            </div>             
+            </div>
+            <p class="text-center" style="margin-top: 30px">Utilice una de nuestras donantes.</p>  
+            <div class="form-row margin-space">
+                <div class="form-group col-md-12">
+                    <select id="yeguaeqntcs" name="yeguaeqntcs" class="form-control">
+                        <option value="">Seleccione...</option>
+                        <?php foreach ($arrYeguasEquinetics as $group => $options): ?>
+                            <optgroup label="<?= $group ?>">
+                                <?php foreach ($options as $option): ?>
+                                    <option value="<?= $option->ID ?>"
+                                            <?= (isset($_POST["yeguaeqntcs"]) && trim($_POST["yeguaeqntcs"]) == $option->ID) ? 'selected' : ''; ?>>
+                                                <?= $option->post_title ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </optgroup>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="vc_tta-container tta-cruza" data-vc-action="collapse">
@@ -457,7 +477,7 @@ $nombreValores = [
                                                            ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-<!--                                                            Cuadrada-->
+                                                            <!--                                                            Cuadrada-->
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -466,7 +486,7 @@ $nombreValores = [
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-<!--                                                            Rectangular-->
+                                                            <!--                                                            Rectangular-->
                                                         </span>
                                                     </div>
                                                 </div>   
@@ -489,7 +509,7 @@ $nombreValores = [
                                                            value="<?= isset($_POST['var']['geometria_orientacion']) ? $_POST['var']['geometria_orientacion'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-<!--                                                            Descendente-->
+                                                            <!--                                                            Descendente-->
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -498,7 +518,7 @@ $nombreValores = [
                                                             ?>
                                                         </span>
                                                         <span class="maxvalor">
-<!--                                                            Ascendente-->
+                                                            <!--                                                            Ascendente-->
                                                         </span>
                                                     </div>
                                                 </div>
@@ -558,7 +578,7 @@ $nombreValores = [
                                                            value="<?= isset($_POST['var']['balance_horizontal']) ? $_POST['var']['balance_horizontal'] : ""; ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
-<!--                                                            Desbalanceado-->
+                                                            <!--                                                            Desbalanceado-->
                                                         </span>
                                                         <span class="valor">
                                                             <?=
@@ -721,7 +741,7 @@ $nombreValores = [
                                                            id="lineaSuperior_orientacion_cuello" 
                                                            name="var[lineaSuperior_orientacion_cuello]"
                                                            data-range="range_lineaSuperior_orientacion_cuello"
-                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : "";            ?>">
+                                                           value="<?php // isset($_POST['var']['lineaSuperior_orientacion_cuello']) ? $_POST['var']['lineaSuperior_orientacion_cuello'] : "";                           ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -988,7 +1008,7 @@ $nombreValores = [
                                                            id="dorso_linea" 
                                                            name="var[dorso_linea]"
                                                            data-range="range_dorso_linea"
-                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "";            ?>">
+                                                           value="<?php // isset($_POST['var']['dorso_linea']) ? $_POST['var']['dorso_linea'] : "";                           ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -1749,7 +1769,7 @@ $nombreValores = [
                                                            id="movimiento_pulimento" 
                                                            name="var[movimiento_pulimento]"
                                                            data-range="range_movimiento_pulimento"
-                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : "";            ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_pulimento']) ? $_POST['var']['movimiento_pulimento'] : "";                           ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Valor mínimo
@@ -1781,7 +1801,7 @@ $nombreValores = [
                                                            id="movimiento_elasticidad" 
                                                            name="var[movimiento_elasticidad]"
                                                            data-range="range_movimiento_elasticidad"
-                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : "";            ?>">
+                                                           value="<?php // isset($_POST['var']['movimiento_elasticidad']) ? $_POST['var']['movimiento_elasticidad'] : "";                           ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Poco elástico
@@ -1813,7 +1833,7 @@ $nombreValores = [
                                                            id="movimiento_compensacion" 
                                                            name="var[movimiento_compensacion]"
                                                            data-range="range_movimiento_compensacion"
-                                                           value="<?php //= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : "";     ?>">
+                                                           value="<?php //= isset($_POST['var']['movimiento_compensacion']) ? $_POST['var']['movimiento_compensacion'] : "";                    ?>">
                                                     <div class="valores">
                                                         <span class="minvalor">
                                                             Descompensado
@@ -1929,7 +1949,7 @@ $nombreValores = [
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''            ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''                           ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -1964,7 +1984,7 @@ $nombreValores = [
                                         </div>
                                         <div class="col-md-3 col-sm-6 col-xs-6" style="visibility: hidden">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''            ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_dorso_linea" name="chk[chk_dorso_linea]" value="chk_dorso_linea" <?php // isset($_POST['chk']['chk_dorso_linea']) ? 'checked' : ''                           ?>>
                                                 <label class="form-check-label" for="chk_dorso_linea">Línea dorso</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2015,7 +2035,7 @@ $nombreValores = [
                                         </div>
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : ''            ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_lineaSuperior_orientacion_cuello" name="chk[chk_lineaSuperior_orientacion_cuello]" value="chk_lineaSuperior_orientacion_cuello" <?php //isset($_POST['chk']['chk_lineaSuperior_orientacion_cuello']) ? 'checked' : ''                           ?>>
                                                 <label class="form-check-label" for="chk_lineaSuperior_orientacion_cuello">Orientación cuello</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2104,14 +2124,14 @@ $nombreValores = [
                                         </div>        
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : ''            ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_pulimento" name="chk[chk_movimiento_pulimento]" value="chk_movimiento_pulimento" <?php // isset($_POST['chk']['chk_movimiento_pulimento']) ? 'checked' : ''                           ?>>
                                                 <label class="form-check-label" for="chk_movimiento_pulimento">Pulimento</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
                                         </div>-->   
                                         <!--<div class="col-md-3 col-sm-6 col-xs-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : ''            ?>>
+                                                <input class="form-check-input" type="checkbox" id="chk_movimiento_elasticidad" name="chk[chk_movimiento_elasticidad]" value="chk_movimiento_elasticidad" <?php // isset($_POST['chk']['chk_movimiento_elasticidad']) ? 'checked' : ''                           ?>>
                                                 <label class="form-check-label" for="chk_movimiento_elasticidad">Elasticidad</label>
                                                 <span class="prioridad badge badge-secondary"></span>
                                             </div>
@@ -2141,6 +2161,7 @@ $nombreValores = [
                                                    style="line-height: 40px !important; padding: 3px 50px;"/>
                                                    <?php if (is_user_logged_in()) : ?>        
                                                 <input type="submit" 
+                                                       id="buscaryguardar"
                                                        name="guardar"
                                                        value="Buscar y guardar" 
                                                        class="up-button btn-grey btn-buscarguardar"
@@ -2295,8 +2316,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
         }
     })(jQuery);
 
-    var nombresValoresJS = <?=json_encode($nombreValores); ?>;
-    console.info(nombresValoresJS);
+    var nombresValoresJS = <?= json_encode($nombreValores); ?>;
 
     var selectedImprovements = [];
 
@@ -2342,6 +2362,60 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
                 }
             });
             //jQuery('form.buscadr').submit();
+        }
+    });
+
+    //SELECCIONA UNA YEGUA DONANTE DE EQUINETICS
+    jQuery('#yeguaeqntcs').change(function () {
+        if (jQuery(this).val() !== "") {
+            //BUSCO LOS DATOS DE LA YEGUA SELECCIONADA
+            jQuery.ajax({
+                beforeSend: function () {},
+                type: "POST",
+                url: "<?= get_site_url(); ?>/wp-admin/admin-ajax.php",
+                data: {'action': 'get_selected_donor_yegua', 'idYegua': jQuery(this).val()},
+                dataType: "json",
+                success: function (data) {
+
+                    jQuery("#buscaryguardar").hide();
+
+                    //INGRESO EL ANDAR
+                    jQuery("#andar").val(data[0].andar);
+                    //jQuery("#andar").prop('disabled', true);
+
+                    //INGRESO EL NOMBRE DE LA YEGUA
+                    jQuery("#nombre_yegua").val(data[0].post_title);
+                    jQuery("#nombre_yegua").prop('readonly', true);
+
+                    //INGRESO LOS DATOS PERSONALES DE LA YEGUA GUARDADA
+                    jQuery.each(data, function (i, val) {
+                        if (val.meta_key === "donante_registro") {
+                            jQuery("#registro").val(val.meta_value);
+                            jQuery("#registro").prop('readonly', true);
+                        }
+                        if (val.meta_key === "donante_padre") {
+                            jQuery("#padre").val(val.meta_value);
+                            jQuery("#padre").prop('readonly', true);
+                        }
+                        if (val.meta_key === "donante_madre") {
+                            jQuery("#madre").val(val.meta_value);
+                            jQuery("#madre").prop('readonly', true);
+                        }
+                        if (val.meta_key === "donante_abuelomaterno") {
+                            jQuery("#abuelo_materno").val(val.meta_value);
+                            jQuery("#abuelo_materno").prop('readonly', true);
+                        }
+                        var str = val.meta_key.replace("varsara_", '');
+                        var str2 = str.replace("ñ", 'n');
+                        jQuery("#" + str2).val(val.meta_value);
+                        jQuery("#range_" + str2).prop('disabled', true);
+                    });
+                    set_selected_values();
+                },
+                error: function (error) {
+                    alert("Ha ocurrido un error: Código: (" + error.status + ") '" + error.statusText + "'");
+                }
+            });
         }
     });
 
@@ -2556,6 +2630,16 @@ Por favor revise la información suministrada.');
                 varchkSelected80.push(jQuery("label[for='" + val + "']").text());
             });
             jQuery(".variables_resultados_80").text(varchkSelected80.join(', '));
+<?php endif; ?>
+
+<?php if ($_POST['yeguaeqntcs'] != ''): ?>
+            jQuery("#registro").prop('readonly', true);
+            jQuery("#nombre_yegua").prop('readonly', true);
+            jQuery("#padre").prop('readonly', true);
+            jQuery("#madre").prop('readonly', true);
+            jQuery("#abuelo_materno").prop('readonly', true);
+            jQuery("#buscaryguardar").hide();
+            jQuery(".custom-range").prop('disabled', true);
 <?php endif; ?>
 
     });

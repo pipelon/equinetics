@@ -104,6 +104,25 @@ if (!class_exists('FormularioBuscador')) :
             $products = null;
             $settings = Buscador_equinetics()->get_settings();
 
+
+            //YEGUA PREDEFINIDAS DE EQUINETICS
+            global $wpdb;
+            $sql = "SELECT ID, `post_title`, rs2.term_taxonomy_id, t.NAME
+                    FROM  `eqntcs_posts` AS post
+                    INNER JOIN eqntcs_term_relationships rs ON rs.object_id = post.ID 
+                    INNER JOIN eqntcs_term_relationships rs2 ON rs2.object_id = post.ID 
+                    INNER JOIN eqntcs_terms t ON t.term_id = rs2.term_taxonomy_id 
+                    WHERE `post_type` = 'product' 
+                    AND `post_status` = 'publish'
+                    AND rs.term_taxonomy_id  = 53
+                    AND rs2.term_taxonomy_id IN ('46', '47', '48', '49')
+                    ORDER BY rs2.term_taxonomy_id ASC ";
+            $results = $wpdb->get_results($sql) or die(mysql_error());
+            $arrYeguasEquinetics = [];
+            foreach ($results as $result) {
+                $arrYeguasEquinetics[$result->NAME][] = $result;
+            }
+
             //SI HUBO POST
             if (!empty($_POST)) {
 
@@ -240,13 +259,13 @@ if (!class_exists('FormularioBuscador')) :
             }
 
             //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
-            /*if ($variables['movimiento_elevacion_anterior'] !== '' &&
-                    $variables['movimiento_elevacion_posterior'] !== '' &&
-                    !$wasEmpty) {
+            /* if ($variables['movimiento_elevacion_anterior'] !== '' &&
+              $variables['movimiento_elevacion_posterior'] !== '' &&
+              !$wasEmpty) {
 
-                return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
-                //SI ES CRUZ Y DORSO DEBO PARTIR LAS CONSULTAS EN VARIAS    
-            } else*/ if ($variables['lineaSuperior_cruz'] !== '' &&
+              return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
+              //SI ES CRUZ Y DORSO DEBO PARTIR LAS CONSULTAS EN VARIAS
+              } else */ if ($variables['lineaSuperior_cruz'] !== '' &&
                     $variables['dorso_tamano'] !== '' &&
                     !$wasEmpty) {
 
@@ -369,40 +388,40 @@ if (!class_exists('FormularioBuscador')) :
             }
 
             //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
-            /*if ($variables['movimiento_elevacion_anterior'] !== '' &&
-                    $variables['movimiento_elevacion_posterior'] !== '' &&
-                    !$wasEmpty) {
-                return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
-            } else {*/
-                //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
-                $args = array(
-                    'post_type' => 'product',
-                    'post_status' => 'publish',
-                    'ignore_sticky_posts' => 1,
-                    //'orderby' => $ordering_args['orderby'],
-                    //'order' => $ordering_args['order'],
-                    'posts_per_page' => $settings["result_per_page"],
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'product_cat',
-                            'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                            'terms' => $selectedCat, //CATEGORIA DEL ANDAR
-                            'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
-                        ),
-                        array(
-                            'taxonomy' => 'product_cat',
-                            'field' => 'term_id',
-                            'terms' => 52, //CATEGORIA DEL SOLO MACHOS
-                            'operator' => 'AND'
-                        ),
+            /* if ($variables['movimiento_elevacion_anterior'] !== '' &&
+              $variables['movimiento_elevacion_posterior'] !== '' &&
+              !$wasEmpty) {
+              return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
+              } else { */
+            //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
+            $args = array(
+                'post_type' => 'product',
+                'post_status' => 'publish',
+                'ignore_sticky_posts' => 1,
+                //'orderby' => $ordering_args['orderby'],
+                //'order' => $ordering_args['order'],
+                'posts_per_page' => $settings["result_per_page"],
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                        'terms' => $selectedCat, //CATEGORIA DEL ANDAR
+                        'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
                     ),
-                    'meta_query' => $meta_query
-                );
-                ob_start();
-                //echo "<pre>"; print_r($args);echo "</pre>";
-                //$res = new WP_Query($args);
-                //echo $res->found_posts;
-                return new WP_Query($args);
+                    array(
+                        'taxonomy' => 'product_cat',
+                        'field' => 'term_id',
+                        'terms' => 52, //CATEGORIA DEL SOLO MACHOS
+                        'operator' => 'AND'
+                    ),
+                ),
+                'meta_query' => $meta_query
+            );
+            ob_start();
+            //echo "<pre>"; print_r($args);echo "</pre>";
+            //$res = new WP_Query($args);
+            //echo $res->found_posts;
+            return new WP_Query($args);
             //}
         }
 
@@ -443,40 +462,40 @@ if (!class_exists('FormularioBuscador')) :
                     $searchValues = $this->$func($variables[$nmVariable], $selectedCat);
 
                     //CASO ESPECIAL DE LAS ELEVACIONES
-                /*} elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
-                        $nmVariable == 'movimiento_elevacion_posterior') {
+                    /* } elseif ($nmVariable == 'movimiento_elevacion_anterior' ||
+                      $nmVariable == 'movimiento_elevacion_posterior') {
 
-                    if (!$boolCompensacion) {
+                      if (!$boolCompensacion) {
 
-                        $searchValues = $this->get_compensacion_sara_suggestion($variables['movimiento_elevacion_anterior'],
-                                $variables['movimiento_elevacion_posterior'],
-                                $selectedCat);
-                        if (!$searchValues) {
-                            continue;
-                        }
+                      $searchValues = $this->get_compensacion_sara_suggestion($variables['movimiento_elevacion_anterior'],
+                      $variables['movimiento_elevacion_posterior'],
+                      $selectedCat);
+                      if (!$searchValues) {
+                      continue;
+                      }
 
-                        foreach ($searchValues as $searchValue) {
-                            $meta_querytmp = [];
-                            $meta_querytmp['type'] = 'compensacion';
-                            $meta_querytmp[] = [
-                                'relation' => 'AND',
-                                [
-                                    'key' => 'varsara_movimiento_elevacion_anterior',
-                                    'value' => $searchValue['movimiento_elevacion_anterior'],
-                                    'compare' => '='
-                                ],
-                                [
-                                    'key' => 'varsara_movimiento_elevacion_posterior',
-                                    'value' => $searchValue['movimiento_elevacion_posterior'],
-                                    'compare' => '='
-                                ]
-                            ];
-                            array_push($meta_query, $meta_querytmp);
-                        }
-                        //$meta_query['relation'] = 'OR';
-                        $boolCompensacion = true;
-                    }
-                    continue;*/
+                      foreach ($searchValues as $searchValue) {
+                      $meta_querytmp = [];
+                      $meta_querytmp['type'] = 'compensacion';
+                      $meta_querytmp[] = [
+                      'relation' => 'AND',
+                      [
+                      'key' => 'varsara_movimiento_elevacion_anterior',
+                      'value' => $searchValue['movimiento_elevacion_anterior'],
+                      'compare' => '='
+                      ],
+                      [
+                      'key' => 'varsara_movimiento_elevacion_posterior',
+                      'value' => $searchValue['movimiento_elevacion_posterior'],
+                      'compare' => '='
+                      ]
+                      ];
+                      array_push($meta_query, $meta_querytmp);
+                      }
+                      //$meta_query['relation'] = 'OR';
+                      $boolCompensacion = true;
+                      }
+                      continue; */
                 } else {
                     //resto de variables
                     $searchValues = $this->$func($variables[$nmVariable]);
@@ -2169,6 +2188,12 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
+
+    
+
+    
 
     
 

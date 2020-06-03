@@ -671,3 +671,24 @@ function get_selected_yegua() {
 
 add_action('wp_ajax_get_selected_yegua', 'get_selected_yegua');
 add_action('wp_ajax_nopriv_get_selected_yegua', 'get_selected_yegua');
+
+//FUNCION AJAX PARA BUSCAR LA YEGUA GUARDADA
+function get_selected_donor_yegua() {
+    if (isset($_POST["idYegua"])) {
+        global $wpdb;
+        $sql = "SELECT post_title, meta_key, meta_value, rs.term_taxonomy_id AS andar
+                FROM  `eqntcs_posts` p
+                INNER JOIN eqntcs_postmeta pm ON pm.post_id = p.ID 
+                INNER JOIN eqntcs_term_relationships rs ON rs.object_id = p.ID 
+                WHERE  `ID` =  '" . $_POST["idYegua"] . "' AND (meta_key LIKE 'varsara_%' OR meta_key LIKE 'donante_%')
+                AND rs.term_taxonomy_id IN ('46', '47', '48', '49')";
+        $results = $wpdb->get_results($sql) or die(mysql_error());
+        echo json_encode($results);
+    } else {
+        die(header("HTTP/1.0 404 Not Found")); //Throw an error on failure
+    }
+    die();
+}
+
+add_action('wp_ajax_get_selected_donor_yegua', 'get_selected_donor_yegua');
+add_action('wp_ajax_nopriv_get_selected_donor_yegua', 'get_selected_donor_yegua');
