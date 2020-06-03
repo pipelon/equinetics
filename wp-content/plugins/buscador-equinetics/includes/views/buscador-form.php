@@ -2411,6 +2411,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
                         jQuery("#range_" + str2).prop('disabled', true);
                     });
                     set_selected_values();
+                    jQuery(".emptyVar").hide();
                 },
                 error: function (error) {
                     alert("Ha ocurrido un error: Código: (" + error.status + ") '" + error.statusText + "'");
@@ -2640,6 +2641,7 @@ Por favor revise la información suministrada.');
             jQuery("#abuelo_materno").prop('readonly', true);
             jQuery("#buscaryguardar").hide();
             jQuery(".custom-range").prop('disabled', true);
+            jQuery(".emptyVar").hide();
 <?php endif; ?>
 
     });
