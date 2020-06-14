@@ -2490,7 +2490,7 @@ echo '<div class="woocommerce">' . ob_get_clean() . '</div>';
                 bandera = false;
                 return false;
             }
-            if (variableChk === "movimiento_compensacion" && (jQuery("#movimiento_compensacion").val() === "" || jQuery("#movimiento_elevacion_posterior").val() === "")) {
+            if (variableChk === "movimiento_compensacion" && (jQuery("#movimiento_elevacion_anterior").val() === "" || jQuery("#movimiento_elevacion_posterior").val() === "")) {
                 banderaC = false;
                 return false;
             }

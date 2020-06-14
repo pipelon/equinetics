@@ -179,6 +179,19 @@ if (!class_exists('FormularioBuscador')) :
                 if (isset($_POST["buscar"]) || isset($_POST["guardar"])) {
                     $isSaraResults = false;
                     $priority = explode(",", $_POST['priority']);
+
+                    //SI VIENE LA COMPENSACIÓN ELIMINO LAS ELEVACIONES SI LAS HAY
+                    if (in_array('chk_movimiento_compensacion', $priority)) {
+                        $clave = array_search('chk_movimiento_elevacion_anterior', $priority);
+                        if ($clave !== false) {
+                            unset($priority[$clave]);
+                        }
+                        $clave2 = array_search('chk_movimiento_elevacion_posterior', $priority);
+                        if ($clave2 !== false) {
+                            unset($priority[$clave2]);
+                        }
+                    }
+
                     $lblpriority = implode(",", $priority);
                     if (count($priority) >= 5) {
                         array_pop($priority);
@@ -189,7 +202,7 @@ if (!class_exists('FormularioBuscador')) :
                         $products80 = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",", $priority));
                     }
 
-                    $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], $_POST['priority']);
+                    $products = $this->getHorses($_POST["var"], $_POST["chk"], $_POST['andar'], implode(",", $priority));
                 }
 
                 //SI SE PRESIONO EL BOTON DE SUGERENCIAS SARA
@@ -387,42 +400,42 @@ if (!class_exists('FormularioBuscador')) :
                 $wasEmpty = true;
             }
 
+            $comp = explode(",", $priority);
             //SI ES EA Y EP DEBO PARTIR LAS CONSULTAS EN VARIAS
-            /* if ($variables['movimiento_elevacion_anterior'] !== '' &&
-              $variables['movimiento_elevacion_posterior'] !== '' &&
-              !$wasEmpty) {
-              return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
-              } else { */
-            //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
-            $args = array(
-                'post_type' => 'product',
-                'post_status' => 'publish',
-                'ignore_sticky_posts' => 1,
-                //'orderby' => $ordering_args['orderby'],
-                //'order' => $ordering_args['order'],
-                'posts_per_page' => $settings["result_per_page"],
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'product_cat',
-                        'field' => 'term_id', //This is optional, as it defaults to 'term_id'
-                        'terms' => $selectedCat, //CATEGORIA DEL ANDAR
-                        'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+            if (in_array("chk_movimiento_compensacion", $comp) &&
+                    !$wasEmpty) {
+                return $this->setQuerybyParts($meta_query, $settings, $selectedCat, 'compensacion');
+            } else {
+                //BUSCO POR LA CATEGORIA SELECCIONADA Y POR LAS VARIABLES
+                $args = array(
+                    'post_type' => 'product',
+                    'post_status' => 'publish',
+                    'ignore_sticky_posts' => 1,
+                    //'orderby' => $ordering_args['orderby'],
+                    //'order' => $ordering_args['order'],
+                    'posts_per_page' => $settings["result_per_page"],
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'term_id', //This is optional, as it defaults to 'term_id'
+                            'terms' => $selectedCat, //CATEGORIA DEL ANDAR
+                            'operator' => 'IN' // Possible values are 'IN', 'NOT IN', 'AND'.
+                        ),
+                        array(
+                            'taxonomy' => 'product_cat',
+                            'field' => 'term_id',
+                            'terms' => 52, //CATEGORIA DEL SOLO MACHOS
+                            'operator' => 'AND'
+                        ),
                     ),
-                    array(
-                        'taxonomy' => 'product_cat',
-                        'field' => 'term_id',
-                        'terms' => 52, //CATEGORIA DEL SOLO MACHOS
-                        'operator' => 'AND'
-                    ),
-                ),
-                'meta_query' => $meta_query
-            );
-            ob_start();
-            //echo "<pre>"; print_r($args);echo "</pre>";
-            //$res = new WP_Query($args);
-            //echo $res->found_posts;
-            return new WP_Query($args);
-            //}
+                    'meta_query' => $meta_query
+                );
+                ob_start();
+                //echo "<pre>"; print_r($args);echo "</pre>";
+                //$res = new WP_Query($args);
+                //echo $res->found_posts;
+                return new WP_Query($args);
+            }
         }
 
         private function getVariablesSaraSuggestion($variables, $selectedCat, $priority) {
@@ -2188,6 +2201,12 @@ if (!class_exists('FormularioBuscador')) :
         }
 
     }
+
+    
+
+    
+
+    
 
     
 
