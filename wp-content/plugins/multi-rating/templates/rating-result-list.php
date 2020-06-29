@@ -44,8 +44,10 @@
 			}
 			?>
 			</select>
-			
-			<input type="submit" value="<?php echo esc_attr( $filter_button_text ); ?>" />
+
+			<div class="wp-block-button">
+				<input type="submit" class="wp-block-button__link" value="<?php echo esc_attr( $filter_button_text ); ?>" />
+			</div>
 		</form>
 	<?php
 	
@@ -76,9 +78,9 @@
 			<?php
 			
 			do_action( 'mr_rating_results_list_row_before_first_td', $post_id, $rating_result );
-				
+
 			// Rank
-			if ( $show_rank ) {
+			if ( $show_rank ) { 
 				?>
 				<td>
 					<span class="rank"><?php echo $index; ?></span>
@@ -122,7 +124,6 @@
 			mr_get_template_part( 'rating-result', null, true, array(
 				'no_rating_results_text' => '',
 				'ignore_count' => true,
-				'generate_microdata' => false,
 				'show_title' => false,
 				'before_title' => $before_title,
 				'after_title' => $after_title,

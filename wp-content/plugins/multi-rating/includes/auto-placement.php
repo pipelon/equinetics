@@ -31,8 +31,8 @@ function mr_filter_the_content( $content ) {
 	$rating_form_position = get_post_meta( $post->ID, Multi_Rating::RATING_FORM_POSITION_POST_META, true );
 	$rating_results_position = get_post_meta( $post->ID, Multi_Rating::RATING_RESULTS_POSITION_POST_META, true );
 
-	if ( $rating_form_position != Multi_Rating::DO_NOT_SHOW ) {
-
+	if ( $rating_form_position != Multi_Rating::DO_NOT_SHOW && ! ( $rating_form_position == '' && ! MR_Utils::check_post_type_enabled( $post_id ) ) ) {
+		
 		// use default rating form position
 		if ( $rating_form_position == '' ) {
 			$rating_form_position = $position_settings[ Multi_Rating::RATING_FORM_POSITION_OPTION ];
@@ -47,7 +47,7 @@ function mr_filter_the_content( $content ) {
 		}
 	}
 
-	if ( $rating_results_position != Multi_Rating::DO_NOT_SHOW ) {
+	if ( $rating_results_position != Multi_Rating::DO_NOT_SHOW && ! ( $rating_results_position == '' && ! MR_Utils::check_post_type_enabled( $post_id ) ) ) {
 
 		// use default rating results position
 		if ( $rating_results_position == '' ) {
@@ -59,7 +59,6 @@ function mr_filter_the_content( $content ) {
 					'post_id' => $post_id,
 					'echo' => false,
 					'show_date' => false,
-					'generate_microdata' => is_singular(),
 					'class' => $rating_results_position . ' mr-filter'
 			) );
 		}
@@ -118,7 +117,7 @@ function mr_filter_the_title( $title ) {
 	}
 
 	$rating_results_position = get_post_meta( $post->ID, Multi_Rating::RATING_RESULTS_POSITION_POST_META, true );
-	if ( $rating_results_position == Multi_Rating::DO_NOT_SHOW ) {
+	if ( $rating_results_position == Multi_Rating::DO_NOT_SHOW || ( $rating_results_position == '' && ! MR_Utils::check_post_type_enabled( $post_id ) ) ) {
 		return $title;
 	}
 
@@ -136,9 +135,9 @@ function mr_filter_the_title( $title ) {
 				'post_id' => $post_id,
 				'echo' => false,
 				'show_date' => false,
-				'generate_microdata' => is_singular(),
 				'class' => $rating_results_position . ' mr-filter'
 		) );
+		
 	}
 
 	$filtered_title = '';
@@ -170,10 +169,6 @@ add_filter( 'the_title', 'mr_filter_the_title' );
  * @return $can_apply_filter
  */
 function mr_can_apply_filter( $can_apply_filter, $filter_name, $value, $post_id ) {
-
-	if ( $can_apply_filter ) {
-		$can_apply_filter = MR_Utils::check_post_type_enabled( $post_id );
-	}
 
 	return $can_apply_filter;
 }

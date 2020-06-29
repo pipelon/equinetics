@@ -1,49 +1,53 @@
 ﻿=== Multi Rating ===
 Contributors: dpowney
-Tags: rating, review, star rating, multi rating, post rating, rating criteria, rich snippet, question, poll, survey, quiz, vote, voting
+Tags: rating, review, post rating, star rating, seo, schema.org, json-ld
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 5.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A powerful post rating / review system plugin for WordPress including 5 star ratings and rich snippets.
+A powerful post rating / review system plugin for WordPress.
 
 == Description ==
 
-A powerful post rating / review system plugin for WordPress with a niche of doing multi ratings better than anyone else. Can also be used for polls, quizzes, voting and surveys.
+A powerful post rating / review system plugin for WordPress with a niche of doing multi ratings better than anyone else.
 
-View [Demo](https://multiratingpro.com/demo-page-free?utm_source=view-demo&utm_medium=free-plugin&utm_campaign=readme).
+Check out [the demo](https://multiratingpro.com/demo-page-free?utm_source=view-demo&utm_medium=free-plugin&utm_campaign=readme).
 
-= Key Features =
+= Features =
 
-* Rate posts based on multiple rating criteria / questions with star ratings, select drop-downs and radio buttons
-* Average ratings can be out of 5 stars, a percentage or an aggregated score
-* Add schema.org microdata to show the aggregate rating / reviews in search engine results pages (SERP) as rich snippets
-* Font Awesome and Dashicon support for star icons or upload your own custom star image icons
-* Tools to export ratings to a CSV file
-* Shortcodes and widgets to display the rating form and overall post ratings
-* Shortcode and widget to display a list of ratings (sort by highest rated, lowest rated, most entries, post title ascending or post title descending)
-* View / edit all ratings and details in WP-admin
-* Apply weights to rating items to adjust the average ratings
-* Automatic placement of rating form and average ratings on enabled post types
-* Settings to validate duplicates, change default text and apply different styles etc...
-* i18n translation ready
-* In-built template system for customization
+* Rate posts based on different criteria with **star ratings**, select and radio buttons
+* Compatible with both the Classic editor and new **Gutenberg** editor
+* Adds **Google review snippets** to improve SEO (JSON-LD)
+* Integrates JSON-LD structured data with WordPress SEO (Yoast) and WooCommerce plugins
+* Use **Font Awesome** icons or upload custom images intead
+* Several **Gutenberg blocks**, shortcodes and widgets available
+* Can apply different **weights** to rating items to adjust results
+* Can **automatically add** the rating form and rating result to post content
+* **i18n translation ready** for multilingual sites
+* In-built **template system** to customize the HTML presentation
+* Access ratings through the WordPress **REST API**
+* Can export rating entries to CSV
+* Can edit rating details from WP-admin
+* Style options for stars icon colors
 
-= Shortcode Examples =
+= Shortcodes =
 
-* [mr_rating_form]
+* [mr_rating_form] - displays the rating form.
+* [mr_rating_result] - displays the overall rating result.
+* [mr_rating_results_list] - displays a list of post ratings.
+
+Shortcode examples:
+
 * [mr_rating_form title="Please rate this" submit_button_text="Submit"]
-* [mr_rating_result]
-* [mr_rating_result post_id="100" no_rating_results_text="No rating result yet" show_rich_snippets="false"]
-* [mr_rating_results_list]
+* [mr_rating_result post_id="100" no_rating_results_text="No rating result yet"]
 * [mr_rating_results_list title="Top Ratings" sort_by="highest_rated" limit="10"]
 * [mr_rating_results_list title="Ratings" sort_by="most_entries" limit="5"]
 
-= Upgrade to Pro =
+= Premium Version =
 
-The [Multi Rating Pro](https://multiratingpro.com?utm_source=pro-version&utm_medium=free-plugin&utm_campaign=readme&utm_content=top) version provides a significant additional feature set, including:
+Looking for some more advanced functionality? The [Multi Rating Pro](https://multiratingpro.com?utm_source=pro-version&utm_medium=free-plugin&utm_campaign=readme&utm_content=top) version provides a significant additional feature set, including:
 
 * Create multiple rating forms
 * Ratings moderation (approve or unapprove rating entries)
@@ -54,8 +58,8 @@ The [Multi Rating Pro](https://multiratingpro.com?utm_source=pro-version&utm_med
 * Add common review fields (title, name, e-mail and comments)
 * Add custom fields to collect additional information
 * Display rating entry details in a review layout
-* Display rating item results in a poll / bar chart layout (e.g. Amazon style ratings)
-* Extra shortcodes and widgets (i.e. reviews, dashboard of user ratings and detailed rating item results)
+* Display rating item results in a poll / bar chart layout
+* Extra shortcodes, widgets & Gutenerg blocks (i.e. reviews, dashboard of user ratings and detailed rating item results)
 * Logged in users can update or delete their existing ratings
 * Override the rating form to be used on specific posts, URLs, post types, post ids, taxonomies, terms etc…
 * Options to exclude the home page, search page and archive pages (e.g. category)
@@ -63,32 +67,50 @@ The [Multi Rating Pro](https://multiratingpro.com?utm_source=pro-version&utm_med
 * Option to only allow ratings from logged in users
 * Google reCAPTCHA validation (add-on)
 * Gravity Forms integration (add-on)
-* Readonly REST API (add-on)
-* WPML plugin certified & Polylang plugin comptatibility
 * And much much more...
-
-Check out [Multi Rating Pro](https://multiratingpro.com?utm_source=pro-version&utm_medium=free-plugin&utm_campaign=readme&utm_content=bottom).
 
 == Screenshots ==
 
 1. Rating form and rating results
-2. [mr_rating_results_list] shortcode
-3. Results in WP-admin
-4. Entries in WP-admin
-5. Widget options
-6. Rating items in WP-admin
-7. Settings 1
-8. Settings 2
-9. Settings 3
-10. Reports
-11. Tools
+2. Gutenberg blocks 1
+3. Gutenberg blocks 2
+4. General settings
+5. Auto placement settings
+6. Style settings
+7. Post ratings in WP-admin
+8. Rating entries in WP-admin
+9. Rating items in WP-admin
+10. Widget options for list of rating results
 
 == Upgrade Notice ==
 
 == Changelog ==
 
+= 5.0.1 (28/06/2020) =
+Fix: Auto placement post type issue
+
+= 5.0 (27/06/2020) =
+* New: Added REST API readonly endpoints for rating results list, rating items and a custom field on posts with rating results
+* Tweak: Upgraded Font Awesome icons to latest v3 & v4 and added v5
+* Tweak: Fixed about page CSS and removed Credits tab.
+* Tweak: Removed custom CSS option. You should move this to the Customizer.
+* Tweak: Some minor CSS style changes. You may need to update your styles.
+* New: Added 3 Gutenberg blocks for the rating form, rating result and rating reslt list.
+* New: Migrated post meta settings to Gutenberg editor.
+* New: Added JSON-LD AggregateRatings structured data support for supported schema.org item types. Removed old microdata format which was previously added in the templates.
+* New: Added integration with WooCommerce Product structured data
+* New: Added integration with Wordpress SEO (Yoast) structured data graph
+* Tweak: Removed minified assets.
+* Tweak: Removed widget check for enabled post types.
+* Tweak: Moved enabled post types option to the auto placement settings.
+* Tweak: Changed classic editor post meta box styles.
+* Tweak: Removed post type check from the mr_can_apply_filter filter. This allows auto placement even when the post type is not enabled using post meta fields.
+
+= 4.3.1 =
+* Tweak: Removed WPML references
+
 = 4.3 (14/04/2018) =
-* Tweak: Removed IP address duplicate checks for GDPR compliance. Cookies will be the default option used instead.
+* Tweak: Removed IP address duplicate checking for GDPR compliance. Cookies will be the default option used instead.
 * Bug: Fixed PHP error when saving rating items due to typo...
 
 = 4.2.9 (22/12/2017) =

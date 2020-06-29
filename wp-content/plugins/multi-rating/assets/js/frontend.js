@@ -3,7 +3,9 @@ jQuery(document).ready(function() {
 	// supporting different versions of Font Awesome icons
 	var icon_classes = jQuery.parseJSON(mr_frontend_data.icon_classes);
 	
-	jQuery(".rating-form :button").click(function(e) {
+	jQuery(".rating-form :submit").click(function(e) {
+
+		e.preventDefault();
 	
 		var ratingItems = [];
 		var customFields = [];
@@ -44,7 +46,7 @@ jQuery(document).ready(function() {
 		var temp = postId +'-' + sequence;
 		var spinnerId = 'mr-spinner-' + temp;
 		
-		jQuery('<i style="margin-left: 10px;" id="' + spinnerId + '" class="' + icon_classes.spinner + '"></i>').insertAfter('input#' + btnId);
+		jQuery('<i style="margin-left: 10px;" id="' + spinnerId + '" class="' + icon_classes.spinner + '"></i>').insertAfter(jQuery('input#' + btnId).parent());
 	
 		jQuery.post(mr_frontend_data.ajax_url, data, function(response) {
 				handle_rating_form_submit_response(response);

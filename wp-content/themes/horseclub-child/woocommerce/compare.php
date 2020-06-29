@@ -70,12 +70,15 @@ $localized_table_text = apply_filters('wpml_translate_single_string', $table_tex
 
 <?php global $product; ?>
 <?php
+//OBETENGO EL ULTIMO CABALLO AGFREGADO QUE CORRESPONDE AL MÁS RECIENTE
+$lastProduct = end($products);
 //DEJO SOLO LAS MISMAS CATEGORIAS
-$firstCategory = 0;
+//$firstCategory = 0;
+$firstCategory = $lastProduct->category_ids[2];
 foreach ($products as $product_id => $product) {
-    if ($firstCategory == 0) {
-        $firstCategory = $product->category_ids[2];
-    }
+//    if ($firstCategory == 0) {
+//        $firstCategory = $product->category_ids[2];
+//    }
     if ($product->category_ids[2] != $firstCategory) {
         unset($products[$product_id]);
     }
