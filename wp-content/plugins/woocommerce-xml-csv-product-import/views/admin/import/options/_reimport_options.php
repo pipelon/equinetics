@@ -182,10 +182,8 @@
 				</div>
 			</div>
 			<?php
-
 			// add-ons re-import options
-			do_action('pmxi_reimport', $post_type, $post);
-
+			do_action('pmxi_reimport', $post['custom_type'], $post);
 			?>
 		</div>
 	</div>

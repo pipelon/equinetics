@@ -3,9 +3,9 @@
 Plugin Name: WP All Import - WooCommerce Add-On
 Plugin URI: http://www.wpallimport.com/woocommerce-product-import/?utm_source=import-wooco-products-addon-free&utm_medium=wp-plugins-page&utm_campaign=upgrade-to-pro
 Description: An extremely easy, drag & drop importer to import WooCommerce simple products. A paid upgrade is available for premium support and support for Variable, Grouped, and External/Affiliate products
-Version: 1.4.5
+Version: 1.4.6
 Author: Soflyy
-WC tested up to: 4.1.0
+WC tested up to: 4.3.0
 */
 
 if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -25,7 +25,7 @@ if ( is_plugin_active('wpai-woocommerce-add-on/wpai-woocommerce-add-on.php') ) {
 }
 else {
 
-    define('PMWI_FREE_VERSION', '1.4.5');
+    define('PMWI_FREE_VERSION', '1.4.6');
 
     define('PMWI_EDITION', 'free');
 
@@ -814,7 +814,27 @@ else {
                 'existing_parent_product_matching_logic' => 'custom field',
                 'existing_parent_product_title' => '',
                 'existing_parent_product_cf_name' => '_sku',
-                'existing_parent_product_cf_value' => ''
+                'existing_parent_product_cf_value' => '',
+                // WooCommerce Subscriptions
+                'single_product_subscription_price' => '',
+                'single_product_subscription_sign_up_fee' => '',
+                'is_multiple_product_subscription_period_interval' => 'yes',
+                'multiple_product_subscription_period_interval' => 1,
+                'single_product_subscription_period_interval' => '',
+
+                'is_multiple_product_subscription_period' => 'yes',
+                'multiple_product_subscription_period' => 'month',
+                'single_product_subscription_period' => '',
+
+                'is_multiple_product_subscription_trial_period' => 'yes',
+                'multiple_product_subscription_trial_period' => 0,
+                'single_product_subscription_trial_period' => '',
+                'is_multiple_product_subscription_length' => 'yes',
+                'multiple_product_subscription_length' => 0,
+                'single_product_subscription_length' => '',
+                'is_multiple_product_subscription_limit' => 'yes',
+                'multiple_product_subscription_limit' => 'no',
+                'single_product_subscription_limit' => ''
             );
         }
     }

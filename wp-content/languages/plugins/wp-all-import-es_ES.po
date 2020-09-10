@@ -2,26 +2,26 @@
 # This file is distributed under the same license as the Plugins - Import any XML or CSV File to WordPress - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-02-23 21:18:28+0000\n"
+"PO-Revision-Date: 2020-08-07 21:30:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.4.0-alpha\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Import any XML or CSV File to WordPress - Stable (latest release)\n"
 
 #: views/admin/import/template.php:160 views/admin/settings/index.php:146
 msgid "Add functions here for use during your import. You can access this file at %s"
-msgstr "Añade aquí las funciones que quieras usar durante tu importación. Puedes acceder a este archivo en %s"
+msgstr "Añade aquí las funciones a usar durante tu importación. Puedes acceder a este archivo en %s"
 
 #: views/admin/import/template.php:159 views/admin/settings/index.php:145
 msgid "Save Functions"
-msgstr "Guardar funciones"
+msgstr "Guardar las funciones"
 
 #: views/admin/import/template.php:151 views/admin/settings/index.php:138
 msgid "Upgrade to the professional edition of WP All Import to enable the Function Editor."
-msgstr "Mejora a la versión profesional de WP All Import para tener acceso al editor de funciones."
+msgstr "Actualiza a la edición profesional de WP All Import para activar el editor de funciones."
 
 #: views/admin/import/template.php:146 views/admin/settings/index.php:136
 msgid "Function Editor"
@@ -29,7 +29,7 @@ msgstr "Editor de funciones"
 
 #: views/admin/import/template/_other_template.php:284
 msgid "If records in this import have different post types specify the slug of the desired post type here.\n"
-msgstr "Si los registros de esta importación tienen diferentes tipos de entrada especifica el slug que desees emplear para cada uno de ellos aquí.\n"
+msgstr "Si los registros de esta importación tienen diferentes tipos de contenido, especifica aquí el slug de los tipos de contenido que desees.\n"
 
 #: views/admin/import/template/_other_template.php:274
 msgid "Dynamic Post Type"
@@ -37,35 +37,23 @@ msgstr "Tipo de contenido dinámico"
 
 #: views/admin/import/preview_images.php:26
 msgid "Run Test"
-msgstr "Probar"
+msgstr "Ejecutar la prueba"
 
 #: views/admin/import/preview_images.php:24
 msgid "Click to test that your images are able to be accessed by WP All Import."
-msgstr "Haz clic para comprobar que tus imágenes sean accesibles por WP All Import."
+msgstr "Haz clic para comprobar que WP All Import es capaz de acceder a tus imágenes."
 
 #: views/admin/import/preview_images.php:17
 msgid "Test Images"
-msgstr "Imágenes de prueba"
-
-#. Author of the plugin/theme
-msgid "Soflyy"
-msgstr "Soflyy"
-
-#. Description of the plugin/theme
-msgid "The most powerful solution for importing XML and CSV files to WordPress. Create Posts and Pages with content from any XML or CSV file. A paid upgrade to WP All Import Pro is available for support and additional features."
-msgstr "La mejor solución para importar archivos XML y CSV a WordPress. Crea entradas y páginas con contenido desde cualquier archivo XML y CSV. Pásate a WP All Import Pro para soporte y funciones adicionales."
-
-#. Plugin URI of the plugin/theme
-msgid "http://www.wpallimport.com/upgrade-to-pro?utm_source=wordpress.org&utm_medium=plugins-page&utm_campaign=free+plugin"
-msgstr "http://www.wpallimport.com/upgrade-to-pro?utm_source=wordpress.org&utm_medium=plugins-page&utm_campaign=free+plugin"
+msgstr "Probar las imágenes"
 
 #: views/admin/settings/index.php:114
 msgid "Specify the port number to add if you're having problems continuing to Step 2 and are running things on a custom port. Default is blank."
-msgstr "Especifica un número de puerto distinto si tienes problemas para continuar con el Paso 2 y estás ejecutando tareas en un puerto personalizado. El valor predeterminado es en blanco."
+msgstr "Especifica un número de puerto a añadir si estás teniendo problemas para continuar con el paso 2 y estás ejecutando cosas en un puerto personalizado. Por defecto está en blanco."
 
 #: views/admin/settings/index.php:111
 msgid "Add Port To URL"
-msgstr "Añadir puerto a la URL"
+msgstr "Añadir el puerto a la URL"
 
 #: views/admin/settings/index.php:107
 msgid "Setting this constant avoids triggering pingback."
@@ -117,7 +105,7 @@ msgstr "Los archivos importados, fragmentos, registros y archivos temporales se 
 
 #: views/admin/settings/index.php:59
 msgid "Randomize folder names"
-msgstr "Aleatorizar los nombres de las carpetas"
+msgstr "Hacer aleatorios los nombres de las carpetas"
 
 #: views/admin/settings/index.php:54 views/admin/settings/index.php:57
 msgid "Secure Mode"
@@ -133,15 +121,15 @@ msgstr "No hay plantillas guardadas"
 
 #: views/admin/settings/index.php:33
 msgid "Export Selected"
-msgstr "Exporta la selección"
+msgstr "Exportar lo seleccionado"
 
 #: views/admin/settings/index.php:32
 msgid "Delete Selected"
-msgstr "Borra la selección"
+msgstr "Borrar lo seleccionado"
 
 #: views/admin/settings/index.php:18
 msgid "Import/Export Templates"
-msgstr "Importar/exportar plantillas"
+msgstr "Plantillas de importación/exportación"
 
 #: views/admin/manage/update.php:21
 msgid "Update feature is not available for this import since it has no external path linked."
@@ -157,15 +145,15 @@ msgstr "¿Estás seguro de que quieres actualizar la importación <strong>%s</st
 
 #: views/admin/manage/update.php:1
 msgid "Update Import"
-msgstr "Actualiza la importación"
+msgstr "Actualizar la importación"
 
 #: views/admin/manage/scheduling.php:57
 msgid "Go to Import Settings now..."
-msgstr "Ve a ajustes de importación ..."
+msgstr "Ir ahora a los ajustes de importación..."
 
 #: views/admin/manage/scheduling.php:54
 msgid "To schedule this import with a cron job, you must use the \"Download from URL\" option on the Import Settings screen of WP All Import."
-msgstr "Para programar esta importación con un tarea cron, debes usar la opción \"Descargar desde URL\" en la pantalla Importar ajustes de WP All Import."
+msgstr "Para programar esta importación con un tarea cron, debes usar la opción «Descargar desde URL» en la pantalla Importar ajustes de WP All Import."
 
 #: views/admin/manage/scheduling.php:44
 msgid "Your web host may require you to use a command other than wget, although wget is most common. In this case, you must asking your web hosting provider for help."
@@ -197,7 +185,7 @@ msgstr "Ejemplo:"
 
 #: views/admin/manage/scheduling.php:23
 msgid "To schedule the import to run once every 24 hours, run the trigger script every 24 hours. Most hosts require you to use “wget” to access a URL. Ask your host for details."
-msgstr "Para programar la importación para que se ejecute una vez cada 24 horas, ejecuta el script de activación cada 24 horas. La mayoría de servidores requieren que uses \"wget\" para acceder a una URL. Pregunta a tu proveedor para obtener más detalles."
+msgstr "Para programar la importación para que se ejecute una vez cada 24 horas, ejecuta el script de activación cada 24 horas. La mayoría de servidores necesitan que uses «wget» para acceder a una URL. Pregunta a tu proveedor para obtener más detalles."
 
 #: views/admin/manage/scheduling.php:21
 msgid "Every time you want to schedule the import, run the trigger script."
@@ -225,11 +213,11 @@ msgstr "Cancelar"
 
 #: views/admin/manage/index.php:320
 msgid "Cancel Cron"
-msgstr "Cancelar Cron"
+msgstr "Cancelar cron"
 
 #: views/admin/manage/index.php:318
 msgid "Run Import"
-msgstr "Ejecutar importación"
+msgstr "Ejecutar la importación"
 
 #: views/admin/manage/index.php:308
 msgid "History Logs"
@@ -294,7 +282,7 @@ msgstr "Editar importación"
 
 #: views/admin/manage/index.php:100
 msgid "No previous imports found. <a href=\"%s\">Start a new import...</a>"
-msgstr "Ninguna importación anterior encontrada. <a href=\"%s\">Iniciar una nueva importación...</a>"
+msgstr "No se ha encontrado ninguna importación anterior. <a href=\"%s\">Iniciar una nueva importación...</a>"
 
 #: views/admin/manage/index.php:31
 msgid "Info & Options"
@@ -318,7 +306,7 @@ msgstr "Eliminar importación"
 
 #: views/admin/manage/bulk.php:30 views/admin/manage/delete.php:24
 msgid "<p class=\"wpallimport-delete-posts-warning\"><strong>Important</strong>: this import was created automatically by WP All Export. All posts exported by the \"%s\" export job have been automatically associated with this import.</p>"
-msgstr "<p class=\"wpallimport-delete-posts-warning\"><strong>Importante</strong>: esta importación fue creada automáticamente por WP All Export. Todas las entradas exportadas por la tarea de exportación \"%s\" se han asociado automáticamente con esta importación.</p>"
+msgstr "<p class=\"wpallimport-delete-posts-warning\"><strong>Importante</strong>: esta importación fue creada automáticamente por WP All Export. Todas las entradas exportadas por la tarea de exportación «%s» se han asociado automáticamente con esta importación.</p>"
 
 #: views/admin/manage/bulk.php:22 views/admin/manage/delete.php:16
 msgid "Delete associated files from media gallery"
@@ -350,7 +338,7 @@ msgstr "Nombre de la plantilla..."
 
 #: views/admin/import/template.php:185
 msgid "Save settings as a template"
-msgstr "Guardar ajustes como plantilla"
+msgstr "Guardar los ajustes como una plantilla"
 
 #: views/admin/import/template.php:89
 msgid "Decode HTML entities with <b>html_entity_decode</b>"
@@ -390,7 +378,7 @@ msgstr "Se crearán las taxonomías que aún no existen en tu sitio."
 
 #: views/admin/import/template/_taxonomies_template.php:303
 msgid "Show \"private\" taxonomies"
-msgstr "Mostrar taxonomías \"privadas\""
+msgstr "Mostrar taxonomías «privadas»"
 
 #: views/admin/import/template/_taxonomies_template.php:288
 msgid "Apply mapping rules before splitting via separator symbol"
@@ -474,7 +462,7 @@ msgstr "Establecer padre de la entrada"
 
 #: views/admin/import/template/_other_template.php:237
 msgid "Enter the slug of the desired post parent. If adding the child and parent posts in the same import, set 'Records per Iteration' to 1, run the import twice, or run separate imports for child and parent posts."
-msgstr "Introduce el slug del padre de la entrada deseado. Si añades las entradas hijo y padre en la misma importación, establece la opción \"Registros por iteración\" a 1, ejecuta la importación dos veces o ejecuta importaciones separadas para las entradas hijo y las entradas padre."
+msgstr "Introduce el slug de la entrada superior deseada. Si añades las entradas hijas y superiores en la misma importación, establece la opción «Registros por iteración» a 1, ejecuta la importación dos veces o ejecuta importaciones separadas para las entradas hijo y las entradas padre."
 
 #: views/admin/import/template/_other_template.php:237
 msgid "Post Parent"
@@ -490,7 +478,7 @@ msgstr "Seleccionar padre de la página"
 
 #: views/admin/import/template/_other_template.php:211
 msgid "Enter the slug of the desired page parent. If adding the child and parent pages in the same import, set 'Records per Iteration' to 1, run the import twice, or run separate imports for child and parent pages."
-msgstr "Introduce el slug del padre de la página deseado. Si añades las páginas hijo y padre en la misma importación, establece la opción \"Registros por iteración\" a 1, ejecuta la importación dos veces o ejecuta importaciones separadas para las páginas hijo y las páginas padre."
+msgstr "Introduce el slug de la página superior deseada. Si añades las páginas hijas y superiores en la misma importación, establece la opción «Registros por iteración» a 1, ejecuta la importación dos veces o ejecuta importaciones separadas para las páginas hijo y las páginas padre."
 
 #: views/admin/import/template/_other_template.php:211
 msgid "Page Parent"
@@ -502,7 +490,7 @@ msgstr "Por defecto"
 
 #: views/admin/import/template/_other_template.php:185
 msgid "Select a template"
-msgstr "Seleccionar plantilla"
+msgstr "Seleccionar una plantilla"
 
 #: views/admin/import/template/_other_template.php:182
 msgid "Page Template"
@@ -813,7 +801,7 @@ msgstr "Elementos"
 
 #: views/admin/import/process.php:68
 msgid "Unfortunately, your server terminated the import process. Click here for our <a href=\"%s\" target=\"_blank\">troubleshooting guide</a>, or ask your web host to look in your error_log file for an error that takes place at the same time you are trying to run your import, and fix whatever setting is causing the import to fail."
-msgstr "Desafortunadamente, tu servidor ha abortado el proceso de importación. Haz clic aquí para ver nuestra <a href=\"%s\" target=\"_blank\">guía de solución de problemas</a>, o pide a tu proveedor web que busque en su archivo error_log un error que se produzca al mismo tiempo que cuando intentas ejecutar tu importación, y corrige cualquier ajuste que esté causando que la importación falle."
+msgstr "Desafortunadamente, tu servidor ha cancelado el proceso de importación. Haz clic aquí para ver nuestra <a href=\"%s\" target=\"_blank\">guía de solución de problemas</a>, o pide a tu proveedor web que busque en su archivo error_log un error que se produzca al mismo tiempo que cuando intentas ejecutar tu importación, y corrige cualquier ajuste que esté causando que la importación falle."
 
 #: views/admin/import/process.php:62
 msgid "Log"
@@ -873,7 +861,7 @@ msgstr "Tiempo transcurrido"
 
 #: views/admin/import/process.php:22
 msgid "Importing may take some time. Please do not close your browser or refresh the page until the process is complete."
-msgstr "La importación puede tardar un tiempo. Por favor, no cierres tu navegador ni recargues la página hasta completar el proceso."
+msgstr "La importación puede tardar un tiempo. Por favor, no cierres tu navegador ni recargues la página hasta que el proceso esté completo."
 
 #: views/admin/import/process.php:21
 msgid "Import <span id=\"status\">in Progress</span>"
@@ -885,11 +873,11 @@ msgstr "Jerarquía de las taxonomías de prueba"
 
 #: views/admin/import/preview_prices.php:19
 msgid "Sale Price"
-msgstr "Precio rebajado"
+msgstr "Precio de oferta"
 
 #: views/admin/import/preview_prices.php:18
 msgid "Regular Price"
-msgstr "Precio habitual"
+msgstr "Precio normal"
 
 #: views/admin/import/preview_prices.php:16
 msgid "Preview Prices"
@@ -1252,7 +1240,7 @@ msgstr "En lugar de eliminarla, cambiar el estado de la entrada a borrador"
 #: views/admin/import/options/_reimport_template.php:107
 #: views/admin/import/template/_custom_fields_template.php:42
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 #: views/admin/import/options/_reimport_options.php:32
 msgid "Instead of deletion, set Custom Field"
@@ -1309,7 +1297,7 @@ msgstr "Continuar"
 
 #: views/admin/import/options/_buttons_template.php:15
 msgid "Save Only"
-msgstr "Guardar solo"
+msgstr "Solo guardar"
 
 #: views/admin/import/options/_buttons_template.php:11
 msgid "Back to Step 3"
@@ -1513,11 +1501,11 @@ msgstr "es igual a"
 
 #: views/admin/import/element.php:146
 msgid "Select Rule"
-msgstr "Selecciona regla"
+msgstr "Seleccionar la regla"
 
 #: views/admin/import/element.php:140
 msgid "Select Element"
-msgstr "Selecciona elemento"
+msgstr "Seleccionar el elemento"
 
 #: views/admin/import/element.php:134 views/admin/import/element.php:186
 #: views/admin/import/options/_reimport_options.php:37
@@ -1864,7 +1852,7 @@ msgstr "Borrar"
 #: views/admin/history/index.php:52 views/admin/history/index.php:227
 #: views/admin/manage/index.php:44 views/admin/manage/index.php:349
 msgid "Bulk Actions"
-msgstr "Acciones en masa"
+msgstr "Acciones en lote"
 
 #: views/admin/history/index.php:42
 msgid "and processing"
@@ -1929,12 +1917,12 @@ msgstr "Extensiones gratuitas"
 
 #: views/admin/addons/index.php:41
 msgid "Purchase & Install"
-msgstr "Compra e instala"
+msgstr "Comprar e instalar"
 
 #: views/admin/addons/index.php:36 views/admin/addons/index.php:77
 #: views/admin/addons/index.php:82 views/admin/import/index.php:108
 msgid "Download"
-msgstr "Descarga"
+msgstr "Descargar"
 
 #: views/admin/addons/index.php:29 views/admin/addons/index.php:70
 msgid " required"
@@ -1970,7 +1958,7 @@ msgstr "Versión Pro"
 
 #: plugin.php:299
 msgid "WP All Import Pro Version"
-msgstr "WP All Import version Pro"
+msgstr "WP All Import versión Pro"
 
 #: models/import/record.php:2290
 msgid "<b>ERROR</b> Could not insert term relationship into the database"
@@ -2322,7 +2310,7 @@ msgstr "<b>ADVERTENCIA</b>: No se crearán imágenes destacadas. No se ha encont
 
 #: models/import/record.php:601 models/import/record.php:712
 msgid "<b>WARNING</b>"
-msgstr "<b> ADVERTENCIA</b>"
+msgstr "<b>ADVERTENCIA</b>"
 
 #: models/import/record.php:380
 msgid "Composing terms for `%s` taxonomy..."
@@ -2391,7 +2379,7 @@ msgstr "Componiendo títulos..."
 
 #: models/import/record.php:68
 msgid "WP All Import requires the SimpleXML PHP module to be installed. This is a standard feature of PHP, and is necessary for WP All Import to read the files you are trying to import.<br/>Please contact your web hosting provider and ask them to install and activate the SimpleXML PHP module."
-msgstr "WP All Import requiere el módulo de PHP SimpleXML. Esta es una característica estándar de PHP y es necesaria para que WP All Import pueda leer los archivos que estás intentando importar.<br/>Por favor, ponte en contacto con tu proveedor de alojamiento web y pídeles que instalen y activen el módulo de PHP SimpleXML."
+msgstr "WP All Import necesita el módulo de PHP SimpleXML. Esta es una característica estándar de PHP y es necesaria para que WP All Import pueda leer los archivos que estás intentando importar.<br/>Por favor, ponte en contacto con tu proveedor de alojamiento web y pídeles que instalen y activen el módulo de PHP SimpleXML."
 
 #: models/import/record.php:67
 msgid "Required PHP components are missing."
@@ -2423,51 +2411,51 @@ msgstr "<strong>Advertencia:</strong>"
 
 #: helpers/wp_all_import_template_notifications.php:81
 msgid "The import template you are using requires an Add-On for WP All Import. If you continue without using this Add-On your data may import incorrectly."
-msgstr "La plantilla de importación que estás usando requiere una extensión de WP All Import. Si continúas sin usar esta extensión tus datos puede que se importen incorrectamente."
+msgstr "La plantilla de importación que estás usando necesita una extensión de WP All Import. Si continúas sin usar esta extensión tus datos puede que se importen incorrectamente."
 
 #: helpers/wp_all_import_template_notifications.php:76
 msgid "The import template you are using requires the Yoast SEO Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/yoast-seo-settings-xml-csv-import/\" target=\"_blank\">Download the Yoast SEO Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de Yoast SEO. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/yoast-seo-settings-xml-csv-import/\" target=\"_blank\">Descargar la extensión de Yoast SEO</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de Yoast SEO. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/yoast-seo-settings-xml-csv-import/\" target=\"_blank\">Descargar la extensión de Yoast SEO</a>."
 
 #: helpers/wp_all_import_template_notifications.php:70
 msgid "The import template you are using requires the WP Job Manager Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/wp-job-manager-xml-csv-listings-import/\" target=\"_blank\">Download the WP Job Manager Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de WP Job Manager. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/wp-job-manager-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de WP Job Manager</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de WP Job Manager. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/wp-job-manager-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de WP Job Manager</a>."
 
 #: helpers/wp_all_import_template_notifications.php:64
 msgid "The import template you are using requires the Reales WP Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/reales-wp-xml-csv-property-listings-import/\" target=\"_blank\">Download the Reales WP Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de WP Reales. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/reales-wp-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de WP Reales</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de WP Reales. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/reales-wp-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de WP Reales</a>."
 
 #: helpers/wp_all_import_template_notifications.php:58
 msgid "The import template you are using requires the Listify Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/listify-xml-csv-listings-import/\" target=\"_blank\">Download the Listify Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de Listify. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/listify-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de Listify</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de Listify. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/listify-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de Listify</a>."
 
 #: helpers/wp_all_import_template_notifications.php:52
 msgid "The import template you are using requires the Jobify Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/jobify-xml-csv-listings-import/\" target=\"_blank\">Download the Jobify Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de Jobify. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/jobify-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de Jobify</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de Jobify. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/jobify-xml-csv-listings-import/\" target=\"_blank\">Descargar la extensión de Jobify</a>."
 
 #: helpers/wp_all_import_template_notifications.php:46
 msgid "The import template you are using requires the RealHomes Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/realhomes-xml-csv-property-listings-import/\" target=\"_blank\">Download the RealHomes Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de RealHomes. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/realhomes-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de RealHomes</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de RealHomes. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/realhomes-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de RealHomes</a>."
 
 #: helpers/wp_all_import_template_notifications.php:39
 msgid "The import template you are using requires the WP Residence Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/wp-residence-add-on-for-wp-all-import/\" target=\"_blank\">Download the WP Residence Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de WP Residence. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/wp-residence-add-on-for-wp-all-import/\" target=\"_blank\">Descargar la extensión de WP Residence</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de WP Residence. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/wp-residence-add-on-for-wp-all-import/\" target=\"_blank\">Descargar la extensión de WP Residence</a>."
 
 #: helpers/wp_all_import_template_notifications.php:32
 msgid "The import template you are using requires the Realia Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"https://wordpress.org/plugins/realia-xml-csv-property-listings-import/\" target=\"_blank\">Download the Realia Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de Realia. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/realia-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de Realia</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de Realia. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"https://wordpress.org/plugins/realia-xml-csv-property-listings-import/\" target=\"_blank\">Descargar la extensión de Realia</a>."
 
 #: helpers/wp_all_import_template_notifications.php:27
 msgid "The import template you are using requires the WooCommerce Import Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"http://www.wpallimport.com/woocommerce-product-import/\" target=\"_blank\">Purchase the WooCommerce Import Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de WooCommerce Import. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"http://www.wpallimport.com/woocommerce-product-import/\" target=\"_blank\">Comprar la extensión WooCommerce Import</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de WooCommerce Import. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"http://www.wpallimport.com/woocommerce-product-import/\" target=\"_blank\">Comprar la extensión WooCommerce Import</a>."
 
 #: helpers/wp_all_import_template_notifications.php:23
 msgid "The import template you are using requires the User Import Add-On. If you continue without it your data may import incorrectly.<br/><br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Purchase the User Import Add-On</a>."
-msgstr "La plantilla de importación que estás usando requiere la extensión de importación de usuarios. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Comprar la extensión de importación de usuarios</a>."
+msgstr "La plantilla de importación que estás usando necesita la extensión de importación de usuarios. Si continúas sin usarla tus datos puede que se importen incorrectamente.<br/><br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Comprar la extensión de importación de usuarios</a>."
 
 #: helpers/wp_all_import_is_json.php:27
 msgid "Unknown json error"
-msgstr "Error json desconocido"
+msgstr "Error JSON desconocido"
 
 #: helpers/wp_all_import_is_json.php:24
 msgid "Malformed UTF-8 characters, possibly incorrectly encoded"
@@ -2475,7 +2463,7 @@ msgstr "Caracteres de UTF-8 con formato incorrecto, posiblemente incorrectamente
 
 #: helpers/wp_all_import_is_json.php:21
 msgid "Syntax error, malformed JSON"
-msgstr "Error de sintaxis, el archivo JSON no está bien creado"
+msgstr "Error de sintaxis, el archivo JSON no está bien formado"
 
 #: helpers/wp_all_import_is_json.php:18
 msgid "Unexpected control character found"
@@ -2538,7 +2526,7 @@ msgstr "La limpieza se ha completado con éxito."
 
 #: controllers/admin/settings.php:268
 msgid "Files not found"
-msgstr "No se han encontrado los archivos"
+msgstr "No se han encontrado archivos"
 
 #: controllers/admin/settings.php:140
 msgid "%d template deleted"
@@ -2612,7 +2600,7 @@ msgstr "Importación cancelada"
 
 #: controllers/admin/import.php:2542
 msgid "Complete"
-msgstr "Completo"
+msgstr "Completado"
 
 #: controllers/admin/import.php:2542
 msgid "Canceled"
@@ -2621,11 +2609,11 @@ msgstr "Cancelado"
 #: controllers/admin/import.php:2171 controllers/admin/import.php:2454
 #: controllers/admin/import.php:2535
 msgid "%d %ss created %d updated %d deleted %d skipped"
-msgstr "%d %ss creado %d actualiado %d borrado %d saltado"
+msgstr "%d %ss creado %d actualizado %d borrado %d omitido"
 
 #: controllers/admin/import.php:1999
 msgid "Configuration updated"
-msgstr "Ajustes actualizados"
+msgstr "Configuración actualizada"
 
 #: controllers/admin/import.php:1927
 msgid "Import created"
@@ -2641,7 +2629,7 @@ msgstr "No se ha encontrado el elemento raíz del feed subido."
 
 #: controllers/admin/import.php:1830
 msgid "<strong>Warning:</strong> this file does not have the same structure as the last file associated with this import. WP All Import won't be able to import this file with your current settings. Probably you'll need to adjust your XPath in the \"Configure Advanced Settings\" box below, and reconfigure your import by clicking \"Edit\" on the Manage Imports page."
-msgstr "<strong>Advertencia:</strong> este archivo no tiene la misma estructura que el último archivo asociado a esta importación. WP All Import no podrá importar este archivo con los ajustes actuales. Probablemente tendrás que ajustar tu XPath en la sección \"Configurar ajustes avanzados\" de abajo y reconfigurar tu importación haciendo clic en \"Editar\" en la página Gestionar importaciones."
+msgstr "<strong>Advertencia:</strong> este archivo no tiene la misma estructura que el último archivo asociado a esta importación. WP All Import no podrá importar este archivo con los ajustes actuales. Probablemente tendrás que ajustar tu XPath en la sección «Configurar ajustes avanzados» de abajo y reconfigurar tu importación haciendo clic en «Editar» en la página «Gestionar importaciones»."
 
 #: controllers/admin/import.php:1786
 msgid "WP All Import doesn't support this import type."
@@ -2736,7 +2724,7 @@ msgstr "Extracto"
 
 #: controllers/admin/import.php:1202 controllers/admin/import.php:1329
 msgid "There is no data to preview"
-msgstr "No hay datos que previsualizar"
+msgstr "No hay datos para previsualizar"
 
 #: controllers/admin/import.php:1161 controllers/admin/import.php:1311
 msgid "Error parsing: String could not be parsed as XML"
@@ -2782,7 +2770,7 @@ msgstr "No se han encontrado variaciones coincidentes para el XPath especificado
 
 #: controllers/admin/import.php:512 controllers/admin/import.php:655
 msgid "Your XPath is empty.<br/><br/>Please enter an XPath expression, or click \"get default XPath\" to get the default XPath."
-msgstr "Tu XPath está vacío.<br/><br/>Por favor, introduce una expresión XPath, o haz clic en \"get default XPath\" para obtener el XPath predeterminado."
+msgstr "Tu XPath está vacío.<br/><br/>Por favor, introduce una expresión XPath, o haz clic en «Obtener XPath por defecto» para obtener el XPath por defecto."
 
 #: controllers/admin/import.php:470
 msgid "Warning: No matching elements found for XPath expression from the import being updated. It probably means that new XML file has different format. Though you can update XPath, procceed only if you sure about update operation being valid."
@@ -2794,7 +2782,7 @@ msgstr "XPath debe emparejar solo elementos"
 
 #: controllers/admin/import.php:436 controllers/admin/import.php:662
 msgid "Your XPath is not valid.<br/><br/>Click \"get default XPath\" to get the default XPath."
-msgstr "Tu XPath no es válido.<br/><br/>Haz clic en \"get default XPath\" para obtener el XPath predeterminado."
+msgstr "Tu XPath no es válido.<br/><br/>Haz clic en «Obtener XPath por defecto» para obtener el XPath por defecto."
 
 #: controllers/admin/import.php:431
 msgid "No elements selected"
@@ -2815,7 +2803,7 @@ msgstr "No se puede descargar el feed."
 
 #: controllers/admin/import.php:246
 msgid "The import template you are using requires User Import Add-On.<br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Purchase the User Import Add-On</a>"
-msgstr "La plantilla de importación que estás usando requiere la extensión de importación de usuarios.<br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Compra la extensión de importación de usuarios</a>"
+msgstr "La plantilla de importación que estás usando necesita la extensión de importación de usuarios.<br/><a href=\"http://www.wpallimport.com/add-ons/user-import/?utm_source=wordpress.org&utm_medium=wpai-import-template&utm_campaign=free+wp+all+export+plugin\" target=\"_blank\">Compra la extensión de importación de usuarios</a>"
 
 #: controllers/admin/import.php:243 controllers/admin/import.php:274
 msgid "Certain columns are required to be present in your file to enable it to be re-imported with WP All Import. These columns are missing. Re-export your file using WP All Export, and don't delete any of the columns when editing it. Then, re-import will work correctly."
@@ -2823,7 +2811,7 @@ msgstr "Ciertas columnas deben estar presentes en el archivo para que se pueda v
 
 #: controllers/admin/import.php:240
 msgid "File is no longer in the correct format"
-msgstr "El archivo no está en el formato correcto"
+msgstr "El archivo ya no está en el formato correcto"
 
 #: controllers/admin/import.php:197
 msgid "Previous import for update must be selected to proceed with a new one"
@@ -2835,7 +2823,7 @@ msgstr "Seleccionar un tipo de elemento para importar los datos"
 
 #: controllers/admin/import.php:167
 msgid "Required PHP components are missing.<br/><br/>WP All Import requires DOMDocument, XMLReader, and XMLWriter PHP modules to be installed.<br/>These are standard features of PHP, and are necessary for WP All Import to read the files you are trying to import.<br/>Please contact your web hosting provider and ask them to install and activate the DOMDocument, XMLReader, and XMLWriter PHP modules."
-msgstr "Faltan algunos componentes de PHP necesarios.<br/><br/>WP All Import requiere que los módulos de PHP DOMDocument, XMLReader y XMLWriter estén instalados.<br/>Estas son características estándar de PHP y son necesarias para que WP All Import pueda leer los archivos que estás intentando importar.<br/>Ponte en contacto con tu proveedor de alojamiento web y pide que instalen y activen los módulos de PHP DOMDocument, XMLReader y XMLWriter."
+msgstr "Faltan algunos componentes de PHP necesarios.<br/><br/>WP All Import necesita que los módulos de PHP DOMDocument, XMLReader y XMLWriter estén instalados.<br/>Estas son características estándar de PHP y son necesarias para que WP All Import pueda leer los archivos que estás intentando importar.<br/>Ponte en contacto con tu proveedor de alojamiento web y pide que instalen y activen los módulos de PHP DOMDocument, XMLReader y XMLWriter."
 
 #: controllers/admin/import.php:155
 msgid "This import has been deleted."
@@ -2987,7 +2975,7 @@ msgstr "- El adjunto de la imagen '%s' se ha creado con éxito"
 #: classes/api.php:514 models/import/record.php:1631
 #: models/import/record.php:1814
 msgid "- <b>WARNING</b>"
-msgstr "- <b>ATENCIÓN</b>"
+msgstr "- <b>ADVERTENCIA</b>"
 
 #: classes/api.php:495
 msgid "- Creating an attachment for file `%s`"
@@ -3131,7 +3119,7 @@ msgstr "%d imagen descargada correctamente en %s segundos"
 
 #: actions/wp_ajax_test_images.php:86
 msgid "File `%s` is not a valid image."
-msgstr "El archivo `%s` no es una imagen válida."
+msgstr "El archivo «%s» no es una imagen válida."
 
 #: actions/wp_ajax_test_images.php:84
 msgid "File `%s` cannot be saved locally"
@@ -3202,7 +3190,7 @@ msgstr "<strong>Advertencia:</strong> Tienes que <a href=\"http://www.wpallimpor
 #: actions/admin_notices.php:122 controllers/admin/import.php:1425
 #: controllers/admin/import.php:1642 controllers/admin/import.php:2075
 msgid "<strong>Warning:</strong> your content is blank."
-msgstr "<strong>Advertencia:</strong> tu contenido está vacío."
+msgstr "<strong>Advertencia:</strong> tu contenido está en blanco."
 
 #: actions/admin_notices.php:119 controllers/admin/import.php:1418
 #: controllers/admin/import.php:1640 controllers/admin/import.php:2073

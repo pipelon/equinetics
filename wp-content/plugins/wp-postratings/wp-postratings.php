@@ -3,7 +3,7 @@
 Plugin Name: WP-PostRatings
 Plugin URI: https://lesterchan.net/portfolio/programming/php/
 Description: Adds an AJAX rating system for your WordPress site's content.
-Version: 1.88
+Version: 1.89
 Author: Lester 'GaMerZ' Chan
 Author URI: https://lesterchan.net
 Text Domain: wp-postratings
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin version
  * Set wp-postratings plugin version.
  */
-define( 'WP_POSTRATINGS_VERSION', '1.88' );
+define( 'WP_POSTRATINGS_VERSION', '1.89' );
 
 /**
  * Rating logs table name
@@ -1181,20 +1181,20 @@ function expand_ratings_template($template, $post_data, $post_ratings_data = nul
 
 	if ( strpos( $template, '%POST_EXCERPT%') !== false ) {
 		if ( get_the_ID() !== $post_id ) {
-			$post = &get_post($post_id);
+			$post = get_post($post_id);
 		}
 		$post_excerpt = ratings_post_excerpt( $post_id, $post->post_excerpt, $post->post_content );
 		$value = str_replace('%POST_EXCERPT%', $post_excerpt, $value );
 	}
 	if ( strpos( $template, '%POST_CONTENT%' ) !== false ) {
 		if ( get_the_ID() !== $post_id ) {
-			$post = &get_post( $post_id );
+			$post = get_post( $post_id );
 		}
 		$value = str_replace('%POST_CONTENT%', get_the_content(), $value );
 	}
 	if ( strpos( $template, '%POST_THUMBNAIL%') !== false ) {
 		if ( get_the_ID() !== $post_id ) {
-			$post = &get_post( $post_id );
+			$post = get_post( $post_id );
 		}
 		$value = str_replace( '%POST_THUMBNAIL%', get_the_post_thumbnail( $post, 'thumbnail' ), $value );
 	}
@@ -1269,5 +1269,5 @@ function expand_ratings_template($template, $post_data, $post_ratings_data = nul
 		$google_structured_data =  apply_filters( 'wp_postratings_google_structured_data', ( empty( $itemtype ) ? $ratings_meta : ( $post_meta . $ratings_meta ) ) );
 	}
 
-	return apply_filters( 'wp_postratings_expand_ratings_template', $value . $google_structured_data );
+	return apply_filters( 'wp_postratings_expand_ratings_template', $value . $google_structured_data, $post_id );
 }

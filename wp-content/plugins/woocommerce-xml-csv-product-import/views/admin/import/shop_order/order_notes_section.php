@@ -178,7 +178,7 @@
 									<span class="order-separator-label wpallimport-slide-content" style="padding-left:0;">	
 										<label><?php _e('Multiple notes separated by', PMWI_Plugin::TEXT_DOMAIN); ?></label>
 										<input type="text" class="short rad4 order-separator-input" name="pmwi_order[notes_repeater_mode_separator]" value="<?php echo esc_attr($post['pmwi_order']['notes_repeater_mode_separator']) ?>" style="width:10%; text-align: center;"/>
-										<a href="#help" class="wpallimport-help" style="top:0px;left:8px;" original-title="For example, two notes would be imported like this Note 1|Note 2">?</a>							
+										<a href="#help" class="wpallimport-help" style="top:0px;left:8px;" title="For example, two notes would be imported like this Note 1|Note 2">?</a>
 									</span>
 								</div>
 							</div>								
@@ -198,7 +198,7 @@
 							<div class="form-field input" style="padding-left: 20px;">
 								<label class="order-separator-label" style="line-height: 30px;"><?php _e('Multiple notes separated by', PMWI_Plugin::TEXT_DOMAIN); ?></label>
 								<input type="text" class="short rad4 order-separator-input" name="pmwi_order[notes_repeater_mode_separator]" value="<?php echo esc_attr($post['pmwi_order']['notes_repeater_mode_separator']) ?>" style="width:10%; text-align: center;"/>
-								<a href="#help" class="wpallimport-help" style="top:0px;left:8px;" original-title="For example, two notes would be imported like this 'Note 1|Note 2'">?</a>							
+								<a href="#help" class="wpallimport-help" style="top:0px;left:8px;" title="For example, two notes would be imported like this 'Note 1|Note 2'">?</a>
 							</div>
 							<?php endif; ?>	
 						</div>				

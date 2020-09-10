@@ -307,7 +307,7 @@ class PMXI_API
 				$is_full_width = true;
 				if ( ! empty($params['sub_fields']) ){
 					foreach ($params['sub_fields'] as $sub_field) {
-						if ($sub_field[0]['params']['is_main_field']){
+						if (!empty($sub_field[0]['params']['is_main_field'])){
 							PMXI_API::add_field($sub_field[0]['type'], $sub_field[0]['label'], $sub_field[0]['params']);			
 							$is_full_width = false;
 							break;
@@ -333,8 +333,9 @@ class PMXI_API
 								<?php
 									if ( ! empty($params['sub_fields']) ){
 										foreach ($params['sub_fields'] as $sub_field) {																						
-											if ( ! $sub_field[0]['params']['is_main_field'])
-												PMXI_API::add_field($sub_field[0]['type'], $sub_field[0]['label'], $sub_field[0]['params']);																																					
+											if ( empty($sub_field[0]['params']['is_main_field']) ) {
+                                                PMXI_API::add_field($sub_field[0]['type'], $sub_field[0]['label'], $sub_field[0]['params']);
+                                            }
 										}
 									}
 								?>
@@ -360,7 +361,7 @@ class PMXI_API
 
 	}
 
-	public static function upload_image($pid, $img_url, $download_images, $logger, $create_image = false, $image_name = "", $file_type = 'images', $check_existing = true, $articleData = false){
+	public static function upload_image($pid, $img_url, $download_images, $logger, $create_image = false, $image_name = "", $file_type = 'images', $check_existing = true, $articleData = false, $importData = false) {
 
 		if (empty($img_url)) return false;
 		
@@ -370,15 +371,21 @@ class PMXI_API
 			$img_ext = pmxi_getExtensionFromStr($img_url);			
 			$default_extension = pmxi_getExtension($bn);
 			if ($img_ext == "") $img_ext = pmxi_get_remote_image_ext($img_url);
-			
 			// generate local file name
 			$image_name = apply_filters("wp_all_import_api_image_filename", urldecode(sanitize_file_name((($img_ext) ? str_replace("." . $default_extension, "", $bn) : $bn))) . (("" != $img_ext) ? '.' . $img_ext : ''), $img_url, $pid);
-
 		}
 
-		$uploads = wp_upload_dir();
+        $current_xml_node = false;
+		if (!empty($importData['current_xml_node'])) {
+		    $current_xml_node = $importData['current_xml_node'];
+        }
+		$import_id = false;
+		if (!empty($importData['import'])) {
+		    $import_id = $importData['import']->id;
+        }
 
-		$uploads = apply_filters('wp_all_import_images_uploads_dir', $uploads, $articleData, false, false);
+		$uploads = wp_upload_dir();
+		$uploads = apply_filters('wp_all_import_images_uploads_dir', $uploads, $articleData, $current_xml_node, $import_id);
 
 		$targetDir = $uploads['path'];
 		$targetUrl = $uploads['url'];

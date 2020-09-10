@@ -958,6 +958,10 @@ function setPreviewDom() {
 }
 
 function updatePreview() {
+  if (!previewDom) {
+    return setPreviewDom();
+  }
+
   var markup = FormEditor.getValue(); // replace template tags (twice, to allow for nested tags)
 
   markup = markup.replace(templateRegex, '').replace(templateRegex, ''); // update dom
@@ -1285,7 +1289,7 @@ function Overlay(vnode) {
   }
 
   function view(vnode) {
-    return [m('div.overlay-wrap', m('div.overlay', {
+    return [m('div.mc4wp-overlay-wrap', m('div.mc4wp-overlay', {
       oncreate: function oncreate(vnode) {
         element = vnode.dom;
         onWindowResize();
@@ -1295,7 +1299,7 @@ function Overlay(vnode) {
       "class": 'close dashicons dashicons-no',
       title: i18n.close,
       onclick: close
-    }), vnode.children])), m('div.overlay-background', {
+    }), vnode.children])), m('div.mc4wp-overlay-background', {
       title: i18n.close,
       onclick: close
     })];
@@ -1438,9 +1442,9 @@ window.mc4wp.forms.editor = editor;
       cm.removeKeyMap("autoCloseTags");
     if (!val) return;
     var map = {name: "autoCloseTags"};
-    if (typeof val != "object" || val.whenClosing)
+    if (typeof val != "object" || val.whenClosing !== false)
       map["'/'"] = function(cm) { return autoCloseSlash(cm); };
-    if (typeof val != "object" || val.whenOpening)
+    if (typeof val != "object" || val.whenOpening !== false)
       map["'>'"] = function(cm) { return autoCloseGT(cm); };
     cm.addKeyMap(map);
   });
@@ -5032,7 +5036,7 @@ window.mc4wp.forms.editor = editor;
     var x, y, space = display.lineSpace.getBoundingClientRect();
     // Fails unpredictably on IE[67] when mouse is dragged around quickly.
     try { x = e.clientX - space.left; y = e.clientY - space.top; }
-    catch (e) { return null }
+    catch (e$1) { return null }
     var coords = coordsChar(cm, x, y), line;
     if (forRect && coords.xRel > 0 && (line = getLine(cm.doc, coords.line).text).length == coords.ch) {
       var colDiff = countColumn(line, line.length, cm.options.tabSize) - line.length;
@@ -8617,7 +8621,7 @@ window.mc4wp.forms.editor = editor;
           cm.display.input.focus();
         }
       }
-      catch(e){}
+      catch(e$1){}
     }
   }
 
@@ -8713,7 +8717,7 @@ window.mc4wp.forms.editor = editor;
     46: "Delete", 59: ";", 61: "=", 91: "Mod", 92: "Mod", 93: "Mod",
     106: "*", 107: "=", 109: "-", 110: ".", 111: "/", 145: "ScrollLock",
     173: "-", 186: ";", 187: "=", 188: ",", 189: "-", 190: ".", 191: "/", 192: "`", 219: "[", 220: "\\",
-    221: "]", 222: "'", 63232: "Up", 63233: "Down", 63234: "Left", 63235: "Right", 63272: "Delete",
+    221: "]", 222: "'", 224: "Mod", 63232: "Up", 63233: "Down", 63234: "Left", 63235: "Right", 63272: "Delete",
     63273: "Home", 63275: "End", 63276: "PageUp", 63277: "PageDown", 63302: "Insert"
   };
 
@@ -8848,7 +8852,7 @@ window.mc4wp.forms.editor = editor;
     var base = name;
     if (event.altKey && base != "Alt") { name = "Alt-" + name; }
     if ((flipCtrlCmd ? event.metaKey : event.ctrlKey) && base != "Ctrl") { name = "Ctrl-" + name; }
-    if ((flipCtrlCmd ? event.ctrlKey : event.metaKey) && base != "Cmd") { name = "Cmd-" + name; }
+    if ((flipCtrlCmd ? event.ctrlKey : event.metaKey) && base != "Mod") { name = "Cmd-" + name; }
     if (!noShift && event.shiftKey && base != "Shift") { name = "Shift-" + name; }
     return name
   }
@@ -9669,7 +9673,7 @@ window.mc4wp.forms.editor = editor;
       mY = e.touches[0].clientY;
     } else {
       try { mX = e.clientX; mY = e.clientY; }
-      catch(e) { return false }
+      catch(e$1) { return false }
     }
     if (mX >= Math.floor(cm.display.gutters.getBoundingClientRect().right)) { return false }
     if (prevent) { e_preventDefault(e); }
@@ -9769,7 +9773,7 @@ window.mc4wp.forms.editor = editor;
       for (var i = newBreaks.length - 1; i >= 0; i--)
         { replaceRange(cm.doc, val, newBreaks[i], Pos(newBreaks[i].line, newBreaks[i].ch + val.length)); }
     });
-    option("specialChars", /[\u0000-\u001f\u007f-\u009f\u00ad\u061c\u200b-\u200f\u2028\u2029\ufeff\ufff9-\ufffc]/g, function (cm, val, old) {
+    option("specialChars", /[\u0000-\u001f\u007f-\u009f\u00ad\u061c\u200b-\u200c\u200e\u200f\u2028\u2029\ufeff\ufff9-\ufffc]/g, function (cm, val, old) {
       cm.state.specialChars = new RegExp(val.source + (val.test("\t") ? "" : "|\t"), "g");
       if (old != Init) { cm.refresh(); }
     });
@@ -10189,7 +10193,7 @@ window.mc4wp.forms.editor = editor;
           { from = Pos(from.line, from.ch - deleted); }
         else if (cm.state.overwrite && !paste) // Handle overwrite
           { to = Pos(to.line, Math.min(getLine(doc, to.line).text.length, to.ch + lst(textLines).length)); }
-        else if (paste && lastCopied && lastCopied.lineWise && lastCopied.text.join("\n") == inserted)
+        else if (paste && lastCopied && lastCopied.lineWise && lastCopied.text.join("\n") == textLines.join("\n"))
           { from = to = Pos(from.line, 0); }
       }
       var changeEvent = {from: from, to: to, text: multiPaste ? multiPaste[i$1 % multiPaste.length] : textLines,
@@ -11843,7 +11847,7 @@ window.mc4wp.forms.editor = editor;
 
   addLegacyProps(CodeMirror);
 
-  CodeMirror.version = "5.54.0";
+  CodeMirror.version = "5.57.0";
 
   return CodeMirror;
 
@@ -12294,17 +12298,18 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "monochrome", "min-monochrome", "max-monochrome", "resolution",
     "min-resolution", "max-resolution", "scan", "grid", "orientation",
     "device-pixel-ratio", "min-device-pixel-ratio", "max-device-pixel-ratio",
-    "pointer", "any-pointer", "hover", "any-hover"
+    "pointer", "any-pointer", "hover", "any-hover", "prefers-color-scheme"
   ], mediaFeatures = keySet(mediaFeatures_);
 
   var mediaValueKeywords_ = [
     "landscape", "portrait", "none", "coarse", "fine", "on-demand", "hover",
-    "interlace", "progressive"
+    "interlace", "progressive",
+    "dark", "light"
   ], mediaValueKeywords = keySet(mediaValueKeywords_);
 
   var propertyKeywords_ = [
     "align-content", "align-items", "align-self", "alignment-adjust",
-    "alignment-baseline", "anchor-point", "animation", "animation-delay",
+    "alignment-baseline", "all", "anchor-point", "animation", "animation-delay",
     "animation-direction", "animation-duration", "animation-fill-mode",
     "animation-iteration-count", "animation-name", "animation-play-state",
     "animation-timing-function", "appearance", "azimuth", "backdrop-filter",
@@ -12355,7 +12360,9 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "list-style-image", "list-style-position", "list-style-type", "margin",
     "margin-bottom", "margin-left", "margin-right", "margin-top", "marks",
     "marquee-direction", "marquee-loop", "marquee-play-count", "marquee-speed",
-    "marquee-style", "max-block-size", "max-height", "max-inline-size",
+    "marquee-style", "mask-clip", "mask-composite", "mask-image", "mask-mode",
+    "mask-origin", "mask-position", "mask-repeat", "mask-size","mask-type",
+    "max-block-size", "max-height", "max-inline-size",
     "max-width", "min-block-size", "min-height", "min-inline-size", "min-width",
     "mix-blend-mode", "move-to", "nav-down", "nav-index", "nav-left", "nav-right",
     "nav-up", "object-fit", "object-position", "offset", "offset-anchor",
@@ -12392,7 +12399,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "text-height", "text-indent", "text-justify", "text-orientation",
     "text-outline", "text-overflow", "text-rendering", "text-shadow",
     "text-size-adjust", "text-space-collapse", "text-transform",
-    "text-underline-position", "text-wrap", "top", "transform", "transform-origin",
+    "text-underline-position", "text-wrap", "top", "touch-action", "transform", "transform-origin",
     "transform-style", "transition", "transition-delay", "transition-duration",
     "transition-property", "transition-timing-function", "translate",
     "unicode-bidi", "user-select", "vertical-align", "visibility", "voice-balance",
@@ -12404,11 +12411,11 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "flood-opacity", "lighting-color", "stop-color", "stop-opacity", "pointer-events",
     "color-interpolation", "color-interpolation-filters",
     "color-rendering", "fill", "fill-opacity", "fill-rule", "image-rendering",
-    "marker", "marker-end", "marker-mid", "marker-start", "shape-rendering", "stroke",
+    "marker", "marker-end", "marker-mid", "marker-start", "paint-order", "shape-rendering", "stroke",
     "stroke-dasharray", "stroke-dashoffset", "stroke-linecap", "stroke-linejoin",
     "stroke-miterlimit", "stroke-opacity", "stroke-width", "text-rendering",
     "baseline-shift", "dominant-baseline", "glyph-orientation-horizontal",
-    "glyph-orientation-vertical", "text-anchor", "writing-mode"
+    "glyph-orientation-vertical", "text-anchor", "writing-mode",
   ], propertyKeywords = keySet(propertyKeywords_);
 
   var nonStandardPropertyKeywords_ = [
@@ -12475,7 +12482,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "after-white-space", "ahead", "alias", "all", "all-scroll", "alphabetic", "alternate",
     "always", "amharic", "amharic-abegede", "antialiased", "appworkspace",
     "arabic-indic", "armenian", "asterisks", "attr", "auto", "auto-flow", "avoid", "avoid-column", "avoid-page",
-    "avoid-region", "background", "backwards", "baseline", "below", "bidi-override", "binary",
+    "avoid-region", "axis-pan", "background", "backwards", "baseline", "below", "bidi-override", "binary",
     "bengali", "blink", "block", "block-axis", "bold", "bolder", "border", "border-box",
     "both", "bottom", "break", "break-all", "break-word", "bullets", "button", "button-bevel",
     "buttonface", "buttonhighlight", "buttonshadow", "buttontext", "calc", "cambodian",
@@ -12499,7 +12506,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "ethiopic-halehame-sid-et", "ethiopic-halehame-so-et",
     "ethiopic-halehame-ti-er", "ethiopic-halehame-ti-et", "ethiopic-halehame-tig",
     "ethiopic-numeric", "ew-resize", "exclusion", "expanded", "extends", "extra-condensed",
-    "extra-expanded", "fantasy", "fast", "fill", "fixed", "flat", "flex", "flex-end", "flex-start", "footnotes",
+    "extra-expanded", "fantasy", "fast", "fill", "fill-box", "fixed", "flat", "flex", "flex-end", "flex-start", "footnotes",
     "forwards", "from", "geometricPrecision", "georgian", "graytext", "grid", "groove",
     "gujarati", "gurmukhi", "hand", "hangul", "hangul-consonant", "hard-light", "hebrew",
     "help", "hidden", "hide", "higher", "highlight", "highlighttext",
@@ -12514,7 +12521,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "line-through", "linear", "linear-gradient", "lines", "list-item", "listbox", "listitem",
     "local", "logical", "loud", "lower", "lower-alpha", "lower-armenian",
     "lower-greek", "lower-hexadecimal", "lower-latin", "lower-norwegian",
-    "lower-roman", "lowercase", "ltr", "luminosity", "malayalam", "match", "matrix", "matrix3d",
+    "lower-roman", "lowercase", "ltr", "luminosity", "malayalam", "manipulation", "match", "matrix", "matrix3d",
     "media-controls-background", "media-current-time-display",
     "media-fullscreen-button", "media-mute-button", "media-play-button",
     "media-return-to-realtime-button", "media-rewind-button",
@@ -12523,13 +12530,13 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "media-volume-slider-container", "media-volume-sliderthumb", "medium",
     "menu", "menulist", "menulist-button", "menulist-text",
     "menulist-textfield", "menutext", "message-box", "middle", "min-intrinsic",
-    "mix", "mongolian", "monospace", "move", "multiple", "multiply", "myanmar", "n-resize",
+    "mix", "mongolian", "monospace", "move", "multiple", "multiple_mask_images", "multiply", "myanmar", "n-resize",
     "narrower", "ne-resize", "nesw-resize", "no-close-quote", "no-drop",
     "no-open-quote", "no-repeat", "none", "normal", "not-allowed", "nowrap",
     "ns-resize", "numbers", "numeric", "nw-resize", "nwse-resize", "oblique", "octal", "opacity", "open-quote",
     "optimizeLegibility", "optimizeSpeed", "oriya", "oromo", "outset",
     "outside", "outside-shape", "overlay", "overline", "padding", "padding-box",
-    "painted", "page", "paused", "persian", "perspective", "plus-darker", "plus-lighter",
+    "painted", "page", "paused", "persian", "perspective", "pinch-zoom", "plus-darker", "plus-lighter",
     "pointer", "polygon", "portrait", "pre", "pre-line", "pre-wrap", "preserve-3d",
     "progress", "push-button", "radial-gradient", "radio", "read-only",
     "read-write", "read-write-plaintext-only", "rectangle", "region",
@@ -12547,8 +12554,8 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "slider-vertical", "sliderthumb-horizontal", "sliderthumb-vertical", "slow",
     "small", "small-caps", "small-caption", "smaller", "soft-light", "solid", "somali",
     "source-atop", "source-in", "source-out", "source-over", "space", "space-around", "space-between", "space-evenly", "spell-out", "square",
-    "square-button", "start", "static", "status-bar", "stretch", "stroke", "sub",
-    "subpixel-antialiased", "super", "sw-resize", "symbolic", "symbols", "system-ui", "table",
+    "square-button", "start", "static", "status-bar", "stretch", "stroke", "stroke-box", "sub",
+    "subpixel-antialiased", "svg_masks", "super", "sw-resize", "symbolic", "symbols", "system-ui", "table",
     "table-caption", "table-cell", "table-column", "table-column-group",
     "table-footer-group", "table-header-group", "table-row", "table-row-group",
     "tamil",
@@ -12558,10 +12565,10 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
     "tigrinya-er-abegede", "tigrinya-et", "tigrinya-et-abegede", "to", "top",
     "trad-chinese-formal", "trad-chinese-informal", "transform",
     "translate", "translate3d", "translateX", "translateY", "translateZ",
-    "transparent", "ultra-condensed", "ultra-expanded", "underline", "unset", "up",
+    "transparent", "ultra-condensed", "ultra-expanded", "underline", "unidirectional-pan", "unset", "up",
     "upper-alpha", "upper-armenian", "upper-greek", "upper-hexadecimal",
     "upper-latin", "upper-norwegian", "upper-roman", "uppercase", "urdu", "url",
-    "var", "vertical", "vertical-text", "visible", "visibleFill", "visiblePainted",
+    "var", "vertical", "vertical-text", "view-box", "visible", "visibleFill", "visiblePainted",
     "visibleStroke", "visual", "w-resize", "wait", "wave", "wider",
     "window", "windowframe", "windowtext", "words", "wrap", "wrap-reverse", "x-large", "x-small", "xor",
     "xx-large", "xx-small"
@@ -12971,7 +12978,8 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
       return ret("meta", "meta");
     } else if (ch == "#" && stream.eatWhile(wordRE)) {
       return ret("variable", "property")
-    } else if (ch == "<" && stream.match("!--") || ch == "-" && stream.match("->")) {
+    } else if (ch == "<" && stream.match("!--") ||
+               (ch == "-" && stream.match("->") && !/\S/.test(stream.string.slice(0, stream.start)))) {
       stream.skipToEnd()
       return ret("comment", "comment")
     } else if (isOperatorChar.test(ch)) {

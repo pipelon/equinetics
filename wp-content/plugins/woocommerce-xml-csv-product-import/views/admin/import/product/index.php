@@ -106,7 +106,7 @@
 
 										<!-- ADDITIONAL TABS -->
 
-										<?php do_action('pmwi_tab_content'); ?>
+										<?php do_action('pmwi_tab_content', $post ); ?>
 
 										<!-- OPTIONS -->
 

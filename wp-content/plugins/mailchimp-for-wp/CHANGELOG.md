@@ -1,6 +1,20 @@
 Changelog
 =========
 
+#### 4.8.1 - Aug 25, 2020
+
+- Fix notice by explicitly setting `permission_callback` on registered REST route.
+- Minor internal code improvements.
+
+#### 4.8 - Jul 9, 2020
+
+- Plugin now requires PHP 5.3 or higher.
+- Prefix overlay classname to prevent styling collissions with other plugins.
+- Form sign-ups can now add tags to both new and existing subscribers.
+- Update JavaScript dependencies.
+- Register script early to work with Gutenberg preview.
+
+
 #### 4.7.8 - Jun 04, 2020
 
 - Add `MC4WP_API_V3::add_template` method.

@@ -89,8 +89,16 @@ final class XmlImportWooCommerceService {
         if (empty($importID)) {
             $importID = $input->get('import_id');
         }
-        if (empty($importID)) {
+        if (empty($importID) && !empty(\PMXI_Plugin::$session)) {
             $importID = \PMXI_Plugin::$session->import_id;
+        }
+        if (empty($importID) && php_sapi_name() === 'cli') {
+            global $argv;
+            foreach ($argv as $key => $arg) {
+                if ($arg === 'run' && !empty($argv[$key + 1])) {
+                    $importID = $argv[$key + 1];
+                }
+            }
         }
         if ($importID && ($this->import->isEmpty() || $this->import->id != $importID)) {
             $this->import->getById($importID);
@@ -162,14 +170,29 @@ final class XmlImportWooCommerceService {
         $parentAttributes = get_post_meta($product->get_id(), '_product_attributes', TRUE);
         // Sync attribute terms with parent product.
         if (!empty($parentAttributes)) {
-            $variation_attributes = $product->get_variation_attributes();
+            $variation_attributes = [];
+            foreach ($variations as $variation) {
+                $attributes = $variation->get_attributes();
+                if (!empty($attributes)) {
+                    foreach ($attributes as $attribute_name => $attribute_value) {
+                        if (!isset($variation_attributes[$attribute_name])) {
+                            $variation_attributes[$attribute_name] = [];
+                        }
+                        if (!in_array($attribute_value, $variation_attributes[$attribute_name])) {
+                            $variation_attributes[$attribute_name][] = $attribute_value;
+                        }
+                    }
+                }
+            }
+//            $variation_attributes = $product->get_variation_attributes();
             foreach ($parentAttributes as $name => $parentAttribute) {
                 // Only in case if attribute marked to import as taxonomy terms.
                 if ($parentAttribute['is_taxonomy']) {
+                    $taxonomy_name = strpos($name, "%") !== FALSE ? urldecode($name) : $name;
                     $terms = [];
                     if (!empty($variation_attributes[$name])) {
                         foreach ($variation_attributes[$name] as $attribute_term_slug) {
-                            $term = get_term_by('slug', $attribute_term_slug, $name);
+                            $term = get_term_by('slug', $attribute_term_slug, $taxonomy_name);
                             if ($term && !is_wp_error($term)) {
                                 $terms[] = $term->term_taxonomy_id;
                             }
@@ -179,7 +202,7 @@ final class XmlImportWooCommerceService {
                         $terms = array_filter($terms);
                     }
                     if (!empty($terms)) {
-                        $this->getTaxonomiesService()->associateTerms($parentID, $terms, $name);
+                        $this->getTaxonomiesService()->associateTerms($parentID, $terms, $taxonomy_name);
                     }
                 }
             }
@@ -214,7 +237,28 @@ final class XmlImportWooCommerceService {
                             }
                         }
                     }
-                    $defaultAttributes = $defaultVariation ? $defaultVariation->get_attributes() : array();
+                    if ($defaultVariation) {
+                        foreach ($defaultVariation->get_attributes() as $key => $value) {
+                            if (!empty($value)) {
+                                $defaultAttributes[$key] = $value;
+                            } else {
+                                // Variation can be applied to any value of this attribute.
+                                if (isset($parentAttributes[$key])) {
+                                    // Get first value from parent product.
+                                    if ($parentAttributes[$key]['is_taxonomy']) {
+                                        $terms = explode("|", $parentAttributes[$key]['value']);
+                                        $terms = array_filter($terms);
+                                        if (!empty($terms)) {
+                                            $term = WP_Term::get_instance($terms[0]);
+                                            if ($term) {
+                                                $defaultAttributes[$key] = $term->slug;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 $product->set_default_attributes($defaultAttributes);
             }

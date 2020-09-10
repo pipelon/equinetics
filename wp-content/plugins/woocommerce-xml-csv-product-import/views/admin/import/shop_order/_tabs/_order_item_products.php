@@ -609,7 +609,7 @@
 					<div class="form-field input" style="margin-bottom: 20px;">
 						<label class="order-separator-label" style="line-height: 30px;"><?php _e('Multiple products separated by', PMWI_Plugin::TEXT_DOMAIN); ?></label>
 						<input type="text" class="short rad4 order-separator-input" name="pmwi_order[products_repeater_mode_separator]" value="<?php echo esc_attr($post['pmwi_order']['products_repeater_mode_separator']) ?>" style="width:10%; text-align: center;"/>
-						<a href="#help" class="wpallimport-help" style="top:10px;left:8px;" original-title="For example, two products would be imported like this SKU1|SKU2, and their quantities like this 15|20">?</a>							
+						<a href="#help" class="wpallimport-help" style="top:10px;left:8px;" title="For example, two products would be imported like this SKU1|SKU2, and their quantities like this 15|20">?</a>
 					</div>
 					<?php endif; ?>		
 				</div>

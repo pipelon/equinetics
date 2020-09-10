@@ -2,7 +2,7 @@
 Contributors: dpowney
 Tags: rating, review, post rating, star rating, seo, schema.org, json-ld
 Requires at least: 4.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -86,8 +86,12 @@ Looking for some more advanced functionality? The [Multi Rating Pro](https://mul
 
 == Changelog ==
 
+= 5.0.2 (14/08/2020) =
+* Fix: Console error in Gutenberg editor due to icon_classes missing
+* Fix: Deprecated jQuery function live() was used in admin JS
+
 = 5.0.1 (28/06/2020) =
-Fix: Auto placement post type issue
+* Fix: Auto placement post type issue
 
 = 5.0 (27/06/2020) =
 * New: Added REST API readonly endpoints for rating results list, rating items and a custom field on posts with rating results
